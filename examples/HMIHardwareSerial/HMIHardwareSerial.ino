@@ -1,9 +1,12 @@
 #include <hmi.h>
-HMI myhmi(Serial2); // If you want to use another hardware serial,please edit this line.
-void setup()
+/*For UNO board,we advice you to use software serial,because hardware serial has been used to output log in this example.*/
+
+HMI myhmi(Serial2); //For MEGA board,if you want to use another hardware serial,please edit this line.
+void setup()       
 {    
     Serial.begin(9600);
 }
+
 void loop()
 {	
     if (myhmi.pictureEdit("p3",10) == 1)
