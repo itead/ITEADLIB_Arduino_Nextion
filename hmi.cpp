@@ -144,6 +144,7 @@ void HMI::readLcdData(unsigned char *data_buffer)
 
 bool HMI::returnIsRight(void)
 {
+	delay(10);
 	uint32_t tempid = 0;
 	unsigned char temp[20] = {0};
 	unsigned char temp1[4] = {0x01,0xFF,0xFF,0xFF};
