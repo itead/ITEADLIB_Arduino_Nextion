@@ -1,6 +1,14 @@
 # HMI
 
-A HMI library for Arduino providing an easy-to-use way to manipulate LCD touch screen. 
+A HMI library for Arduino providing an easy-to-use way to manipulate LCD touch screen.
+
+# Source 
+
+Source can be download at https://github.com/itead/ITEADLIB_Arduino_Nextion.
+
+You can clone it by:
+
+    git clone https://github.com/itead/ITEADLIB_Arduino_Nextion
 
 # How to get started
 
