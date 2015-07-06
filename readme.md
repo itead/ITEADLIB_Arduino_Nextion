@@ -6,6 +6,7 @@ For more information about the Nextion display project, please visit [the wikiã€
 The wiki provdies all the necessary technical documnets, quick start guide, tutorials, demos, as well as some useful resources.
 
 To get your Nextion display, please visit [iMall.](http://imall.itead.cc/display/nextion.html)
+
 To discuss the project?  Request new features?  Report a BUG? please visit the [Forums](http://support.iteadstudio.com/discussions/1000058038)
 
 â€‹
