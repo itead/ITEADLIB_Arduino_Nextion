@@ -40,6 +40,7 @@ After modification, it should be:
     #define HMI_SOFTWARE_SERIAL
 
 Nextion library only requires an uart for hardware connection. All communications are done via uart.   
+
 -------------------------------------------------------------------------------
 
 # The End!
