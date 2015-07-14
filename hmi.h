@@ -6,6 +6,15 @@
   */
 #ifndef  __HMI_H__
 #define  __HMI_H__
+
+// To also support the growing community of Particle devices (www.particle.io)
+#if defined(SPARK) || defined(PLATFORM_ID)
+  #include "application.h"
+
+  typedef USARTSerial HMISerial; 
+
+  extern char* itoa(int a, char* buffer, unsigned char radix);
+#else // not a Particle device
 #include "arduino.h"
 
 /**
@@ -19,6 +28,9 @@ typedef SoftwareSerial HMISerial;
 #else 		  
 typedef HardwareSerial HMISerial; 
 #endif /* #ifdef HMI_SOFTWARE_SERIAL */
+
+#endif  // Arduino
+
 
 /** 
   *  HMI class. 
