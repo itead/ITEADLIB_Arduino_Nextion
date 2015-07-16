@@ -1,5 +1,5 @@
 /**
- * @example NexTouch.cpp
+ * @example CompHotspot.ino
  *
  * @par Show how to use API of class NexHotspot.  
  *
