@@ -23,7 +23,8 @@
 
 // To also support the growing community of Particle devices (www.particle.io)
 #if defined(SPARK) || defined(PLATFORM_ID)
-  #define nexSerial Serial1
+  #define nexSerial Serial1  // RX/TX pins
+  //#define nexSerial Serial2  // D0/D1 pins on Core (on Photon not easily usable)
 #elif
   #define nexSerial Serial2
 #endif
