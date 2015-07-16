@@ -1,4 +1,4 @@
-﻿@mainpage
+@mainpage
 
 # Nextion Library for Arduino 
 
@@ -20,6 +20,11 @@ Latest source code can be download at https://github.com/itead/ITEADLIB_Arduino_
 You can clone it by:
 
     git clone https://github.com/itead/ITEADLIB_Arduino_Nextion
+# Documentation
+Online API documentation can be reached at <http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/>.
+
+Offline API documentation can be found under directory 
+[doc](https://github.com/itead/ITEADLIB_Arduino_Nextion/tree/master/doc).
 
 # Hareware requirement 
 
