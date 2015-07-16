@@ -1,7 +1,28 @@
+/**
+ * @file NexTouch.cpp
+ *
+ * API of Nextion. 
+ *
+ * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
+ * @date    2015/7/10
+ * @copyright 
+ * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License, or (at your option) any later version.
+ */
+
 #include "NexTouch.h"
 
 uint8_t NexTouch::__buffer[256] = {0};
 
+/**
+ * Watting for Nextion's touch event.
+ * 
+ * @param list - index to Nextion Components list. 
+ * 
+ */
 uint8_t NexTouch::mainEventLoop(NexTouch **list)
 {
     uint16_t i;
@@ -38,6 +59,18 @@ uint8_t NexTouch::mainEventLoop(NexTouch **list)
     return 0;
 }
 
+/**
+ * Constructor of Nextouch. 
+ * 
+ * @param pid - page id. 
+ * @param cid - component id.    
+ * @param name - component name. 
+ * @param pop - pop event function pointer.   
+ * @param pop_str - the parameter was transmitted to pop event function pointer.  
+ * @param push - push event function pointer. 
+ * @param push_ptr - the parameter was transmitted to push event function pointer.
+ *   
+ */
 NexTouch::NexTouch(NexPid pid, NexCid cid, char *name, 
     NexTouchEventCb pop, void *pop_ptr,
     NexTouchEventCb push, void *push_ptr)
@@ -51,21 +84,41 @@ NexTouch::NexTouch(NexPid pid, NexCid cid, char *name,
     this->__cbpush_ptr = push_ptr;
 }
 
+/**
+ * Get page id.
+ *
+ * @return the id of page.  
+ */
 NexPid NexTouch::getPid(void)
 {
     return pid;
 }
 
+/**
+ * Get component id.
+ *
+ * @return the id of component.  
+ */
 NexCid NexTouch::getCid(void)
 {
     return cid;
 }
 
+/**
+ * Get component name.
+ *
+ * @return the name of component. 
+ */
 const char* NexTouch::getObjName(void)
 {
     return name;
 }
 
+/**
+ * Print current object address,page id,component id,
+ * component name,pop event function address,push event function address. 
+ *  
+ */
 void NexTouch::print(void)
 {
     dbSerial.print("[");
@@ -114,7 +167,6 @@ void NexTouch::detachPop(void)
     this->__cbpop_ptr = NULL;
 }
 
-    
 void NexTouch::iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType event)
 {
     NexTouch *e = NULL;
@@ -144,7 +196,6 @@ void NexTouch::iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType eve
     }
 }
 
-
 void NexTouch::push(void)
 {
     if (cbPush)
@@ -161,6 +212,15 @@ void NexTouch::pop(void)
     }
 }
 
+/**
+ * Command is executed successfully. 
+ *
+ * @param timeout - set timeout time.
+ *
+ * @retval true - success.
+ * @retval false - failed. 
+ *
+ */
 bool NexTouch::recvRetCommandFinished(uint32_t timeout)
 {    
     bool ret = false;
@@ -193,6 +253,11 @@ bool NexTouch::recvRetCommandFinished(uint32_t timeout)
     return ret;
 }
 
+/**
+ * Send command to Nextion.
+ *
+ * @param cmd - the string of command.
+ */
 void NexTouch::sendCommand(const char* cmd)
 {
     while (nexSerial.available())
@@ -206,7 +271,16 @@ void NexTouch::sendCommand(const char* cmd)
     nexSerial.write(0xFF);
 }
 
-/* 0X70 0X61 0X62 0X63 0x... 0XFF 0XFF 0XFF */
+/**
+ * Receive string data. 
+ * 
+ * @param buffer - save string data. 
+ * @param len - string buffer length. 
+ * @param timeout - set timeout time. 
+ *
+ * @return the length of string buffer.
+ *
+ */
 uint16_t NexTouch::recvRetString(char *buffer, uint16_t len, uint32_t timeout)
 {
     uint16_t ret = 0;
@@ -269,7 +343,16 @@ __return:
     return ret;
 }
 
-/* 0X71 0X66 0X00 0X00 0X00 0XFF 0XFF 0XFF */
+/**
+ * Receive uint32_t data. 
+ * 
+ * @param number - save uint32_t data. 
+ * @param timeout - set timeout time. 
+ *
+ * @retval true - success. 
+ * @retval false - failed.
+ *
+ */
 bool NexTouch::recvRetNumber(uint32_t *number, uint32_t timeout)
 {
     bool ret = false;
@@ -330,6 +413,13 @@ bool NexTouch::getBrightness(uint32_t *brightness)
     return recvRetNumber(brightness);
 }
 
+
+/**
+ * Init Nextion's baudrate,page id.    
+ * 
+ * @retval true - success. 
+ * @retval false - failed. 
+ */
 bool nexInit(void)
 {
     nexSerial.begin(9600);
@@ -339,6 +429,14 @@ bool nexInit(void)
     return true;
 }
 
+
+/**
+ * Call mainEventLoop,watting for Nextion's touch event.  
+ *  
+ * @param nexListenList - index to Nextion Components list. 
+ * 
+ * @retval false - failed. 
+ */
 bool nexLoop(NexTouch **nexListenList)
 {
     NexTouch::mainEventLoop(nexListenList);

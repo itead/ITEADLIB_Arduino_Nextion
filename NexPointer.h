@@ -3,9 +3,9 @@
 #ifdef __cplusplus
 #include "NexTouch.h"
 
-
-/*
- * NexPointer
+/**
+ * NexPointer,subclass of NexTouch,provides simple methods to control pointer component.
+ *
  */
 class NexPointer: public NexTouch
 {

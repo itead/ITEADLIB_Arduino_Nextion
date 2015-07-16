@@ -1,9 +1,28 @@
+/**
+ * @file NexTouch.h
+ *
+ * API of Nextion. 
+ *
+ * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
+ * @date    2015/7/10
+ * @copyright 
+ * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License, or (at your option) any later version.
+ */
+
 #ifndef __NEXTOUCH_H__
 #define __NEXTOUCH_H__
 #ifdef __cplusplus
 #include <Arduino.h>
 
+
+/*Define debug serial*/
 #define dbSerial Serial
+
+/*Define Nextion serial*/
 #define nexSerial Serial2
 
 typedef uint8_t NexPid;
@@ -15,17 +34,16 @@ typedef enum {
     NEX_EVENT_NULL
 } NexEventType;
 
+/*The first byte of Nextoin's return value*/
 #define NEX_RET_CMD_FINISHED            (0x01)
 #define NEX_RET_EVENT_LAUNCHED          (0x88)
 #define NEX_RET_EVENT_UPGRADED          (0x89)
-
 #define NEX_RET_EVENT_TOUCH_HEAD            (0x65)     
 #define NEX_RET_EVENT_POSITION_HEAD         (0x67)
 #define NEX_RET_EVENT_SLEEP_POSITION_HEAD   (0x68)
 #define NEX_RET_CURRENT_PAGE_ID_HEAD        (0x66)
 #define NEX_RET_STRING_HEAD                 (0x70)
 #define NEX_RET_NUMBER_HEAD                 (0x71)
-
 #define NEX_RET_INVALID_CMD             (0x00)
 #define NEX_RET_INVALID_COMPONENT_ID    (0x02)
 #define NEX_RET_INVALID_PAGE_ID         (0x03)
@@ -38,8 +56,9 @@ typedef enum {
 
 typedef void (*NexTouchEventCb)(void *ptr);
 
-/*
- * Root Class of Nextion Components
+/**
+ * Root Class of Nextion Components. 
+ *
  */
 class NexTouch 
 {
