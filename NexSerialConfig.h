@@ -20,6 +20,12 @@
 #define dbSerial Serial
 
 /*Define Nextion serial*/
-#define nexSerial Serial2
+
+// To also support the growing community of Particle devices (www.particle.io)
+#if defined(SPARK) || defined(PLATFORM_ID)
+  #define nexSerial Serial1
+#elif
+  #define nexSerial Serial2
+#endif
 
 #endif 
