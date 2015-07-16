@@ -20,6 +20,7 @@ Latest source code can be download at https://github.com/itead/ITEADLIB_Arduino_
 You can clone it by:
 
     git clone https://github.com/itead/ITEADLIB_Arduino_Nextion
+
 # Documentation
 Online API documentation can be reached at <http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/>.
 
@@ -30,7 +31,9 @@ Offline API documentation can be found under directory
 
   - RAM: not less than 2KBytes
   - Serial: two serial (communication and debug)
+
 # Serial configuration
+
 If you want to change the default serial to debug or communicate with Nextion ,you need to modify the line in file NexSerialConfig.h:
 
 	#define dbSerial Serial
