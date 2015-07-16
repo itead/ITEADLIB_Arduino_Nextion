@@ -30,12 +30,16 @@ Offline API documentation can be found under directory
 
   - RAM: not less than 2KBytes
   - Serial: two serial (communication and debug)
+# Serial configuration
+If you want to change the default serial to debug or communicate with Nextion ,you need to modify the line in file NexSerialConfig.h:
+
+	#define dbSerial Serial
+    #define nexSerial Serial2
 
 # Suppported Mainboards:
 
   - Iteaduino MEGA2560
   - Arduino MEGA2560
-
 
 -------------------------------------------------------------------------------
 

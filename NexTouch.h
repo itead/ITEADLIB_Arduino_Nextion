@@ -17,13 +17,7 @@
 #define __NEXTOUCH_H__
 #ifdef __cplusplus
 #include <Arduino.h>
-
-
-/*Define debug serial*/
-#define dbSerial Serial
-
-/*Define Nextion serial*/
-#define nexSerial Serial2
+#include "NexSerialConfig.h"
 
 typedef uint8_t NexPid;
 typedef uint8_t NexCid;
