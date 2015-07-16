@@ -29,7 +29,7 @@ NexPicture::NexPicture(NexPid pid, NexCid cid, char *name, NexTouchEventCb pop, 
  * 
  * @param number - an output parameter to save picture number.  
  * 
- * @reval true - success. 
+ * @retval true - success. 
  * @retval false - failed. 
  */
 bool NexPicture::getPic(uint32_t *number)

@@ -106,7 +106,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_text.html#ab199d12188a48e5f92844452ebd493cc"><param name="Name" value="NexText"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_text.html#a19589b32c981436a1bbcfe407bc766e3"><param name="Name" value="setText"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="md_readme.html"><param name="Name" value="Nextion Library for Arduino"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html"><param name="Name" value="NexTouch"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html"><param name="Name" value="NexTouch.cpp"></OBJECT>
   <UL>
@@ -132,6 +131,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8"><param name="Name" value="sendCommand"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a5f4c8a51d930403413d1f267348a9a1e"><param name="Name" value="print"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="md_readme.html"><param name="Name" value="readme"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507"><param name="Name" value="recvRetCommandFinished"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a257439b0ce23b3b2de73fad3944d5336"><param name="Name" value="recvRetNumber"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#ac9cf23a7fc63040dc129ac3cb3de1d35"><param name="Name" value="recvRetString"></OBJECT>

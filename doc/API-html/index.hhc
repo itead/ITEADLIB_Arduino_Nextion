@@ -4,7 +4,7 @@
 <param name="FrameName" value="right">
 </OBJECT>
 <UL>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="Nextion Library for Arduino"><param name="Local" value="md_readme.html"><param name="ImageNumber" value="11"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="readme"><param name="Local" value="md_readme.html"><param name="ImageNumber" value="11"></OBJECT>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Classes"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="Class List"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
@@ -245,8 +245,14 @@
   </UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Examples"><param name="Local" value="examples.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="CompButton.ino"><param name="Local" value="_comp_button_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="CompHotspot.ino"><param name="Local" value="_comp_hotspot_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="NexTouch.cpp"><param name="Local" value="_nex_touch_8cpp-example.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="CompPage.ino"><param name="Local" value="_comp_page_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="CompPicture.ino"><param name="Local" value="_comp_picture_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="CompPointer.ino"><param name="Local" value="_comp_pointer_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="CompProgressBar.ino"><param name="Local" value="_comp_progress_bar_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="CompSlice.ino"><param name="Local" value="_comp_slice_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="CompText.ino"><param name="Local" value="_comp_text_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
   </UL>
 </UL>
 </BODY>

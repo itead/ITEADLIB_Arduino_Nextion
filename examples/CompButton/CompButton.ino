@@ -1,5 +1,5 @@
 /**
- * @example NexTouch.cpp
+ * @example CompButton.ino
  *
  * @par Show how to use API of class NexButton.  
  *

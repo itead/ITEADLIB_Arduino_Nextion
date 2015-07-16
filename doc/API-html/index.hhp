@@ -13,8 +13,14 @@ Title=API
 main="API","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
 
 [FILES]
+_comp_button_8ino-example.html
 _comp_hotspot_8ino-example.html
-_nex_touch_8cpp-example.html
+_comp_page_8ino-example.html
+_comp_picture_8ino-example.html
+_comp_pointer_8ino-example.html
+_comp_progress_bar_8ino-example.html
+_comp_slice_8ino-example.html
+_comp_text_8ino-example.html
 _comp_button_8ino_source.html
 _comp_hotspot_8ino_source.html
 _comp_page_8ino_source.html

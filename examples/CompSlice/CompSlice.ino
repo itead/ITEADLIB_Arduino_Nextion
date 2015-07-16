@@ -1,5 +1,5 @@
 /**
- * @example NexTouch.cpp
+ * @example CompSlice.ino
  *
  * @par Show how to use API of class NexSlice.  
  *

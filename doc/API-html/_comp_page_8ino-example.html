@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>API: CompHotspot.ino</title>
+<title>API: CompPage.ino</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,64 +40,67 @@
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">CompHotspot.ino</div>  </div>
+<div class="title">CompPage.ino</div>  </div>
 </div><!--header-->
 <div class="contents">
-<dl class="section user"><dt>Show how to use API of class NexHotspot. </dt><dd></dd></dl>
+<dl class="section user"><dt>Show how to use API of class NexPage. </dt><dd></dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Wu Pengfei (email:<a href="#" onclick="location.href='mai'+'lto:'+'pen'+'gf'+'ei.'+'wu'+'@it'+'ea'+'d.c'+'c'; return false;">pengf<span style="display: none;">.nosp@m.</span>ei.w<span style="display: none;">.nosp@m.</span>u@ite<span style="display: none;">.nosp@m.</span>ad.c<span style="display: none;">.nosp@m.</span>c</a>) </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2015/7/10 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. <br />
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</dd></dl>
 <div class="fragment"><div class="line"></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_nex_hotspot_8h.html">NexHotspot.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_nex_page_8h.html">NexPage.h</a>&quot;</span></div>
 <div class="line"></div>
-<div class="line"><a name="_a0"></a><a class="code" href="class_nex_hotspot.html">NexHotspot</a> hot0    = <a class="code" href="class_nex_hotspot.html">NexHotspot</a>(0, 1, <span class="stringliteral">&quot;hot0&quot;</span>);</div>
-<div class="line"><a class="code" href="class_nex_hotspot.html">NexHotspot</a> hot1    = <a class="code" href="class_nex_hotspot.html">NexHotspot</a>(0, 2, <span class="stringliteral">&quot;hot1&quot;</span>);</div>
+<div class="line"><a name="_a0"></a><a class="code" href="class_nex_page.html">NexPage</a> page0    = <a class="code" href="class_nex_page.html">NexPage</a>(0, 0, <span class="stringliteral">&quot;page0&quot;</span>);</div>
+<div class="line"><a class="code" href="class_nex_page.html">NexPage</a> page1    = <a class="code" href="class_nex_page.html">NexPage</a>(1, 0, <span class="stringliteral">&quot;page1&quot;</span>);</div>
+<div class="line"><a class="code" href="class_nex_page.html">NexPage</a> page2    = <a class="code" href="class_nex_page.html">NexPage</a>(2, 0, <span class="stringliteral">&quot;page2&quot;</span>);</div>
+<div class="line"><a class="code" href="class_nex_page.html">NexPage</a> page3    = <a class="code" href="class_nex_page.html">NexPage</a>(3, 0, <span class="stringliteral">&quot;page3&quot;</span>);</div>
 <div class="line"></div>
 <div class="line"><a name="_a1"></a><a class="code" href="class_nex_touch.html">NexTouch</a> *nexListenList[] = </div>
 <div class="line">{</div>
-<div class="line">    &amp;hot0,</div>
-<div class="line">    &amp;hot1,</div>
+<div class="line">    &amp;page0,</div>
+<div class="line">    &amp;page1,</div>
+<div class="line">    &amp;page2,</div>
+<div class="line">    &amp;page3,</div>
 <div class="line">    NULL</div>
 <div class="line">};</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> hot0PushCallback(<span class="keywordtype">void</span> *ptr)</div>
+<div class="line"><span class="keywordtype">void</span> page0PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;hot0PushCallback&quot;</span>);</div>
-<div class="line">    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line">    dbSerial.println((uint32_t)ptr);</div>
+<div class="line">    dbSerial.println(<span class="stringliteral">&quot;page0PopCallback&quot;</span>);</div>
+<div class="line">    page1.<a name="a2"></a><a class="code" href="class_nex_page.html#a5714e41d4528b991eda4bbe578005418">show</a>();</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> hot1PushCallback(<span class="keywordtype">void</span> *ptr)</div>
+<div class="line"><span class="keywordtype">void</span> page1PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;hot1PushCallback&quot;</span>);    </div>
-<div class="line">    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line">    dbSerial.println((uint32_t)ptr);</div>
+<div class="line">    dbSerial.println(<span class="stringliteral">&quot;page1PopCallback&quot;</span>);</div>
+<div class="line">    page2.<a class="code" href="class_nex_page.html#a5714e41d4528b991eda4bbe578005418">show</a>();</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> hot0PopCallback(<span class="keywordtype">void</span> *ptr)</div>
+<div class="line"><span class="keywordtype">void</span> page2PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;hot0PopCallback&quot;</span>);</div>
-<div class="line">    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line">    dbSerial.println((uint32_t)ptr);</div>
+<div class="line">    dbSerial.println(<span class="stringliteral">&quot;page2PopCallback&quot;</span>);</div>
+<div class="line">    page3.<a class="code" href="class_nex_page.html#a5714e41d4528b991eda4bbe578005418">show</a>();</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> hot1PopCallback(<span class="keywordtype">void</span> *ptr)</div>
+<div class="line"><span class="keywordtype">void</span> page3PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;hot1PopCallback&quot;</span>);</div>
-<div class="line">    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line">    dbSerial.println((uint32_t)ptr);</div>
+<div class="line">    dbSerial.println(<span class="stringliteral">&quot;page3PopCallback&quot;</span>);</div>
+<div class="line">    page0.<a class="code" href="class_nex_page.html#a5714e41d4528b991eda4bbe578005418">show</a>();</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
+<div class="line">{   </div>
 <div class="line">    dbSerial.begin(9600);</div>
-<div class="line">    <a name="a2"></a><a class="code" href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
-<div class="line">    hot0.<a name="a3"></a><a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot0PushCallback, &amp;hot0);</div>
-<div class="line">    hot0.<a name="a4"></a><a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot0PopCallback, &amp;hot0);</div>
-<div class="line">    hot1.<a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot1PushCallback, &amp;hot1);</div>
-<div class="line">    hot1.<a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot1PopCallback, &amp;hot1);</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
+<div class="line">    <a name="a3"></a><a class="code" href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
+<div class="line">    dbSerial.println(<span class="stringliteral">&quot;setup begin&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    page0.<a name="a4"></a><a class="code" href="class_nex_page.html#a12dfab060db8a063ec37cc03d423bfa5">attachPop</a>(page0PopCallback);</div>
+<div class="line">    page1.<a class="code" href="class_nex_page.html#a12dfab060db8a063ec37cc03d423bfa5">attachPop</a>(page1PopCallback);</div>
+<div class="line">    page2.<a class="code" href="class_nex_page.html#a12dfab060db8a063ec37cc03d423bfa5">attachPop</a>(page2PopCallback);</div>
+<div class="line">    page3.<a class="code" href="class_nex_page.html#a12dfab060db8a063ec37cc03d423bfa5">attachPop</a>(page3PopCallback);</div>
+<div class="line">    </div>
+<div class="line">    dbSerial.println(<span class="stringliteral">&quot;setup end&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>

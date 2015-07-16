@@ -29,7 +29,7 @@ NexHotspot::NexHotspot(NexPid pid, NexCid cid, char *name,
 /**
  * Register hotspot push callback function. 
  *
- * @param pop - the pointer to hotspot push callback function.
+ * @param push - the pointer to hotspot push callback function.
  * @param ptr - the parameter to be transmitted to hotspot push callback function. 
  */
 void NexHotspot::attachPush(NexTouchEventCb push, void *ptr)

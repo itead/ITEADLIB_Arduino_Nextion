@@ -66,7 +66,7 @@ uint8_t NexTouch::mainEventLoop(NexTouch **list)
  * @param cid - component id.    
  * @param name - component name. 
  * @param pop - pop event function pointer.   
- * @param pop_str - the parameter was transmitted to pop event function pointer.  
+ * @param pop_ptr - the parameter was transmitted to pop event function pointer.  
  * @param push - push event function pointer. 
  * @param push_ptr - the parameter was transmitted to push event function pointer.
  *   

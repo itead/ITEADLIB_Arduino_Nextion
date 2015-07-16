@@ -1,3 +1,5 @@
+﻿@mainpage
+
 # Nextion Library for Arduino 
 
 Nextion Arduino library provides an easy-to-use way to manipulate Nextion serial displays. 
