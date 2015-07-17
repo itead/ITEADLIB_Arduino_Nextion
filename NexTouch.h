@@ -106,5 +106,19 @@ private: /* data */
 bool nexInit(void);
 bool nexLoop(NexTouch **nexListenList);
 
+/* add new function */
+bool  sendCurrentPageId(uint8_t* pageId,uint32_t timeout);
+bool TouchCalibration(uint32_t timeout);
+bool disableTouchFocus(uint32_t timeout); 
+bool pauseSerialCommand(uint32_t timeout); 
+bool recoverySerialCommand(uint32_t timeout);
+bool clearSerialSurplusCommand(uint32_t timeout);
+bool setDim(uint8_t dimValue);
+bool setDefaultDim(uint8_t dimDefaultValue);
+bool sleepMode(uint8_t mode);
+bool setDeviceDelay(uint32_t delayMs);
+bool setCurrentBaudrate(uint32_t baudrate);
+bool setDefaultBaudrate(uint32_t baudrate);
+
 #endif /* #ifdef __cplusplus */
 #endif /* #ifndef __NEXTOUCH_H__ */
