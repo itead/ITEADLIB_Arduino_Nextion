@@ -394,19 +394,6 @@ __return:
     return ret;
 }
 
-bool NexTouch::setBrightness(uint32_t brightness)
-{    
-    char buf[10] = {0};
-    String cmd;
-    
-    utoa(brightness, buf, 10);
-    cmd += "dim=";
-    cmd += buf;
-
-    sendCommand(cmd.c_str());
-    return recvRetCommandFinished();
-}
-
 bool NexTouch::getBrightness(uint32_t *brightness)
 {
     sendCommand("get dim");
@@ -442,52 +429,68 @@ bool nexLoop(NexTouch **nexListenList)
     return false;
 }
 
-/*add for new function*/
+/**
+ * Return current page id.   
+ *  
+ * @param pageId - output parameter,to save page id.  
+ * @param timeout - set timeout time. 
+ * 
+ * @retval true - success. 
+ * @retval false - failed. 
+ */
 bool sendCurrentPageId(uint8_t* pageId,uint32_t timeout)
 {
 
-        bool ret = false;
-        uint8_t temp[5] = {0};
-    
-        if (!pageId)
-        {
-            goto __return;
-        }
-        NexTouch::sendCommand("sendme");
-        delay(50);
-        nexSerial.setTimeout(timeout);
-        if (sizeof(temp) != nexSerial.readBytes((char *)temp, sizeof(temp)))
-        {
-            goto __return;
-        }
-    
-        if (temp[0] == NEX_RET_NUMBER_HEAD
-            && temp[2] == 0xFF
-            && temp[3] == 0xFF
-            && temp[4] == 0xFF
-            )
-        {
-            *pageId = temp[1];
-            ret = true;
-        }
-    
+    bool ret = false;
+    uint8_t temp[5] = {0};
+
+    if (!pageId)
+    {
+        goto __return;
+    }
+    NexTouch::sendCommand("sendme");
+    delay(50);
+    nexSerial.setTimeout(timeout);
+    if (sizeof(temp) != nexSerial.readBytes((char *)temp, sizeof(temp)))
+    {
+        goto __return;
+    }
+
+    if (temp[0] == NEX_RET_CURRENT_PAGE_ID_HEAD
+    && temp[2] == 0xFF
+    && temp[3] == 0xFF
+    && temp[4] == 0xFF
+    )
+    {
+        *pageId = temp[1];
+        ret = true;
+    }
+
     __return:
-    
-        if (ret) 
-        {
-            dbSerial.print("recvPageId :");
-            dbSerial.println(*pageId);
-        }
-        else
-        {
-            dbSerial.println("recvPageId err");
-        }
-        
-        return ret;
+
+    if (ret) 
+    {
+        dbSerial.print("recvPageId :");
+        dbSerial.println(*pageId);
+    }
+    else
+    {
+        dbSerial.println("recvPageId err");
+    }
+
+    return ret;
 
 }
 
 
+/**
+ * Touch screen calibration. 
+ *
+ * @param timeout - set timeout time. 
+ * 
+ * @retval true - success. 
+ * @retval false - failed. 
+ */
 bool touchCalibration(uint32_t timeout)
 {
     bool ret = false;
@@ -508,10 +511,18 @@ bool touchCalibration(uint32_t timeout)
     return ret;
 }
 
+/**
+ * Disable all touch hot.  
+ *
+ * @param timeout - set timeout time. 
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */
 bool  disableTouchFocus(uint32_t timeout)
 {
     bool ret = false;
-    NexTouch::sendCommand("clec_c");
+    NexTouch::sendCommand("cle_c");
     delay(10);
     
     nexSerial.setTimeout(timeout);
@@ -529,6 +540,14 @@ bool  disableTouchFocus(uint32_t timeout)
 
 }
 
+/**
+ * Pause serial instruction execution. 
+ *
+ * @param timeout - set timeout time. 
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */
 bool pauseSerialCommand(uint32_t timeout)
 {
 
@@ -551,6 +570,14 @@ bool pauseSerialCommand(uint32_t timeout)
 
 }
 
+/**
+ * Recovery serial instruction execution. 
+ *
+ * @param timeout - set timeout time. 
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */
 bool recoverySerialCommand(uint32_t timeout)               
 {  
     bool ret = false;
@@ -571,161 +598,194 @@ bool recoverySerialCommand(uint32_t timeout)
     return ret;	
 }
 
-bool setDim(uint8_t dimValue)
-  {
-      bool ret = false;
-      char buf[10] = {0};
-      String cmd;
-      utoa(dimValue, buf, 10);
-      cmd += "dim=";
-      cmd += buf;
-      NexTouch::sendCommand(cmd.c_str());
-      delay(10);
+/**
+ * Set current backlight brightness value. 
+ *
+ * @param dimValue - current backlight brightness value.
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */
+bool setCurrentBrightness(uint8_t dimValue)
+{
+    bool ret = false;
+    char buf[10] = {0};
+    String cmd;
+    utoa(dimValue, buf, 10);
+    cmd += "dim=";
+    cmd += buf;
+    NexTouch::sendCommand(cmd.c_str());
+    delay(10);
 
-      if(NexTouch::recvRetCommandFinished())
-      {   
-          dbSerial.print("setDim[ ");
-          dbSerial.print(dimValue);
-          dbSerial.println("]ok ");
-          
-          ret = true; 
-      }
-      else 
-      {
-          dbSerial.println("setDim err ");
-      }
-  
-      return ret;    
-  }
+    if(NexTouch::recvRetCommandFinished())
+    {   
+        dbSerial.print("setCurrentBrightness[ ");
+        dbSerial.print(dimValue);
+        dbSerial.println("]ok ");
+      
+        ret = true; 
+    }
+    else 
+    {
+        dbSerial.println("setCurrentBrightness err ");
+    }
 
+    return ret;    
+}
 
-  bool setDefaultDim(uint8_t dimDefaultValue)
-  {
-      bool ret = false;
-      char buf[10] = {0};
-      String cmd;
-      utoa(dimDefaultValue, buf, 10);
-      cmd += "dims=";
-      cmd += buf;
-      NexTouch::sendCommand(cmd.c_str());
-      delay(10);
+/**
+ * Set default backlight brightness value.  
+ *
+ * @param dimDefaultValue - default backlight brightness value.
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */
+bool setDefaultDim(uint8_t dimDefaultValue)
+{
+    bool ret = false;
+    char buf[10] = {0};
+    String cmd;
+    utoa(dimDefaultValue, buf, 10);
+    cmd += "dims=";
+    cmd += buf;
+    NexTouch::sendCommand(cmd.c_str());
+    delay(10);
 
-      if(NexTouch::recvRetCommandFinished())
-      {
-          dbSerial.print("setDefaultDim[");
-          dbSerial.print(dimDefaultValue);
-          dbSerial.println("]ok");
-          ret = true; 
-      }
-      else 
-      {
-          dbSerial.println("setDefaultDim err ");
-      }
-  
-      return ret; 
-  }
+    if(NexTouch::recvRetCommandFinished())
+    {
+        dbSerial.print("setDefaultDim[");
+        dbSerial.print(dimDefaultValue);
+        dbSerial.println("]ok");
+        ret = true; 
+    }
+    else 
+    {
+        dbSerial.println("setDefaultDim err ");
+    }
 
-  bool sleepMode(uint8_t mode)
-  {
-      bool ret = false;
-      char buf[10] = {0};
-      String cmd;
-      utoa(mode, buf, 10);
-      cmd += "sleep=";
-      cmd += buf;
-      NexTouch::sendCommand(cmd.c_str());
-      delay(10);
+    return ret; 
+}
 
-      if(NexTouch::recvRetCommandFinished())
-      {
-          dbSerial.println("sleepMode ok ");
-          ret = true; 
-      }
-      else 
-      {
-          dbSerial.println("sleepMode err ");
-      }
-  
-      return ret; 
+/**
+ * Set device in sleep mode.
+ *
+ * @param  mode - 1:into sleep mode,0:exit sleep mode.  
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */
+bool sleepMode(uint8_t mode)
+{
+    bool ret = false;
+    char buf[10] = {0};
+    String cmd;
+    utoa(mode, buf, 10);
+    cmd += "sleep=";
+    cmd += buf;
+    NexTouch::sendCommand(cmd.c_str());
+    delay(10);
 
+    if(NexTouch::recvRetCommandFinished())
+    {
+        dbSerial.println("sleepMode ok ");
+        ret = true; 
+    }
+    else 
+    {
+        dbSerial.println("sleepMode err ");
+    }
 
-  }
-  
-  bool setDeviceDelay(uint32_t delayMs)
-  {
-      bool ret = false;
-      char buf[10] = {0};
-      String cmd;
-      utoa(delayMs, buf, 10);
-      cmd += "delay=";
-      cmd += buf;
-      NexTouch::sendCommand(cmd.c_str());
-      delay(10);
+    return ret; 
+}
 
-      if(NexTouch::recvRetCommandFinished())
-      {
-          dbSerial.println("setDeviceDelay ok ");
-          ret = true; 
-      }
-      else 
-      {
-          dbSerial.println("setDeviceDelay err ");
-      }
-  
-      return ret; 
+bool setDeviceDelay(uint32_t delayMs)
+{
+    bool ret = false;
+    char buf[10] = {0};
+    String cmd;
+    utoa(delayMs, buf, 10);
+    cmd += "delay=";
+    cmd += buf;
+    NexTouch::sendCommand(cmd.c_str());
+    delay(10);
 
-  }
-  
-  bool setCurrentBaudrate(uint32_t baudrate)
-  {
-      bool ret = false;
-      char buf[10] = {0};
-      String cmd;
-      utoa(baudrate, buf, 10);
-      cmd += "baud=";
-      cmd += buf;
-      NexTouch::sendCommand(cmd.c_str());
-      delay(10);
+    if(NexTouch::recvRetCommandFinished())
+    {
+        dbSerial.println("setDeviceDelay ok ");
+        ret = true; 
+    }
+    else 
+    {
+        dbSerial.println("setDeviceDelay err ");
+    }
 
-      if(NexTouch::recvRetCommandFinished())
-      {
-          dbSerial.println("setCurrentBaudrate ok ");
-          ret = true; 
-      }
-      else 
-      {
-          dbSerial.println("setCurrentBaudrate err ");
-      }
-  
-      return ret; 
+    return ret; 
+}
 
+/**
+ * Set current baudrate. 
+ *
+ * @param  baudrate - current baudrate,it surrpots 2400,4800,9600,19200,38400,57600,38400.
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */
+bool setCurrentBaudrate(uint32_t baudrate)
+{
+    bool ret = false;
+    char buf[10] = {0};
+    String cmd;
+    utoa(baudrate, buf, 10);
+    cmd += "baud=";
+    cmd += buf;
+    NexTouch::sendCommand(cmd.c_str());
+    delay(10);
 
-  }
-  
-  bool setDefaultBaudrate(uint32_t defaultBaudrate)
-  {
-      bool ret = false;
-      char buf[10] = {0};
-      String cmd;
-      utoa(defaultBaudrate, buf, 10);
-      cmd += "bauds=";
-      cmd += buf;
-      NexTouch::sendCommand(cmd.c_str());
-      delay(10);
+    if(NexTouch::recvRetCommandFinished())
+    {
+        dbSerial.println("setCurrentBaudrate ok ");
+        ret = true; 
+    }
+    else 
+    {
+        dbSerial.println("setCurrentBaudrate err ");
+    }
 
-      if(NexTouch::recvRetCommandFinished())
-      {
-          dbSerial.println("setDefaultBaudrate ok ");
-          ret = true; 
-      }
-      else 
-      {
-          dbSerial.println("setDefaultBaudrate err ");
-      }
-  
-      return ret; 
+    return ret; 
+}
 
-  }
+/**
+ * Set default baudrate. 
+ *
+ * @param  defaultBaudrate - default baudrate,it surrpots 2400,4800,9600,19200,38400,57600,38400.
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */  
+bool setDefaultBaudrate(uint32_t defaultBaudrate)
+{
+    bool ret = false;
+    char buf[10] = {0};
+    String cmd;
+    utoa(defaultBaudrate, buf, 10);
+    cmd += "bauds=";
+    cmd += buf;
+    NexTouch::sendCommand(cmd.c_str());
+    delay(10);
+
+    if(NexTouch::recvRetCommandFinished())
+    {
+        dbSerial.println("setDefaultBaudrate ok ");
+        ret = true; 
+    }
+    else 
+    {
+        dbSerial.println("setDefaultBaudrate err ");
+    }
+
+    return ret; 
+}
 
 
 
