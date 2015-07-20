@@ -108,7 +108,7 @@ bool nexLoop(NexTouch **nexListenList);
 
 /* add new function */
 bool  sendCurrentPageId(uint8_t* pageId,uint32_t timeout);
-bool TouchCalibration(uint32_t timeout);
+bool touchCalibration(uint32_t timeout);
 bool disableTouchFocus(uint32_t timeout); 
 bool pauseSerialCommand(uint32_t timeout); 
 bool recoverySerialCommand(uint32_t timeout);

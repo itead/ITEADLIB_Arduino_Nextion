@@ -488,7 +488,7 @@ bool sendCurrentPageId(uint8_t* pageId,uint32_t timeout)
 }
 
 
-bool TouchCalibration(uint32_t timeout)
+bool touchCalibration(uint32_t timeout)
 {
     bool ret = false;
     NexTouch::sendCommand("touch_j");
@@ -579,12 +579,15 @@ bool setDim(uint8_t dimValue)
       utoa(dimValue, buf, 10);
       cmd += "dim=";
       cmd += buf;
-      NexTouch::sendCommandsendCommand(cmd.c_str());
+      NexTouch::sendCommand(cmd.c_str());
       delay(10);
 
       if(NexTouch::recvRetCommandFinished())
-      {
-          dbSerial.println("setDim ok ");
+      {   
+          dbSerial.print("setDim[ ");
+          dbSerial.print(dimValue);
+          dbSerial.println("]ok ");
+          
           ret = true; 
       }
       else 
@@ -604,12 +607,14 @@ bool setDim(uint8_t dimValue)
       utoa(dimDefaultValue, buf, 10);
       cmd += "dims=";
       cmd += buf;
-      NexTouch::sendCommandsendCommand(cmd.c_str());
+      NexTouch::sendCommand(cmd.c_str());
       delay(10);
 
       if(NexTouch::recvRetCommandFinished())
       {
-          dbSerial.println("setDefaultDim ok ");
+          dbSerial.print("setDefaultDim[");
+          dbSerial.print(dimDefaultValue);
+          dbSerial.println("]ok");
           ret = true; 
       }
       else 
@@ -628,7 +633,7 @@ bool setDim(uint8_t dimValue)
       utoa(mode, buf, 10);
       cmd += "sleep=";
       cmd += buf;
-      NexTouch::sendCommandsendCommand(cmd.c_str());
+      NexTouch::sendCommand(cmd.c_str());
       delay(10);
 
       if(NexTouch::recvRetCommandFinished())
@@ -654,7 +659,7 @@ bool setDim(uint8_t dimValue)
       utoa(delayMs, buf, 10);
       cmd += "delay=";
       cmd += buf;
-      NexTouch::sendCommandsendCommand(cmd.c_str());
+      NexTouch::sendCommand(cmd.c_str());
       delay(10);
 
       if(NexTouch::recvRetCommandFinished())
@@ -679,7 +684,7 @@ bool setDim(uint8_t dimValue)
       utoa(baudrate, buf, 10);
       cmd += "baud=";
       cmd += buf;
-      NexTouch::sendCommandsendCommand(cmd.c_str());
+      NexTouch::sendCommand(cmd.c_str());
       delay(10);
 
       if(NexTouch::recvRetCommandFinished())
@@ -705,7 +710,7 @@ bool setDim(uint8_t dimValue)
       utoa(defaultBaudrate, buf, 10);
       cmd += "bauds=";
       cmd += buf;
-      NexTouch::sendCommandsendCommand(cmd.c_str());
+      NexTouch::sendCommand(cmd.c_str());
       delay(10);
 
       if(NexTouch::recvRetCommandFinished())
