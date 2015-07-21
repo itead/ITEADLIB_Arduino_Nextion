@@ -16,7 +16,16 @@
 #ifndef __NEXTOUCH_H__
 #define __NEXTOUCH_H__
 #ifdef __cplusplus
-#include <Arduino.h>
+
+// To also support the growing community of Particle devices (www.particle.io)
+#if defined(SPARK) || defined(PLATFORM_ID)
+  #include "application.h"
+
+  extern char* itoa(int a, char* buffer, unsigned char radix);
+#else // not a Particle device
+  #include <Arduino.h>
+#endif  // Arduino
+
 #include "NexSerialConfig.h"
 
 typedef uint8_t NexPid;
