@@ -121,26 +121,26 @@ const char* NexTouch::getObjName(void)
  */
 void NexTouch::print(void)
 {
-    dbSerial.print("[");
-    dbSerial.print((uint32_t)this);
-    dbSerial.print(":");
-    dbSerial.print(pid);
-    dbSerial.print(",");
-    dbSerial.print(cid);
-    dbSerial.print(",");
+    dbSerialPrint("[");
+    dbSerialPrint((uint32_t)this);
+    dbSerialPrint(":");
+    dbSerialPrint(pid);
+    dbSerialPrint(",");
+    dbSerialPrint(cid);
+    dbSerialPrint(",");
     if (name)
     {
-        dbSerial.print(name);
+        dbSerialPrint(name);
     }
     else
     {
-        dbSerial.print("(null)");
+        dbSerialPrint("(null)");
     }
-    dbSerial.print(",");
-    dbSerial.print((uint32_t)cbPush);
-    dbSerial.print(",");
-    dbSerial.print((uint32_t)cbPop);
-    dbSerial.println("]");
+    dbSerialPrint(",");
+    dbSerialPrint((uint32_t)cbPush);
+    dbSerialPrint(",");
+    dbSerialPrint((uint32_t)cbPop);
+    dbSerialPrintln("]");
 }
 
 void NexTouch::attachPush(NexTouchEventCb push, void *ptr)
@@ -243,11 +243,11 @@ bool NexTouch::recvRetCommandFinished(uint32_t timeout)
 
     if (ret) 
     {
-        dbSerial.println("recvRetCommandFinished ok");
+        dbSerialPrintln("recvRetCommandFinished ok");
     }
     else
     {
-        dbSerial.println("recvRetCommandFinished err");
+        dbSerialPrintln("recvRetCommandFinished err");
     }
     
     return ret;
@@ -334,11 +334,11 @@ uint16_t NexTouch::recvRetString(char *buffer, uint16_t len, uint32_t timeout)
     
 __return:
 
-    dbSerial.print("recvRetString[");
-    dbSerial.print(temp.length());
-    dbSerial.print(",");
-    dbSerial.print(temp);
-    dbSerial.println("]");
+    dbSerialPrint("recvRetString[");
+    dbSerialPrint(temp.length());
+    dbSerialPrint(",");
+    dbSerialPrint(temp);
+    dbSerialPrintln("]");
 
     return ret;
 }
@@ -383,12 +383,12 @@ __return:
 
     if (ret) 
     {
-        dbSerial.print("recvRetNumber :");
-        dbSerial.println(*number);
+        dbSerialPrint("recvRetNumber :");
+        dbSerialPrintln(*number);
     }
     else
     {
-        dbSerial.println("recvRetNumber err");
+        dbSerialPrintln("recvRetNumber err");
     }
     
     return ret;
@@ -468,12 +468,12 @@ bool sendCurrentPageId(uint8_t* pageId)
 
     if (ret) 
     {
-        dbSerial.print("recvPageId :");
-        dbSerial.println(*pageId);
+        dbSerialPrint("recvPageId :");
+        dbSerialPrintln(*pageId);
     }
     else
     {
-        dbSerial.println("recvPageId err");
+        dbSerialPrintln("recvPageId err");
     }
 
     return ret;
@@ -493,12 +493,12 @@ bool touchCalibration(void)
     delay(10);
     if(NexTouch::recvRetCommandFinished())
     {
-        dbSerial.println("TouchCalibration ok ");
+        dbSerialPrintln("TouchCalibration ok ");
         ret = true; 
     }
     else 
     {
-        dbSerial.println("TouchCalibration err ");
+        dbSerialPrintln("TouchCalibration err ");
     }
     
     return ret;
@@ -517,12 +517,12 @@ bool  disableTouchFocus(void)
     delay(10);
     if(NexTouch::recvRetCommandFinished())
     {
-        dbSerial.println("disableTouchFocus ok ");
+        dbSerialPrintln("disableTouchFocus ok ");
         ret = true; 
     }
     else 
     {
-        dbSerial.println("disableTouchFocus err ");
+        dbSerialPrintln("disableTouchFocus err ");
     }
     
     return ret;
@@ -542,12 +542,12 @@ bool pauseSerialCommand(void)
     delay(10);
     if(NexTouch::recvRetCommandFinished())
     {
-        dbSerial.println("pauseSerialCommand ok ");
+        dbSerialPrintln("pauseSerialCommand ok ");
         ret = true; 
     }
     else 
     {
-        dbSerial.println("pauseSerialCommand err ");
+        dbSerialPrintln("pauseSerialCommand err ");
     }
 
     return ret;
@@ -566,12 +566,12 @@ bool recoverySerialCommand(void)
     delay(10);
     if(NexTouch::recvRetCommandFinished())
     {
-        dbSerial.println("recoverySerialCommand ok ");
+        dbSerialPrintln("recoverySerialCommand ok ");
         ret = true; 
     }
     else 
     {
-        dbSerial.println("recoverySerialCommand err ");
+        dbSerialPrintln("recoverySerialCommand err ");
     }
 
     return ret;	
@@ -598,15 +598,15 @@ bool setCurrentBrightness(uint8_t dimValue)
 
     if(NexTouch::recvRetCommandFinished())
     {   
-        dbSerial.print("setCurrentBrightness[ ");
-        dbSerial.print(dimValue);
-        dbSerial.println("]ok ");
+        dbSerialPrint("setCurrentBrightness[ ");
+        dbSerialPrint(dimValue);
+        dbSerialPrintln("]ok ");
       
         ret = true; 
     }
     else 
     {
-        dbSerial.println("setCurrentBrightness err ");
+        dbSerialPrintln("setCurrentBrightness err ");
     }
 
     return ret;    
@@ -633,14 +633,14 @@ bool setDefaultBrightness(uint8_t dimDefaultValue)
 
     if(NexTouch::recvRetCommandFinished())
     {
-        dbSerial.print("setDefaultBrightness[");
-        dbSerial.print(dimDefaultValue);
-        dbSerial.println("]ok");
+        dbSerialPrint("setDefaultBrightness[");
+        dbSerialPrint(dimDefaultValue);
+        dbSerialPrintln("]ok");
         ret = true; 
     }
     else 
     {
-        dbSerial.println("setDefaultBrightness err ");
+        dbSerialPrintln("setDefaultBrightness err ");
     }
 
     return ret; 
@@ -661,7 +661,7 @@ bool sleepMode(uint8_t mode)
     String cmd;
     if(mode != 0 && mode != 1)
     {
-        dbSerial.println("mode input ok ");
+        dbSerialPrintln("mode input ok ");
         return ret;
     }
     utoa(mode, buf, 10);
@@ -672,12 +672,12 @@ bool sleepMode(uint8_t mode)
 
     if(NexTouch::recvRetCommandFinished())
     {
-        dbSerial.println("sleepMode ok ");
+        dbSerialPrintln("sleepMode ok ");
         ret = true; 
     }
     else 
     {
-        dbSerial.println("sleepMode err ");
+        dbSerialPrintln("sleepMode err ");
     }
 
     return ret; 
@@ -704,12 +704,12 @@ bool setCurrentBaudrate(uint32_t baudrate)
 
     if(NexTouch::recvRetCommandFinished())
     {
-        dbSerial.println("setCurrentBaudrate ok ");
+        dbSerialPrintln("setCurrentBaudrate ok ");
         ret = true; 
     }
     else 
     {
-        dbSerial.println("setCurrentBaudrate err ");
+        dbSerialPrintln("setCurrentBaudrate err ");
     }
 
     return ret; 
@@ -736,12 +736,12 @@ bool setDefaultBaudrate(uint32_t defaultBaudrate)
 
     if(NexTouch::recvRetCommandFinished())
     {
-        dbSerial.println("setDefaultBaudrate ok ");
+        dbSerialPrintln("setDefaultBaudrate ok ");
         ret = true; 
     }
     else 
     {
-        dbSerial.println("setDefaultBaudrate err ");
+        dbSerialPrintln("setDefaultBaudrate err ");
     }
 
     return ret; 

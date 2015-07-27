@@ -29,11 +29,9 @@ void b0PopCallback(void *ptr)
     uint16_t len;
     uint16_t number;
     NexButton *btn = (NexButton *)ptr;
-    
-    dbSerial.println("b0PopCallback");
-    dbSerial.print("ptr=");
-    dbSerial.println((uint32_t)ptr);
-    
+    dbSerialPrintln("b0PopCallback");
+    dbSerialPrint("ptr=");
+    dbSerialPrintln((uint32_t)ptr); 
     memset(buffer, 0, sizeof(buffer));
     btn->getText(buffer, sizeof(buffer));
     
@@ -47,15 +45,15 @@ void b0PopCallback(void *ptr)
 }
 
 void setup(void)
-{
-    dbSerial.begin(9600);
+{  
+    dbSerialBegin(9600);  
     nexInit();
     b0.attachPop(b0PopCallback, &b0);
-    dbSerial.println("setup done");
+    dbSerialPrintln("setup done"); 
 }
 
 void loop(void)
-{
-    dbSerial.println("nexLoop");
+{   
+    dbSerialPrintln("nexLoop");  
     nexLoop(nexListenList);
 }

@@ -16,10 +16,19 @@
 #ifndef __NexSerialConfig_H__
 #define __NexSerialConfig_H__
 
-/*Define debug serial*/
-#define dbSerial Serial
+/*enable debug serial*/
+#define DEBUG_SERIAL_ENABLE 
+
+#ifdef DEBUG_SERIAL_ENABLE
+#define dbSerialPrint(a)    Serial.print(a)
+#define dbSerialPrintln(a)  Serial.println(a)
+#define dbSerialBegin(a)    Serial.begin(a)
+#else
+#define dbSerialPrint(a)
+#define dbSerialPrintln(a)
+#define dbSerialBegin(a)
+#endif
 
 /*Define Nextion serial*/
 #define nexSerial Serial2
-
 #endif 

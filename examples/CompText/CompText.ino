@@ -36,7 +36,7 @@ NexTouch *nexListenList[] =
 
 void t0PopCallback(void *ptr)
 {
-    dbSerial.println("t0PopCallback");
+    dbSerialPrintln("t0PopCallback");
     t0.setText("50");
 }
 
@@ -45,7 +45,7 @@ void b0PopCallback(void *ptr)
     uint16_t len;
     uint16_t number;
     
-    dbSerial.println("b0PopCallback");
+    dbSerialPrintln("b0PopCallback");
 
     memset(buffer, 0, sizeof(buffer));
     t0.getText(buffer, sizeof(buffer));
@@ -64,7 +64,7 @@ void b1PopCallback(void *ptr)
     uint16_t len;
     uint16_t number;
     
-    dbSerial.println("b1PopCallback");
+    dbSerialPrintln("b1PopCallback");
 
     memset(buffer, 0, sizeof(buffer));
     t0.getText(buffer, sizeof(buffer));
@@ -80,14 +80,14 @@ void b1PopCallback(void *ptr)
 
 void setup(void)
 {
-    dbSerial.begin(9600);
+    dbSerialBegin(9600);
     nexInit();
-    dbSerial.println("setup done");
+    dbSerialPrintln("setup done");
 }
 
 void loop(void)
 {
-    dbSerial.println("nexLoop");
+    dbSerialPrintln("nexLoop");
     nexLoop(nexListenList);
 }
 

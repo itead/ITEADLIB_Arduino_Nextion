@@ -27,45 +27,45 @@ NexTouch *nexListenList[] =
 
 void hot0PushCallback(void *ptr)
 {
-    dbSerial.println("hot0PushCallback");
-    dbSerial.print("ptr=");
-    dbSerial.println((uint32_t)ptr);
+    dbSerialPrintln("hot0PushCallback");
+    dbSerialPrint("ptr=");
+    dbSerialPrintln((uint32_t)ptr);
 }
 
 void hot1PushCallback(void *ptr)
 {
-    dbSerial.println("hot1PushCallback");    
-    dbSerial.print("ptr=");
-    dbSerial.println((uint32_t)ptr);
+    dbSerialPrintln("hot1PushCallback");    
+    dbSerialPrint("ptr=");
+    dbSerialPrintln((uint32_t)ptr);
 }
 
 void hot0PopCallback(void *ptr)
 {
-    dbSerial.println("hot0PopCallback");
-    dbSerial.print("ptr=");
-    dbSerial.println((uint32_t)ptr);
+    dbSerialPrintln("hot0PopCallback");
+    dbSerialPrint("ptr=");
+    dbSerialPrintln((uint32_t)ptr);
 }
 
 void hot1PopCallback(void *ptr)
 {
-    dbSerial.println("hot1PopCallback");
-    dbSerial.print("ptr=");
-    dbSerial.println((uint32_t)ptr);
+    dbSerialPrintln("hot1PopCallback");
+    dbSerialPrint("ptr=");
+    dbSerialPrintln((uint32_t)ptr);
 }
 
 void setup(void)
 {
-    dbSerial.begin(9600);
+    dbSerialBegin(9600);
     nexInit();
     hot0.attachPush(hot0PushCallback, &hot0);
     hot0.attachPop(hot0PopCallback, &hot0);
     hot1.attachPush(hot1PushCallback, &hot1);
     hot1.attachPop(hot1PopCallback, &hot1);
-    dbSerial.println("setup done");
+    dbSerialPrintln("setup done");
 }
 
 void loop(void)
 {
-    dbSerial.println("nexLoop");
+    dbSerialPrintln("nexLoop");
     nexLoop(nexListenList);
 }

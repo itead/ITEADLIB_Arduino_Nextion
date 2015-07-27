@@ -31,44 +31,44 @@ NexTouch *nexListenList[] =
 
 void page0PopCallback(void *ptr)
 {
-    dbSerial.println("page0PopCallback");
+    dbSerialPrintln("page0PopCallback");
     page1.show();
 }
 
 void page1PopCallback(void *ptr)
 {
-    dbSerial.println("page1PopCallback");
+    dbSerialPrintln("page1PopCallback");
     page2.show();
 }
 
 void page2PopCallback(void *ptr)
 {
-    dbSerial.println("page2PopCallback");
+    dbSerialPrintln("page2PopCallback");
     page3.show();
 }
 
 void page3PopCallback(void *ptr)
 {
-    dbSerial.println("page3PopCallback");
+    dbSerialPrintln("page3PopCallback");
     page0.show();
 }
 
 void setup(void)
 {   
-    dbSerial.begin(9600);
+    dbSerialBegin(9600);
     nexInit();
-    dbSerial.println("setup begin");
+    dbSerialPrintln("setup begin");
     
     page0.attachPop(page0PopCallback);
     page1.attachPop(page1PopCallback);
     page2.attachPop(page2PopCallback);
     page3.attachPop(page3PopCallback);
     
-    dbSerial.println("setup end");
+    dbSerialPrintln("setup end");
 }
 
 void loop(void)
 {
-    dbSerial.println("nexLoop");
+    dbSerialPrintln("nexLoop");
     nexLoop(nexListenList);
 }
