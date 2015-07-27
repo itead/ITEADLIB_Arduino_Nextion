@@ -54,116 +54,132 @@
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define __NEXTOUCH_H__</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_serial_config_8h.html">NexSerialConfig.h</a>&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*Define debug serial*/</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define dbSerial Serial</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">typedef</span> uint8_t NexPid;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">typedef</span> uint8_t NexCid;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/*Define Nextion serial*/</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define nexSerial Serial2</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">typedef</span> uint8_t NexPid;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">typedef</span> uint8_t NexCid;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    NEX_EVENT_POP = 0x00,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    NEX_EVENT_PUSH = 0x01,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    NEX_EVENT_NULL</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} NexEventType;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    NEX_EVENT_POP = 0x00,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    NEX_EVENT_PUSH = 0x01,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    NEX_EVENT_NULL</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;} NexEventType;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/*The first byte of Nextoin&#39;s return value*/</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define NEX_RET_CMD_FINISHED            (0x01)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_LAUNCHED          (0x88)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_UPGRADED          (0x89)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_TOUCH_HEAD            (0x65)     </span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_POSITION_HEAD         (0x67)</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_SLEEP_POSITION_HEAD   (0x68)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define NEX_RET_CURRENT_PAGE_ID_HEAD        (0x66)</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define NEX_RET_STRING_HEAD                 (0x70)</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define NEX_RET_NUMBER_HEAD                 (0x71)</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_CMD             (0x00)</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_COMPONENT_ID    (0x02)</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_PAGE_ID         (0x03)</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_PICTURE_ID      (0x04)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_FONT_ID         (0x05)</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_BAUD            (0x11)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_VARIABLE        (0x1A)</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_OPERATION       (0x1B)</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">typedef</span> void (*NexTouchEventCb)(<span class="keywordtype">void</span> *ptr);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_nex_touch.html">   63</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nex_touch.html">NexTouch</a> </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>: <span class="comment">/* static methods */</span> </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">static</span> uint8_t <a class="code" href="class_nex_touch.html#a48db410f610f36196752633bf3d013ce">mainEventLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> **list);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">sendCommand</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cmd); </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">recvRetCommandFinished</a>(uint32_t timeout = 100);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">static</span> uint16_t <a class="code" href="class_nex_touch.html#ac9cf23a7fc63040dc129ac3cb3de1d35">recvRetString</a>(<span class="keywordtype">char</span> *buffer, uint16_t len, uint32_t timeout = 500);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_nex_touch.html#a257439b0ce23b3b2de73fad3944d5336">recvRetNumber</a>(uint32_t *number, uint32_t timeout = 500);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_nex_touch.html#a1cf4b76cda45ef6517f6d07f86c8018d">NexTouch</a>(NexPid pid, NexCid cid, <span class="keywordtype">char</span> *name, </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        NexTouchEventCb pop = NULL, <span class="keywordtype">void</span> *pop_ptr = NULL,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        NexTouchEventCb push = NULL, <span class="keywordtype">void</span> *push_ptr = NULL);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    NexPid <a class="code" href="class_nex_touch.html#a2aaea7a401a6fef25aafafc2f06b8339">getPid</a>(<span class="keywordtype">void</span>);    </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    NexCid <a class="code" href="class_nex_touch.html#a3d769351baa4eac31b0063949e469469">getCid</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="class_nex_touch.html#a31e2d5f2922383f8d82c33f7586643d0">getObjName</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_nex_touch.html#a5f4c8a51d930403413d1f267348a9a1e">print</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">protected</span>: <span class="comment">/* static methods */</span>    </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> setBrightness(uint32_t brightness);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> getBrightness(uint32_t *brightness);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/*The first byte of Nextoin&#39;s return value*/</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define NEX_RET_CMD_FINISHED            (0x01)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_LAUNCHED          (0x88)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_UPGRADED          (0x89)</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_TOUCH_HEAD            (0x65)     </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_POSITION_HEAD         (0x67)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define NEX_RET_EVENT_SLEEP_POSITION_HEAD   (0x68)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define NEX_RET_CURRENT_PAGE_ID_HEAD        (0x66)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define NEX_RET_STRING_HEAD                 (0x70)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define NEX_RET_NUMBER_HEAD                 (0x71)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_CMD             (0x00)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_COMPONENT_ID    (0x02)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_PAGE_ID         (0x03)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_PICTURE_ID      (0x04)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_FONT_ID         (0x05)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_BAUD            (0x11)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_VARIABLE        (0x1A)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_OPERATION       (0x1B)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">typedef</span> void (*NexTouchEventCb)(<span class="keywordtype">void</span> *ptr);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_nex_touch.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nex_touch.html">NexTouch</a> </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>: <span class="comment">/* static methods */</span> </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> uint8_t <a class="code" href="class_nex_touch.html#a48db410f610f36196752633bf3d013ce">mainEventLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> **list);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">sendCommand</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cmd); </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">recvRetCommandFinished</a>(uint32_t timeout = 100);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">static</span> uint16_t <a class="code" href="class_nex_touch.html#ac9cf23a7fc63040dc129ac3cb3de1d35">recvRetString</a>(<span class="keywordtype">char</span> *buffer, uint16_t len, uint32_t timeout = 500);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_nex_touch.html#a257439b0ce23b3b2de73fad3944d5336">recvRetNumber</a>(uint32_t *number, uint32_t timeout = 500);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_nex_touch.html#a1cf4b76cda45ef6517f6d07f86c8018d">NexTouch</a>(NexPid pid, NexCid cid, <span class="keywordtype">char</span> *name, </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        NexTouchEventCb pop = NULL, <span class="keywordtype">void</span> *pop_ptr = NULL,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        NexTouchEventCb push = NULL, <span class="keywordtype">void</span> *push_ptr = NULL);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    NexPid <a class="code" href="class_nex_touch.html#a2aaea7a401a6fef25aafafc2f06b8339">getPid</a>(<span class="keywordtype">void</span>);    </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    NexCid <a class="code" href="class_nex_touch.html#a3d769351baa4eac31b0063949e469469">getCid</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="class_nex_touch.html#a31e2d5f2922383f8d82c33f7586643d0">getObjName</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_nex_touch.html#a5f4c8a51d930403413d1f267348a9a1e">print</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">protected</span>: <span class="comment">/* static methods */</span>    </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> setBrightness(uint32_t brightness);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> getBrightness(uint32_t *brightness);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">protected</span>: <span class="comment">/* methods */</span>    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> attachPush(NexTouchEventCb push, <span class="keywordtype">void</span> *ptr = NULL);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> detachPush(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> attachPop(NexTouchEventCb pop, <span class="keywordtype">void</span> *ptr = NULL);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> detachPop(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">protected</span>: <span class="comment">/* methods */</span>    </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> attachPush(NexTouchEventCb push, <span class="keywordtype">void</span> *ptr = NULL);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> detachPush(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> attachPop(NexTouchEventCb pop, <span class="keywordtype">void</span> *ptr = NULL);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> detachPop(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">private</span>: <span class="comment">/* static methods */</span>     </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> iterate(<a class="code" href="class_nex_touch.html">NexTouch</a> **list, NexPid pid, NexCid cid, NexEventType event); </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">private</span>: <span class="comment">/* methods */</span> </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> push(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> pop(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">private</span>: <span class="comment">/* static data */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">static</span> uint8_t __buffer[256];</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">private</span>: <span class="comment">/* data */</span> </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    NexPid pid; <span class="comment">/* Page ID */</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    NexCid cid; <span class="comment">/* Component ID */</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">char</span> *name; <span class="comment">/* An unique name */</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    NexTouchEventCb cbPush;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> *__cbpush_ptr;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    NexTouchEventCb cbPop;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> *__cbpop_ptr;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#a70a2ac1029d750e0dfcb361824fa6f35">nexLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> **nexListenList);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXTOUCH_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">private</span>: <span class="comment">/* static methods */</span>     </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> iterate(<a class="code" href="class_nex_touch.html">NexTouch</a> **list, NexPid pid, NexCid cid, NexEventType event); </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">private</span>: <span class="comment">/* methods */</span> </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> push(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> pop(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">private</span>: <span class="comment">/* static data */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">static</span> uint8_t __buffer[256];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">private</span>: <span class="comment">/* data */</span> </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    NexPid pid; <span class="comment">/* Page ID */</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    NexCid cid; <span class="comment">/* Component ID */</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">char</span> *name; <span class="comment">/* An unique name */</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    NexTouchEventCb cbPush;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> *__cbpush_ptr;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    NexTouchEventCb cbPop;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> *__cbpop_ptr;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#a70a2ac1029d750e0dfcb361824fa6f35">nexLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> **nexListenList);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">bool</span>  <a class="code" href="_nex_touch_8h.html#a1c03f7826512a9ede4d5e0971180d198">sendCurrentPageId</a>(uint8_t* pageId);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#ab250b42fe8c8b55c11f786c734b5a391">touchCalibration</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#ac0ecc339e2e1ba0febef765f364399f2">disableTouchFocus</a>(<span class="keywordtype">void</span>); </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#aeee8bc7211698c1aa3365a5a74dd38a1">pauseSerialCommand</a>(<span class="keywordtype">void</span>); </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#a125153946e31e79117631d795f2e36a7">recoverySerialCommand</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">bool</span> clearSerialSurplusCommand(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#aba0afc76c19367791d4d7c261c43b14b">setCurrentBrightness</a>(uint8_t dimValue);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#a1e02e6beb948b7b63be62f2f6b07413f">setDefaultBrightness</a>(uint8_t dimDefaultValue);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#a1613f6f3db99a7f065dfa4b7e21afd8d">sleepMode</a>(uint8_t mode);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#a5bbef027966444f05aa170d00c6f2825">setCurrentBaudrate</a>(uint32_t baudrate);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8h.html#a1cab38cb2f482b9383a9e41059aefacd">setDefaultBaudrate</a>(uint32_t baudrate);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXTOUCH_H__ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="_nex_touch_8h_html_a1cab38cb2f482b9383a9e41059aefacd"><div class="ttname"><a href="_nex_touch_8h.html#a1cab38cb2f482b9383a9e41059aefacd">setDefaultBaudrate</a></div><div class="ttdeci">bool setDefaultBaudrate(uint32_t baudrate)</div><div class="ttdoc">Set default baudrate. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00726">NexTouch.cpp:726</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a2aaea7a401a6fef25aafafc2f06b8339"><div class="ttname"><a href="class_nex_touch.html#a2aaea7a401a6fef25aafafc2f06b8339">NexTouch::getPid</a></div><div class="ttdeci">NexPid getPid(void)</div><div class="ttdoc">Get page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00092">NexTouch.cpp:92</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_a1613f6f3db99a7f065dfa4b7e21afd8d"><div class="ttname"><a href="_nex_touch_8h.html#a1613f6f3db99a7f065dfa4b7e21afd8d">sleepMode</a></div><div class="ttdeci">bool sleepMode(uint8_t mode)</div><div class="ttdoc">Set device in sleep mode. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00657">NexTouch.cpp:657</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a1cf4b76cda45ef6517f6d07f86c8018d"><div class="ttname"><a href="class_nex_touch.html#a1cf4b76cda45ef6517f6d07f86c8018d">NexTouch::NexTouch</a></div><div class="ttdeci">NexTouch(NexPid pid, NexCid cid, char *name, NexTouchEventCb pop=NULL, void *pop_ptr=NULL, NexTouchEventCb push=NULL, void *push_ptr=NULL)</div><div class="ttdoc">Constructor of Nextouch. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00074">NexTouch.cpp:74</a></div></div>
-<div class="ttc" id="_nex_touch_8h_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_touch_8h.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00423">NexTouch.cpp:423</a></div></div>
+<div class="ttc" id="_nex_serial_config_8h_html"><div class="ttname"><a href="_nex_serial_config_8h.html">NexSerialConfig.h</a></div><div class="ttdoc">Serial configure. </div></div>
+<div class="ttc" id="_nex_touch_8h_html_a5bbef027966444f05aa170d00c6f2825"><div class="ttname"><a href="_nex_touch_8h.html#a5bbef027966444f05aa170d00c6f2825">setCurrentBaudrate</a></div><div class="ttdeci">bool setCurrentBaudrate(uint32_t baudrate)</div><div class="ttdoc">Set current baudrate. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00694">NexTouch.cpp:694</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_a1e02e6beb948b7b63be62f2f6b07413f"><div class="ttname"><a href="_nex_touch_8h.html#a1e02e6beb948b7b63be62f2f6b07413f">setDefaultBrightness</a></div><div class="ttdeci">bool setDefaultBrightness(uint8_t dimDefaultValue)</div><div class="ttdoc">Set default backlight brightness value. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00623">NexTouch.cpp:623</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_touch_8h.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00409">NexTouch.cpp:409</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a822897068e62ae76bee9824de1ef85a8"><div class="ttname"><a href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a></div><div class="ttdeci">static void sendCommand(const char *cmd)</div><div class="ttdoc">Send command to Nextion. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00261">NexTouch.cpp:261</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a31e2d5f2922383f8d82c33f7586643d0"><div class="ttname"><a href="class_nex_touch.html#a31e2d5f2922383f8d82c33f7586643d0">NexTouch::getObjName</a></div><div class="ttdeci">const char * getObjName(void)</div><div class="ttdoc">Get component name. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00112">NexTouch.cpp:112</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_ac0ecc339e2e1ba0febef765f364399f2"><div class="ttname"><a href="_nex_touch_8h.html#ac0ecc339e2e1ba0febef765f364399f2">disableTouchFocus</a></div><div class="ttdeci">bool disableTouchFocus(void)</div><div class="ttdoc">Disable all touch hot. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00513">NexTouch.cpp:513</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_aeee8bc7211698c1aa3365a5a74dd38a1"><div class="ttname"><a href="_nex_touch_8h.html#aeee8bc7211698c1aa3365a5a74dd38a1">pauseSerialCommand</a></div><div class="ttdeci">bool pauseSerialCommand(void)</div><div class="ttdoc">Pause serial instruction execution. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00537">NexTouch.cpp:537</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a5f4c8a51d930403413d1f267348a9a1e"><div class="ttname"><a href="class_nex_touch.html#a5f4c8a51d930403413d1f267348a9a1e">NexTouch::print</a></div><div class="ttdeci">void print(void)</div><div class="ttdoc">Print current object address,page id,component id, component name,pop event function address...</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00122">NexTouch.cpp:122</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a48db410f610f36196752633bf3d013ce"><div class="ttname"><a href="class_nex_touch.html#a48db410f610f36196752633bf3d013ce">NexTouch::mainEventLoop</a></div><div class="ttdeci">static uint8_t mainEventLoop(NexTouch **list)</div><div class="ttdoc">Watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00026">NexTouch.cpp:26</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_ab250b42fe8c8b55c11f786c734b5a391"><div class="ttname"><a href="_nex_touch_8h.html#ab250b42fe8c8b55c11f786c734b5a391">touchCalibration</a></div><div class="ttdeci">bool touchCalibration(void)</div><div class="ttdoc">Touch screen calibration. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00489">NexTouch.cpp:489</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a3d769351baa4eac31b0063949e469469"><div class="ttname"><a href="class_nex_touch.html#a3d769351baa4eac31b0063949e469469">NexTouch::getCid</a></div><div class="ttdeci">NexCid getCid(void)</div><div class="ttdoc">Get component id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00102">NexTouch.cpp:102</a></div></div>
-<div class="ttc" id="_nex_touch_8h_html_a70a2ac1029d750e0dfcb361824fa6f35"><div class="ttname"><a href="_nex_touch_8h.html#a70a2ac1029d750e0dfcb361824fa6f35">nexLoop</a></div><div class="ttdeci">bool nexLoop(NexTouch **nexListenList)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00440">NexTouch.cpp:440</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_a70a2ac1029d750e0dfcb361824fa6f35"><div class="ttname"><a href="_nex_touch_8h.html#a70a2ac1029d750e0dfcb361824fa6f35">nexLoop</a></div><div class="ttdeci">bool nexLoop(NexTouch **nexListenList)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00425">NexTouch.cpp:425</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_aba0afc76c19367791d4d7c261c43b14b"><div class="ttname"><a href="_nex_touch_8h.html#aba0afc76c19367791d4d7c261c43b14b">setCurrentBrightness</a></div><div class="ttdeci">bool setCurrentBrightness(uint8_t dimValue)</div><div class="ttdoc">Set current backlight brightness value. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00588">NexTouch.cpp:588</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a257439b0ce23b3b2de73fad3944d5336"><div class="ttname"><a href="class_nex_touch.html#a257439b0ce23b3b2de73fad3944d5336">NexTouch::recvRetNumber</a></div><div class="ttdeci">static bool recvRetNumber(uint32_t *number, uint32_t timeout=500)</div><div class="ttdoc">Receive uint32_t data. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00356">NexTouch.cpp:356</a></div></div>
 <div class="ttc" id="class_nex_touch_html_ac9cf23a7fc63040dc129ac3cb3de1d35"><div class="ttname"><a href="class_nex_touch.html#ac9cf23a7fc63040dc129ac3cb3de1d35">NexTouch::recvRetString</a></div><div class="ttdeci">static uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout=500)</div><div class="ttdoc">Receive string data. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00284">NexTouch.cpp:284</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_a125153946e31e79117631d795f2e36a7"><div class="ttname"><a href="_nex_touch_8h.html#a125153946e31e79117631d795f2e36a7">recoverySerialCommand</a></div><div class="ttdeci">bool recoverySerialCommand(void)</div><div class="ttdoc">Recovery serial instruction execution. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00562">NexTouch.cpp:562</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html_a1c03f7826512a9ede4d5e0971180d198"><div class="ttname"><a href="_nex_touch_8h.html#a1c03f7826512a9ede4d5e0971180d198">sendCurrentPageId</a></div><div class="ttdeci">bool sendCurrentPageId(uint8_t *pageId)</div><div class="ttdoc">Return current page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00439">NexTouch.cpp:439</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a9129f708be2b8f7fd417803025e83507"><div class="ttname"><a href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a></div><div class="ttdeci">static bool recvRetCommandFinished(uint32_t timeout=100)</div><div class="ttdoc">Command is executed successfully. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00224">NexTouch.cpp:224</a></div></div>
-<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00063">NexTouch.h:63</a></div></div>
+<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00057">NexTouch.h:57</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 16 2015 13:05:45 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 27 2015 16:03:45 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

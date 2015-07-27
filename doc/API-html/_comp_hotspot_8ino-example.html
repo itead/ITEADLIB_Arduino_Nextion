@@ -63,52 +63,52 @@ This program is free software; you can redistribute it and/or modify it under th
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> hot0PushCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;hot0PushCallback&quot;</span>);</div>
-<div class="line">    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line">    dbSerial.println((uint32_t)ptr);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;hot0PushCallback&quot;</span>);</div>
+<div class="line">    dbSerialPrint(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
+<div class="line">    dbSerialPrintln((uint32_t)ptr);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> hot1PushCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;hot1PushCallback&quot;</span>);    </div>
-<div class="line">    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line">    dbSerial.println((uint32_t)ptr);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;hot1PushCallback&quot;</span>);    </div>
+<div class="line">    dbSerialPrint(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
+<div class="line">    dbSerialPrintln((uint32_t)ptr);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> hot0PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;hot0PopCallback&quot;</span>);</div>
-<div class="line">    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line">    dbSerial.println((uint32_t)ptr);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;hot0PopCallback&quot;</span>);</div>
+<div class="line">    dbSerialPrint(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
+<div class="line">    dbSerialPrintln((uint32_t)ptr);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> hot1PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;hot1PopCallback&quot;</span>);</div>
-<div class="line">    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line">    dbSerial.println((uint32_t)ptr);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;hot1PopCallback&quot;</span>);</div>
+<div class="line">    dbSerialPrint(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
+<div class="line">    dbSerialPrintln((uint32_t)ptr);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.begin(9600);</div>
+<div class="line">    dbSerialBegin(9600);</div>
 <div class="line">    <a name="a2"></a><a class="code" href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
 <div class="line">    hot0.<a name="a3"></a><a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot0PushCallback, &amp;hot0);</div>
 <div class="line">    hot0.<a name="a4"></a><a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot0PopCallback, &amp;hot0);</div>
 <div class="line">    hot1.<a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot1PushCallback, &amp;hot1);</div>
 <div class="line">    hot1.<a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot1PopCallback, &amp;hot1);</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;nexLoop&quot;</span>);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;nexLoop&quot;</span>);</div>
 <div class="line">    <a name="a5"></a><a class="code" href="_nex_touch_8cpp.html#a70a2ac1029d750e0dfcb361824fa6f35">nexLoop</a>(nexListenList);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 16 2015 13:05:44 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 27 2015 16:03:45 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

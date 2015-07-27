@@ -24,6 +24,11 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_text.html#a9b718af186036890749c2f0951be9928"><param name="Name" value="NexText"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_hotspot.html#a25b023f7df931981c7a85512f3e5a5c7"><param name="Name" value="detachPush"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ac0ecc339e2e1ba0febef765f364399f2"><param name="Name" value="disableTouchFocus"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ac0ecc339e2e1ba0febef765f364399f2"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#ac0ecc339e2e1ba0febef765f364399f2"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a3d769351baa4eac31b0063949e469469"><param name="Name" value="getCid"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a31e2d5f2922383f8d82c33f7586643d0"><param name="Name" value="getObjName"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_picture.html#a11bd68ef9fe1d03d9e0d02ef1c7527e9"><param name="Name" value="getPic"></OBJECT>
@@ -109,13 +114,33 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html"><param name="Name" value="NexTouch"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html"><param name="Name" value="NexTouch.cpp"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ac0ecc339e2e1ba0febef765f364399f2"><param name="Name" value="disableTouchFocus"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790"><param name="Name" value="nexInit"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a70a2ac1029d750e0dfcb361824fa6f35"><param name="Name" value="nexLoop"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#aeee8bc7211698c1aa3365a5a74dd38a1"><param name="Name" value="pauseSerialCommand"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a125153946e31e79117631d795f2e36a7"><param name="Name" value="recoverySerialCommand"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1c03f7826512a9ede4d5e0971180d198"><param name="Name" value="sendCurrentPageId"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a5bbef027966444f05aa170d00c6f2825"><param name="Name" value="setCurrentBaudrate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#aba0afc76c19367791d4d7c261c43b14b"><param name="Name" value="setCurrentBrightness"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ad1d999070923f05104994655c7f7d796"><param name="Name" value="setDefaultBaudrate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1e02e6beb948b7b63be62f2f6b07413f"><param name="Name" value="setDefaultBrightness"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1613f6f3db99a7f065dfa4b7e21afd8d"><param name="Name" value="sleepMode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ab250b42fe8c8b55c11f786c734b5a391"><param name="Name" value="touchCalibration"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html"><param name="Name" value="NexTouch.h"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#ac0ecc339e2e1ba0febef765f364399f2"><param name="Name" value="disableTouchFocus"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#ab09ddba6b72334d30ae091a7b038d790"><param name="Name" value="nexInit"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a70a2ac1029d750e0dfcb361824fa6f35"><param name="Name" value="nexLoop"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#aeee8bc7211698c1aa3365a5a74dd38a1"><param name="Name" value="pauseSerialCommand"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a125153946e31e79117631d795f2e36a7"><param name="Name" value="recoverySerialCommand"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a1c03f7826512a9ede4d5e0971180d198"><param name="Name" value="sendCurrentPageId"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a5bbef027966444f05aa170d00c6f2825"><param name="Name" value="setCurrentBaudrate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#aba0afc76c19367791d4d7c261c43b14b"><param name="Name" value="setCurrentBrightness"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a1cab38cb2f482b9383a9e41059aefacd"><param name="Name" value="setDefaultBaudrate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a1e02e6beb948b7b63be62f2f6b07413f"><param name="Name" value="setDefaultBrightness"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a1613f6f3db99a7f065dfa4b7e21afd8d"><param name="Name" value="sleepMode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#ab250b42fe8c8b55c11f786c734b5a391"><param name="Name" value="touchCalibration"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html"><param name="Name" value="NexTouch"></OBJECT>
   <UL>
@@ -130,12 +155,47 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#ac9cf23a7fc63040dc129ac3cb3de1d35"><param name="Name" value="recvRetString"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8"><param name="Name" value="sendCommand"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#aeee8bc7211698c1aa3365a5a74dd38a1"><param name="Name" value="pauseSerialCommand"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#aeee8bc7211698c1aa3365a5a74dd38a1"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#aeee8bc7211698c1aa3365a5a74dd38a1"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a5f4c8a51d930403413d1f267348a9a1e"><param name="Name" value="print"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="md_readme.html"><param name="Name" value="readme"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a125153946e31e79117631d795f2e36a7"><param name="Name" value="recoverySerialCommand"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a125153946e31e79117631d795f2e36a7"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a125153946e31e79117631d795f2e36a7"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507"><param name="Name" value="recvRetCommandFinished"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a257439b0ce23b3b2de73fad3944d5336"><param name="Name" value="recvRetNumber"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#ac9cf23a7fc63040dc129ac3cb3de1d35"><param name="Name" value="recvRetString"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8"><param name="Name" value="sendCommand"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1c03f7826512a9ede4d5e0971180d198"><param name="Name" value="sendCurrentPageId"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1c03f7826512a9ede4d5e0971180d198"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a1c03f7826512a9ede4d5e0971180d198"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a5bbef027966444f05aa170d00c6f2825"><param name="Name" value="setCurrentBaudrate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a5bbef027966444f05aa170d00c6f2825"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a5bbef027966444f05aa170d00c6f2825"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#aba0afc76c19367791d4d7c261c43b14b"><param name="Name" value="setCurrentBrightness"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#aba0afc76c19367791d4d7c261c43b14b"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#aba0afc76c19367791d4d7c261c43b14b"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ad1d999070923f05104994655c7f7d796"><param name="Name" value="setDefaultBaudrate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ad1d999070923f05104994655c7f7d796"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a1cab38cb2f482b9383a9e41059aefacd"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1e02e6beb948b7b63be62f2f6b07413f"><param name="Name" value="setDefaultBrightness"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1e02e6beb948b7b63be62f2f6b07413f"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a1e02e6beb948b7b63be62f2f6b07413f"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd"><param name="Name" value="setPic"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_button.html#a649dafc5afb1dc7f1fc1bde1e6270290"><param name="Name" value="setText"></OBJECT>
   <UL>
@@ -148,6 +208,16 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_progress_bar.html#aaa7937d364cb63151bd1e1bc4729334d"><param name="Name" value="NexProgressBar"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_page.html#a5714e41d4528b991eda4bbe578005418"><param name="Name" value="show"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1613f6f3db99a7f065dfa4b7e21afd8d"><param name="Name" value="sleepMode"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1613f6f3db99a7f065dfa4b7e21afd8d"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a1613f6f3db99a7f065dfa4b7e21afd8d"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ab250b42fe8c8b55c11f786c734b5a391"><param name="Name" value="touchCalibration"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ab250b42fe8c8b55c11f786c734b5a391"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#ab250b42fe8c8b55c11f786c734b5a391"><param name="Name" value="NexTouch.h"></OBJECT>
+  </UL>
 </UL>
 </BODY>
 </HTML>

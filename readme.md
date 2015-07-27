@@ -36,9 +36,11 @@ Offline API documentation can be found under directory
 
 If you want to change the default serial to debug or communicate with Nextion ,you need to modify the line in file NexSerialConfig.h:
 
-	#define dbSerial Serial
-    #define nexSerial Serial2
+	#define dbSerial Serial    ---> #define dbSerial Serialxxx
+    #define nexSerial Serial2  ---> #define dbSerial Serialxxx
+If you want to close the debug information,you need to modify the line in file NexSerialConfig.h:
 
+    #define DEBUG_SERIAL_ENABLE ---> //#define DEBUG_SERIAL_ENABLE
 # Suppported Mainboards:
 
   - Iteaduino MEGA2560

@@ -17,18 +17,22 @@
 #define __NexSerialConfig_H__
 
 /*enable debug serial*/
-#define DEBUG_SERIAL_ENABLE 
+#define DEBUG_SERIAL_ENABLE
+
+/*define serial for debug*/
+#define dbSerial Serial
 
 #ifdef DEBUG_SERIAL_ENABLE
-#define dbSerialPrint(a)    Serial.print(a)
-#define dbSerialPrintln(a)  Serial.println(a)
-#define dbSerialBegin(a)    Serial.begin(a)
+#define dbSerialPrint(a)    dbSerial.print(a)
+#define dbSerialPrintln(a)  dbSerial.println(a)
+#define dbSerialBegin(a)    dbSerial.begin(a)
 #else
 #define dbSerialPrint(a)
 #define dbSerialPrintln(a)
 #define dbSerialBegin(a)
 #endif
 
-/*Define Nextion serial*/
+/*define serial for communicate with Nextion screen*/
 #define nexSerial Serial2
+
 #endif 

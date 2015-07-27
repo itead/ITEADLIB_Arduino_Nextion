@@ -68,59 +68,59 @@
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> hot0PushCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    dbSerial.println(<span class="stringliteral">&quot;hot0PushCallback&quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    dbSerial.println((uint32_t)ptr);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;hot0PushCallback&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    dbSerialPrint(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    dbSerialPrintln((uint32_t)ptr);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> hot1PushCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    dbSerial.println(<span class="stringliteral">&quot;hot1PushCallback&quot;</span>);    </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    dbSerial.println((uint32_t)ptr);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;hot1PushCallback&quot;</span>);    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    dbSerialPrint(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    dbSerialPrintln((uint32_t)ptr);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> hot0PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    dbSerial.println(<span class="stringliteral">&quot;hot0PopCallback&quot;</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    dbSerial.println((uint32_t)ptr);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;hot0PopCallback&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    dbSerialPrint(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    dbSerialPrintln((uint32_t)ptr);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> hot1PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    dbSerial.println(<span class="stringliteral">&quot;hot1PopCallback&quot;</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    dbSerial.print(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    dbSerial.println((uint32_t)ptr);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;hot1PopCallback&quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    dbSerialPrint(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    dbSerialPrintln((uint32_t)ptr);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    dbSerial.begin(9600);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    dbSerialBegin(9600);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    hot0.<a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot0PushCallback, &amp;hot0);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    hot0.<a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot0PopCallback, &amp;hot0);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    hot1.<a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot1PushCallback, &amp;hot1);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    hot1.<a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot1PopCallback, &amp;hot1);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    dbSerial.println(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    dbSerial.println(<span class="stringliteral">&quot;nexLoop&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;nexLoop&quot;</span>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="_nex_touch_8cpp.html#a70a2ac1029d750e0dfcb361824fa6f35">nexLoop</a>(nexListenList);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="ttc" id="_nex_touch_8cpp_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00423">NexTouch.cpp:423</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_a70a2ac1029d750e0dfcb361824fa6f35"><div class="ttname"><a href="_nex_touch_8cpp.html#a70a2ac1029d750e0dfcb361824fa6f35">nexLoop</a></div><div class="ttdeci">bool nexLoop(NexTouch **nexListenList)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00440">NexTouch.cpp:440</a></div></div>
+<div class="ttc" id="_nex_touch_8cpp_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00409">NexTouch.cpp:409</a></div></div>
+<div class="ttc" id="_nex_touch_8cpp_html_a70a2ac1029d750e0dfcb361824fa6f35"><div class="ttname"><a href="_nex_touch_8cpp.html#a70a2ac1029d750e0dfcb361824fa6f35">nexLoop</a></div><div class="ttdeci">bool nexLoop(NexTouch **nexListenList)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00425">NexTouch.cpp:425</a></div></div>
 <div class="ttc" id="_nex_hotspot_8h_html"><div class="ttname"><a href="_nex_hotspot_8h.html">NexHotspot.h</a></div><div class="ttdoc">API of NexHotspot. </div></div>
 <div class="ttc" id="class_nex_hotspot_html"><div class="ttname"><a href="class_nex_hotspot.html">NexHotspot</a></div><div class="ttdoc">NexHotspot,subclass of NexTouch,provides simple methods to control hotspot component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hotspot_8h_source.html#l00025">NexHotspot.h:25</a></div></div>
 <div class="ttc" id="class_nex_hotspot_html_ab024ae9f0cb6c3d048fff750e66b3138"><div class="ttname"><a href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">NexHotspot::attachPop</a></div><div class="ttdeci">void attachPop(NexTouchEventCb pop, void *ptr=NULL)</div><div class="ttdoc">Register hotspot pop callback function. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hotspot_8cpp_source.html#l00055">NexHotspot.cpp:55</a></div></div>
-<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00063">NexTouch.h:63</a></div></div>
+<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00057">NexTouch.h:57</a></div></div>
 <div class="ttc" id="class_nex_hotspot_html_a334baf11f1dcdc69e8fe638364267aaa"><div class="ttname"><a href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">NexHotspot::attachPush</a></div><div class="ttdeci">void attachPush(NexTouchEventCb push, void *ptr=NULL)</div><div class="ttdoc">Register hotspot push callback function. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hotspot_8cpp_source.html#l00035">NexHotspot.cpp:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 16 2015 13:05:44 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 27 2015 16:03:45 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

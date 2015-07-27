@@ -66,7 +66,7 @@ This program is free software; you can redistribute it and/or modify it under th
 <div class="line"><span class="keywordtype">void</span> buttonUpPopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
 <div class="line">    uint32_t number = 0;</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;buttonUpPopCallback&quot;</span>);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;buttonUpPopCallback&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    pointer.<a name="a3"></a><a class="code" href="class_nex_pointer.html#a9d061972b36c952732c34ccfa3e506e3">getValue</a>(&amp;number);</div>
 <div class="line"></div>
@@ -81,7 +81,7 @@ This program is free software; you can redistribute it and/or modify it under th
 <div class="line"><span class="keywordtype">void</span> buttonDownPopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
 <div class="line">    uint32_t number = 0;</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;buttonDownPopCallback&quot;</span>);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;buttonDownPopCallback&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    pointer.<a class="code" href="class_nex_pointer.html#a9d061972b36c952732c34ccfa3e506e3">getValue</a>(&amp;number);</div>
 <div class="line"></div>
@@ -97,23 +97,23 @@ This program is free software; you can redistribute it and/or modify it under th
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.begin(9600);</div>
+<div class="line">    dbSerialBegin(9600);</div>
 <div class="line">    <a name="a5"></a><a class="code" href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
 <div class="line">    btn_up.<a name="a6"></a><a class="code" href="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d">attachPop</a>(buttonUpPopCallback);</div>
 <div class="line">    btn_down.<a class="code" href="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d">attachPop</a>(buttonDownPopCallback);</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    dbSerial.println(<span class="stringliteral">&quot;nexLoop&quot;</span>);</div>
+<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;nexLoop&quot;</span>);</div>
 <div class="line">    <a name="a7"></a><a class="code" href="_nex_touch_8cpp.html#a70a2ac1029d750e0dfcb361824fa6f35">nexLoop</a>(nexListenList);</div>
 <div class="line">}</div>
 <div class="line"></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 16 2015 13:05:44 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 27 2015 16:03:45 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
