@@ -26,9 +26,8 @@ uint8_t NexTouch::__buffer[256] = {0};
 uint8_t NexTouch::mainEventLoop(NexTouch **list)
 {
     uint16_t i;
-    uint8_t c;
-    
-    while (true)
+    uint8_t c;  
+    //while (true)
     {
         while (nexSerial.available() > 0)
         {   
@@ -686,7 +685,7 @@ bool sleepMode(uint8_t mode)
 /**
  * Set current baudrate. 
  *
- * @param  baudrate - current baudrate,it surrpots 2400,4800,9600,19200,38400,57600,38400.
+ * @param  baudrate - current baudrate,it supports 2400,4800,9600,19200,38400,57600,115200.
  * 
  * @retval true - success. 
  * @retval false - failed.
@@ -718,7 +717,7 @@ bool setCurrentBaudrate(uint32_t baudrate)
 /**
  * Set default baudrate. 
  *
- * @param  defaultBaudrate - default baudrate,it surrpots 2400,4800,9600,19200,38400,57600,38400.
+ * @param  defaultBaudrate - default baudrate,it supports 2400,4800,9600,19200,38400,57600,115200.
  * 
  * @retval true - success. 
  * @retval false - failed.

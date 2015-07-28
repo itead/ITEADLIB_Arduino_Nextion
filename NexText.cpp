@@ -30,7 +30,7 @@ NexText::NexText(NexPid pid, NexCid cid, char *name, NexTouchEventCb pop, void *
  * @param buffer - text value buffer. 
  * @param len - the length of text value buffer.
  *
- * @return the the length of text value buffer.
+ * @return the length of text value buffer.
  */
 uint16_t NexText::getText(char *buffer, uint16_t len)
 {
