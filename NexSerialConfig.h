@@ -16,10 +16,10 @@
 #ifndef __NexSerialConfig_H__
 #define __NexSerialConfig_H__
 
-/*enable debug serial*/
+/* enable debug serial */
 #define DEBUG_SERIAL_ENABLE
 
-/*define serial for debug*/
+/* define serial for debug */
 #define dbSerial Serial
 
 #ifdef DEBUG_SERIAL_ENABLE
@@ -32,7 +32,7 @@
 #define dbSerialBegin(a)
 #endif
 
-/*define serial for communicate with Nextion screen*/
+/* define serial for communicate with Nextion screen */
 #define nexSerial Serial2
 
 #endif 

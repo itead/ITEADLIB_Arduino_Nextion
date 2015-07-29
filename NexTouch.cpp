@@ -27,34 +27,30 @@ uint8_t NexTouch::mainEventLoop(NexTouch **list)
 {
     uint16_t i;
     uint8_t c;  
-    //while (true)
-    {
-        while (nexSerial.available() > 0)
-        {   
-            delay(10);
-            c = nexSerial.read();
-            
-            if (NEX_RET_EVENT_TOUCH_HEAD == c)
+    while (nexSerial.available() > 0)
+    {   
+        delay(10);
+        c = nexSerial.read();
+        
+        if (NEX_RET_EVENT_TOUCH_HEAD == c)
+        {
+            if (nexSerial.available() >= 6)
             {
-                if (nexSerial.available() >= 6)
+                __buffer[0] = c;  
+                for (i = 1; i < 7; i++)
                 {
-                    //memset(__buffer, 0, sizeof(__buffer));
-                    __buffer[0] = c;  
-                    for (i = 1; i < 7; i++)
-                    {
-                        __buffer[i] = nexSerial.read();
-                    }
-                    __buffer[i] = 0x00;
-                    
-                    if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
-                    {
-                        iterate(list, (NexPid)__buffer[1], (NexCid)__buffer[2], (NexEventType)__buffer[3]);
-                    }
-                    
+                    __buffer[i] = nexSerial.read();
                 }
+                __buffer[i] = 0x00;
+                
+                if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
+                {
+                    iterate(list, (NexPid)__buffer[1], (NexCid)__buffer[2], (NexEventType)__buffer[3]);
+                }
+                
             }
         }
-    }        
+    }
     return 0;
 }
 
@@ -417,13 +413,13 @@ bool nexInit(void)
 /**
  * Call mainEventLoop,watting for Nextion's touch event.  
  *  
- * @param nexListenList - index to Nextion Components list. 
+ * @param nex_listen_list - index to Nextion Components list. 
  * 
  * @retval false - failed. 
  */
-bool nexLoop(NexTouch **nexListenList)
+bool nexLoop(NexTouch **nex_listen_list)
 {
-    NexTouch::mainEventLoop(nexListenList);
+    NexTouch::mainEventLoop(nex_listen_list);
     return false;
 }
 

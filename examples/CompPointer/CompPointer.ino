@@ -20,7 +20,7 @@ NexPointer pointer  = NexPointer(0, 1, "pointer");
 NexButton btn_up   = NexButton(0, 2, "btn_up");
 NexButton btn_down = NexButton(0, 3, "btn_down");
 
-NexTouch *nexListenList[] = 
+NexTouch *nex_listen_list[] = 
 {
     &btn_up,
     &btn_down,
@@ -70,7 +70,6 @@ void setup(void)
 
 void loop(void)
 {
-    dbSerialPrintln("nexLoop");
-    nexLoop(nexListenList);
+    nexLoop(nex_listen_list);
 }
 

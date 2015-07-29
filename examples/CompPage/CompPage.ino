@@ -20,7 +20,7 @@ NexPage page1    = NexPage(1, 0, "page1");
 NexPage page2    = NexPage(2, 0, "page2");
 NexPage page3    = NexPage(3, 0, "page3");
 
-NexTouch *nexListenList[] = 
+NexTouch *nex_listen_list[] = 
 {
     &page0,
     &page1,
@@ -69,6 +69,5 @@ void setup(void)
 
 void loop(void)
 {
-    dbSerialPrintln("nexLoop");
-    nexLoop(nexListenList);
+    nexLoop(nex_listen_list);
 }

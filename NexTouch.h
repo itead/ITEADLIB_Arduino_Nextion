@@ -104,7 +104,7 @@ private: /* data */
 };
 
 bool nexInit(void);
-bool nexLoop(NexTouch **nexListenList);
+bool nexLoop(NexTouch **nex_listen_list);
 bool  sendCurrentPageId(uint8_t* pageId);
 bool touchCalibration(void);
 bool disableTouchFocus(void); 

@@ -20,7 +20,7 @@ NexProgressBar j0  = NexProgressBar(0, 3, "j0");
 NexButton btn_up   = NexButton(0, 1, "btn_up");
 NexButton btn_down = NexButton(0, 2, "btn_down");
 
-NexTouch *nexListenList[] = 
+NexTouch *nex_listen_list[] = 
 {
     &btn_up,
     &btn_down,
@@ -72,7 +72,6 @@ void setup(void)
 
 void loop(void)
 {
-    dbSerialPrintln("nexLoop");
-    nexLoop(nexListenList);
+    nexLoop(nex_listen_list);
 }
 

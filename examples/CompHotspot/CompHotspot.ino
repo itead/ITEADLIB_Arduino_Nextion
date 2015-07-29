@@ -18,7 +18,7 @@
 NexHotspot hot0    = NexHotspot(0, 1, "hot0");
 NexHotspot hot1    = NexHotspot(0, 2, "hot1");
 
-NexTouch *nexListenList[] = 
+NexTouch *nex_listen_list[] = 
 {
     &hot0,
     &hot1,
@@ -66,6 +66,5 @@ void setup(void)
 
 void loop(void)
 {
-    dbSerialPrintln("nexLoop");
-    nexLoop(nexListenList);
+    nexLoop(nex_listen_list);
 }

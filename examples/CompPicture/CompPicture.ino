@@ -17,7 +17,7 @@
 
 NexPicture p0 = NexPicture(0, 1, "p0");
 
-NexTouch *nexListenList[] = 
+NexTouch *nex_listen_list[] = 
 {
     &p0,
     NULL
@@ -53,7 +53,6 @@ void setup(void)
 
 void loop(void)
 {
-    dbSerialPrintln("nexLoop");
-    nexLoop(nexListenList);
+    nexLoop(nex_listen_list);
 }
 

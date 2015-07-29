@@ -18,7 +18,7 @@
 NexButton b0 = NexButton(0, 1, "b0");
 char buffer[100] = {0};
 
-NexTouch *nexListenList[] = 
+NexTouch *nex_listen_list[] = 
 {
     &b0,
     NULL
@@ -54,6 +54,5 @@ void setup(void)
 
 void loop(void)
 {   
-    dbSerialPrintln("nexLoop");  
-    nexLoop(nexListenList);
+    nexLoop(nex_listen_list);
 }

@@ -17,7 +17,7 @@
 
 NexSlice q0 = NexSlice(0, 1, "q0");
 
-NexTouch *nexListenList[] = 
+NexTouch *nex_listen_list[] = 
 {
     &q0,
     NULL
@@ -47,7 +47,6 @@ void setup(void)
 
 void loop(void)
 {
-    dbSerialPrintln("nexLoop");
-    nexLoop(nexListenList);
+    nexLoop(nex_listen_list);
 }
 
