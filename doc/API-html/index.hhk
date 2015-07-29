@@ -7,20 +7,20 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d"><param name="Name" value="attachPop"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d"><param name="Name" value="NexButton"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_crop.html#a38c9d4d8999fd300ce4986743c016427"><param name="Name" value="NexCrop"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138"><param name="Name" value="NexHotspot"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_page.html#a12dfab060db8a063ec37cc03d423bfa5"><param name="Name" value="NexPage"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_picture.html#a48435e24d1e8792d01da857b56eed89f"><param name="Name" value="NexPicture"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_slice.html#a428e4ff2940895d87235452d5cdd298a"><param name="Name" value="NexSlice"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_text.html#a65afd4e50e90d325dc990434fd0582d4"><param name="Name" value="NexText"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa"><param name="Name" value="attachPush"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_button.html#a9c3cc5751cffade5be8fa05be88cd919"><param name="Name" value="detachPop"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_button.html#a9c3cc5751cffade5be8fa05be88cd919"><param name="Name" value="NexButton"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_crop.html#a11dda043a57eb4ca1831d1d0593dc8f0"><param name="Name" value="NexCrop"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_hotspot.html#a8137ae470e3158bf1d28fc65358e59cf"><param name="Name" value="NexHotspot"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_page.html#ab54d1381b54798333de6035ce2fe76b2"><param name="Name" value="NexPage"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_picture.html#ac5ddae20b18c4d09e5def762b2d6a045"><param name="Name" value="NexPicture"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_slice.html#a57a58be0fbb9e048c7a0b3078d9a6f2b"><param name="Name" value="NexSlice"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_text.html#a9b718af186036890749c2f0951be9928"><param name="Name" value="NexText"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_hotspot.html#a25b023f7df931981c7a85512f3e5a5c7"><param name="Name" value="detachPush"></OBJECT>
@@ -52,6 +52,12 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_button.html#a9776e1dc3cbb4af357f8d2a2924a7318"><param name="Name" value="NexButton"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_button.html#a649dafc5afb1dc7f1fc1bde1e6270290"><param name="Name" value="setText"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_crop.html"><param name="Name" value="NexCrop"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_crop.html#a38c9d4d8999fd300ce4986743c016427"><param name="Name" value="attachPop"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_crop.html#a11dda043a57eb4ca1831d1d0593dc8f0"><param name="Name" value="detachPop"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_crop.html#af010e5bb401c7c3640f091a8a870a6ef"><param name="Name" value="NexCrop"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_hotspot.html"><param name="Name" value="NexHotspot"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138"><param name="Name" value="attachPop"></OBJECT>
@@ -65,10 +71,10 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790"><param name="Name" value="NexTouch.cpp"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#ab09ddba6b72334d30ae091a7b038d790"><param name="Name" value="NexTouch.h"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a70a2ac1029d750e0dfcb361824fa6f35"><param name="Name" value="nexLoop"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625"><param name="Name" value="nexLoop"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a70a2ac1029d750e0dfcb361824fa6f35"><param name="Name" value="NexTouch.cpp"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a70a2ac1029d750e0dfcb361824fa6f35"><param name="Name" value="NexTouch.h"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625"><param name="Name" value="NexTouch.cpp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a2ac649a3055291eece6f6787c55a8625"><param name="Name" value="NexTouch.h"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_page.html"><param name="Name" value="NexPage"></OBJECT>
   <UL>
@@ -97,12 +103,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_progress_bar.html#a3aafcaa5927ddacfbb3016dbcff6ff26"><param name="Name" value="NexProgressBar"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_progress_bar.html#aaa7937d364cb63151bd1e1bc4729334d"><param name="Name" value="setValue"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_slice.html"><param name="Name" value="NexSlice"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_slice.html#a428e4ff2940895d87235452d5cdd298a"><param name="Name" value="attachPop"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_slice.html#a57a58be0fbb9e048c7a0b3078d9a6f2b"><param name="Name" value="detachPop"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_slice.html#a9abf13eaaad0577accdd1bd12e46798b"><param name="Name" value="NexSlice"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_text.html"><param name="Name" value="NexText"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_nex_text.html#a65afd4e50e90d325dc990434fd0582d4"><param name="Name" value="attachPop"></OBJECT>
@@ -116,7 +116,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ac0ecc339e2e1ba0febef765f364399f2"><param name="Name" value="disableTouchFocus"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790"><param name="Name" value="nexInit"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a70a2ac1029d750e0dfcb361824fa6f35"><param name="Name" value="nexLoop"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625"><param name="Name" value="nexLoop"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#aeee8bc7211698c1aa3365a5a74dd38a1"><param name="Name" value="pauseSerialCommand"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a125153946e31e79117631d795f2e36a7"><param name="Name" value="recoverySerialCommand"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8cpp.html#a1c03f7826512a9ede4d5e0971180d198"><param name="Name" value="sendCurrentPageId"></OBJECT>
@@ -131,7 +131,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#ac0ecc339e2e1ba0febef765f364399f2"><param name="Name" value="disableTouchFocus"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#ab09ddba6b72334d30ae091a7b038d790"><param name="Name" value="nexInit"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a70a2ac1029d750e0dfcb361824fa6f35"><param name="Name" value="nexLoop"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a2ac649a3055291eece6f6787c55a8625"><param name="Name" value="nexLoop"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#aeee8bc7211698c1aa3365a5a74dd38a1"><param name="Name" value="pauseSerialCommand"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a125153946e31e79117631d795f2e36a7"><param name="Name" value="recoverySerialCommand"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_nex_touch_8h.html#a1c03f7826512a9ede4d5e0971180d198"><param name="Name" value="sendCurrentPageId"></OBJECT>
