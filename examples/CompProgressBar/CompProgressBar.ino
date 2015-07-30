@@ -61,9 +61,6 @@ void buttonDownPopCallback(void *ptr)
 
 void setup(void)
 {
-    uint32_t brightness = 0;
-    
-    dbSerialBegin(9600);
     nexInit();
     btn_up.attachPop(buttonUpPopCallback);
     btn_down.attachPop(buttonDownPopCallback);

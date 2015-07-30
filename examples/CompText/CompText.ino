@@ -80,7 +80,6 @@ void b1PopCallback(void *ptr)
 
 void setup(void)
 {
-    dbSerialBegin(9600);
     nexInit();
     dbSerialPrintln("setup done");
 }

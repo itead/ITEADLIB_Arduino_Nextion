@@ -403,6 +403,7 @@ bool NexTouch::getBrightness(uint32_t *brightness)
  */
 bool nexInit(void)
 {
+    dbSerialBegin(9600);
     nexSerial.begin(9600);
     NexTouch::sendCommand("");
     NexTouch::sendCommand("page 0");

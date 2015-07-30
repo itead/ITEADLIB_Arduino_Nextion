@@ -22,6 +22,9 @@
 /* define serial for debug */
 #define dbSerial Serial
 
+/* define serial for communicate with Nextion screen */
+#define nexSerial Serial2
+
 #ifdef DEBUG_SERIAL_ENABLE
 #define dbSerialPrint(a)    dbSerial.print(a)
 #define dbSerialPrintln(a)  dbSerial.println(a)
@@ -31,8 +34,5 @@
 #define dbSerialPrintln(a)
 #define dbSerialBegin(a)
 #endif
-
-/* define serial for communicate with Nextion screen */
-#define nexSerial Serial2
 
 #endif 

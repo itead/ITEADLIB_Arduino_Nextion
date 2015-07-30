@@ -61,7 +61,6 @@ void buttonDownPopCallback(void *ptr)
 
 void setup(void)
 {
-    dbSerialBegin(9600);
     nexInit();
     btn_up.attachPop(buttonUpPopCallback);
     btn_down.attachPop(buttonDownPopCallback);

@@ -55,7 +55,6 @@ void hot1PopCallback(void *ptr)
 
 void setup(void)
 {
-    dbSerialBegin(9600);
     nexInit();
     hot0.attachPush(hot0PushCallback, &hot0);
     hot0.attachPop(hot0PopCallback, &hot0);

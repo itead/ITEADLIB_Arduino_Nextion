@@ -55,7 +55,6 @@ void page3PopCallback(void *ptr)
 
 void setup(void)
 {   
-    dbSerialBegin(9600);
     nexInit();
     dbSerialPrintln("setup begin");
     

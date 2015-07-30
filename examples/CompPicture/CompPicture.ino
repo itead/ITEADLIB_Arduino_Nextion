@@ -45,7 +45,6 @@ void p0PopCallback(void *ptr)
 
 void setup(void)
 {
-    dbSerialBegin(9600);
     nexInit();
     p0.attachPop(p0PopCallback);
     dbSerialPrintln("setup done");
