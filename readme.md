@@ -68,6 +68,9 @@ If you want to disable the debug information,you need to modify the line in file
 If your board has only one hardware serial, such as UNO, you should disable 
 dbSerial and redirect nexSerial to Serial(Refer to section:`Serial configuration`). 
 
+# Useful Links
+
+<http://blog.iteadstudio.com/nextion-tutorial-based-on-nextion-arduino-library/>
 
 -------------------------------------------------------------------------------
 
