@@ -44,7 +44,7 @@ In configuration file `NexSerialConfig.h`, you can find two macros below:
 
   - dbSerial: Debug Serial, needed by beginners for debug your nextion applications or sketches. If
               your complete your work, it will be a wise choice to disable Debug Serial.
-  - nexSerial: Nextion Serial, the bridge of Nextion and your MCU.
+  - nexSerial: Nextion Serial, the bridge of Nextion and your mainboard.
 
 **Note:** the default configuration is for MEGA2560.
 
@@ -55,13 +55,15 @@ you need to modify the line in file `NexSerialConfig.h`:
 
 	#define dbSerial Serial    ---> #define dbSerial Serialxxx
     #define nexSerial Serial2  ---> #define dbSerial Serialxxx
-    
+
+## Disable Debug Serial
+
 If you want to disable the debug information,you need to modify the line in file 
 `NexSerialConfig.h`:
 
     #define DEBUG_SERIAL_ENABLE ---> //#define DEBUG_SERIAL_ENABLE
 
-## Without Debug
+# UNO
 
 If your board has only one hardware serial, such as UNO, you should disable 
 dbSerial and redirect nexSerial to Serial(Refer to section:`Serial configuration`). 
