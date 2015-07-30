@@ -42,7 +42,7 @@ For example:
 
 In configuration file `NexSerialConfig.h`, you can find two macros below:
 
-  - dbSerial: Debug Serial, needed by beginners for debug your nextion applications or sketches. If
+  - dbSerial: Debug Serial (baudrate:9600), needed by beginners for debug your nextion applications or sketches. If
               your complete your work, it will be a wise choice to disable Debug Serial.
   - nexSerial: Nextion Serial, the bridge of Nextion and your mainboard.
 
