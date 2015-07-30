@@ -192,8 +192,16 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="setPic"><param name="Local" value="class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       </UL>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="NexPointer.cpp"><param name="Local" value="_nex_pointer_8cpp_source.html"><param name="ImageNumber" value="11"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="NexPointer.h"><param name="Local" value="_nex_pointer_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="NexPointer.cpp"><param name="Local" value="_nex_pointer_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="NexPointer.h"><param name="Local" value="_nex_pointer_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="NexPointer"><param name="Local" value="class_nex_pointer.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="NexPointer"><param name="Local" value="class_nex_pointer.html#a354eb8a9750b734cadd66d079a47e712"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getValue"><param name="Local" value="class_nex_pointer.html#a9d061972b36c952732c34ccfa3e506e3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="setValue"><param name="Local" value="class_nex_pointer.html#a5d6dd483961e23a83219e5bc884a2600"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="NexProgressBar.cpp"><param name="Local" value="_nex_progress_bar_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="NexProgressBar.h"><param name="Local" value="_nex_progress_bar_8h.html"><param name="ImageNumber" value="11"></OBJECT>
       <UL>

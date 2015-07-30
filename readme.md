@@ -54,7 +54,7 @@ If you want to change the default serial to debug or communicate with Nextion ,
 you need to modify the line in file `NexSerialConfig.h`:
 
 	#define dbSerial Serial    ---> #define dbSerial Serialxxx
-    #define nexSerial Serial2  ---> #define dbSerial Serialxxx
+    #define nexSerial Serial2  ---> #define nexSeria Serialxxx
 
 ## Disable Debug Serial
 
