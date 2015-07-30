@@ -354,322 +354,290 @@
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keywordtype">bool</span> NexTouch::getBrightness(uint32_t *brightness)</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">sendCommand</a>(<span class="stringliteral">&quot;get dim&quot;</span>);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nex_touch.html#a257439b0ce23b3b2de73fad3944d5336">recvRetNumber</a>(brightness);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;}</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;</div>
-<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#ab09ddba6b72334d30ae091a7b038d790">  404</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    nexSerial.begin(9600);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;page 0&quot;</span>);</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    delay(100);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;</div>
-<div class="line"><a name="l00420"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#a2ac649a3055291eece6f6787c55a8625">  420</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625">nexLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> **nex_listen_list)</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;{</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <a class="code" href="class_nex_touch.html#a48db410f610f36196752633bf3d013ce">NexTouch::mainEventLoop</a>(nex_listen_list);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;}</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;</div>
-<div class="line"><a name="l00434"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#a1c03f7826512a9ede4d5e0971180d198">  434</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#a1c03f7826512a9ede4d5e0971180d198">sendCurrentPageId</a>(uint8_t* pageId)</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;{</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    uint8_t temp[5] = {0};</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">if</span> (!pageId)</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    {</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">goto</span> __return;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    }</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;sendme&quot;</span>);</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    delay(50);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    nexSerial.setTimeout(500);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(temp) != nexSerial.readBytes((<span class="keywordtype">char</span> *)temp, <span class="keyword">sizeof</span>(temp)))</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    {</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="keywordflow">goto</span> __return;</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    }</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="keywordflow">if</span> (temp[0] == NEX_RET_CURRENT_PAGE_ID_HEAD</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    &amp;&amp; temp[2] == 0xFF</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    &amp;&amp; temp[3] == 0xFF</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    &amp;&amp; temp[4] == 0xFF</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    )</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    {</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        *pageId = temp[1];</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        ret = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    }</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    __return:</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keywordflow">if</span> (ret) </div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    {</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        dbSerialPrint(<span class="stringliteral">&quot;recvPageId :&quot;</span>);</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        dbSerialPrintln(*pageId);</div>
+<div class="line"><a name="l00398"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#ab09ddba6b72334d30ae091a7b038d790">  398</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;{</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    dbSerialBegin(9600);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    nexSerial.begin(9600);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;page 0&quot;</span>);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    delay(100);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
+<div class="line"><a name="l00415"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#a2ac649a3055291eece6f6787c55a8625">  415</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625">nexLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> **nex_listen_list)</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;{</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <a class="code" href="class_nex_touch.html#a48db410f610f36196752633bf3d013ce">NexTouch::mainEventLoop</a>(nex_listen_list);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;}</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="keywordtype">bool</span> sendCurrentPageId(uint8_t* pageId)</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;{</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    uint8_t temp[5] = {0};</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">if</span> (!pageId)</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    {</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">goto</span> __return;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    }</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;sendme&quot;</span>);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    delay(50);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    nexSerial.setTimeout(500);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(temp) != nexSerial.readBytes((<span class="keywordtype">char</span> *)temp, <span class="keyword">sizeof</span>(temp)))</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    {</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keywordflow">goto</span> __return;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    }</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="keywordflow">if</span> (temp[0] == NEX_RET_CURRENT_PAGE_ID_HEAD</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    &amp;&amp; temp[2] == 0xFF</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    &amp;&amp; temp[3] == 0xFF</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    &amp;&amp; temp[4] == 0xFF</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    )</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    {</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        *pageId = temp[1];</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        ret = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    }</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    __return:</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordflow">if</span> (ret) </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    {</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        dbSerialPrint(<span class="stringliteral">&quot;recvPageId :&quot;</span>);</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        dbSerialPrintln(*pageId);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    }</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    {</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;recvPageId err&quot;</span>);</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    }</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    {</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;recvPageId err&quot;</span>);</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    }</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;}</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;}</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;</div>
-<div class="line"><a name="l00484"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#ab250b42fe8c8b55c11f786c734b5a391">  484</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#ab250b42fe8c8b55c11f786c734b5a391">touchCalibration</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;{</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;touch_j&quot;</span>);</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    delay(10);</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    {</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;TouchCalibration ok &quot;</span>);</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;<span class="keywordtype">bool</span> touchCalibration(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;{</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;touch_j&quot;</span>);</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    delay(10);</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    {</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;TouchCalibration ok &quot;</span>);</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    }</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    {</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;TouchCalibration err &quot;</span>);</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    }</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    {</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;TouchCalibration err &quot;</span>);</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    }</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    </div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;}</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;</div>
-<div class="line"><a name="l00508"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#ac0ecc339e2e1ba0febef765f364399f2">  508</a></span>&#160;<span class="keywordtype">bool</span>  <a class="code" href="_nex_touch_8cpp.html#ac0ecc339e2e1ba0febef765f364399f2">disableTouchFocus</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;{</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;cle_c&quot;</span>);</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    delay(10);</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    {</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;disableTouchFocus ok &quot;</span>);</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    </div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;}</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<span class="keywordtype">bool</span>  disableTouchFocus(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;{</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;cle_c&quot;</span>);</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    delay(10);</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    {</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;disableTouchFocus ok &quot;</span>);</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    }</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    {</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;disableTouchFocus err &quot;</span>);</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    }</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    {</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;disableTouchFocus err &quot;</span>);</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    }</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    </div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;}</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;</div>
-<div class="line"><a name="l00532"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#aeee8bc7211698c1aa3365a5a74dd38a1">  532</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#aeee8bc7211698c1aa3365a5a74dd38a1">pauseSerialCommand</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;{</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;com_stop&quot;</span>);</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    delay(10);</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    {</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;pauseSerialCommand ok &quot;</span>);</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    </div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;}</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="keywordtype">bool</span> pauseSerialCommand(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;{</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;com_stop&quot;</span>);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    delay(10);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    {</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;pauseSerialCommand ok &quot;</span>);</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    }</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    {</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;pauseSerialCommand err &quot;</span>);</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    }</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    {</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;pauseSerialCommand err &quot;</span>);</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    }</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;}</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;</div>
-<div class="line"><a name="l00557"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#a125153946e31e79117631d795f2e36a7">  557</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#a125153946e31e79117631d795f2e36a7">recoverySerialCommand</a>(<span class="keywordtype">void</span>)               </div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;{  </div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;com_star&quot;</span>);</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    delay(10);</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    {</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;recoverySerialCommand ok &quot;</span>);</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;}</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;<span class="keywordtype">bool</span> recoverySerialCommand(<span class="keywordtype">void</span>)               </div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;{  </div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(<span class="stringliteral">&quot;com_star&quot;</span>);</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    delay(10);</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    {</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;recoverySerialCommand ok &quot;</span>);</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    }</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    {</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;recoverySerialCommand err &quot;</span>);</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    }</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    {</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;recoverySerialCommand err &quot;</span>);</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    }</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="keywordflow">return</span> ret; </div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;}</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;</div>
-<div class="line"><a name="l00583"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#aba0afc76c19367791d4d7c261c43b14b">  583</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#aba0afc76c19367791d4d7c261c43b14b">setCurrentBrightness</a>(uint8_t dimValue)</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;{</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    String cmd;</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    utoa(dimValue, buf, 10);</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    cmd += <span class="stringliteral">&quot;dim=&quot;</span>;</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    delay(10);</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    {   </div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        dbSerialPrint(<span class="stringliteral">&quot;setCurrentBrightness[ &quot;</span>);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        dbSerialPrint(dimValue);</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;]ok &quot;</span>);</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;      </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="keywordflow">return</span> ret; </div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;}</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="keywordtype">bool</span> setCurrentBrightness(uint8_t dimValue)</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;{</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    String cmd;</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    utoa(dimValue, buf, 10);</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    cmd += <span class="stringliteral">&quot;dim=&quot;</span>;</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    delay(10);</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    {   </div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        dbSerialPrint(<span class="stringliteral">&quot;setCurrentBrightness[ &quot;</span>);</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        dbSerialPrint(dimValue);</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;]ok &quot;</span>);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;      </div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    }</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    {</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setCurrentBrightness err &quot;</span>);</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    }</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    {</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setCurrentBrightness err &quot;</span>);</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    }</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keywordflow">return</span> ret;    </div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;}</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;</div>
-<div class="line"><a name="l00618"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#a1e02e6beb948b7b63be62f2f6b07413f">  618</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#a1e02e6beb948b7b63be62f2f6b07413f">setDefaultBrightness</a>(uint8_t dimDefaultValue)</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;{</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    String cmd;</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    utoa(dimDefaultValue, buf, 10);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    cmd += <span class="stringliteral">&quot;dims=&quot;</span>;</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    delay(10);</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    {</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        dbSerialPrint(<span class="stringliteral">&quot;setDefaultBrightness[&quot;</span>);</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        dbSerialPrint(dimDefaultValue);</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;]ok&quot;</span>);</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="keywordflow">return</span> ret;    </div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;}</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="keywordtype">bool</span> setDefaultBrightness(uint8_t dimDefaultValue)</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;{</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    String cmd;</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    utoa(dimDefaultValue, buf, 10);</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    cmd += <span class="stringliteral">&quot;dims=&quot;</span>;</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    delay(10);</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    {</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        dbSerialPrint(<span class="stringliteral">&quot;setDefaultBrightness[&quot;</span>);</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        dbSerialPrint(dimDefaultValue);</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;]ok&quot;</span>);</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    }</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    {</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setDefaultBrightness err &quot;</span>);</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    }</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    {</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setDefaultBrightness err &quot;</span>);</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    }</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="keywordflow">return</span> ret; </div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;}</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;</div>
-<div class="line"><a name="l00652"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#a1613f6f3db99a7f065dfa4b7e21afd8d">  652</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#a1613f6f3db99a7f065dfa4b7e21afd8d">sleepMode</a>(uint8_t mode)</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;{</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    String cmd;</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="keywordflow">if</span>(mode != 0 &amp;&amp; mode != 1)</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    {</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;mode input ok &quot;</span>);</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    }</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    utoa(mode, buf, 10);</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    cmd += <span class="stringliteral">&quot;sleep=&quot;</span>;</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    delay(10);</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;sleepMode ok &quot;</span>);</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="keywordflow">return</span> ret; </div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;}</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="keywordtype">bool</span> sleepMode(uint8_t mode)</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;{</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    String cmd;</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="keywordflow">if</span>(mode != 0 &amp;&amp; mode != 1)</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    {</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;mode input ok &quot;</span>);</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    }</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    utoa(mode, buf, 10);</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    cmd += <span class="stringliteral">&quot;sleep=&quot;</span>;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    delay(10);</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    {</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;sleepMode ok &quot;</span>);</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    }</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    {</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;sleepMode err &quot;</span>);</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    }</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    {</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;sleepMode err &quot;</span>);</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    }</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordflow">return</span> ret; </div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;}</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;</div>
-<div class="line"><a name="l00689"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#a5bbef027966444f05aa170d00c6f2825">  689</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#a5bbef027966444f05aa170d00c6f2825">setCurrentBaudrate</a>(uint32_t baudrate)</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;{</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    String cmd;</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    utoa(baudrate, buf, 10);</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    cmd += <span class="stringliteral">&quot;baud=&quot;</span>;</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    delay(10);</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    {</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setCurrentBaudrate ok &quot;</span>);</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keywordflow">return</span> ret; </div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;}</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;<span class="keywordtype">bool</span> setCurrentBaudrate(uint32_t baudrate)</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;{</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    String cmd;</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    utoa(baudrate, buf, 10);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    cmd += <span class="stringliteral">&quot;baud=&quot;</span>;</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    delay(10);</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    {</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setCurrentBaudrate ok &quot;</span>);</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    }</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    {</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setCurrentBaudrate err &quot;</span>);</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    }</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    {</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setCurrentBaudrate err &quot;</span>);</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    }</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordflow">return</span> ret; </div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;}</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;</div>
-<div class="line"><a name="l00721"></a><span class="lineno"><a class="line" href="_nex_touch_8h.html#a1cab38cb2f482b9383a9e41059aefacd">  721</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_touch_8cpp.html#ad1d999070923f05104994655c7f7d796">setDefaultBaudrate</a>(uint32_t defaultBaudrate)</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;{</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    String cmd;</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    utoa(defaultBaudrate, buf, 10);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    cmd += <span class="stringliteral">&quot;bauds=&quot;</span>;</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    delay(10);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    {</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setDefaultBaudrate ok &quot;</span>);</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="keywordflow">return</span> ret; </div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;}</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="keywordtype">bool</span> setDefaultBaudrate(uint32_t defaultBaudrate)</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;{</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    String cmd;</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    utoa(defaultBaudrate, buf, 10);</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    cmd += <span class="stringliteral">&quot;bauds=&quot;</span>;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <a class="code" href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    delay(10);</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a>())</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    {</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setDefaultBaudrate ok &quot;</span>);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        ret = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    }</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    {</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setDefaultBaudrate err &quot;</span>);</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    }</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    {</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        dbSerialPrintln(<span class="stringliteral">&quot;setDefaultBaudrate err &quot;</span>);</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    }</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <span class="keywordflow">return</span> ret; </div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;}</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keywordflow">return</span> ret; </div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;}</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_nex_touch_html_a2aaea7a401a6fef25aafafc2f06b8339"><div class="ttname"><a href="class_nex_touch.html#a2aaea7a401a6fef25aafafc2f06b8339">NexTouch::getPid</a></div><div class="ttdeci">NexPid getPid(void)</div><div class="ttdoc">Get page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00087">NexTouch.cpp:87</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_ad1d999070923f05104994655c7f7d796"><div class="ttname"><a href="_nex_touch_8cpp.html#ad1d999070923f05104994655c7f7d796">setDefaultBaudrate</a></div><div class="ttdeci">bool setDefaultBaudrate(uint32_t defaultBaudrate)</div><div class="ttdoc">Set default baudrate. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00721">NexTouch.cpp:721</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a1cf4b76cda45ef6517f6d07f86c8018d"><div class="ttname"><a href="class_nex_touch.html#a1cf4b76cda45ef6517f6d07f86c8018d">NexTouch::NexTouch</a></div><div class="ttdeci">NexTouch(NexPid pid, NexCid cid, char *name, NexTouchEventCb pop=NULL, void *pop_ptr=NULL, NexTouchEventCb push=NULL, void *push_ptr=NULL)</div><div class="ttdoc">Constructor of Nextouch. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00069">NexTouch.cpp:69</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00404">NexTouch.cpp:404</a></div></div>
+<div class="ttc" id="_nex_touch_8cpp_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00398">NexTouch.cpp:398</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a822897068e62ae76bee9824de1ef85a8"><div class="ttname"><a href="class_nex_touch.html#a822897068e62ae76bee9824de1ef85a8">NexTouch::sendCommand</a></div><div class="ttdeci">static void sendCommand(const char *cmd)</div><div class="ttdoc">Send command to Nextion. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00256">NexTouch.cpp:256</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a31e2d5f2922383f8d82c33f7586643d0"><div class="ttname"><a href="class_nex_touch.html#a31e2d5f2922383f8d82c33f7586643d0">NexTouch::getObjName</a></div><div class="ttdeci">const char * getObjName(void)</div><div class="ttdoc">Get component name. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00107">NexTouch.cpp:107</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_a2ac649a3055291eece6f6787c55a8625"><div class="ttname"><a href="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625">nexLoop</a></div><div class="ttdeci">bool nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00420">NexTouch.cpp:420</a></div></div>
+<div class="ttc" id="_nex_touch_8cpp_html_a2ac649a3055291eece6f6787c55a8625"><div class="ttname"><a href="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625">nexLoop</a></div><div class="ttdeci">bool nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00415">NexTouch.cpp:415</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a5f4c8a51d930403413d1f267348a9a1e"><div class="ttname"><a href="class_nex_touch.html#a5f4c8a51d930403413d1f267348a9a1e">NexTouch::print</a></div><div class="ttdeci">void print(void)</div><div class="ttdoc">Print current object address,page id,component id, component name,pop event function address...</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00117">NexTouch.cpp:117</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a48db410f610f36196752633bf3d013ce"><div class="ttname"><a href="class_nex_touch.html#a48db410f610f36196752633bf3d013ce">NexTouch::mainEventLoop</a></div><div class="ttdeci">static uint8_t mainEventLoop(NexTouch **list)</div><div class="ttdoc">Watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00026">NexTouch.cpp:26</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_ac0ecc339e2e1ba0febef765f364399f2"><div class="ttname"><a href="_nex_touch_8cpp.html#ac0ecc339e2e1ba0febef765f364399f2">disableTouchFocus</a></div><div class="ttdeci">bool disableTouchFocus(void)</div><div class="ttdoc">Disable all touch hot. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00508">NexTouch.cpp:508</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a3d769351baa4eac31b0063949e469469"><div class="ttname"><a href="class_nex_touch.html#a3d769351baa4eac31b0063949e469469">NexTouch::getCid</a></div><div class="ttdeci">NexCid getCid(void)</div><div class="ttdoc">Get component id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00097">NexTouch.cpp:97</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_a1e02e6beb948b7b63be62f2f6b07413f"><div class="ttname"><a href="_nex_touch_8cpp.html#a1e02e6beb948b7b63be62f2f6b07413f">setDefaultBrightness</a></div><div class="ttdeci">bool setDefaultBrightness(uint8_t dimDefaultValue)</div><div class="ttdoc">Set default backlight brightness value. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00618">NexTouch.cpp:618</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_a1c03f7826512a9ede4d5e0971180d198"><div class="ttname"><a href="_nex_touch_8cpp.html#a1c03f7826512a9ede4d5e0971180d198">sendCurrentPageId</a></div><div class="ttdeci">bool sendCurrentPageId(uint8_t *pageId)</div><div class="ttdoc">Return current page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00434">NexTouch.cpp:434</a></div></div>
 <div class="ttc" id="_nex_touch_8h_html"><div class="ttname"><a href="_nex_touch_8h.html">NexTouch.h</a></div><div class="ttdoc">API of Nextion. </div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_a125153946e31e79117631d795f2e36a7"><div class="ttname"><a href="_nex_touch_8cpp.html#a125153946e31e79117631d795f2e36a7">recoverySerialCommand</a></div><div class="ttdeci">bool recoverySerialCommand(void)</div><div class="ttdoc">Recovery serial instruction execution. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00557">NexTouch.cpp:557</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_a1613f6f3db99a7f065dfa4b7e21afd8d"><div class="ttname"><a href="_nex_touch_8cpp.html#a1613f6f3db99a7f065dfa4b7e21afd8d">sleepMode</a></div><div class="ttdeci">bool sleepMode(uint8_t mode)</div><div class="ttdoc">Set device in sleep mode. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00652">NexTouch.cpp:652</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_a5bbef027966444f05aa170d00c6f2825"><div class="ttname"><a href="_nex_touch_8cpp.html#a5bbef027966444f05aa170d00c6f2825">setCurrentBaudrate</a></div><div class="ttdeci">bool setCurrentBaudrate(uint32_t baudrate)</div><div class="ttdoc">Set current baudrate. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00689">NexTouch.cpp:689</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_aeee8bc7211698c1aa3365a5a74dd38a1"><div class="ttname"><a href="_nex_touch_8cpp.html#aeee8bc7211698c1aa3365a5a74dd38a1">pauseSerialCommand</a></div><div class="ttdeci">bool pauseSerialCommand(void)</div><div class="ttdoc">Pause serial instruction execution. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00532">NexTouch.cpp:532</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a257439b0ce23b3b2de73fad3944d5336"><div class="ttname"><a href="class_nex_touch.html#a257439b0ce23b3b2de73fad3944d5336">NexTouch::recvRetNumber</a></div><div class="ttdeci">static bool recvRetNumber(uint32_t *number, uint32_t timeout=500)</div><div class="ttdoc">Receive uint32_t data. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00351">NexTouch.cpp:351</a></div></div>
 <div class="ttc" id="class_nex_touch_html_ac9cf23a7fc63040dc129ac3cb3de1d35"><div class="ttname"><a href="class_nex_touch.html#ac9cf23a7fc63040dc129ac3cb3de1d35">NexTouch::recvRetString</a></div><div class="ttdeci">static uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout=500)</div><div class="ttdoc">Receive string data. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00279">NexTouch.cpp:279</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_aba0afc76c19367791d4d7c261c43b14b"><div class="ttname"><a href="_nex_touch_8cpp.html#aba0afc76c19367791d4d7c261c43b14b">setCurrentBrightness</a></div><div class="ttdeci">bool setCurrentBrightness(uint8_t dimValue)</div><div class="ttdoc">Set current backlight brightness value. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00583">NexTouch.cpp:583</a></div></div>
 <div class="ttc" id="class_nex_touch_html_a9129f708be2b8f7fd417803025e83507"><div class="ttname"><a href="class_nex_touch.html#a9129f708be2b8f7fd417803025e83507">NexTouch::recvRetCommandFinished</a></div><div class="ttdeci">static bool recvRetCommandFinished(uint32_t timeout=100)</div><div class="ttdoc">Command is executed successfully. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00219">NexTouch.cpp:219</a></div></div>
 <div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00057">NexTouch.h:57</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_ab250b42fe8c8b55c11f786c734b5a391"><div class="ttname"><a href="_nex_touch_8cpp.html#ab250b42fe8c8b55c11f786c734b5a391">touchCalibration</a></div><div class="ttdeci">bool touchCalibration(void)</div><div class="ttdoc">Touch screen calibration. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00484">NexTouch.cpp:484</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 29 2015 13:48:32 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 30 2015 10:41:04 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

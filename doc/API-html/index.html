@@ -54,21 +54,30 @@
 </pre><h1>Documentation</h1>
 <p>Online API documentation can be reached at <a href="http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/">http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/</a>.</p>
 <p>Offline API documentation can be found under directory <a href="https://github.com/itead/ITEADLIB_Arduino_Nextion/tree/master/doc">doc</a>.</p>
-<h1>Hareware requirement</h1>
-<ul>
-<li>RAM: not less than 2KBytes</li>
-<li>Serial: two serial (communication and debug)</li>
-</ul>
-<h1>Serial configuration</h1>
-<p>If you want to change the default serial to debug or communicate with Nextion ,you need to modify the line in file <a class="el" href="_nex_serial_config_8h.html" title="Serial configure. ">NexSerialConfig.h</a>: </p><pre class="fragment">#define dbSerial Serial    ---&gt; #define dbSerial Serialxxx
-#define nexSerial Serial2  ---&gt; #define dbSerial Serialxxx
-</pre><p> If you want to close the debug information,you need to modify the line in file <a class="el" href="_nex_serial_config_8h.html" title="Serial configure. ">NexSerialConfig.h</a>: </p><pre class="fragment">#define DEBUG_SERIAL_ENABLE ---&gt; //#define DEBUG_SERIAL_ENABLE
-</pre> <h1>Suppported Mainboards:</h1>
+<h1>Suppported Mainboards:</h1>
+<p><b>All boards, which has one or more hardware serial, can be supported.</b></p>
+<p>For example:</p>
 <ul>
 <li>Iteaduino MEGA2560</li>
-<li>Arduino MEGA2560 <hr/>
-</li>
+<li>Iteaduino UNO</li>
+<li>Arduino MEGA2560</li>
+<li>Arduino UNO</li>
 </ul>
+<h1>Serial configuration</h1>
+<p>In configuration file <code><a class="el" href="_nex_serial_config_8h.html" title="Serial configure. ">NexSerialConfig.h</a></code>, you can find two macros below:</p>
+<ul>
+<li>dbSerial: Debug Serial (baudrate:9600), needed by beginners for debug your nextion applications or sketches. If your complete your work, it will be a wise choice to disable Debug Serial.</li>
+<li>nexSerial: Nextion Serial, the bridge of Nextion and your mainboard.</li>
+</ul>
+<p><b>Note:</b> the default configuration is for MEGA2560.</p>
+<h2>Redirect dbSerial and nexSerial</h2>
+<p>If you want to change the default serial to debug or communicate with Nextion , you need to modify the line in file <code><a class="el" href="_nex_serial_config_8h.html" title="Serial configure. ">NexSerialConfig.h</a></code>: </p><pre class="fragment">#define dbSerial Serial    ---&gt; #define dbSerial Serialxxx
+#define nexSerial Serial2  ---&gt; #define dbSerial Serialxxx
+</pre><h2>Disable Debug Serial</h2>
+<p>If you want to disable the debug information,you need to modify the line in file <code><a class="el" href="_nex_serial_config_8h.html" title="Serial configure. ">NexSerialConfig.h</a></code>: </p><pre class="fragment">#define DEBUG_SERIAL_ENABLE ---&gt; //#define DEBUG_SERIAL_ENABLE
+</pre><h1>UNO</h1>
+<p>If your board has only one hardware serial, such as UNO, you should disable dbSerial and redirect nexSerial to Serial(Refer to section:<code>Serial configuration</code>).</p>
+<hr/>
 <p>DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE Version 2, December 2004</p>
 <p>Copyright (C) 2014 ITEAD Studio</p>
 <p>Everyone is permitted to copy and distribute verbatim or modified copies of this license document, and changing it is allowed as long as the name is changed. </p><pre class="fragment">   DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
@@ -78,7 +87,7 @@
  </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 29 2015 13:48:32 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 30 2015 10:41:05 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -96,21 +96,20 @@
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    dbSerialBegin(9600);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    hot0.<a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot0PushCallback, &amp;hot0);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    hot0.<a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot0PopCallback, &amp;hot0);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    hot1.<a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot1PushCallback, &amp;hot1);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    hot1.<a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot1PopCallback, &amp;hot1);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625">nexLoop</a>(nex_listen_list);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="ttc" id="_nex_touch_8cpp_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00404">NexTouch.cpp:404</a></div></div>
-<div class="ttc" id="_nex_touch_8cpp_html_a2ac649a3055291eece6f6787c55a8625"><div class="ttname"><a href="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625">nexLoop</a></div><div class="ttdeci">bool nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00420">NexTouch.cpp:420</a></div></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    hot0.<a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot0PushCallback, &amp;hot0);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    hot0.<a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot0PopCallback, &amp;hot0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    hot1.<a class="code" href="class_nex_hotspot.html#a334baf11f1dcdc69e8fe638364267aaa">attachPush</a>(hot1PushCallback, &amp;hot1);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    hot1.<a class="code" href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">attachPop</a>(hot1PopCallback, &amp;hot1);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625">nexLoop</a>(nex_listen_list);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="ttc" id="_nex_touch_8cpp_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_touch_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00398">NexTouch.cpp:398</a></div></div>
+<div class="ttc" id="_nex_touch_8cpp_html_a2ac649a3055291eece6f6787c55a8625"><div class="ttname"><a href="_nex_touch_8cpp.html#a2ac649a3055291eece6f6787c55a8625">nexLoop</a></div><div class="ttdeci">bool nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00415">NexTouch.cpp:415</a></div></div>
 <div class="ttc" id="_nex_hotspot_8h_html"><div class="ttname"><a href="_nex_hotspot_8h.html">NexHotspot.h</a></div><div class="ttdoc">API of NexHotspot. </div></div>
 <div class="ttc" id="class_nex_hotspot_html"><div class="ttname"><a href="class_nex_hotspot.html">NexHotspot</a></div><div class="ttdoc">NexHotspot,subclass of NexTouch,provides simple methods to control hotspot component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hotspot_8h_source.html#l00025">NexHotspot.h:25</a></div></div>
 <div class="ttc" id="class_nex_hotspot_html_ab024ae9f0cb6c3d048fff750e66b3138"><div class="ttname"><a href="class_nex_hotspot.html#ab024ae9f0cb6c3d048fff750e66b3138">NexHotspot::attachPop</a></div><div class="ttdeci">void attachPop(NexTouchEventCb pop, void *ptr=NULL)</div><div class="ttdoc">Register hotspot pop callback function. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hotspot_8cpp_source.html#l00055">NexHotspot.cpp:55</a></div></div>
@@ -119,7 +118,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 29 2015 13:48:32 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 30 2015 10:41:04 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
