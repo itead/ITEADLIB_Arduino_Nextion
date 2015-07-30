@@ -29,7 +29,7 @@ Offline API documentation can be found under directory
 
 # Suppported Mainboards:
 
-*** All boards, which has one or more hardware serial, can be supported.***
+**All boards, which has one or more hardware serial, can be supported.**
 
 For example:
 
@@ -46,7 +46,7 @@ In configuration file `NexSerialConfig.h`, you can find two macros below:
               your complete your work, it will be a wise choice to disable Debug Serial.
   - nexSerial: Nextion Serial, the bridge of Nextion and your MCU.
 
-***Note:*** the default configuration is for MEGA2560.
+**Note:** the default configuration is for MEGA2560.
 
 ## Redirect dbSerial and nexSerial
 
