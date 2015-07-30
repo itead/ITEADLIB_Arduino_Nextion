@@ -74,8 +74,6 @@ public: /* methods */
     void print(void);
 
 protected: /* static methods */    
-    static bool setBrightness(uint32_t brightness);
-    static bool getBrightness(uint32_t *brightness);
 
 protected: /* methods */    
     void attachPush(NexTouchEventCb push, void *ptr = NULL);
@@ -105,7 +103,9 @@ private: /* data */
 
 bool nexInit(void);
 bool nexLoop(NexTouch **nex_listen_list);
-bool  sendCurrentPageId(uint8_t* pageId);
+
+#if 0
+bool sendCurrentPageId(uint8_t* pageId);
 bool touchCalibration(void);
 bool disableTouchFocus(void); 
 bool pauseSerialCommand(void); 
@@ -116,6 +116,7 @@ bool setDefaultBrightness(uint8_t dimDefaultValue);
 bool sleepMode(uint8_t mode);
 bool setCurrentBaudrate(uint32_t baudrate);
 bool setDefaultBaudrate(uint32_t baudrate);
+#endif
 
 #endif /* #ifdef __cplusplus */
 #endif /* #ifndef __NEXTOUCH_H__ */

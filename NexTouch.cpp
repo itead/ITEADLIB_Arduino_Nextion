@@ -389,12 +389,6 @@ __return:
     return ret;
 }
 
-bool NexTouch::getBrightness(uint32_t *brightness)
-{
-    sendCommand("get dim");
-    return recvRetNumber(brightness);
-}
-
 /**
  * Init Nextion's baudrate,page id.    
  * 
@@ -424,6 +418,7 @@ bool nexLoop(NexTouch **nex_listen_list)
     return false;
 }
 
+#if 0
 /**
  * Return current page id.   
  *  
@@ -743,23 +738,4 @@ bool setDefaultBaudrate(uint32_t defaultBaudrate)
     return ret; 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#endif
