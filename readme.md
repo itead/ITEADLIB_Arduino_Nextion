@@ -27,24 +27,45 @@ Online API documentation can be reached at <http://docs.iteadstudio.com/ITEADLIB
 Offline API documentation can be found under directory 
 [doc](https://github.com/itead/ITEADLIB_Arduino_Nextion/tree/master/doc).
 
-# Hareware requirement 
+# Suppported Mainboards:
 
-  - RAM: not less than 2KBytes
-  - Serial: two serial (communication and debug)
+*** All boards, which has one or more hardware serial, can be supported.***
+
+For example:
+
+  - Iteaduino MEGA2560
+  - Iteaduino UNO
+  - Arduino MEGA2560
+  - Arduino UNO
 
 # Serial configuration
 
-If you want to change the default serial to debug or communicate with Nextion ,you need to modify the line in file NexSerialConfig.h:
+In configuration file `NexSerialConfig.h`, you can find two macros below:
+
+  - dbSerial: Debug Serial, needed by beginners for debug your nextion applications or sketches. If
+              your complete your work, it will be a wise choice to disable Debug Serial.
+  - nexSerial: Nextion Serial, the bridge of Nextion and your MCU.
+
+***Note:*** the default configuration is for MEGA2560.
+
+## Redirect dbSerial and nexSerial
+
+If you want to change the default serial to debug or communicate with Nextion ,
+you need to modify the line in file `NexSerialConfig.h`:
 
 	#define dbSerial Serial    ---> #define dbSerial Serialxxx
     #define nexSerial Serial2  ---> #define dbSerial Serialxxx
-If you want to close the debug information,you need to modify the line in file NexSerialConfig.h:
+    
+If you want to disable the debug information,you need to modify the line in file 
+`NexSerialConfig.h`:
 
     #define DEBUG_SERIAL_ENABLE ---> //#define DEBUG_SERIAL_ENABLE
-# Suppported Mainboards:
 
-  - Iteaduino MEGA2560
-  - Arduino MEGA2560
+## Without Debug
+
+If your board has only one hardware serial, such as UNO, you should disable 
+dbSerial and redirect nexSerial to Serial(Refer to section:`Serial configuration`). 
+
 
 -------------------------------------------------------------------------------
 
