@@ -400,8 +400,10 @@ bool nexInit(void)
     dbSerialBegin(9600);
     nexSerial.begin(9600);
     NexTouch::sendCommand("");
+    NexTouch::sendCommand("bkcmd=1");
+    NexTouch::recvRetCommandFinished();
     NexTouch::sendCommand("page 0");
-    delay(100);
+    NexTouch::recvRetCommandFinished();
     return true;
 }
 
