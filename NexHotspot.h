@@ -17,6 +17,7 @@
 #define __NEXHOTSPOT_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
+#include "NexHardware.h"
 
 /**
  * NexHotspot,subclass of NexTouch,provides simple methods to control hotspot component. 

@@ -17,6 +17,7 @@
 #define __NEXGAUGE_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
+#include "NexHardware.h"
 
 /**
  * NexGauge,subclass of NexTouch,provides simple methods to control gauge component.

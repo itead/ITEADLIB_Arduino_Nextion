@@ -17,6 +17,7 @@
 #define __NEXPAGE_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
+#include "NexHardware.h"
 
 /**
  * NexPage,subclass of NexTouch,provides simple methods to control page component. 

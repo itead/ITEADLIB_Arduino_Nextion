@@ -17,6 +17,7 @@
 #define __NEXCROP_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
+#include "NexHardware.h"
 
 /**
  * NexCrop,subclass of NexTouch,provides simple methods to control crop component. 

@@ -17,6 +17,7 @@
 #define __NEXPICTURE_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
+#include "NexHardware.h"
 
 /**
  * NexPicture,subclass of NexTouch,provides simple methods to control picture component. 

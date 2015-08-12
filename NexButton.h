@@ -17,6 +17,7 @@
 #define __NEXBUTTON_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
+#include "NexHardware.h"
 
 /**
  * NexButton,subclass of NexTouch,provides simple methods to control button component. 

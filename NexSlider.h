@@ -17,6 +17,7 @@
 #define __NEXSLIDER_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
+#include "NexHardware.h"
 
 /**
  * NexSlider,subclass of NexTouch,provides simple methods to control slider component. 

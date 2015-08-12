@@ -17,6 +17,7 @@
 #define __NEXPROGRESSBAR_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
+#include "NexHardware.h"
 
 /**
  * NexProgressBar,subclass of NexTouch,provides simple methods to control progress bar component. 
