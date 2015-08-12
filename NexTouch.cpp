@@ -15,7 +15,7 @@
 
 #include "NexTouch.h"
 
-uint8_t NexTouch::__buffer[256] = {0};
+uint8_t NexTouch::__buffer[NEX_SERIAL_RX_BUFFER_SIZE] = {0};
 
 /**
  * Watting for Nextion's touch event.

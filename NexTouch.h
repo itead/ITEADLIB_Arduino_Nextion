@@ -19,6 +19,8 @@
 #include <Arduino.h>
 #include "NexSerialConfig.h"
 
+#define NEX_SERIAL_RX_BUFFER_SIZE   (64)
+
 typedef uint8_t NexPid;
 typedef uint8_t NexCid;
 
@@ -89,7 +91,7 @@ private: /* methods */
     void pop(void);
     
 private: /* static data */
-    static uint8_t __buffer[256];
+    static uint8_t __buffer[NEX_SERIAL_RX_BUFFER_SIZE];
 
 private: /* data */ 
     NexPid pid; /* Page ID */
