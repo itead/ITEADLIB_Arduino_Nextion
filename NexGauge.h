@@ -1,10 +1,10 @@
 /**
- * @file NexWaveform.h
+ * @file NexGauge.h
  *
- * API of NexWaveform. 
+ * API of NexGauge. 
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
- * @date    2015/8/11
+ * @date    2015/7/10
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -13,21 +13,23 @@
  * the License, or (at your option) any later version.
  */
  
-#ifndef __NEXWAVEFORM_H__
-#define __NEXWAVEFORM_H__
+#ifndef __NEXGAUGE_H__
+#define __NEXGAUGE_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
 
 /**
- * NexWaveform,subclass of NexTouch,provides simple methods to control NexWaveform component.
+ * NexGauge,subclass of NexTouch,provides simple methods to control gauge component.
  *
  */
-class NexWaveform: public NexTouch
+class NexGauge: public NexTouch
 {
 public: /* methods */
-    NexWaveform(NexPid pid, NexCid cid, char *name);
-    bool addValue(uint8_t ch, uint8_t number);
+    NexGauge(NexPid pid, NexCid cid, char *name);
+    
+    bool getValue(uint32_t *number);
+    bool setValue(uint32_t number);
 };
 
 #endif /* #ifdef __cplusplus */
-#endif /* #ifndef __NEXWAVEFORM_H__ */
+#endif /* #ifndef __NEXGAUGE_H__ */
