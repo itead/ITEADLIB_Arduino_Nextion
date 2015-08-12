@@ -140,3 +140,32 @@ void NexTouch::pop(void)
     }
 }
 
+void NexTouch::iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType event)
+{
+    NexTouch *e = NULL;
+    uint16_t i = 0;
+
+    if (NULL == list)
+    {
+        return;
+    }
+    
+    for(i = 0; (e = list[i]) != NULL; i++)
+    {
+        if (e->getPid() == pid && e->getCid() == cid)
+        {
+            e->print();
+            if (NEX_EVENT_PUSH == event)
+            {
+                e->push();
+            }
+            else if (NEX_EVENT_POP == event)
+            {
+                e->pop();
+            }
+            
+            break;
+        }
+    }
+}
+

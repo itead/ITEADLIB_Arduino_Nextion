@@ -14,12 +14,6 @@
  */
 #include "NexHardware.h"
 
-typedef enum {
-    NEX_EVENT_POP = 0x00,
-    NEX_EVENT_PUSH = 0x01,
-    NEX_EVENT_NULL
-} NexEventType;
-
 /*The first byte of Nextoin's return value*/
 #define NEX_RET_CMD_FINISHED            (0x01)
 #define NEX_RET_EVENT_LAUNCHED          (0x88)
@@ -224,34 +218,6 @@ bool recvRetCommandFinished(uint32_t timeout)
 }
 
 
-static void iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType event)
-{
-    NexTouch *e = NULL;
-    uint16_t i = 0;
-
-    if (NULL == list)
-    {
-        return;
-    }
-    
-    for(i = 0; (e = list[i]) != NULL; i++)
-    {
-        if (e->getPid() == pid && e->getCid() == cid)
-        {
-            e->print();
-            if (NEX_EVENT_PUSH == event)
-            {
-                e->push();
-            }
-            else if (NEX_EVENT_POP == event)
-            {
-                e->pop();
-            }
-            
-            break;
-        }
-    }
-}
 
 /**
  * Watting for Nextion's touch event.
@@ -284,7 +250,7 @@ static void mainEventLoop(NexTouch **list)
                 
                 if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
                 {
-                    iterate(list, (NexPid)__buffer[1], (NexCid)__buffer[2], (NexEventType)__buffer[3]);
+                    NexTouch::iterate(list, (NexPid)__buffer[1], (NexCid)__buffer[2], (NexEventType)__buffer[3]);
                 }
                 
             }

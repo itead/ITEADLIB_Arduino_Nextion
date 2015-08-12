@@ -24,12 +24,21 @@ typedef uint8_t NexCid;
 
 typedef void (*NexTouchEventCb)(void *ptr);
 
+typedef enum {
+    NEX_EVENT_POP = 0x00,
+    NEX_EVENT_PUSH = 0x01,
+    NEX_EVENT_NULL
+} NexEventType;
+
 /**
  * Root Class of Nextion Components. 
  *
  */
 class NexTouch 
 {
+public: /* static methods */    
+    static void iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType event);
+
 public: /* methods */
     NexTouch(NexPid pid, NexCid cid, char *name, 
         NexTouchEventCb pop = NULL, void *pop_ptr = NULL,
@@ -38,9 +47,6 @@ public: /* methods */
     NexPid getPid(void);    
     NexCid getCid(void);
     const char *getObjName(void);
-    void print(void);
-    void push(void);
-    void pop(void);
 
 protected: /* methods */    
     void attachPush(NexTouchEventCb push, void *ptr = NULL);
@@ -49,6 +55,9 @@ protected: /* methods */
     void detachPop(void);
     
 private: /* methods */ 
+    void print(void);
+    void push(void);
+    void pop(void);
     
 private: /* data */ 
     NexPid pid; /* Page ID */
