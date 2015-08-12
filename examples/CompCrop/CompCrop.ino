@@ -13,7 +13,7 @@
  * the License, or (at your option) any later version.
  */
 
-#include "NexCrop.h"
+#include "Nextion.h"
 
 NexCrop q0 = NexCrop(0, 1, "q0");
 

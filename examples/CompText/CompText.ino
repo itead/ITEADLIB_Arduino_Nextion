@@ -13,8 +13,7 @@
  * the License, or (at your option) any later version.
  */
 
-#include "NexButton.h"
-#include "NexText.h"
+#include "Nextion.h"
 
 void t0PopCallback(void *ptr);
 void b0PopCallback(void *ptr);

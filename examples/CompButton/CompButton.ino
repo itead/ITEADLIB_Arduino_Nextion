@@ -13,9 +13,10 @@
  * the License, or (at your option) any later version.
  */
 
-#include "NexButton.h"
+#include "Nextion.h"
 
 NexButton b0 = NexButton(0, 1, "b0");
+
 char buffer[100] = {0};
 
 NexTouch *nex_listen_list[] = 

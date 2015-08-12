@@ -19,19 +19,19 @@
 #define __NEXTION_H__
 
 #include "Arduino.h"
-#include "NexSerialConfig"
-#include "NexTouch"
-#include "NexHardware"
+#include "NexSerialConfig.h"
+#include "NexTouch.h"
+#include "NexHardware.h"
 
-#include "NexButton"
-#include "NexCrop"
-#include "NexGauge"
-#include "NexHotspot"
-#include "NexPage"
-#include "NexPicture"
-#include "NexProgressBar"
-#include "NexSlider"
-#include "NexText"
-#include "NexWaveform"
+#include "NexButton.h"
+#include "NexCrop.h"
+#include "NexGauge.h"
+#include "NexHotspot.h"
+#include "NexPage.h"
+#include "NexPicture.h"
+#include "NexProgressBar.h"
+#include "NexSlider.h"
+#include "NexText.h"
+#include "NexWaveform.h"
 
 #endif /* #ifndef __NEXTION_H__ */

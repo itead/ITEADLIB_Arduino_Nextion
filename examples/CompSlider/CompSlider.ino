@@ -13,8 +13,7 @@
  * the License, or (at your option) any later version.
  */
  
-#include "NexText.h"
-#include "NexSlider.h"
+#include "Nextion.h"
 
 
 NexText t0 = NexText(0, 2, "t0");

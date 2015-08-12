@@ -13,7 +13,7 @@
  * the License, or (at your option) any later version.
  */
  
-#include "NexPicture.h"
+#include "Nextion.h"
 
 NexPicture p0 = NexPicture(0, 1, "p0");
 

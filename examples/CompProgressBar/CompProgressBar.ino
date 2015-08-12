@@ -13,8 +13,7 @@
  * the License, or (at your option) any later version.
  */
 
-#include "NexProgressBar.h"
-#include "NexButton.h"
+#include "Nextion.h"
 
 NexProgressBar j0  = NexProgressBar(0, 3, "j0");
 NexButton btn_up   = NexButton(0, 1, "btn_up");

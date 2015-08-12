@@ -13,8 +13,7 @@
  * the License, or (at your option) any later version.
  */
  
-#include "NexText.h"
-#include "NexWaveform.h"
+#include "Nextion.h"
 
 #define LEVEL_HIGH      (30)
 #define LEVEL_LOW       (0)
