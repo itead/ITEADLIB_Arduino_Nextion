@@ -22,10 +22,11 @@ You can clone it by:
     git clone https://github.com/itead/ITEADLIB_Arduino_Nextion
 
 # Documentation
-Online API documentation can be reached at <http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/>.
 
-Offline API documentation can be found under directory 
-[doc](https://github.com/itead/ITEADLIB_Arduino_Nextion/tree/master/doc).
+Online API documentation can be reached at <http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html>.
+
+Offline API documentation can be open by clicking `doc/API/index.html`.
+
 
 # Suppported Mainboards:
 

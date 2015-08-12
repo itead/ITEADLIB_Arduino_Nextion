@@ -28,7 +28,7 @@ NexWaveform::NexWaveform(NexPid pid, NexCid cid, char *name)
 /**
  * Add value to show. 
  *
- * param ch - channel of waveform(0-3). 
+ * @param ch - channel of waveform(0-3). 
  * @param number - the value of waveform.  
  *
  * @retval true - success. 
