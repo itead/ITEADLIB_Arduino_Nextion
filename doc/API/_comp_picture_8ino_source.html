@@ -32,6 +32,7 @@
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="examples.html"><span>Examples</span></a></li>
@@ -86,28 +87,28 @@
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="_nex_hardware_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    p0.<a class="code" href="class_nex_picture.html#a48435e24d1e8792d01da857b56eed89f">attachPop</a>(p0PopCallback);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="_nex_hardware_8cpp.html#ae4200065e323c18e6b11e91a916d8475">nexLoop</a>(nex_listen_list);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a>(nex_listen_list);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="ttc" id="class_nex_picture_html_ab1c6adff615d48261ce10c2095859abd"><div class="ttname"><a href="class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd">NexPicture::setPic</a></div><div class="ttdeci">bool setPic(uint32_t number)</div><div class="ttdoc">Set picture&#39;s number. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8cpp_source.html#l00052">NexPicture.cpp:52</a></div></div>
-<div class="ttc" id="_nex_hardware_8cpp_html_ae4200065e323c18e6b11e91a916d8475"><div class="ttname"><a href="_nex_hardware_8cpp.html#ae4200065e323c18e6b11e91a916d8475">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00287">NexHardware.cpp:287</a></div></div>
+<div class="ttc" id="group___nextion_html_gae4200065e323c18e6b11e91a916d8475"><div class="ttname"><a href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00293">NexHardware.cpp:293</a></div></div>
 <div class="ttc" id="class_nex_picture_html"><div class="ttname"><a href="class_nex_picture.html">NexPicture</a></div><div class="ttdoc">NexPicture,subclass of NexTouch,provides simple methods to control picture component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8h_source.html#l00026">NexPicture.h:26</a></div></div>
-<div class="ttc" id="_nex_hardware_8cpp_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_hardware_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00266">NexHardware.cpp:266</a></div></div>
 <div class="ttc" id="class_nex_picture_html_a48435e24d1e8792d01da857b56eed89f"><div class="ttname"><a href="class_nex_picture.html#a48435e24d1e8792d01da857b56eed89f">NexPicture::attachPop</a></div><div class="ttdeci">void attachPop(NexTouchEventCb pop, void *ptr=NULL)</div><div class="ttdoc">Register picture pop callback function. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8cpp_source.html#l00072">NexPicture.cpp:72</a></div></div>
 <div class="ttc" id="_nextion_8h_html"><div class="ttname"><a href="_nextion_8h.html">Nextion.h</a></div><div class="ttdoc">Header file of Nextion Library. </div></div>
+<div class="ttc" id="group___nextion_html_gab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00272">NexHardware.cpp:272</a></div></div>
 <div class="ttc" id="class_nex_picture_html_a11bd68ef9fe1d03d9e0d02ef1c7527e9"><div class="ttname"><a href="class_nex_picture.html#a11bd68ef9fe1d03d9e0d02ef1c7527e9">NexPicture::getPic</a></div><div class="ttdeci">bool getPic(uint32_t *number)</div><div class="ttdoc">Get picture&#39;s number. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8cpp_source.html#l00035">NexPicture.cpp:35</a></div></div>
 <div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00037">NexTouch.h:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 12 2015 17:41:22 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 12 2015 17:53:26 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

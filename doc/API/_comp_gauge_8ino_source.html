@@ -32,6 +32,7 @@
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="examples.html"><span>Examples</span></a></li>
@@ -101,7 +102,7 @@
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="_nex_hardware_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    btn_up.<a class="code" href="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d">attachPop</a>(buttonUpPopCallback);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    btn_down.<a class="code" href="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d">attachPop</a>(buttonDownPopCallback);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
@@ -109,22 +110,22 @@
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="_nex_hardware_8cpp.html#ae4200065e323c18e6b11e91a916d8475">nexLoop</a>(nex_listen_list);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a>(nex_listen_list);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="ttc" id="class_nex_gauge_html"><div class="ttname"><a href="class_nex_gauge.html">NexGauge</a></div><div class="ttdoc">NexGauge,subclass of NexTouch,provides simple methods to control gauge component. ...</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8h_source.html#l00026">NexGauge.h:26</a></div></div>
+<div class="ttc" id="group___nextion_html_gae4200065e323c18e6b11e91a916d8475"><div class="ttname"><a href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00293">NexHardware.cpp:293</a></div></div>
 <div class="ttc" id="class_nex_gauge_html_a448ce9ad69f54c156c325d578a96b765"><div class="ttname"><a href="class_nex_gauge.html#a448ce9ad69f54c156c325d578a96b765">NexGauge::setValue</a></div><div class="ttdeci">bool setValue(uint32_t number)</div><div class="ttdoc">Set the value of gauge. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00052">NexGauge.cpp:52</a></div></div>
 <div class="ttc" id="class_nex_button_html_a6c7d60c2339b8c4530349fe2e75b840d"><div class="ttname"><a href="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d">NexButton::attachPop</a></div><div class="ttdeci">void attachPop(NexTouchEventCb pop, void *ptr=NULL)</div><div class="ttdoc">Register button pop callback function. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_button_8cpp_source.html#l00070">NexButton.cpp:70</a></div></div>
 <div class="ttc" id="class_nex_button_html"><div class="ttname"><a href="class_nex_button.html">NexButton</a></div><div class="ttdoc">NexButton,subclass of NexTouch,provides simple methods to control button component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_button_8h_source.html#l00026">NexButton.h:26</a></div></div>
-<div class="ttc" id="_nex_hardware_8cpp_html_ae4200065e323c18e6b11e91a916d8475"><div class="ttname"><a href="_nex_hardware_8cpp.html#ae4200065e323c18e6b11e91a916d8475">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00287">NexHardware.cpp:287</a></div></div>
-<div class="ttc" id="_nex_hardware_8cpp_html_ab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="_nex_hardware_8cpp.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00266">NexHardware.cpp:266</a></div></div>
 <div class="ttc" id="class_nex_gauge_html_aeea8933513ebba11584ad97f8c8b5e69"><div class="ttname"><a href="class_nex_gauge.html#aeea8933513ebba11584ad97f8c8b5e69">NexGauge::getValue</a></div><div class="ttdeci">bool getValue(uint32_t *number)</div><div class="ttdoc">Get the value of gauge. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00035">NexGauge.cpp:35</a></div></div>
 <div class="ttc" id="_nextion_8h_html"><div class="ttname"><a href="_nextion_8h.html">Nextion.h</a></div><div class="ttdoc">Header file of Nextion Library. </div></div>
+<div class="ttc" id="group___nextion_html_gab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00272">NexHardware.cpp:272</a></div></div>
 <div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00037">NexTouch.h:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 12 2015 17:41:22 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 12 2015 17:53:26 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -258,6 +258,12 @@ static void mainEventLoop(NexTouch **list)
 }
 
 /**
+ * @addtogroup Nextion 
+ * @{ 
+ */
+
+
+/**
  * Init Nextion's baudrate,page id.    
  * 
  * @retval true - success. 
@@ -288,4 +294,8 @@ void nexLoop(NexTouch **nex_listen_list)
 {
     mainEventLoop(nex_listen_list);
 }
+
+/**
+ * @}
+ */
 

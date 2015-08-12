@@ -32,6 +32,7 @@
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="examples.html"><span>Examples</span></a></li>
@@ -74,12 +75,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ac750b0217e885b937e0f8ad31e0a2657"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_nex_hardware_8h.html#ac750b0217e885b937e0f8ad31e0a2657">recvRetCommandFinished</a> (uint32_t timeout=100)</td></tr>
 <tr class="memdesc:ac750b0217e885b937e0f8ad31e0a2657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command is executed successfully.  <a href="#ac750b0217e885b937e0f8ad31e0a2657">More...</a><br /></td></tr>
 <tr class="separator:ac750b0217e885b937e0f8ad31e0a2657"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab09ddba6b72334d30ae091a7b038d790"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_nex_hardware_8h.html#ab09ddba6b72334d30ae091a7b038d790">nexInit</a> (void)</td></tr>
-<tr class="memdesc:ab09ddba6b72334d30ae091a7b038d790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init Nextion's baudrate,page id.  <a href="#ab09ddba6b72334d30ae091a7b038d790">More...</a><br /></td></tr>
-<tr class="separator:ab09ddba6b72334d30ae091a7b038d790"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4200065e323c18e6b11e91a916d8475"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_nex_hardware_8h.html#ae4200065e323c18e6b11e91a916d8475">nexLoop</a> (<a class="el" href="class_nex_touch.html">NexTouch</a> **nex_listen_list)</td></tr>
-<tr class="memdesc:ae4200065e323c18e6b11e91a916d8475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call mainEventLoop,watting for Nextion's touch event.  <a href="#ae4200065e323c18e6b11e91a916d8475">More...</a><br /></td></tr>
-<tr class="separator:ae4200065e323c18e6b11e91a916d8475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab09ddba6b72334d30ae091a7b038d790"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a> (void)</td></tr>
+<tr class="memdesc:gab09ddba6b72334d30ae091a7b038d790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init Nextion's baudrate,page id.  <a href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">More...</a><br /></td></tr>
+<tr class="separator:gab09ddba6b72334d30ae091a7b038d790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4200065e323c18e6b11e91a916d8475"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a> (<a class="el" href="class_nex_touch.html">NexTouch</a> **nex_listen_list)</td></tr>
+<tr class="memdesc:gae4200065e323c18e6b11e91a916d8475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call mainEventLoop,watting for Nextion's touch event.  <a href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">More...</a><br /></td></tr>
+<tr class="separator:gae4200065e323c18e6b11e91a916d8475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Hardware Srial API. </p>
@@ -90,59 +91,6 @@ This program is free software; you can redistribute it and/or modify it under th
 
 <p>Definition in file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ab09ddba6b72334d30ae091a7b038d790"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool nexInit </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Init Nextion's baudrate,page id. </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">true</td><td>- success. </td></tr>
-    <tr><td class="paramname">false</td><td>- failed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00266">266</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae4200065e323c18e6b11e91a916d8475"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void nexLoop </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_nex_touch.html">NexTouch</a> **&#160;</td>
-          <td class="paramname"><em>nex_listen_list</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Call mainEventLoop,watting for Nextion's touch event. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nex_listen_list</td><td>- index to Nextion Components list. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00287">287</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="ac750b0217e885b937e0f8ad31e0a2657"></a>
 <div class="memitem">
 <div class="memproto">
@@ -294,7 +242,7 @@ This program is free software; you can redistribute it and/or modify it under th
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 12 2015 17:41:22 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 12 2015 17:53:26 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
