@@ -18,6 +18,11 @@
 #include "NexSerialConfig.h"
 #include "NexTouch.h"
 
+bool recvRetNumber(uint32_t *number, uint32_t timeout = 100);
+uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout = 100);
+void sendCommand(const char* cmd);
+bool recvRetCommandFinished(uint32_t timeout = 100);
+
 bool nexInit(void);
 void nexLoop(NexTouch **nex_listen_list);
 

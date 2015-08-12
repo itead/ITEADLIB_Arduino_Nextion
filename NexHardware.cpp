@@ -49,7 +49,7 @@ typedef enum {
  * @retval false - failed.
  *
  */
-static bool recvRetNumber(uint32_t *number, uint32_t timeout)
+bool recvRetNumber(uint32_t *number, uint32_t timeout)
 {
     bool ret = false;
     uint8_t temp[8] = {0};
@@ -101,7 +101,7 @@ __return:
  * @return the length of string buffer.
  *
  */
-static uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout)
+uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout)
 {
     uint16_t ret = 0;
     bool str_start_flag = false;
@@ -168,7 +168,7 @@ __return:
  *
  * @param cmd - the string of command.
  */
-static void sendCommand(const char* cmd)
+void sendCommand(const char* cmd)
 {
     while (nexSerial.available())
     {
@@ -191,7 +191,7 @@ static void sendCommand(const char* cmd)
  * @retval false - failed. 
  *
  */
-static bool recvRetCommandFinished(uint32_t timeout)
+bool recvRetCommandFinished(uint32_t timeout)
 {    
     bool ret = false;
     uint8_t temp[4] = {0};
@@ -261,7 +261,7 @@ static void iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType event)
  */
 static void mainEventLoop(NexTouch **list)
 {
-    static uint8_t __buffer[NEX_SERIAL_RX_BUFFER_SIZE];
+    static uint8_t __buffer[16];
     
     uint16_t i;
     uint8_t c;  

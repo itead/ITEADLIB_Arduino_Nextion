@@ -39,6 +39,8 @@ public: /* methods */
     NexCid getCid(void);
     const char *getObjName(void);
     void print(void);
+    void push(void);
+    void pop(void);
 
 protected: /* methods */    
     void attachPush(NexTouchEventCb push, void *ptr = NULL);
@@ -47,8 +49,6 @@ protected: /* methods */
     void detachPop(void);
     
 private: /* methods */ 
-    void push(void);
-    void pop(void);
     
 private: /* data */ 
     NexPid pid; /* Page ID */

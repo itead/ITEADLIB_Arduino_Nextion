@@ -16,6 +16,7 @@
 #define __NEXWAVEFORM_H__
 #ifdef __cplusplus
 #include "NexTouch.h"
+#include "NexHardware.h"
 
 /**
  * NexWaveform,subclass of NexTouch,provides simple methods to control NexWaveform component.
