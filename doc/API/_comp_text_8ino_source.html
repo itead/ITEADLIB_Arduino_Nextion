@@ -61,9 +61,9 @@
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> b0PopCallback(<span class="keywordtype">void</span> *ptr);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> b1PopCallback(<span class="keywordtype">void</span> *ptr);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="class_nex_text.html">NexText</a> t0 = <a class="code" href="class_nex_text.html">NexText</a>(0, 1, <span class="stringliteral">&quot;t0&quot;</span>, t0PopCallback);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<a class="code" href="class_nex_button.html">NexButton</a> b0 = <a class="code" href="class_nex_button.html">NexButton</a>(0, 2, <span class="stringliteral">&quot;b0&quot;</span>, b0PopCallback);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<a class="code" href="class_nex_button.html">NexButton</a> b1 = <a class="code" href="class_nex_button.html">NexButton</a>(0, 3, <span class="stringliteral">&quot;b1&quot;</span>, b1PopCallback);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="class_nex_text.html">NexText</a> t0 = <a class="code" href="class_nex_text.html">NexText</a>(0, 1, <span class="stringliteral">&quot;t0&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<a class="code" href="class_nex_button.html">NexButton</a> b0 = <a class="code" href="class_nex_button.html">NexButton</a>(0, 2, <span class="stringliteral">&quot;b0&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<a class="code" href="class_nex_button.html">NexButton</a> b1 = <a class="code" href="class_nex_button.html">NexButton</a>(0, 3, <span class="stringliteral">&quot;b1&quot;</span>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">char</span> buffer[100] = {0};</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
@@ -122,26 +122,29 @@
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a>(nex_listen_list);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    t0.attachPop(t0PopCallback);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    b0.attachPop(b0PopCallback);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    b1.attachPop(b1PopCallback);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a>(nex_listen_list);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="ttc" id="class_nex_text_html_a19589b32c981436a1bbcfe407bc766e3"><div class="ttname"><a href="class_nex_text.html#a19589b32c981436a1bbcfe407bc766e3">NexText::setText</a></div><div class="ttdeci">bool setText(const char *buffer)</div><div class="ttdoc">Set the value of text. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_text_8cpp_source.html#l00053">NexText.cpp:53</a></div></div>
 <div class="ttc" id="group___nextion_html_gae4200065e323c18e6b11e91a916d8475"><div class="ttname"><a href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00293">NexHardware.cpp:293</a></div></div>
 <div class="ttc" id="class_nex_button_html"><div class="ttname"><a href="class_nex_button.html">NexButton</a></div><div class="ttdoc">NexButton,subclass of NexTouch,provides simple methods to control button component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_button_8h_source.html#l00026">NexButton.h:26</a></div></div>
 <div class="ttc" id="class_nex_text_html_a9cf417b2f25df2872492c55bdc9f5b30"><div class="ttname"><a href="class_nex_text.html#a9cf417b2f25df2872492c55bdc9f5b30">NexText::getText</a></div><div class="ttdeci">uint16_t getText(char *buffer, uint16_t len)</div><div class="ttdoc">Get the value of text. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_text_8cpp_source.html#l00035">NexText.cpp:35</a></div></div>
 <div class="ttc" id="_nextion_8h_html"><div class="ttname"><a href="_nextion_8h.html">Nextion.h</a></div><div class="ttdoc">Header file of Nextion Library. </div></div>
 <div class="ttc" id="group___nextion_html_gab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00272">NexHardware.cpp:272</a></div></div>
-<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00037">NexTouch.h:37</a></div></div>
+<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00035">NexTouch.h:35</a></div></div>
 <div class="ttc" id="class_nex_text_html"><div class="ttname"><a href="class_nex_text.html">NexText</a></div><div class="ttdoc">NexText,subclass of NexTouch,provides simple methods to control text component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_text_8h_source.html#l00026">NexText.h:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 12 2015 17:53:26 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 13 2015 18:10:27 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

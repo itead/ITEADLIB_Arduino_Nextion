@@ -66,23 +66,17 @@ Inheritance diagram for NexSlider:</div>
  <div class="center">
   <img src="class_nex_slider.png" usemap="#NexSlider_map" alt=""/>
   <map id="NexSlider_map" name="NexSlider_map">
-<area href="class_nex_touch.html" title="Root Class of Nextion Components. " alt="NexTouch" shape="rect" coords="0,0,69,24"/>
+<area href="class_nex_touch.html" title="Root Class of Nextion Components. " alt="NexTouch" shape="rect" coords="0,56,71,80"/>
+<area href="class_nex_object.html" title="Root Class of Nextion Components. " alt="NexObject" shape="rect" coords="0,0,71,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:affe881a5512baaa31832b21c13d2bc9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affe881a5512baaa31832b21c13d2bc9b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_slider.html#affe881a5512baaa31832b21c13d2bc9b">NexSlider</a> (NexPid pid, NexCid cid, char *name, NexTouchEventCb pop=NULL, void *pop_ptr=NULL)</td></tr>
-<tr class="memdesc:affe881a5512baaa31832b21c13d2bc9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor,inherited <a class="el" href="class_nex_touch.html" title="Root Class of Nextion Components. ">NexTouch</a>'s constructor function. <br /></td></tr>
-<tr class="separator:affe881a5512baaa31832b21c13d2bc9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9a57a43d11514867943d2cb95acfc14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_slider.html#aa9a57a43d11514867943d2cb95acfc14">attachPop</a> (NexTouchEventCb pop, void *ptr=NULL)</td></tr>
-<tr class="memdesc:aa9a57a43d11514867943d2cb95acfc14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register slider pop callback function.  <a href="#aa9a57a43d11514867943d2cb95acfc14">More...</a><br /></td></tr>
-<tr class="separator:aa9a57a43d11514867943d2cb95acfc14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a75f7ab3db2d12313b2f80b92f18149"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a75f7ab3db2d12313b2f80b92f18149"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_slider.html#a3a75f7ab3db2d12313b2f80b92f18149">detachPop</a> (void)</td></tr>
-<tr class="memdesc:a3a75f7ab3db2d12313b2f80b92f18149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload slider pop callback function. <br /></td></tr>
-<tr class="separator:a3a75f7ab3db2d12313b2f80b92f18149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af60f08f3308e76c8bb86ce2e84104680"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af60f08f3308e76c8bb86ce2e84104680"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_slider.html#af60f08f3308e76c8bb86ce2e84104680">NexSlider</a> (NexPid pid, NexCid cid, const char *name)</td></tr>
+<tr class="memdesc:af60f08f3308e76c8bb86ce2e84104680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor,inherited <a class="el" href="class_nex_touch.html" title="Root Class of Nextion Components. ">NexTouch</a>'s constructor function. <br /></td></tr>
+<tr class="separator:af60f08f3308e76c8bb86ce2e84104680"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a384d5488b421efd6affbfd32f45bb107"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_slider.html#a384d5488b421efd6affbfd32f45bb107">getValue</a> (uint32_t *number)</td></tr>
 <tr class="memdesc:a384d5488b421efd6affbfd32f45bb107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of slider.  <a href="#a384d5488b421efd6affbfd32f45bb107">More...</a><br /></td></tr>
 <tr class="separator:a384d5488b421efd6affbfd32f45bb107"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,18 +84,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a3f325bda4db913e302e94a4b25de7b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of slider.  <a href="#a3f325bda4db913e302e94a4b25de7b5f">More...</a><br /></td></tr>
 <tr class="separator:a3f325bda4db913e302e94a4b25de7b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_nex_touch"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_nex_touch')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_nex_touch.html">NexTouch</a></td></tr>
-<tr class="memitem:a1cf4b76cda45ef6517f6d07f86c8018d inherit pub_methods_class_nex_touch"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_touch.html#a1cf4b76cda45ef6517f6d07f86c8018d">NexTouch</a> (NexPid pid, NexCid cid, char *name, NexTouchEventCb pop=NULL, void *pop_ptr=NULL, NexTouchEventCb push=NULL, void *push_ptr=NULL)</td></tr>
-<tr class="memdesc:a1cf4b76cda45ef6517f6d07f86c8018d inherit pub_methods_class_nex_touch"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of Nextouch.  <a href="#a1cf4b76cda45ef6517f6d07f86c8018d">More...</a><br /></td></tr>
-<tr class="separator:a1cf4b76cda45ef6517f6d07f86c8018d inherit pub_methods_class_nex_touch"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aaea7a401a6fef25aafafc2f06b8339 inherit pub_methods_class_nex_touch"><td class="memItemLeft" align="right" valign="top">NexPid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_touch.html#a2aaea7a401a6fef25aafafc2f06b8339">getPid</a> (void)</td></tr>
-<tr class="memdesc:a2aaea7a401a6fef25aafafc2f06b8339 inherit pub_methods_class_nex_touch"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get page id.  <a href="#a2aaea7a401a6fef25aafafc2f06b8339">More...</a><br /></td></tr>
-<tr class="separator:a2aaea7a401a6fef25aafafc2f06b8339 inherit pub_methods_class_nex_touch"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d769351baa4eac31b0063949e469469 inherit pub_methods_class_nex_touch"><td class="memItemLeft" align="right" valign="top">NexCid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_touch.html#a3d769351baa4eac31b0063949e469469">getCid</a> (void)</td></tr>
-<tr class="memdesc:a3d769351baa4eac31b0063949e469469 inherit pub_methods_class_nex_touch"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get component id.  <a href="#a3d769351baa4eac31b0063949e469469">More...</a><br /></td></tr>
-<tr class="separator:a3d769351baa4eac31b0063949e469469 inherit pub_methods_class_nex_touch"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31e2d5f2922383f8d82c33f7586643d0 inherit pub_methods_class_nex_touch"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_touch.html#a31e2d5f2922383f8d82c33f7586643d0">getObjName</a> (void)</td></tr>
-<tr class="memdesc:a31e2d5f2922383f8d82c33f7586643d0 inherit pub_methods_class_nex_touch"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get component name.  <a href="#a31e2d5f2922383f8d82c33f7586643d0">More...</a><br /></td></tr>
-<tr class="separator:a31e2d5f2922383f8d82c33f7586643d0 inherit pub_methods_class_nex_touch"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3b6f0252f339bf912ca85bec8707e9 inherit pub_methods_class_nex_touch"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_touch.html#a7a3b6f0252f339bf912ca85bec8707e9">NexTouch</a> (NexPid pid, NexCid cid, const char *name)</td></tr>
+<tr class="memdesc:a7a3b6f0252f339bf912ca85bec8707e9 inherit pub_methods_class_nex_touch"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of Nextouch.  <a href="#a7a3b6f0252f339bf912ca85bec8707e9">More...</a><br /></td></tr>
+<tr class="separator:a7a3b6f0252f339bf912ca85bec8707e9 inherit pub_methods_class_nex_touch"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_nex_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_nex_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_nex_object.html">NexObject</a></td></tr>
+<tr class="memitem:a47e8aee24a518936fbc27f00fda235c6 inherit pub_methods_class_nex_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#a47e8aee24a518936fbc27f00fda235c6">NexObject</a> (NexPid pid, NexCid cid, const char *name)</td></tr>
+<tr class="memdesc:a47e8aee24a518936fbc27f00fda235c6 inherit pub_methods_class_nex_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a47e8aee24a518936fbc27f00fda235c6">More...</a><br /></td></tr>
+<tr class="separator:a47e8aee24a518936fbc27f00fda235c6 inherit pub_methods_class_nex_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf9f3059eb9475266edb4642078ade8 inherit pub_methods_class_nex_object"><td class="memItemLeft" align="right" valign="top">NexPid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#a2bf9f3059eb9475266edb4642078ade8">getObjPid</a> (void)</td></tr>
+<tr class="memdesc:a2bf9f3059eb9475266edb4642078ade8 inherit pub_methods_class_nex_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get page id.  <a href="#a2bf9f3059eb9475266edb4642078ade8">More...</a><br /></td></tr>
+<tr class="separator:a2bf9f3059eb9475266edb4642078ade8 inherit pub_methods_class_nex_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cc1d0bd2acb58b46b6e156df169cd81 inherit pub_methods_class_nex_object"><td class="memItemLeft" align="right" valign="top">NexCid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#a0cc1d0bd2acb58b46b6e156df169cd81">getObjCid</a> (void)</td></tr>
+<tr class="memdesc:a0cc1d0bd2acb58b46b6e156df169cd81 inherit pub_methods_class_nex_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get component id.  <a href="#a0cc1d0bd2acb58b46b6e156df169cd81">More...</a><br /></td></tr>
+<tr class="separator:a0cc1d0bd2acb58b46b6e156df169cd81 inherit pub_methods_class_nex_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0246c02cd5e54d0dbd714ace1ff2b1 inherit pub_methods_class_nex_object"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#aea0246c02cd5e54d0dbd714ace1ff2b1">getObjName</a> (void)</td></tr>
+<tr class="memdesc:aea0246c02cd5e54d0dbd714ace1ff2b1 inherit pub_methods_class_nex_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get component name.  <a href="#aea0246c02cd5e54d0dbd714ace1ff2b1">More...</a><br /></td></tr>
+<tr class="separator:aea0246c02cd5e54d0dbd714ace1ff2b1 inherit pub_methods_class_nex_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeff0c61474e8b3ce6bac76771820b64 inherit pub_methods_class_nex_object"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abeff0c61474e8b3ce6bac76771820b64"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#abeff0c61474e8b3ce6bac76771820b64">printObjInfo</a> (void)</td></tr>
+<tr class="memdesc:abeff0c61474e8b3ce6bac76771820b64 inherit pub_methods_class_nex_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print current object address,page id,component id, component name,pop event function address,push event function address. <br /></td></tr>
+<tr class="separator:abeff0c61474e8b3ce6bac76771820b64 inherit pub_methods_class_nex_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_nex_slider.html" title="NexSlider,subclass of NexTouch,provides simple methods to control slider component. ">NexSlider</a>,subclass of <a class="el" href="class_nex_touch.html" title="Root Class of Nextion Components. ">NexTouch</a>,provides simple methods to control slider component. </p>
@@ -109,44 +111,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <p>Definition at line <a class="el" href="_nex_slider_8h_source.html#l00026">26</a> of file <a class="el" href="_nex_slider_8h_source.html">NexSlider.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa9a57a43d11514867943d2cb95acfc14"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void NexSlider::attachPop </td>
-          <td>(</td>
-          <td class="paramtype">NexTouchEventCb&#160;</td>
-          <td class="paramname"><em>pop</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>ptr</em> = <code>NULL</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Register slider pop callback function. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pop</td><td>- the pointer to picture pop callback function. </td></tr>
-    <tr><td class="paramname">ptr</td><td>- the parameter to be transmitted to picture pop callback function. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_comp_slider_8ino-example.html#a6">CompSlider.ino</a>.</dd>
-</dl>
-<p>Definition at line <a class="el" href="_nex_slider_8cpp_source.html#l00073">73</a> of file <a class="el" href="_nex_slider_8cpp_source.html">NexSlider.cpp</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a384d5488b421efd6affbfd32f45bb107"></a>
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +141,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_comp_slider_8ino-example.html#a3">CompSlider.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_nex_slider_8cpp_source.html#l00036">36</a> of file <a class="el" href="_nex_slider_8cpp_source.html">NexSlider.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_nex_slider_8cpp_source.html#l00035">35</a> of file <a class="el" href="_nex_slider_8cpp_source.html">NexSlider.cpp</a>.</p>
 
 </div>
 </div>
@@ -210,7 +174,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_nex_slider_8cpp_source.html#l00053">53</a> of file <a class="el" href="_nex_slider_8cpp_source.html">NexSlider.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_nex_slider_8cpp_source.html#l00052">52</a> of file <a class="el" href="_nex_slider_8cpp_source.html">NexSlider.cpp</a>.</p>
 
 </div>
 </div>
@@ -221,7 +185,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 12 2015 17:53:26 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 13 2015 18:10:27 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

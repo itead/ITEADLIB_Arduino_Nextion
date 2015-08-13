@@ -103,8 +103,8 @@
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    btn_up.<a class="code" href="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d">attachPop</a>(buttonUpPopCallback);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    btn_down.<a class="code" href="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d">attachPop</a>(buttonDownPopCallback);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    btn_up.attachPop(buttonUpPopCallback);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    btn_down.attachPop(buttonDownPopCallback);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
@@ -115,17 +115,16 @@
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="ttc" id="class_nex_progress_bar_html_aaa7937d364cb63151bd1e1bc4729334d"><div class="ttname"><a href="class_nex_progress_bar.html#aaa7937d364cb63151bd1e1bc4729334d">NexProgressBar::setValue</a></div><div class="ttdeci">bool setValue(uint32_t number)</div><div class="ttdoc">Set the value of progress bar. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_progress_bar_8cpp_source.html#l00052">NexProgressBar.cpp:52</a></div></div>
 <div class="ttc" id="group___nextion_html_gae4200065e323c18e6b11e91a916d8475"><div class="ttname"><a href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00293">NexHardware.cpp:293</a></div></div>
-<div class="ttc" id="class_nex_button_html_a6c7d60c2339b8c4530349fe2e75b840d"><div class="ttname"><a href="class_nex_button.html#a6c7d60c2339b8c4530349fe2e75b840d">NexButton::attachPop</a></div><div class="ttdeci">void attachPop(NexTouchEventCb pop, void *ptr=NULL)</div><div class="ttdoc">Register button pop callback function. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_button_8cpp_source.html#l00070">NexButton.cpp:70</a></div></div>
 <div class="ttc" id="class_nex_button_html"><div class="ttname"><a href="class_nex_button.html">NexButton</a></div><div class="ttdoc">NexButton,subclass of NexTouch,provides simple methods to control button component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_button_8h_source.html#l00026">NexButton.h:26</a></div></div>
 <div class="ttc" id="_nextion_8h_html"><div class="ttname"><a href="_nextion_8h.html">Nextion.h</a></div><div class="ttdoc">Header file of Nextion Library. </div></div>
 <div class="ttc" id="group___nextion_html_gab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00272">NexHardware.cpp:272</a></div></div>
 <div class="ttc" id="class_nex_progress_bar_html_a3e5eb13b2aa014c8f6a9e16439917bf2"><div class="ttname"><a href="class_nex_progress_bar.html#a3e5eb13b2aa014c8f6a9e16439917bf2">NexProgressBar::getValue</a></div><div class="ttdeci">bool getValue(uint32_t *number)</div><div class="ttdoc">Get the value of progress bar. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_progress_bar_8cpp_source.html#l00035">NexProgressBar.cpp:35</a></div></div>
-<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00037">NexTouch.h:37</a></div></div>
+<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00035">NexTouch.h:35</a></div></div>
 <div class="ttc" id="class_nex_progress_bar_html"><div class="ttname"><a href="class_nex_progress_bar.html">NexProgressBar</a></div><div class="ttdoc">NexProgressBar,subclass of NexTouch,provides simple methods to control progress bar component...</div><div class="ttdef"><b>Definition:</b> <a href="_nex_progress_bar_8h_source.html#l00026">NexProgressBar.h:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 12 2015 17:53:26 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 13 2015 18:10:27 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -19,10 +19,9 @@
 /**
  * Constructor of Nextouch. 
  * 
- * @param pop - pop event function pointer.   
- * @param pop_ptr - the parameter was transmitted to pop event function pointer.  
- * @param push - push event function pointer. 
- * @param push_ptr - the parameter was transmitted to push event function pointer.
+ * @param pid - pid
+ * @param cid - cid
+ * @param name - name
  *   
  */
 NexTouch::NexTouch(NexPid pid, NexCid cid, const char *name)

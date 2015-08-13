@@ -56,65 +56,51 @@
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_serial_config_8h.html">NexSerialConfig.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">typedef</span> uint8_t NexPid;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">typedef</span> uint8_t NexCid;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_object_8h.html">NexObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">typedef</span> void (*NexTouchEventCb)(<span class="keywordtype">void</span> *ptr);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">typedef</span> void (*NexTouchEventCb)(<span class="keywordtype">void</span> *ptr);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    NEX_EVENT_POP = 0x00,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    NEX_EVENT_PUSH = 0x01,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    NEX_EVENT_NULL</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} NexEventType;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_nex_touch.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nex_touch.html">NexTouch</a> </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>: <span class="comment">/* static methods */</span>    </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> iterate(<a class="code" href="class_nex_touch.html">NexTouch</a> **list, NexPid pid, NexCid cid, NexEventType event);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_nex_touch.html#a1cf4b76cda45ef6517f6d07f86c8018d">NexTouch</a>(NexPid pid, NexCid cid, <span class="keywordtype">char</span> *name, </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        NexTouchEventCb pop = NULL, <span class="keywordtype">void</span> *pop_ptr = NULL,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        NexTouchEventCb push = NULL, <span class="keywordtype">void</span> *push_ptr = NULL);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    NexPid <a class="code" href="class_nex_touch.html#a2aaea7a401a6fef25aafafc2f06b8339">getPid</a>(<span class="keywordtype">void</span>);    </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    NexCid <a class="code" href="class_nex_touch.html#a3d769351baa4eac31b0063949e469469">getCid</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="class_nex_touch.html#a31e2d5f2922383f8d82c33f7586643d0">getObjName</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">protected</span>: <span class="comment">/* methods */</span>    </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> attachPush(NexTouchEventCb push, <span class="keywordtype">void</span> *ptr = NULL);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> detachPush(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> attachPop(NexTouchEventCb pop, <span class="keywordtype">void</span> *ptr = NULL);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> detachPop(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>: <span class="comment">/* methods */</span> </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> print(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> push(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> pop(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">private</span>: <span class="comment">/* data */</span> </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    NexPid pid; <span class="comment">/* Page ID */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    NexCid cid; <span class="comment">/* Component ID */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">char</span> *name; <span class="comment">/* An unique name */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    NexTouchEventCb cbPush;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> *__cbpush_ptr;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    NexTouchEventCb cbPop;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> *__cbpop_ptr;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXTOUCH_H__ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="class_nex_touch_html_a2aaea7a401a6fef25aafafc2f06b8339"><div class="ttname"><a href="class_nex_touch.html#a2aaea7a401a6fef25aafafc2f06b8339">NexTouch::getPid</a></div><div class="ttdeci">NexPid getPid(void)</div><div class="ttdoc">Get page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00049">NexTouch.cpp:49</a></div></div>
-<div class="ttc" id="class_nex_touch_html_a1cf4b76cda45ef6517f6d07f86c8018d"><div class="ttname"><a href="class_nex_touch.html#a1cf4b76cda45ef6517f6d07f86c8018d">NexTouch::NexTouch</a></div><div class="ttdeci">NexTouch(NexPid pid, NexCid cid, char *name, NexTouchEventCb pop=NULL, void *pop_ptr=NULL, NexTouchEventCb push=NULL, void *push_ptr=NULL)</div><div class="ttdoc">Constructor of Nextouch. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00031">NexTouch.cpp:31</a></div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    NEX_EVENT_POP = 0x00,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    NEX_EVENT_PUSH = 0x01,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    NEX_EVENT_NULL</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} NexEventType;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_nex_touch.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nex_touch.html">NexTouch</a>: <span class="keyword">public</span> <a class="code" href="class_nex_object.html">NexObject</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>: <span class="comment">/* static methods */</span>    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> iterate(<a class="code" href="class_nex_touch.html">NexTouch</a> **list, NexPid pid, NexCid cid, NexEventType event);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_nex_touch.html#a7a3b6f0252f339bf912ca85bec8707e9">NexTouch</a>(NexPid pid, NexCid cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> attachPush(NexTouchEventCb push, <span class="keywordtype">void</span> *ptr = NULL);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> detachPush(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> attachPop(NexTouchEventCb pop, <span class="keywordtype">void</span> *ptr = NULL);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> detachPop(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>: <span class="comment">/* methods */</span> </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> push(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> pop(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>: <span class="comment">/* data */</span> </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    NexTouchEventCb cbPush;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> *__cbpush_ptr;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    NexTouchEventCb cbPop;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> *__cbpop_ptr;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXTOUCH_H__ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="_nex_serial_config_8h_html"><div class="ttname"><a href="_nex_serial_config_8h.html">NexSerialConfig.h</a></div><div class="ttdoc">Serial configure. </div></div>
-<div class="ttc" id="class_nex_touch_html_a31e2d5f2922383f8d82c33f7586643d0"><div class="ttname"><a href="class_nex_touch.html#a31e2d5f2922383f8d82c33f7586643d0">NexTouch::getObjName</a></div><div class="ttdeci">const char * getObjName(void)</div><div class="ttdoc">Get component name. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00069">NexTouch.cpp:69</a></div></div>
-<div class="ttc" id="class_nex_touch_html_a3d769351baa4eac31b0063949e469469"><div class="ttname"><a href="class_nex_touch.html#a3d769351baa4eac31b0063949e469469">NexTouch::getCid</a></div><div class="ttdeci">NexCid getCid(void)</div><div class="ttdoc">Get component id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00059">NexTouch.cpp:59</a></div></div>
-<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00037">NexTouch.h:37</a></div></div>
+<div class="ttc" id="class_nex_touch_html_a7a3b6f0252f339bf912ca85bec8707e9"><div class="ttname"><a href="class_nex_touch.html#a7a3b6f0252f339bf912ca85bec8707e9">NexTouch::NexTouch</a></div><div class="ttdeci">NexTouch(NexPid pid, NexCid cid, const char *name)</div><div class="ttdoc">Constructor of Nextouch. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00027">NexTouch.cpp:27</a></div></div>
+<div class="ttc" id="class_nex_object_html"><div class="ttname"><a href="class_nex_object.html">NexObject</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8h_source.html#l00028">NexObject.h:28</a></div></div>
+<div class="ttc" id="_nex_object_8h_html"><div class="ttname"><a href="_nex_object_8h.html">NexObject.h</a></div><div class="ttdoc">The root of all classes in Nextion library. </div></div>
+<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00035">NexTouch.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 12 2015 17:53:26 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 13 2015 18:10:27 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
