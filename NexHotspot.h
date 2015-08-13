@@ -26,7 +26,7 @@
 class NexHotspot: public NexTouch
 {
 public: /* methods */
-    NexHotspot(NexPid pid, NexCid cid, char *name, 
+    NexHotspot(NexPid pid, NexCid cid, const char *name, 
         NexTouchEventCb pop = NULL, void *pop_ptr = NULL,
         NexTouchEventCb push = NULL, void *push_ptr = NULL);
 

@@ -26,7 +26,7 @@
 class NexButton: public NexTouch
 {
 public: /* methods */
-    NexButton(NexPid pid, NexCid cid, char *name, NexTouchEventCb pop = NULL, void *pop_ptr = NULL);
+    NexButton(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop = NULL, void *pop_ptr = NULL);
     
     void attachPop(NexTouchEventCb pop, void *ptr = NULL);
     void detachPop(void);

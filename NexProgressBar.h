@@ -26,7 +26,7 @@
 class NexProgressBar: public NexTouch
 {
 public: /* methods */
-    NexProgressBar(NexPid pid, NexCid cid, char *name);
+    NexProgressBar(NexPid pid, NexCid cid, const char *name);
     
     bool getValue(uint32_t *number);
     bool setValue(uint32_t number);

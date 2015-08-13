@@ -40,7 +40,7 @@ public: /* static methods */
     static void iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType event);
 
 public: /* methods */
-    NexTouch(NexPid pid, NexCid cid, char *name, 
+    NexTouch(NexPid pid, NexCid cid, const char *name, 
         NexTouchEventCb pop = NULL, void *pop_ptr = NULL,
         NexTouchEventCb push = NULL, void *push_ptr = NULL);
 
@@ -62,7 +62,7 @@ private: /* methods */
 private: /* data */ 
     NexPid pid; /* Page ID */
     NexCid cid; /* Component ID */
-    char *name; /* An unique name */
+    const char *name; /* An unique name */
     NexTouchEventCb cbPush;
     void *__cbpush_ptr;
     NexTouchEventCb cbPop;

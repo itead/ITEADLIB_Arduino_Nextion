@@ -19,7 +19,7 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexPage::NexPage(NexPid pid, NexCid cid, char *name, NexTouchEventCb pop, void *pop_ptr)
+NexPage::NexPage(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop, void *pop_ptr)
     :NexTouch(pid, cid, name, pop, pop_ptr)
 {
 }

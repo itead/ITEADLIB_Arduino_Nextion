@@ -28,7 +28,7 @@
  * @param push_ptr - the parameter was transmitted to push event function pointer.
  *   
  */
-NexTouch::NexTouch(NexPid pid, NexCid cid, char *name, 
+NexTouch::NexTouch(NexPid pid, NexCid cid, const char *name, 
     NexTouchEventCb pop, void *pop_ptr,
     NexTouchEventCb push, void *push_ptr)
 {

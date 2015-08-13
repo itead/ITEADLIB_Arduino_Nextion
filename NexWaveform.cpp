@@ -19,7 +19,7 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexWaveform::NexWaveform(NexPid pid, NexCid cid, char *name)
+NexWaveform::NexWaveform(NexPid pid, NexCid cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }

@@ -19,7 +19,7 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexProgressBar::NexProgressBar(NexPid pid, NexCid cid, char *name)
+NexProgressBar::NexProgressBar(NexPid pid, NexCid cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }

@@ -26,7 +26,7 @@
 class NexGauge: public NexTouch
 {
 public: /* methods */
-    NexGauge(NexPid pid, NexCid cid, char *name);
+    NexGauge(NexPid pid, NexCid cid, const char *name);
     
     bool getValue(uint32_t *number);
     bool setValue(uint32_t number);

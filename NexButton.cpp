@@ -19,7 +19,7 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexButton::NexButton(NexPid pid, NexCid cid, char *name, NexTouchEventCb pop, void *pop_ptr)
+NexButton::NexButton(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop, void *pop_ptr)
     :NexTouch(pid, cid, name, pop, pop_ptr)
 {
 }

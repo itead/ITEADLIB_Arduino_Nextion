@@ -25,7 +25,7 @@
 class NexWaveform: public NexTouch
 {
 public: /* methods */
-    NexWaveform(NexPid pid, NexCid cid, char *name);
+    NexWaveform(NexPid pid, NexCid cid, const char *name);
     bool addValue(uint8_t ch, uint8_t number);
 };
 
