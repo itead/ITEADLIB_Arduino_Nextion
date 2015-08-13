@@ -26,12 +26,8 @@
 class NexPage: public NexTouch
 {
 public: /* methods */
-    NexPage(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop = NULL, void *pop_ptr = NULL);
+    NexPage(NexPid pid, NexCid cid, const char *name);
     bool show(void);
-
-    void attachPop(NexTouchEventCb pop, void *ptr = NULL);
-    void detachPop(void);
-
 };
 
 #endif /* #ifdef __cplusplus */

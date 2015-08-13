@@ -19,8 +19,8 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexButton::NexButton(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop, void *pop_ptr)
-    :NexTouch(pid, cid, name, pop, pop_ptr)
+NexButton::NexButton(NexPid pid, NexCid cid, const char *name)
+    :NexTouch(pid, cid, name)
 {
 }
 
@@ -60,25 +60,4 @@ bool NexButton::setText(const char *buffer)
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();    
 }
-
-/**
- * Register button pop callback function. 
- *
- * @param pop - the pointer to button pop callback function.
- * @param ptr - the parameter to be transmitted to button pop callback function. 
- */
-void NexButton::attachPop(NexTouchEventCb pop, void *ptr)
-{
-    NexTouch::attachPop(pop, ptr);
-}
-
-/**
- * Unload button pop callback function.
- *
- */
-void NexButton::detachPop(void)
-{
-    NexTouch::detachPop();   
-}
- 
 

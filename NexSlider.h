@@ -26,11 +26,8 @@
 class NexSlider: public NexTouch
 {
 public: /* methods */
-    NexSlider(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop = NULL, void *pop_ptr = NULL);
-    
-    void attachPop(NexTouchEventCb pop, void *ptr = NULL);
-    void detachPop(void);
-    
+    NexSlider(NexPid pid, NexCid cid, const char *name);
+
     bool getValue(uint32_t *number);
     bool setValue(uint32_t number);
 };

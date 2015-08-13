@@ -20,7 +20,7 @@
  *
  */
 NexWaveform::NexWaveform(NexPid pid, NexCid cid, const char *name)
-    :NexTouch(pid, cid, name)
+    :NexObject(pid, cid, name)
 {
 }
 
@@ -43,7 +43,7 @@ bool NexWaveform::addValue(uint8_t ch, uint8_t number)
         return false;
     }
     
-    sprintf(buf, "add %u,%u,%u", getCid(), ch, number);
+    sprintf(buf, "add %u,%u,%u", getObjCid(), ch, number);
 
     sendCommand(buf);
     return true;

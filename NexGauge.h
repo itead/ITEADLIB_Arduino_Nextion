@@ -23,7 +23,7 @@
  * NexGauge,subclass of NexTouch,provides simple methods to control gauge component.
  *
  */
-class NexGauge: public NexTouch
+class NexGauge: public NexObject
 {
 public: /* methods */
     NexGauge(NexPid pid, NexCid cid, const char *name);

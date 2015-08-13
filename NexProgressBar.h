@@ -23,7 +23,7 @@
  * NexProgressBar,subclass of NexTouch,provides simple methods to control progress bar component. 
  *
  */
-class NexProgressBar: public NexTouch
+class NexProgressBar: public NexObject
 {
 public: /* methods */
     NexProgressBar(NexPid pid, NexCid cid, const char *name);

@@ -19,9 +19,9 @@ void t0PopCallback(void *ptr);
 void b0PopCallback(void *ptr);
 void b1PopCallback(void *ptr);
 
-NexText t0 = NexText(0, 1, "t0", t0PopCallback);
-NexButton b0 = NexButton(0, 2, "b0", b0PopCallback);
-NexButton b1 = NexButton(0, 3, "b1", b1PopCallback);
+NexText t0 = NexText(0, 1, "t0");
+NexButton b0 = NexButton(0, 2, "b0");
+NexButton b1 = NexButton(0, 3, "b1");
 
 char buffer[100] = {0};
 
@@ -80,6 +80,9 @@ void b1PopCallback(void *ptr)
 void setup(void)
 {
     nexInit();
+    t0.attachPop(t0PopCallback);
+    b0.attachPop(b0PopCallback);
+    b1.attachPop(b1PopCallback);
     dbSerialPrintln("setup done");
 }
 

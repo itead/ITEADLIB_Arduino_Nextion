@@ -22,7 +22,7 @@
  * NexWaveform,subclass of NexTouch,provides simple methods to control NexWaveform component.
  *
  */
-class NexWaveform: public NexTouch
+class NexWaveform: public NexObject
 {
 public: /* methods */
     NexWaveform(NexPid pid, NexCid cid, const char *name);

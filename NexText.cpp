@@ -19,8 +19,8 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexText::NexText(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop, void *pop_ptr)
-    :NexTouch(pid, cid, name, pop, pop_ptr)
+NexText::NexText(NexPid pid, NexCid cid, const char *name)
+    :NexTouch(pid, cid, name)
 {
 }
 
@@ -61,23 +61,3 @@ bool NexText::setText(const char *buffer)
     return recvRetCommandFinished();    
 }
 
-/**
- * Register text pop callback function. 
- *
- * @param pop - the pointer to text pop callback function.
- * @param ptr - the parameter to be transmitted to text pop callback function. 
- */
-void NexText::attachPop(NexTouchEventCb pop, void *ptr)
-{
-    NexTouch::attachPop(pop, ptr);
-}
-
-/**
- * Unload text pop callback function.
- *
- */
-void NexText::detachPop(void)
-{
-    NexTouch::detachPop();   
-}
- 

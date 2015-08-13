@@ -26,11 +26,8 @@
 class NexText: public NexTouch
 {
 public: /* methods */
-    NexText(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop = NULL, void *pop_ptr = NULL);
+    NexText(NexPid pid, NexCid cid, const char *name);
     
-    void attachPop(NexTouchEventCb pop, void *ptr = NULL);
-    void detachPop(void);
-
     uint16_t getText(char *buffer, uint16_t len);    
     bool setText(const char *buffer);    
 };

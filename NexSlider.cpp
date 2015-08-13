@@ -19,9 +19,8 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexSlider::NexSlider(NexPid pid, NexCid cid, const char *name, 
-    NexTouchEventCb pop, void *pop_ptr)
-    :NexTouch(pid, cid, name, pop, pop_ptr)
+NexSlider::NexSlider(NexPid pid, NexCid cid, const char *name)
+    :NexTouch(pid, cid, name)
 {
 }
 
@@ -64,23 +63,3 @@ bool NexSlider::setValue(uint32_t number)
     return recvRetCommandFinished();
 }
 
-/**
- * Register slider pop callback function. 
- *
- * @param pop - the pointer to picture pop callback function.
- * @param ptr - the parameter to be transmitted to picture pop callback function. 
- */
-void NexSlider::attachPop(NexTouchEventCb pop, void *ptr)
-{
-    NexTouch::attachPop(pop, ptr);
-}
-
-/**
- * Unload slider pop callback function.
- *
- */
-void NexSlider::detachPop(void)
-{
-    NexTouch::detachPop();   
-}
- 

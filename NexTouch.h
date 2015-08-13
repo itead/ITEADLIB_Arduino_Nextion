@@ -18,9 +18,7 @@
 #ifdef __cplusplus
 #include <Arduino.h>
 #include "NexSerialConfig.h"
-
-typedef uint8_t NexPid;
-typedef uint8_t NexCid;
+#include "NexObject.h"
 
 typedef void (*NexTouchEventCb)(void *ptr);
 
@@ -34,35 +32,24 @@ typedef enum {
  * Root Class of Nextion Components. 
  *
  */
-class NexTouch 
+class NexTouch: public NexObject
 {
 public: /* static methods */    
     static void iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType event);
 
 public: /* methods */
-    NexTouch(NexPid pid, NexCid cid, const char *name, 
-        NexTouchEventCb pop = NULL, void *pop_ptr = NULL,
-        NexTouchEventCb push = NULL, void *push_ptr = NULL);
+    NexTouch(NexPid pid, NexCid cid, const char *name);
 
-    NexPid getPid(void);    
-    NexCid getCid(void);
-    const char *getObjName(void);
-
-protected: /* methods */    
     void attachPush(NexTouchEventCb push, void *ptr = NULL);
     void detachPush(void);
     void attachPop(NexTouchEventCb pop, void *ptr = NULL);
     void detachPop(void);
     
 private: /* methods */ 
-    void print(void);
     void push(void);
     void pop(void);
     
 private: /* data */ 
-    NexPid pid; /* Page ID */
-    NexCid cid; /* Component ID */
-    const char *name; /* An unique name */
     NexTouchEventCb cbPush;
     void *__cbpush_ptr;
     NexTouchEventCb cbPop;

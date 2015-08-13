@@ -19,8 +19,8 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexPicture::NexPicture(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop, void *pop_ptr)
-    :NexTouch(pid, cid, name, pop, pop_ptr)
+NexPicture::NexPicture(NexPid pid, NexCid cid, const char *name)
+    :NexTouch(pid, cid, name)
 {
 }
 
@@ -61,25 +61,5 @@ bool NexPicture::setPic(uint32_t number)
 
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
-}
-
-/**
- * Register picture pop callback function. 
- *
- * @param pop - the pointer to picture pop callback function.
- * @param ptr - the parameter to be transmitted to picture pop callback function. 
- */
-void NexPicture::attachPop(NexTouchEventCb pop, void *ptr)
-{
-    NexTouch::attachPop(pop, ptr);
-}
-
-/**
- * Unload picture pop callback function.
- *
- */
-void NexPicture::detachPop(void)
-{
-    NexTouch::detachPop();   
 }
  

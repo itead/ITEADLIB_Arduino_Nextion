@@ -20,7 +20,7 @@
  *
  */
 NexGauge::NexGauge(NexPid pid, NexCid cid, const char *name)
-    :NexTouch(pid, cid, name)
+    :NexObject(pid, cid, name)
 {
 }
 

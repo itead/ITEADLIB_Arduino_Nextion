@@ -26,11 +26,8 @@
 class NexCrop: public NexTouch
 {
 public: /* methods */
-    NexCrop(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop = NULL, void *pop_ptr = NULL);
+    NexCrop(NexPid pid, NexCid cid, const char *name);
     
-    void attachPop(NexTouchEventCb pop, void *ptr = NULL);
-    void detachPop(void);
-
     bool getPic(uint32_t *number);
     bool setPic(uint32_t number);
 };

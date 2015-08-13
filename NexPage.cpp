@@ -19,8 +19,8 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexPage::NexPage(NexPid pid, NexCid cid, const char *name, NexTouchEventCb pop, void *pop_ptr)
-    :NexTouch(pid, cid, name, pop, pop_ptr)
+NexPage::NexPage(NexPid pid, NexCid cid, const char *name)
+    :NexTouch(pid, cid, name)
 {
 }
 
@@ -46,22 +46,3 @@ bool NexPage::show(void)
     return recvRetCommandFinished();
 }
 
-/**
- * Register page pop callback function. 
- *
- * @param pop - the pointer to page pop callback function.
- * @param ptr - the parameter to be transmitted to page pop callback function. 
- */
-void NexPage::attachPop(NexTouchEventCb pop, void *ptr)
-{
-    NexTouch::attachPop(pop, ptr);
-}
-
-/**
- * Unload page pop callback function.
- *
- */
-void NexPage::detachPop(void)
-{
-    NexTouch::detachPop();   
-}
