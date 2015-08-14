@@ -25,7 +25,7 @@ You can clone it by:
 
 Online API documentation can be reached at <http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html>.
 
-Offline API documentation can be open by clicking `doc/API/index.html`.
+Offline API documentation can be open by double clicking `doc/UserManual/index.html`.
 
 
 # Suppported Mainboards:
