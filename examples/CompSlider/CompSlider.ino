@@ -1,7 +1,8 @@
 /**
  * @example CompSlider.ino
  *
- * @par Show how to use API of class NexSlider.  
+ * @par How to Use
+ * Show how to use API of class NexSlider.  
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/11

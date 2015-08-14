@@ -19,6 +19,10 @@
 
 #include "NexTouch.h"
 #include "NexHardware.h"
+/**
+ * @addtogroup Component 
+ * @{ 
+ */
 
 /**
  * NexPicture component. 
@@ -52,5 +56,8 @@ public: /* methods */
     bool setPic(uint32_t number);
 };
 
+/**
+ * @}
+ */
 
 #endif /* #ifndef __NEXPICTURE_H__ */

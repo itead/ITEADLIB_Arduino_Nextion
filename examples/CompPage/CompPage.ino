@@ -1,7 +1,8 @@
 /**
  * @example CompPage.ino
  *
- * @par Show how to use API of class NexPage.  
+ * @par How to Use
+ * Show how to use API of class NexPage.  
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/7/10

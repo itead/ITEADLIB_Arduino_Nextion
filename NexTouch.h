@@ -22,6 +22,11 @@
 #include "NexObject.h"
 
 /**
+ * @addtogroup TouchEvent 
+ * @{ 
+ */
+
+/**
  * Push touch event occuring when your finger or pen coming to Nextion touch pannel. 
  */
 #define NEX_EVENT_PUSH  (0x01)
@@ -104,5 +109,8 @@ private: /* data */
     void *__cbpop_ptr;
 };
 
+/**
+ * @}
+ */
 
 #endif /* #ifndef __NEXTOUCH_H__ */

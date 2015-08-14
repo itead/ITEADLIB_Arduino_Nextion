@@ -1,7 +1,8 @@
 /**
  * @example CompText.ino
  *
- * @par Show how to use API of class NexText.  
+ * @par How to Use
+ * Show how to use API of class NexText.  
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/7/10

@@ -19,6 +19,10 @@
 
 #include "NexTouch.h"
 #include "NexHardware.h"
+/**
+ * @addtogroup Component 
+ * @{ 
+ */
 
 /**
  * NexText component.
@@ -49,5 +53,8 @@ public: /* methods */
     bool setText(const char *buffer);    
 };
 
+/**
+ * @}
+ */
 
 #endif /* #ifndef __NEXTEXT_H__ */

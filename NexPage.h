@@ -19,6 +19,10 @@
 
 #include "NexTouch.h"
 #include "NexHardware.h"
+/**
+ * @addtogroup Component 
+ * @{ 
+ */
 
 /**
  * A special component , which can contain other components such as NexButton, 
@@ -39,5 +43,8 @@ public: /* methods */
      */
     bool show(void);
 };
+/**
+ * @}
+ */
 
 #endif /* #ifndef __NEXPAGE_H__ */

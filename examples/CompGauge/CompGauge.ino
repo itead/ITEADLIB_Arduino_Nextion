@@ -1,7 +1,8 @@
 /**
  * @example CompGauge.ino
  *
- * @par Show how to use API of class NexGauge.  
+ * @par How to Use
+ * Show how to use API of class NexGauge.  
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/7/10

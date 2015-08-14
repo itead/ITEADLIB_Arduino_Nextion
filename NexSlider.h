@@ -19,6 +19,10 @@
 
 #include "NexTouch.h"
 #include "NexHardware.h"
+/**
+ * @addtogroup Component 
+ * @{ 
+ */
 
 /**
  * NexSlider component. 
@@ -51,6 +55,9 @@ public: /* methods */
      */
     bool setValue(uint32_t number);
 };
+/**
+ * @}
+ */
 
 
 #endif /* #ifndef __NEXSLIDER_H__ */

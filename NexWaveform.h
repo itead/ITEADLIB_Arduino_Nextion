@@ -18,6 +18,10 @@
 
 #include "NexTouch.h"
 #include "NexHardware.h"
+/**
+ * @addtogroup Component 
+ * @{ 
+ */
 
 /**
  * NexWaveform component.
@@ -42,5 +46,8 @@ public: /* methods */
     bool addValue(uint8_t ch, uint8_t number);
 };
 
+/**
+ * @}
+ */
 
 #endif /* #ifndef __NEXWAVEFORM_H__ */

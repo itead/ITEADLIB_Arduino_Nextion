@@ -19,6 +19,10 @@
 
 #include "NexTouch.h"
 #include "NexHardware.h"
+/**
+ * @addtogroup Component 
+ * @{ 
+ */
 
 /**
  * NexCrop component. 
@@ -53,5 +57,8 @@ public: /* methods */
     bool setPic(uint32_t number);
 };
 
+/**
+ * @}
+ */
 
 #endif /* #ifndef __NEXCROP_H__ */

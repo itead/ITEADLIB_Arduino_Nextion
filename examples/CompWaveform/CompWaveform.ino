@@ -1,7 +1,8 @@
 /**
  * @example CompWaveform.ino
  *
- * @par Show how to use API of class NexWaveform.  
+ * @par How to Use
+ * Show how to use API of class NexWaveform.  
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/11

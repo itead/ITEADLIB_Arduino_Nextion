@@ -19,6 +19,10 @@
 
 #include "NexTouch.h"
 #include "NexHardware.h"
+/**
+ * @addtogroup Component 
+ * @{ 
+ */
 
 /**
  * NexProgressBar component. 
@@ -52,5 +56,8 @@ public: /* methods */
     bool setValue(uint32_t number);
 };
 
+/**
+ * @}
+ */
 
 #endif /* #ifndef __NEXPROGRESSBAR_H__ */

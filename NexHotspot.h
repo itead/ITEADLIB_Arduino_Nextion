@@ -19,6 +19,10 @@
 
 #include "NexTouch.h"
 #include "NexHardware.h"
+/**
+ * @addtogroup Component 
+ * @{ 
+ */
 
 /**
  * NexHotspot component. 
@@ -31,6 +35,9 @@ public: /* methods */
      */
     NexHotspot(uint8_t pid, uint8_t cid, const char *name);
 };
+/**
+ * @}
+ */
 
 
 #endif /* #ifndef __NEXHOTSPOT_H__ */

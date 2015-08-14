@@ -19,7 +19,7 @@
 #include "NexTouch.h"
 
 /**
- * @addtogroup Nextion 
+ * @addtogroup CoreAPI 
  * @{ 
  */
 

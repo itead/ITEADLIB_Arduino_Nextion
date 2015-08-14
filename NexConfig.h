@@ -15,6 +15,11 @@
 #ifndef __NEXCONFIG_H__
 #define __NEXCONFIG_H__
 
+/**
+ * @addtogroup Configuration 
+ * @{ 
+ */
+
 /** 
  * Define DEBUG_SERIAL_ENABLE to enable debug serial. 
  * Comment it to disable debug serial. 
@@ -41,5 +46,9 @@
 #define dbSerialPrintln(a)  do{}while(0)
 #define dbSerialBegin(a)    do{}while(0)
 #endif
+
+/**
+ * @}
+ */
 
 #endif /* #ifndef __NEXCONFIG_H__ */

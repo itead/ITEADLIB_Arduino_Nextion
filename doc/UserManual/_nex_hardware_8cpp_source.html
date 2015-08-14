@@ -91,8 +91,8 @@
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">goto</span> __return;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.setTimeout(timeout);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(temp) != <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.readBytes((<span class="keywordtype">char</span> *)temp, <span class="keyword">sizeof</span>(temp)))</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.setTimeout(timeout);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(temp) != <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.readBytes((<span class="keywordtype">char</span> *)temp, <span class="keyword">sizeof</span>(temp)))</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">goto</span> __return;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
@@ -150,9 +150,9 @@
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    start = millis();</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">while</span> (millis() - start &lt;= timeout)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.available())</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.available())</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            c = <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.read();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            c = <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.read();</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> (str_start_flag)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">if</span> (0xFF == c)</div>
@@ -202,15 +202,15 @@
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keywordtype">void</span> sendCommand(<span class="keyword">const</span> <span class="keywordtype">char</span>* cmd)</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.available())</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.available())</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.read();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.read();</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.print(cmd);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.write(0xFF);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.write(0xFF);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.write(0xFF);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.print(cmd);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.write(0xFF);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.write(0xFF);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.write(0xFF);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
@@ -228,8 +228,8 @@
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    uint8_t temp[4] = {0};</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.setTimeout(timeout);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(temp) != <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.readBytes((<span class="keywordtype">char</span> *)temp, <span class="keyword">sizeof</span>(temp)))</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.setTimeout(timeout);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(temp) != <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.readBytes((<span class="keywordtype">char</span> *)temp, <span class="keyword">sizeof</span>(temp)))</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        ret = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
@@ -256,13 +256,13 @@
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">  220</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="group___core_a_p_i.html#gab09ddba6b72334d30ae091a7b038d790">  220</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group___core_a_p_i.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">bool</span> ret1 = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">bool</span> ret2 = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    </div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    dbSerialBegin(9600);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.begin(9600);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.begin(9600);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    sendCommand(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    sendCommand(<span class="stringliteral">&quot;bkcmd=1&quot;</span>);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    ret1 = recvRetCommandFinished();</div>
@@ -271,26 +271,26 @@
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> ret1 &amp;&amp; ret2;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="group___nextion.html#ga91c549e696b0ca035cf18901e6a50d5a">  235</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___nextion.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> *nex_listen_list[])</div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="group___core_a_p_i.html#ga91c549e696b0ca035cf18901e6a50d5a">  235</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___core_a_p_i.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> *nex_listen_list[])</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">static</span> uint8_t __buffer[10];</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    </div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    uint16_t i;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    uint8_t c;  </div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.available() &gt; 0)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.available() &gt; 0)</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    {   </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        delay(10);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        c = <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.read();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        c = <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.read();</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        </div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">if</span> (NEX_RET_EVENT_TOUCH_HEAD == c)</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.available() &gt;= 6)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.available() &gt;= 6)</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            {</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                __buffer[0] = c;  </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <span class="keywordflow">for</span> (i = 1; i &lt; 7; i++)</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    __buffer[i] = <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.read();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    __buffer[i] = <a class="code" href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.read();</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                }</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                __buffer[i] = 0x00;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                </div>
@@ -304,15 +304,15 @@
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
-<div class="ttc" id="_nex_config_8h_html_a2738b05a77cd5052e440af5b00b0ecbd"><div class="ttname"><a href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a></div><div class="ttdeci">#define nexSerial</div><div class="ttdoc">Define nexSerial for communicate with Nextion touch panel. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_config_8h_source.html#l00032">NexConfig.h:32</a></div></div>
+<div class="ttc" id="group___core_a_p_i_html_ga91c549e696b0ca035cf18901e6a50d5a"><div class="ttname"><a href="group___core_a_p_i.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch *nex_listen_list[])</div><div class="ttdoc">Listen touch event and calling callbacks attached before. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00235">NexHardware.cpp:235</a></div></div>
+<div class="ttc" id="group___configuration_html_ga2738b05a77cd5052e440af5b00b0ecbd"><div class="ttname"><a href="group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a></div><div class="ttdeci">#define nexSerial</div><div class="ttdoc">Define nexSerial for communicate with Nextion touch panel. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_config_8h_source.html#l00037">NexConfig.h:37</a></div></div>
+<div class="ttc" id="group___core_a_p_i_html_gab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="group___core_a_p_i.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00220">NexHardware.cpp:220</a></div></div>
 <div class="ttc" id="_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div><div class="ttdoc">The definition of base API for using Nextion. </div></div>
-<div class="ttc" id="group___nextion_html_gab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00220">NexHardware.cpp:220</a></div></div>
-<div class="ttc" id="group___nextion_html_ga91c549e696b0ca035cf18901e6a50d5a"><div class="ttname"><a href="group___nextion.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch *nex_listen_list[])</div><div class="ttdoc">Listen touch event and calling callbacks attached before. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00235">NexHardware.cpp:235</a></div></div>
-<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Father class of the components with touch events. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00048">NexTouch.h:48</a></div></div>
+<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Father class of the components with touch events. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00053">NexTouch.h:53</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2015 16:38:27 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 14 2015 17:40:29 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

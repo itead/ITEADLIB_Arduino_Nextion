@@ -17,6 +17,10 @@
 #define __NEXOBJECT_H__
 #include <Arduino.h>
 #include "NexConfig.h"
+/**
+ * @addtogroup CoreAPI 
+ * @{ 
+ */
 
 /**
  * Root class of all Nextion components. 
@@ -73,5 +77,8 @@ private: /* data */
     uint8_t __cid; /* Component ID */
     const char *__name; /* An unique name */
 };
+/**
+ * @}
+ */
 
 #endif /* #ifndef __NEXOBJECT_H__ */
