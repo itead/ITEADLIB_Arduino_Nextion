@@ -23,7 +23,11 @@ To discuss the project?  Request new features?  Report a BUG? please visit the
 
 # Documentation
 
-Documentation includes configuration, quick guide and reference of API, etc.
+Documentation includes 
+[Configuration](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/modules.html),
+[Get Started](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/modules.html)
+and [Reference of Core API](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/modules.html)
+, etc.
 
 Online documentation: <http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html>. 
 
