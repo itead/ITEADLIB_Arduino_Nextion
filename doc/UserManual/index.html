@@ -44,18 +44,20 @@
 <div class="title">Nextion User Manual Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>Nextion Library for Arduino</h1>
+<div class="textblock"><h1>Nextion</h1>
+<hr/>
+<h1>Introduction</h1>
 <p>Nextion Arduino library provides an easy-to-use way to manipulate Nextion serial displays. Users can use the libarry freely, either in commerical projects or open-source prjects, without any additional condiitons.</p>
 <p>For more information about the Nextion display project, please visit <a href="http://wiki.iteadstudio.com/Nextion_HMI_Solution">the wiki。</a> The wiki provdies all the necessary technical documnets, quick start guide, tutorials, demos, as well as some useful resources.</p>
 <p>To get your Nextion display, please visit <a href="http://imall.itead.cc/display/nextion.html">iMall.</a></p>
 <p>To discuss the project? Request new features? Report a BUG? please visit the <a href="http://support.iteadstudio.com/discussions/1000058038">Forums</a></p>
-<p>​ </p><h1>Source</h1>
+<h1>Documentation</h1>
+<p>Documentation includes configuration, quick guide and reference of API, etc.</p>
+<p>Online documentation: <a href="http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html">http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html</a>.</p>
+<p>Offline documentation: <code>doc/UserManual/index.html</code> can be open in your browser.(For example, Chrome or the fucking one you like). ​ </p><h1>Source</h1>
 <p>Latest source code can be download at <a href="https://github.com/itead/ITEADLIB_Arduino_Nextion">https://github.com/itead/ITEADLIB_Arduino_Nextion</a>.</p>
 <p>You can clone it by: </p><pre class="fragment">git clone https://github.com/itead/ITEADLIB_Arduino_Nextion
-</pre><h1>Documentation</h1>
-<p>Online API documentation can be reached at <a href="http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html">http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html</a>.</p>
-<p>Offline API documentation can be open by double clicking <code>doc/UserManual/index.html</code>.</p>
-<h1>Suppported Mainboards:</h1>
+</pre><h1>Suppported Mainboards</h1>
 <p><b>All boards, which has one or more hardware serial, can be supported.</b></p>
 <p>For example:</p>
 <ul>
@@ -64,32 +66,43 @@
 <li>Arduino MEGA2560</li>
 <li>Arduino UNO</li>
 </ul>
-<h1>Serial configuration</h1>
-<p>In configuration file <code><a class="el" href="_nex_config_8h.html" title="Options for user can be found here. ">NexConfig.h</a></code>, you can find two macros below:</p>
+<h1>Configuration</h1>
+<p>In configuration file <a class="el" href="_nex_config_8h.html" title="Options for user can be found here. ">NexConfig.h</a>, you can find two macros below:</p>
 <ul>
 <li>dbSerial: Debug Serial (baudrate:9600), needed by beginners for debug your nextion applications or sketches. If your complete your work, it will be a wise choice to disable Debug Serial.</li>
 <li>nexSerial: Nextion Serial, the bridge of Nextion and your mainboard.</li>
 </ul>
 <p><b>Note:</b> the default configuration is for MEGA2560.</p>
 <h2>Redirect dbSerial and nexSerial</h2>
-<p>If you want to change the default serial to debug or communicate with Nextion , you need to modify the line in file <code><a class="el" href="_nex_config_8h.html" title="Options for user can be found here. ">NexConfig.h</a></code>: </p><pre class="fragment">#define dbSerial Serial    ---&gt; #define dbSerial Serialxxx
+<p>If you want to change the default serial to debug or communicate with Nextion , you need to modify the line in configuration file: </p><pre class="fragment">#define dbSerial Serial    ---&gt; #define dbSerial Serialxxx
 #define nexSerial Serial2  ---&gt; #define nexSeria Serialxxx
 </pre><h2>Disable Debug Serial</h2>
-<p>If you want to disable the debug information,you need to modify the line in file <code><a class="el" href="_nex_config_8h.html" title="Options for user can be found here. ">NexConfig.h</a></code>: </p><pre class="fragment">#define DEBUG_SERIAL_ENABLE ---&gt; //#define DEBUG_SERIAL_ENABLE
-</pre><h1>UNO</h1>
+<p>If you want to disable the debug information,you need to modify the line in configuration file: </p><pre class="fragment">#define DEBUG_SERIAL_ENABLE ---&gt; //#define DEBUG_SERIAL_ENABLE
+</pre><h1>UNO-like Mainboards</h1>
 <p>If your board has only one hardware serial, such as UNO, you should disable dbSerial and redirect nexSerial to Serial(Refer to section:<code>Serial configuration</code>).</p>
 <h1>Useful Links</h1>
-<p><a href="http://blog.iteadstudio.com/nextion-tutorial-based-on-nextion-arduino-library/">http://blog.iteadstudio.com/nextion-tutorial-based-on-nextion-arduino-library/</a> </p><hr/>
-<p>DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE Version 2, December 2004</p>
-<p>Copyright (C) 2014 ITEAD Studio</p>
-<p>Everyone is permitted to copy and distribute verbatim or modified copies of this license document, and changing it is allowed as long as the name is changed. </p><pre class="fragment">   DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
-</pre><p>TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION</p>
-<p>0. You just DO WHAT THE FUCK YOU WANT TO.</p>
+<p><a href="http://blog.iteadstudio.com/nextion-tutorial-based-on-nextion-arduino-library/">http://blog.iteadstudio.com/nextion-tutorial-based-on-nextion-arduino-library/</a></p>
+<h1>License</h1>
 <hr/>
+<pre class="fragment">DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
+    Version 2, December 2004 
+
+Copyright (C) 2014 ITEAD Studio
+
+Everyone is permitted to copy and distribute verbatim or modified 
+copies of this license document, and changing it is allowed as long 
+as the name is changed. 
+
+    DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
+
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION 
+
+0. You just DO WHAT THE FUCK YOU WANT TO.
+</pre><hr/>
  </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2015 17:40:29 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 14 2015 18:06:06 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
