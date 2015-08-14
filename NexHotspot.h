@@ -21,8 +21,7 @@
 #include "NexHardware.h"
 
 /**
- * NexHotspot,subclass of NexTouch,provides simple methods to control hotspot component. 
- *
+ * NexHotspot component. 
  */
 class NexHotspot: public NexTouch
 {

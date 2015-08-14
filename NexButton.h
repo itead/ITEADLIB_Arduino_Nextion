@@ -21,8 +21,12 @@
 #include "NexHardware.h"
 
 /**
- * NexButton,subclass of NexTouch,provides simple methods to control button component. 
+ * NexButton component. 
  *
+ * Commonly, you want to do something after push and pop it. It is recommanded that only
+ * call @ref NexTouch::attachPop to satisfy your purpose. 
+ * 
+ * @warning Please do not call @ref NexTouch::attachPush on this component, even though you can. 
  */
 class NexButton: public NexTouch
 {
@@ -33,7 +37,21 @@ public: /* methods */
      */
     NexButton(uint8_t pid, uint8_t cid, const char *name);
 
+    /**
+     * Get text attribute of component.
+     *
+     * @param buffer - buffer storing text returned. 
+     * @param len - length of buffer. 
+     * @return The real length of text returned. 
+     */
     uint16_t getText(char *buffer, uint16_t len);    
+
+    /**
+     * Set text attribute of component.
+     *
+     * @param buffer - text buffer terminated with '\0'. 
+     * @return true if success, false for failure. 
+     */
     bool setText(const char *buffer);    
 };
 

@@ -15,23 +15,11 @@
 
 #include "NexProgressBar.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexProgressBar::NexProgressBar(uint8_t pid, uint8_t cid, const char *name)
     :NexObject(pid, cid, name)
 {
 }
 
-/**
- * Get the value of progress bar. 
- * 
- * @param number - an output parameter to save the value of porgress bar.  
- * 
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexProgressBar::getValue(uint32_t *number)
 {
     String cmd = String("get ");
@@ -41,14 +29,6 @@ bool NexProgressBar::getValue(uint32_t *number)
     return recvRetNumber(number);
 }
 
-/**
- * Set the value of progress bar.
- *
- * @param number - the value of progress bar.  
- *
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexProgressBar::setValue(uint32_t number)
 {
     char buf[10] = {0};

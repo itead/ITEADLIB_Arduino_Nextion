@@ -14,23 +14,11 @@
  */
 #include "NexText.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexText::NexText(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }
 
-/**
- * Get the value of text.
- *
- * @param buffer - text value buffer. 
- * @param len - the length of text value buffer.
- *
- * @return the length of text value buffer.
- */
 uint16_t NexText::getText(char *buffer, uint16_t len)
 {
     String cmd;
@@ -41,14 +29,6 @@ uint16_t NexText::getText(char *buffer, uint16_t len)
     return recvRetString(buffer,len);
 }
 
-/**
- * Set the value of text.
- *
- * @param buffer - text value buffer. 
- *
- * @retval true - success.
- * @retval false - failed. 
- */
 bool NexText::setText(const char *buffer)
 {
     String cmd;

@@ -71,7 +71,17 @@
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_VARIABLE        (0x1A)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define NEX_RET_INVALID_OPERATION       (0x1B)</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="_nex_hardware_8h.html#abf17ad67ff76ea33805be435460c7848">   45</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_hardware_8cpp.html#ae26fbfe1541acac85ac10398be787852">recvRetNumber</a>(uint32_t *number, uint32_t timeout)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * Receive uint32_t data. </span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * @param number - save uint32_t data. </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * @param timeout - set timeout time. </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * @retval true - success. </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * @retval false - failed.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">bool</span> recvRetNumber(uint32_t *number, uint32_t timeout)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint8_t temp[8] = {0};</div>
@@ -113,7 +123,17 @@
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="_nex_hardware_8h.html#a96e44dd6c8d1eb261046c51e0bd029c2">   97</a></span>&#160;uint16_t <a class="code" href="_nex_hardware_8cpp.html#a6f894a77fe0b93a26137e1d790c335fb">recvRetString</a>(<span class="keywordtype">char</span> *buffer, uint16_t len, uint32_t timeout)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * Receive string data. </span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> * @param buffer - save string data. </span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> * @param len - string buffer length. </span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * @param timeout - set timeout time. </span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> * @return the length of string buffer.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;uint16_t recvRetString(<span class="keywordtype">char</span> *buffer, uint16_t len, uint32_t timeout)</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    uint16_t ret = 0;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">bool</span> str_start_flag = <span class="keyword">false</span>;</div>
@@ -175,7 +195,12 @@
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="_nex_hardware_8h.html#aa382dfd2890722f1891f4924d87f2f79">  164</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_nex_hardware_8cpp.html#aa382dfd2890722f1891f4924d87f2f79">sendCommand</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* cmd)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"> * Send command to Nextion.</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment"> * @param cmd - the string of command.</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keywordtype">void</span> sendCommand(<span class="keyword">const</span> <span class="keywordtype">char</span>* cmd)</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.available())</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
@@ -189,7 +214,16 @@
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="_nex_hardware_8h.html#ac750b0217e885b937e0f8ad31e0a2657">  187</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_nex_hardware_8cpp.html#a7fdd8b9f8bd1ea31e38af8d854c3c63f">recvRetCommandFinished</a>(uint32_t timeout)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"> * Command is executed successfully. </span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment"> * @param timeout - set timeout time.</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"> * @retval true - success.</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment"> * @retval false - failed. </span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keywordtype">bool</span> recvRetCommandFinished(uint32_t timeout)</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{    </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    uint8_t temp[4] = {0};</div>
@@ -229,15 +263,15 @@
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    </div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    dbSerialBegin(9600);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a>.begin(9600);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="_nex_hardware_8cpp.html#aa382dfd2890722f1891f4924d87f2f79">sendCommand</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="_nex_hardware_8cpp.html#aa382dfd2890722f1891f4924d87f2f79">sendCommand</a>(<span class="stringliteral">&quot;bkcmd=1&quot;</span>);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    ret1 = <a class="code" href="_nex_hardware_8cpp.html#a7fdd8b9f8bd1ea31e38af8d854c3c63f">recvRetCommandFinished</a>();</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="_nex_hardware_8cpp.html#aa382dfd2890722f1891f4924d87f2f79">sendCommand</a>(<span class="stringliteral">&quot;page 0&quot;</span>);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    ret2 = <a class="code" href="_nex_hardware_8cpp.html#a7fdd8b9f8bd1ea31e38af8d854c3c63f">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    sendCommand(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    sendCommand(<span class="stringliteral">&quot;bkcmd=1&quot;</span>);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    ret1 = recvRetCommandFinished();</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    sendCommand(<span class="stringliteral">&quot;page 0&quot;</span>);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    ret2 = recvRetCommandFinished();</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> ret1 &amp;&amp; ret2;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">  235</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> **nex_listen_list)</div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="group___nextion.html#ga91c549e696b0ca035cf18901e6a50d5a">  235</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___nextion.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> *nex_listen_list[])</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">static</span> uint8_t __buffer[10];</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    </div>
@@ -270,19 +304,15 @@
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
-<div class="ttc" id="_nex_hardware_8cpp_html_ae26fbfe1541acac85ac10398be787852"><div class="ttname"><a href="_nex_hardware_8cpp.html#ae26fbfe1541acac85ac10398be787852">recvRetNumber</a></div><div class="ttdeci">bool recvRetNumber(uint32_t *number, uint32_t timeout)</div><div class="ttdoc">Receive uint32_t data. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00045">NexHardware.cpp:45</a></div></div>
-<div class="ttc" id="_nex_hardware_8cpp_html_a7fdd8b9f8bd1ea31e38af8d854c3c63f"><div class="ttname"><a href="_nex_hardware_8cpp.html#a7fdd8b9f8bd1ea31e38af8d854c3c63f">recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(uint32_t timeout)</div><div class="ttdoc">Command is executed successfully. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00187">NexHardware.cpp:187</a></div></div>
-<div class="ttc" id="group___nextion_html_gae4200065e323c18e6b11e91a916d8475"><div class="ttname"><a href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Listen touch event and calling callbacks attached before. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00235">NexHardware.cpp:235</a></div></div>
 <div class="ttc" id="_nex_config_8h_html_a2738b05a77cd5052e440af5b00b0ecbd"><div class="ttname"><a href="_nex_config_8h.html#a2738b05a77cd5052e440af5b00b0ecbd">nexSerial</a></div><div class="ttdeci">#define nexSerial</div><div class="ttdoc">Define nexSerial for communicate with Nextion touch panel. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_config_8h_source.html#l00032">NexConfig.h:32</a></div></div>
-<div class="ttc" id="_nex_hardware_8cpp_html_a6f894a77fe0b93a26137e1d790c335fb"><div class="ttname"><a href="_nex_hardware_8cpp.html#a6f894a77fe0b93a26137e1d790c335fb">recvRetString</a></div><div class="ttdeci">uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout)</div><div class="ttdoc">Receive string data. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00097">NexHardware.cpp:97</a></div></div>
-<div class="ttc" id="_nex_hardware_8cpp_html_aa382dfd2890722f1891f4924d87f2f79"><div class="ttname"><a href="_nex_hardware_8cpp.html#aa382dfd2890722f1891f4924d87f2f79">sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd)</div><div class="ttdoc">Send command to Nextion. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00164">NexHardware.cpp:164</a></div></div>
 <div class="ttc" id="_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div><div class="ttdoc">The definition of base API for using Nextion. </div></div>
 <div class="ttc" id="group___nextion_html_gab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00220">NexHardware.cpp:220</a></div></div>
+<div class="ttc" id="group___nextion_html_ga91c549e696b0ca035cf18901e6a50d5a"><div class="ttname"><a href="group___nextion.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch *nex_listen_list[])</div><div class="ttdoc">Listen touch event and calling callbacks attached before. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00235">NexHardware.cpp:235</a></div></div>
 <div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Father class of the components with touch events. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00048">NexTouch.h:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2015 15:37:20 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 14 2015 16:38:27 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -20,8 +20,7 @@
 #include "NexHardware.h"
 
 /**
- * NexWaveform,subclass of NexTouch,provides simple methods to control NexWaveform component.
- *
+ * NexWaveform component.
  */
 class NexWaveform: public NexObject
 {
@@ -30,6 +29,16 @@ public: /* methods */
      * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
      */
     NexWaveform(uint8_t pid, uint8_t cid, const char *name);
+    
+    /**
+     * Add value to show. 
+     *
+     * @param ch - channel of waveform(0-3). 
+     * @param number - the value of waveform.  
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool addValue(uint8_t ch, uint8_t number);
 };
 

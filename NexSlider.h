@@ -21,8 +21,7 @@
 #include "NexHardware.h"
 
 /**
- * NexSlider,subclass of NexTouch,provides simple methods to control slider component. 
- *
+ * NexSlider component. 
  */
 class NexSlider: public NexTouch
 {
@@ -32,7 +31,24 @@ public: /* methods */
      */
     NexSlider(uint8_t pid, uint8_t cid, const char *name);
 
+    /**
+     * Get the value of slider. 
+     * 
+     * @param number - an output parameter to save the value of slider.  
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool getValue(uint32_t *number);
+    
+    /**
+     * Set the value of slider.
+     *
+     * @param number - the value of slider.  
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool setValue(uint32_t number);
 };
 

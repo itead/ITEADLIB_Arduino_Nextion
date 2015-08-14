@@ -15,23 +15,11 @@
 
 #include "NexPicture.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexPicture::NexPicture(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }
 
-/**
- * Get picture's number.
- * 
- * @param number - an output parameter to save picture number.  
- * 
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexPicture::getPic(uint32_t *number)
 {
     String cmd = String("get ");
@@ -41,14 +29,6 @@ bool NexPicture::getPic(uint32_t *number)
     return recvRetNumber(number);
 }
 
-/**
- * Set picture's number.
- * 
- * @param number -the picture number.
- *
- * @retval true - success.
- * @retval false - failed. 
- */
 bool NexPicture::setPic(uint32_t number)
 {
     char buf[10] = {0};

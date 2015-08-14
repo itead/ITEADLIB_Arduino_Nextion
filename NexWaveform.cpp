@@ -14,25 +14,11 @@
  */
 #include "NexWaveform.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexWaveform::NexWaveform(uint8_t pid, uint8_t cid, const char *name)
     :NexObject(pid, cid, name)
 {
 }
 
-
-/**
- * Add value to show. 
- *
- * @param ch - channel of waveform(0-3). 
- * @param number - the value of waveform.  
- *
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexWaveform::addValue(uint8_t ch, uint8_t number)
 {
     char buf[15] = {0};

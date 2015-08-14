@@ -21,8 +21,7 @@
 #include "NexHardware.h"
 
 /**
- * NexCrop,subclass of NexTouch,provides simple methods to control crop component. 
- *
+ * NexCrop component. 
  */
 class NexCrop: public NexTouch
 {
@@ -32,8 +31,25 @@ public: /* methods */
      * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
      */
     NexCrop(uint8_t pid, uint8_t cid, const char *name);
-    
+
+    /**
+     * Get the number of picture. 
+     *
+     * @param number - an output parameter to save the number of picture. 
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool getPic(uint32_t *number);
+    
+    /**
+     * Set the number of picture. 
+     *
+     * @param number - the number of picture. 
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool setPic(uint32_t number);
 };
 

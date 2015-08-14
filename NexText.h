@@ -21,8 +21,7 @@
 #include "NexHardware.h"
 
 /**
- * NexText,subclass of NexTouch,provides simple methods to control text component.
- *
+ * NexText component.
  */
 class NexText: public NexTouch
 {
@@ -32,7 +31,21 @@ public: /* methods */
      */
     NexText(uint8_t pid, uint8_t cid, const char *name);
     
-    uint16_t getText(char *buffer, uint16_t len);    
+    /**
+     * Get text attribute of component.
+     *
+     * @param buffer - buffer storing text returned. 
+     * @param len - length of buffer. 
+     * @return The real length of text returned. 
+     */
+    uint16_t getText(char *buffer, uint16_t len);
+    
+    /**
+     * Set text attribute of component.
+     *
+     * @param buffer - text buffer terminated with '\0'. 
+     * @return true if success, false for failure. 
+     */
     bool setText(const char *buffer);    
 };
 

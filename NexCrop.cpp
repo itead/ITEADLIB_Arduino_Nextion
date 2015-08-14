@@ -15,23 +15,11 @@
 
 #include "NexCrop.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexCrop::NexCrop(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }
 
-/*
- * Get the number of picture. 
- *
- * @param number - an output parameter to save the number of picture. 
- * 
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexCrop::getPic(uint32_t *number)
 {
     String cmd = String("get ");
@@ -41,14 +29,6 @@ bool NexCrop::getPic(uint32_t *number)
     return recvRetNumber(number);
 }
 
-/*
- * Set the number of picture. 
- *
- * @param number - the number of picture. 
- * 
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexCrop::setPic(uint32_t number)
 {
     char buf[10] = {0};

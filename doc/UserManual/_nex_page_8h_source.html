@@ -57,25 +57,25 @@
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_touch_8h.html">NexTouch.h</a>&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_hardware_8h.html">NexHardware.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_nex_page.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nex_page.html">NexPage</a>: <span class="keyword">public</span> <a class="code" href="class_nex_touch.html">NexTouch</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_nex_page.html#a8608a0400bd8e27466ca4bbc05b5c2a0">NexPage</a>(uint8_t pid, uint8_t cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_page.html#a5714e41d4528b991eda4bbe578005418">show</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXPAGE_H__ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="class_nex_page_html_a5714e41d4528b991eda4bbe578005418"><div class="ttname"><a href="class_nex_page.html#a5714e41d4528b991eda4bbe578005418">NexPage::show</a></div><div class="ttdeci">bool show(void)</div><div class="ttdoc">Change page. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_page_8cpp_source.html#l00033">NexPage.cpp:33</a></div></div>
-<div class="ttc" id="class_nex_page_html_a8608a0400bd8e27466ca4bbc05b5c2a0"><div class="ttname"><a href="class_nex_page.html#a8608a0400bd8e27466ca4bbc05b5c2a0">NexPage::NexPage</a></div><div class="ttdeci">NexPage(uint8_t pid, uint8_t cid, const char *name)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_page_8cpp_source.html#l00022">NexPage.cpp:22</a></div></div>
-<div class="ttc" id="class_nex_page_html"><div class="ttname"><a href="class_nex_page.html">NexPage</a></div><div class="ttdoc">NexPage,subclass of NexTouch,provides simple methods to control page component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_page_8h_source.html#l00029">NexPage.h:29</a></div></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_nex_page.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nex_page.html">NexPage</a>: <span class="keyword">public</span> <a class="code" href="class_nex_touch.html">NexTouch</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_nex_page.html#a8608a0400bd8e27466ca4bbc05b5c2a0">NexPage</a>(uint8_t pid, uint8_t cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_page.html#a5714e41d4528b991eda4bbe578005418">show</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXPAGE_H__ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="class_nex_page_html_a5714e41d4528b991eda4bbe578005418"><div class="ttname"><a href="class_nex_page.html#a5714e41d4528b991eda4bbe578005418">NexPage::show</a></div><div class="ttdeci">bool show(void)</div><div class="ttdoc">Show itself. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_page_8cpp_source.html#l00023">NexPage.cpp:23</a></div></div>
+<div class="ttc" id="class_nex_page_html_a8608a0400bd8e27466ca4bbc05b5c2a0"><div class="ttname"><a href="class_nex_page.html#a8608a0400bd8e27466ca4bbc05b5c2a0">NexPage::NexPage</a></div><div class="ttdeci">NexPage(uint8_t pid, uint8_t cid, const char *name)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_page_8cpp_source.html#l00018">NexPage.cpp:18</a></div></div>
+<div class="ttc" id="class_nex_page_html"><div class="ttname"><a href="class_nex_page.html">NexPage</a></div><div class="ttdoc">A special component , which can contain other components such as NexButton, NexText and NexWaveform...</div><div class="ttdef"><b>Definition:</b> <a href="_nex_page_8h_source.html#l00027">NexPage.h:27</a></div></div>
 <div class="ttc" id="_nex_touch_8h_html"><div class="ttname"><a href="_nex_touch_8h.html">NexTouch.h</a></div><div class="ttdoc">The definition of class NexTouch. </div></div>
 <div class="ttc" id="_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div><div class="ttdoc">The definition of base API for using Nextion. </div></div>
 <div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Father class of the components with touch events. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00048">NexTouch.h:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2015 15:37:20 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 14 2015 16:38:27 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

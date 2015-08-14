@@ -15,10 +15,6 @@
  
 #include "NexHotspot.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexHotspot::NexHotspot(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {

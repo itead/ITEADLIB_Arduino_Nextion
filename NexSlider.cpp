@@ -14,23 +14,11 @@
  */
 #include "NexSlider.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexSlider::NexSlider(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }
 
-/**
- * Get the value of slider. 
- * 
- * @param number - an output parameter to save the value of slider.  
- * 
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexSlider::getValue(uint32_t *number)
 {
     String cmd = String("get ");
@@ -40,14 +28,6 @@ bool NexSlider::getValue(uint32_t *number)
     return recvRetNumber(number);
 }
 
-/**
- * Set the value of slider.
- *
- * @param number - the value of slider.  
- *
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexSlider::setValue(uint32_t number)
 {
     char buf[10] = {0};

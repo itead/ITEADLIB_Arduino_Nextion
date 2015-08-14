@@ -32,7 +32,7 @@
 #define NEX_RET_INVALID_VARIABLE        (0x1A)
 #define NEX_RET_INVALID_OPERATION       (0x1B)
 
-/**
+/*
  * Receive uint32_t data. 
  * 
  * @param number - save uint32_t data. 
@@ -84,7 +84,7 @@ __return:
 }
 
 
-/**
+/*
  * Receive string data. 
  * 
  * @param buffer - save string data. 
@@ -156,7 +156,7 @@ __return:
     return ret;
 }
 
-/**
+/*
  * Send command to Nextion.
  *
  * @param cmd - the string of command.
@@ -175,7 +175,7 @@ void sendCommand(const char* cmd)
 }
 
 
-/**
+/*
  * Command is executed successfully. 
  *
  * @param timeout - set timeout time.
@@ -232,7 +232,7 @@ bool nexInit(void)
     return ret1 && ret2;
 }
 
-void nexLoop(NexTouch **nex_listen_list)
+void nexLoop(NexTouch *nex_listen_list[])
 {
     static uint8_t __buffer[10];
     

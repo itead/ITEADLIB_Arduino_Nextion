@@ -21,8 +21,7 @@
 #include "NexHardware.h"
 
 /**
- * NexProgressBar,subclass of NexTouch,provides simple methods to control progress bar component. 
- *
+ * NexProgressBar component. 
  */
 class NexProgressBar: public NexObject
 {
@@ -32,7 +31,24 @@ public: /* methods */
      */
     NexProgressBar(uint8_t pid, uint8_t cid, const char *name);
     
+    /**
+     * Get the value of progress bar. 
+     * 
+     * @param number - an output parameter to save the value of porgress bar.  
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool getValue(uint32_t *number);
+    
+    /**
+     * Set the value of progress bar.
+     *
+     * @param number - the value of progress bar.  
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool setValue(uint32_t number);
 };
 

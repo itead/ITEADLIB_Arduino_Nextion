@@ -15,23 +15,11 @@
 
 #include "NexGauge.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexGauge::NexGauge(uint8_t pid, uint8_t cid, const char *name)
     :NexObject(pid, cid, name)
 {
 }
 
-/**
- * Get the value of gauge.
- * 
- * @param number - an output parameter to save gauge's value.
- * 
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexGauge::getValue(uint32_t *number)
 {
     String cmd = String("get ");
@@ -41,14 +29,6 @@ bool NexGauge::getValue(uint32_t *number)
     return recvRetNumber(number);
 }
 
-/**
- * Set the value of gauge. 
- *
- * @param number - the value of gauge.  
- *
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexGauge::setValue(uint32_t number)
 {
     char buf[10] = {0};

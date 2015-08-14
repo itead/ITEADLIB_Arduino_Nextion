@@ -15,23 +15,11 @@
 
 #include "NexButton.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexButton::NexButton(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }
 
-/**
- * Get text value from button component.
- *
- * @param buffer - text buffer. 
- * @param len - text buffer length.
- *
- * @return the text buffer length
- */
 uint16_t NexButton::getText(char *buffer, uint16_t len)
 {
     String cmd;
@@ -42,14 +30,6 @@ uint16_t NexButton::getText(char *buffer, uint16_t len)
     return recvRetString(buffer,len);
 }
 
-/**
- * Set text value of button component.
- *
- * @param buffer - text buffer. 
- * 
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexButton::setText(const char *buffer)
 {
     String cmd;

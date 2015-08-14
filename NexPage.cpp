@@ -15,21 +15,11 @@
 
 #include "NexPage.h"
 
-/**
- * Constructor,inherited NexTouch's constructor function.
- *
- */
 NexPage::NexPage(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }
 
-/**
- * Change page.  
- * 
- * @retval true - success. 
- * @retval false - failed. 
- */
 bool NexPage::show(void)
 {
     uint8_t buffer[4] = {0};

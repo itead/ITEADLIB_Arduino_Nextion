@@ -1,6 +1,6 @@
 /**
  * @example CompButton.ino
- *
+ * 
  * @par Show how to use API of class NexButton.  
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)

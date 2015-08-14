@@ -21,8 +21,7 @@
 #include "NexHardware.h"
 
 /**
- * NexGauge,subclass of NexTouch,provides simple methods to control gauge component.
- *
+ * NexGauge component.
  */
 class NexGauge: public NexObject
 {
@@ -31,8 +30,25 @@ public: /* methods */
      * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
      */
     NexGauge(uint8_t pid, uint8_t cid, const char *name);
-    
+
+    /**
+     * Get the value of gauge.
+     * 
+     * @param number - an output parameter to save gauge's value.
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool getValue(uint32_t *number);
+    
+    /**
+     * Set the value of gauge. 
+     *
+     * @param number - the value of gauge.  
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool setValue(uint32_t number);
 };
 

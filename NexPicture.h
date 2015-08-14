@@ -21,8 +21,7 @@
 #include "NexHardware.h"
 
 /**
- * NexPicture,subclass of NexTouch,provides simple methods to control picture component. 
- *
+ * NexPicture component. 
  */
 class NexPicture: public NexTouch
 {
@@ -32,7 +31,24 @@ public: /* methods */
      */
     NexPicture(uint8_t pid, uint8_t cid, const char *name);
     
+    /**
+     * Get picture's number.
+     * 
+     * @param number - an output parameter to save picture number.  
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool getPic(uint32_t *number);
+    
+    /**
+     * Set picture's number.
+     * 
+     * @param number -the picture number.
+     *
+     * @retval true - success.
+     * @retval false - failed. 
+     */
     bool setPic(uint32_t number);
 };
 
