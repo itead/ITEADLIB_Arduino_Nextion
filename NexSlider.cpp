@@ -18,7 +18,7 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexSlider::NexSlider(NexPid pid, NexCid cid, const char *name)
+NexSlider::NexSlider(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }

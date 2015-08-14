@@ -21,7 +21,7 @@
  * @param cid - component id.    
  * @param name - component name. 
  */
-NexObject::NexObject(NexPid pid, NexCid cid, const char *name)
+NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name)
 {
     this->pid = pid;
     this->cid = cid;
@@ -34,7 +34,7 @@ NexObject::NexObject(NexPid pid, NexCid cid, const char *name)
  *
  * @return the id of page.  
  */
-NexPid NexObject::getObjPid(void)
+uint8_t NexObject::getObjPid(void)
 {
     return pid;
 }
@@ -44,7 +44,7 @@ NexPid NexObject::getObjPid(void)
  *
  * @return the id of component.  
  */
-NexCid NexObject::getObjCid(void)
+uint8_t NexObject::getObjCid(void)
 {
     return cid;
 }

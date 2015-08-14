@@ -23,11 +23,13 @@
 /**
  * NexPage,subclass of NexTouch,provides simple methods to control page component. 
  *
+ * Actually, Page is also a component which can contain other components such as 
+ * Button, Text, etc. 
  */
 class NexPage: public NexTouch
 {
 public: /* methods */
-    NexPage(NexPid pid, NexCid cid, const char *name);
+    NexPage(uint8_t pid, uint8_t cid, const char *name);
     bool show(void);
 };
 

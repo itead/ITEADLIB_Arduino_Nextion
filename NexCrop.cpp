@@ -19,7 +19,7 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexCrop::NexCrop(NexPid pid, NexCid cid, const char *name)
+NexCrop::NexCrop(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }

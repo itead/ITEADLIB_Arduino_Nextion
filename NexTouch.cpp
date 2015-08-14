@@ -23,7 +23,7 @@
  * @param name - name
  *   
  */
-NexTouch::NexTouch(NexPid pid, NexCid cid, const char *name)
+NexTouch::NexTouch(uint8_t pid, uint8_t cid, const char *name)
     :NexObject(pid, cid, name)
 {
     this->cbPush = NULL;
@@ -72,7 +72,7 @@ void NexTouch::pop(void)
     }
 }
 
-void NexTouch::iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType event)
+void NexTouch::iterate(NexTouch **list, uint8_t pid, uint8_t cid, NexEventType event)
 {
     NexTouch *e = NULL;
     uint16_t i = 0;

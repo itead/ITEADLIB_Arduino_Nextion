@@ -27,7 +27,7 @@
 class NexPicture: public NexTouch
 {
 public: /* methods */
-    NexPicture(NexPid pid, NexCid cid, const char *name);
+    NexPicture(uint8_t pid, uint8_t cid, const char *name);
     
     bool getPic(uint32_t *number);
     bool setPic(uint32_t number);

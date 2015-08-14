@@ -36,10 +36,10 @@ typedef enum {
 class NexTouch: public NexObject
 {
 public: /* static methods */    
-    static void iterate(NexTouch **list, NexPid pid, NexCid cid, NexEventType event);
+    static void iterate(NexTouch **list, uint8_t pid, uint8_t cid, NexEventType event);
 
 public: /* methods */
-    NexTouch(NexPid pid, NexCid cid, const char *name);
+    NexTouch(uint8_t pid, uint8_t cid, const char *name);
 
     void attachPush(NexTouchEventCb push, void *ptr = NULL);
     void detachPush(void);

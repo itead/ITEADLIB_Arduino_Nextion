@@ -249,7 +249,7 @@ static void mainEventLoop(NexTouch **list)
                 
                 if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
                 {
-                    NexTouch::iterate(list, (NexPid)__buffer[1], (NexCid)__buffer[2], (NexEventType)__buffer[3]);
+                    NexTouch::iterate(list, (uint8_t)__buffer[1], (uint8_t)__buffer[2], (NexEventType)__buffer[3]);
                 }
                 
             }

@@ -19,7 +19,7 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexGauge::NexGauge(NexPid pid, NexCid cid, const char *name)
+NexGauge::NexGauge(uint8_t pid, uint8_t cid, const char *name)
     :NexObject(pid, cid, name)
 {
 }

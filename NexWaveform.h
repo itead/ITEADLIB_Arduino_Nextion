@@ -26,7 +26,7 @@
 class NexWaveform: public NexObject
 {
 public: /* methods */
-    NexWaveform(NexPid pid, NexCid cid, const char *name);
+    NexWaveform(uint8_t pid, uint8_t cid, const char *name);
     bool addValue(uint8_t ch, uint8_t number);
 };
 

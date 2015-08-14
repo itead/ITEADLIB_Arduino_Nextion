@@ -18,7 +18,7 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexText::NexText(NexPid pid, NexCid cid, const char *name)
+NexText::NexText(uint8_t pid, uint8_t cid, const char *name)
     :NexTouch(pid, cid, name)
 {
 }

@@ -19,16 +19,6 @@
 #include "NexConfig.h"
 
 /**
- * Page ID 
- * 
- * Actually, Page is also a component which can contain other components such as 
- * Button, Text, etc. 
- */
-typedef uint8_t NexPid; 
-
-typedef uint8_t NexCid; /**< Component ID */
-
-/**
  * Root class of all Nextion components. 
  *
  * Provides the essential attributes of a Nextion component and the methods accessing
@@ -38,17 +28,17 @@ typedef uint8_t NexCid; /**< Component ID */
 class NexObject 
 {
 public: /* methods */
-    NexObject(NexPid pid, NexCid cid, const char *name);
+    NexObject(uint8_t pid, uint8_t cid, const char *name);
     void printObjInfo(void);
 
 protected: /* methods */
-    NexPid getObjPid(void);    
-    NexCid getObjCid(void);
+    uint8_t getObjPid(void);    
+    uint8_t getObjCid(void);
     const char *getObjName(void);    
     
 private: /* data */ 
-    NexPid pid; /* Page ID */
-    NexCid cid; /* Component ID */
+    uint8_t pid; /* Page ID */
+    uint8_t cid; /* Component ID */
     const char *name; /* An unique name */
 };
 

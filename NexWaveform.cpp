@@ -18,7 +18,7 @@
  * Constructor,inherited NexTouch's constructor function.
  *
  */
-NexWaveform::NexWaveform(NexPid pid, NexCid cid, const char *name)
+NexWaveform::NexWaveform(uint8_t pid, uint8_t cid, const char *name)
     :NexObject(pid, cid, name)
 {
 }
