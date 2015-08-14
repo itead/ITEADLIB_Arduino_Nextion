@@ -72,7 +72,7 @@ void NexTouch::pop(void)
     }
 }
 
-void NexTouch::iterate(NexTouch **list, uint8_t pid, uint8_t cid, NexEventType event)
+void NexTouch::iterate(NexTouch **list, uint8_t pid, uint8_t cid, int32_t event)
 {
     NexTouch *e = NULL;
     uint16_t i = 0;

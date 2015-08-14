@@ -23,20 +23,17 @@
 
 typedef void (*NexTouchEventCb)(void *ptr);
 
-typedef enum {
-    NEX_EVENT_POP = 0x00,
-    NEX_EVENT_PUSH = 0x01,
-    NEX_EVENT_NULL
-} NexEventType;
+#define NEX_EVENT_POP   (0x00)
+#define NEX_EVENT_PUSH  (0x01)
 
 /**
- * Root Class of Nextion Components. 
+ * Event Class of Nextion Components. 
  *
  */
 class NexTouch: public NexObject
 {
 public: /* static methods */    
-    static void iterate(NexTouch **list, uint8_t pid, uint8_t cid, NexEventType event);
+    static void iterate(NexTouch **list, uint8_t pid, uint8_t cid, int32_t event);
 
 public: /* methods */
     NexTouch(uint8_t pid, uint8_t cid, const char *name);
