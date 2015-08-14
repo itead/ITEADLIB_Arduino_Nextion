@@ -83,7 +83,7 @@
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    h0.attachPop(h0PopCallback);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    h0.<a class="code" href="class_nex_touch.html#a4da1c4fcdfadb7eabfb9ccaba9ecad11">attachPop</a>(h0PopCallback);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
@@ -94,16 +94,17 @@
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="ttc" id="class_nex_slider_html"><div class="ttname"><a href="class_nex_slider.html">NexSlider</a></div><div class="ttdoc">NexSlider,subclass of NexTouch,provides simple methods to control slider component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_slider_8h_source.html#l00027">NexSlider.h:27</a></div></div>
 <div class="ttc" id="class_nex_text_html_a19589b32c981436a1bbcfe407bc766e3"><div class="ttname"><a href="class_nex_text.html#a19589b32c981436a1bbcfe407bc766e3">NexText::setText</a></div><div class="ttdeci">bool setText(const char *buffer)</div><div class="ttdoc">Set the value of text. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_text_8cpp_source.html#l00052">NexText.cpp:52</a></div></div>
-<div class="ttc" id="group___nextion_html_gae4200065e323c18e6b11e91a916d8475"><div class="ttname"><a href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Call mainEventLoop,watting for Nextion&#39;s touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00293">NexHardware.cpp:293</a></div></div>
+<div class="ttc" id="group___nextion_html_gae4200065e323c18e6b11e91a916d8475"><div class="ttname"><a href="group___nextion.html#gae4200065e323c18e6b11e91a916d8475">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch **nex_listen_list)</div><div class="ttdoc">Listen touch event and calling callbacks attached before. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00235">NexHardware.cpp:235</a></div></div>
 <div class="ttc" id="class_nex_slider_html_a384d5488b421efd6affbfd32f45bb107"><div class="ttname"><a href="class_nex_slider.html#a384d5488b421efd6affbfd32f45bb107">NexSlider::getValue</a></div><div class="ttdeci">bool getValue(uint32_t *number)</div><div class="ttdoc">Get the value of slider. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_slider_8cpp_source.html#l00034">NexSlider.cpp:34</a></div></div>
+<div class="ttc" id="class_nex_touch_html_a4da1c4fcdfadb7eabfb9ccaba9ecad11"><div class="ttname"><a href="class_nex_touch.html#a4da1c4fcdfadb7eabfb9ccaba9ecad11">NexTouch::attachPop</a></div><div class="ttdeci">void attachPop(NexTouchEventCb pop, void *ptr=NULL)</div><div class="ttdoc">Attach an callback function of pop touch event. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00039">NexTouch.cpp:39</a></div></div>
 <div class="ttc" id="_nextion_8h_html"><div class="ttname"><a href="_nextion_8h.html">Nextion.h</a></div><div class="ttdoc">The header file including all other header files provided by this library. </div></div>
-<div class="ttc" id="group___nextion_html_gab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion&#39;s baudrate,page id. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00272">NexHardware.cpp:272</a></div></div>
-<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00036">NexTouch.h:36</a></div></div>
+<div class="ttc" id="group___nextion_html_gab09ddba6b72334d30ae091a7b038d790"><div class="ttname"><a href="group___nextion.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a></div><div class="ttdeci">bool nexInit(void)</div><div class="ttdoc">Init Nextion. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00220">NexHardware.cpp:220</a></div></div>
+<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Father class of the components with touch events. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00048">NexTouch.h:48</a></div></div>
 <div class="ttc" id="class_nex_text_html"><div class="ttname"><a href="class_nex_text.html">NexText</a></div><div class="ttdoc">NexText,subclass of NexTouch,provides simple methods to control text component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_text_8h_source.html#l00027">NexText.h:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2015 11:56:19 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 14 2015 15:37:20 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

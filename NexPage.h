@@ -29,6 +29,9 @@
 class NexPage: public NexTouch
 {
 public: /* methods */
+    /**
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     */
     NexPage(uint8_t pid, uint8_t cid, const char *name);
     bool show(void);
 };

@@ -56,7 +56,7 @@
 </div><!--header-->
 <div class="contents">
 
-<p>Root Class of Nextion Components.  
+<p>Root class of all Nextion components.  
  <a href="class_nex_object.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_nex_object_8h_source.html">NexObject.h</a>&gt;</code></p>
@@ -68,7 +68,7 @@ Inheritance diagram for NexObject:</div>
   <map id="NexObject_map" name="NexObject_map">
 <area href="class_nex_gauge.html" title="NexGauge,subclass of NexTouch,provides simple methods to control gauge component. ..." alt="NexGauge" shape="rect" coords="0,56,105,80"/>
 <area href="class_nex_progress_bar.html" title="NexProgressBar,subclass of NexTouch,provides simple methods to control progress bar component..." alt="NexProgressBar" shape="rect" coords="115,56,220,80"/>
-<area href="class_nex_touch.html" title="Root Class of Nextion Components. " alt="NexTouch" shape="rect" coords="345,56,450,80"/>
+<area href="class_nex_touch.html" title="Father class of the components with touch events. " alt="NexTouch" shape="rect" coords="345,56,450,80"/>
 <area href="class_nex_waveform.html" title="NexWaveform,subclass of NexTouch,provides simple methods to control NexWaveform component. " alt="NexWaveform" shape="rect" coords="460,56,565,80"/>
 <area href="class_nex_button.html" title="NexButton,subclass of NexTouch,provides simple methods to control button component. " alt="NexButton" shape="rect" coords="0,112,105,136"/>
 <area href="class_nex_crop.html" title="NexCrop,subclass of NexTouch,provides simple methods to control crop component. " alt="NexCrop" shape="rect" coords="115,112,220,136"/>
@@ -82,42 +82,33 @@ Inheritance diagram for NexObject:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a47e8aee24a518936fbc27f00fda235c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#a47e8aee24a518936fbc27f00fda235c6">NexObject</a> (NexPid pid, NexCid cid, const char *name)</td></tr>
-<tr class="memdesc:a47e8aee24a518936fbc27f00fda235c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a47e8aee24a518936fbc27f00fda235c6">More...</a><br /></td></tr>
-<tr class="separator:a47e8aee24a518936fbc27f00fda235c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bf9f3059eb9475266edb4642078ade8"><td class="memItemLeft" align="right" valign="top">NexPid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#a2bf9f3059eb9475266edb4642078ade8">getObjPid</a> (void)</td></tr>
-<tr class="memdesc:a2bf9f3059eb9475266edb4642078ade8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get page id.  <a href="#a2bf9f3059eb9475266edb4642078ade8">More...</a><br /></td></tr>
-<tr class="separator:a2bf9f3059eb9475266edb4642078ade8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cc1d0bd2acb58b46b6e156df169cd81"><td class="memItemLeft" align="right" valign="top">NexCid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#a0cc1d0bd2acb58b46b6e156df169cd81">getObjCid</a> (void)</td></tr>
-<tr class="memdesc:a0cc1d0bd2acb58b46b6e156df169cd81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get component id.  <a href="#a0cc1d0bd2acb58b46b6e156df169cd81">More...</a><br /></td></tr>
-<tr class="separator:a0cc1d0bd2acb58b46b6e156df169cd81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea0246c02cd5e54d0dbd714ace1ff2b1"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#aea0246c02cd5e54d0dbd714ace1ff2b1">getObjName</a> (void)</td></tr>
-<tr class="memdesc:aea0246c02cd5e54d0dbd714ace1ff2b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get component name.  <a href="#aea0246c02cd5e54d0dbd714ace1ff2b1">More...</a><br /></td></tr>
-<tr class="separator:aea0246c02cd5e54d0dbd714ace1ff2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abeff0c61474e8b3ce6bac76771820b64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abeff0c61474e8b3ce6bac76771820b64"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#abeff0c61474e8b3ce6bac76771820b64">printObjInfo</a> (void)</td></tr>
-<tr class="memdesc:abeff0c61474e8b3ce6bac76771820b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print current object address,page id,component id, component name,pop event function address,push event function address. <br /></td></tr>
+<tr class="memitem:ab15aadb9c91d9690786d8d25d12d94e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#ab15aadb9c91d9690786d8d25d12d94e1">NexObject</a> (uint8_t pid, uint8_t cid, const char *name)</td></tr>
+<tr class="memdesc:ab15aadb9c91d9690786d8d25d12d94e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ab15aadb9c91d9690786d8d25d12d94e1">More...</a><br /></td></tr>
+<tr class="separator:ab15aadb9c91d9690786d8d25d12d94e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeff0c61474e8b3ce6bac76771820b64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_object.html#abeff0c61474e8b3ce6bac76771820b64">printObjInfo</a> (void)</td></tr>
+<tr class="memdesc:abeff0c61474e8b3ce6bac76771820b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print current object'address, page id, component id and name.  <a href="#abeff0c61474e8b3ce6bac76771820b64">More...</a><br /></td></tr>
 <tr class="separator:abeff0c61474e8b3ce6bac76771820b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Root Class of Nextion Components. </p>
+<div class="textblock"><p>Root class of all Nextion components. </p>
+<p>Provides the essential attributes of a Nextion component and the methods accessing them. At least, Page ID(pid), Component ID(pid) and an unique name are needed for creating a component in Nexiton library. </p>
 
-<p>Definition at line <a class="el" href="_nex_object_8h_source.html#l00027">27</a> of file <a class="el" href="_nex_object_8h_source.html">NexObject.h</a>.</p>
+<p>Definition at line <a class="el" href="_nex_object_8h_source.html#l00028">28</a> of file <a class="el" href="_nex_object_8h_source.html">NexObject.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a47e8aee24a518936fbc27f00fda235c6"></a>
+<a class="anchor" id="ab15aadb9c91d9690786d8d25d12d94e1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">NexObject::NexObject </td>
           <td>(</td>
-          <td class="paramtype">NexPid&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>pid</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">NexCid&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>cid</em>, </td>
         </tr>
         <tr>
@@ -139,22 +130,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <table class="params">
     <tr><td class="paramname">pid</td><td>- page id. </td></tr>
     <tr><td class="paramname">cid</td><td>- component id. </td></tr>
-    <tr><td class="paramname">name</td><td>- component name. </td></tr>
+    <tr><td class="paramname">name</td><td>- pointer to an unique name in range of all components. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_nex_object_8cpp_source.html#l00024">24</a> of file <a class="el" href="_nex_object_8cpp_source.html">NexObject.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_nex_object_8cpp_source.html#l00017">17</a> of file <a class="el" href="_nex_object_8cpp_source.html">NexObject.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0cc1d0bd2acb58b46b6e156df169cd81"></a>
+<a class="anchor" id="abeff0c61474e8b3ce6bac76771820b64"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">NexCid NexObject::getObjCid </td>
+          <td class="memname">void NexObject::printObjInfo </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -163,52 +154,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Get component id. </p>
-<dl class="section return"><dt>Returns</dt><dd>the id of component. </dd></dl>
+<p>Print current object'address, page id, component id and name. </p>
+<dl class="section warning"><dt>Warning</dt><dd>this method does nothing, unless debug message enabled. </dd></dl>
 
-<p>Definition at line <a class="el" href="_nex_object_8cpp_source.html#l00047">47</a> of file <a class="el" href="_nex_object_8cpp_source.html">NexObject.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aea0246c02cd5e54d0dbd714ace1ff2b1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * NexObject::getObjName </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get component name. </p>
-<dl class="section return"><dt>Returns</dt><dd>the name of component. </dd></dl>
-
-<p>Definition at line <a class="el" href="_nex_object_8cpp_source.html#l00057">57</a> of file <a class="el" href="_nex_object_8cpp_source.html">NexObject.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2bf9f3059eb9475266edb4642078ade8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">NexPid NexObject::getObjPid </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get page id. </p>
-<dl class="section return"><dt>Returns</dt><dd>the id of page. </dd></dl>
-
-<p>Definition at line <a class="el" href="_nex_object_8cpp_source.html#l00037">37</a> of file <a class="el" href="_nex_object_8cpp_source.html">NexObject.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_nex_object_8cpp_source.html#l00039">39</a> of file <a class="el" href="_nex_object_8cpp_source.html">NexObject.cpp</a>.</p>
 
 </div>
 </div>
@@ -219,7 +168,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2015 11:56:19 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 14 2015 15:37:20 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

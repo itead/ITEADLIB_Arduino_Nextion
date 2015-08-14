@@ -27,6 +27,9 @@
 class NexSlider: public NexTouch
 {
 public: /* methods */
+    /**
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     */
     NexSlider(uint8_t pid, uint8_t cid, const char *name);
 
     bool getValue(uint32_t *number);

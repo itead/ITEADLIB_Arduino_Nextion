@@ -27,6 +27,10 @@
 class NexButton: public NexTouch
 {
 public: /* methods */
+
+    /**
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     */
     NexButton(uint8_t pid, uint8_t cid, const char *name);
 
     uint16_t getText(char *buffer, uint16_t len);    

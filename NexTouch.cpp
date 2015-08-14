@@ -15,60 +15,52 @@
 #include "NexTouch.h"
 
 
-/**
- * Constructor of Nextouch. 
- * 
- * @param pid - pid
- * @param cid - cid
- * @param name - name
- *   
- */
 NexTouch::NexTouch(uint8_t pid, uint8_t cid, const char *name)
     :NexObject(pid, cid, name)
 {
-    this->cbPush = NULL;
-    this->cbPop = NULL;
+    this->__cb_push = NULL;
+    this->__cb_pop = NULL;
     this->__cbpop_ptr = NULL;
     this->__cbpush_ptr = NULL;
 }
 
 void NexTouch::attachPush(NexTouchEventCb push, void *ptr)
 {
-    this->cbPush = push;
+    this->__cb_push = push;
     this->__cbpush_ptr = ptr;
 }
 
 void NexTouch::detachPush(void)
 {
-    this->cbPush = NULL;
+    this->__cb_push = NULL;
     this->__cbpush_ptr = NULL;
 }
 
 void NexTouch::attachPop(NexTouchEventCb pop, void *ptr)
 {
-    this->cbPop = pop;
+    this->__cb_pop = pop;
     this->__cbpop_ptr = ptr;
 }
 
 void NexTouch::detachPop(void)
 {
-    this->cbPop = NULL;    
+    this->__cb_pop = NULL;    
     this->__cbpop_ptr = NULL;
 }
 
 void NexTouch::push(void)
 {
-    if (cbPush)
+    if (__cb_push)
     {
-        cbPush(__cbpush_ptr);
+        __cb_push(__cbpush_ptr);
     }
 }
 
 void NexTouch::pop(void)
 {
-    if (cbPop)
+    if (__cb_pop)
     {
-        cbPop(__cbpop_ptr);
+        __cb_pop(__cbpop_ptr);
     }
 }
 

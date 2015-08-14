@@ -27,6 +27,9 @@
 class NexGauge: public NexObject
 {
 public: /* methods */
+    /**
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     */
     NexGauge(uint8_t pid, uint8_t cid, const char *name);
     
     bool getValue(uint32_t *number);

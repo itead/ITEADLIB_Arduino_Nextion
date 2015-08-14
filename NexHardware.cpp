@@ -217,16 +217,24 @@ bool recvRetCommandFinished(uint32_t timeout)
 }
 
 
-
-/**
- * Watting for Nextion's touch event.
- * 
- * @param list - index to Nextion Components list. 
- * 
- */
-static void mainEventLoop(NexTouch **list)
+bool nexInit(void)
 {
-    static uint8_t __buffer[16];
+    bool ret1 = false;
+    bool ret2 = false;
+    
+    dbSerialBegin(9600);
+    nexSerial.begin(9600);
+    sendCommand("");
+    sendCommand("bkcmd=1");
+    ret1 = recvRetCommandFinished();
+    sendCommand("page 0");
+    ret2 = recvRetCommandFinished();
+    return ret1 && ret2;
+}
+
+void nexLoop(NexTouch **nex_listen_list)
+{
+    static uint8_t __buffer[10];
     
     uint16_t i;
     uint8_t c;  
@@ -249,53 +257,11 @@ static void mainEventLoop(NexTouch **list)
                 
                 if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
                 {
-                    NexTouch::iterate(list, __buffer[1], __buffer[2], (int32_t)__buffer[3]);
+                    NexTouch::iterate(nex_listen_list, __buffer[1], __buffer[2], (int32_t)__buffer[3]);
                 }
                 
             }
         }
     }
 }
-
-/**
- * @addtogroup Nextion 
- * @{ 
- */
-
-
-/**
- * Init Nextion's baudrate,page id.    
- * 
- * @retval true - success. 
- * @retval false - failed. 
- */
-bool nexInit(void)
-{
-    bool ret1 = false;
-    bool ret2 = false;
-    
-    dbSerialBegin(9600);
-    nexSerial.begin(9600);
-    sendCommand("");
-    sendCommand("bkcmd=1");
-    ret1 = recvRetCommandFinished();
-    sendCommand("page 0");
-    ret2 = recvRetCommandFinished();
-    return ret1 && ret2;
-}
-
-/**
- * Call mainEventLoop,watting for Nextion's touch event.  
- *  
- * @param nex_listen_list - index to Nextion Components list. 
- * 
- */
-void nexLoop(NexTouch **nex_listen_list)
-{
-    mainEventLoop(nex_listen_list);
-}
-
-/**
- * @}
- */
 

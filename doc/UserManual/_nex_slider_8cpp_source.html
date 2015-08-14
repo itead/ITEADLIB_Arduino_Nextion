@@ -53,7 +53,7 @@
 <a href="_nex_slider_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_slider_8h.html">NexSlider.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_nex_slider.html#af60f08f3308e76c8bb86ce2e84104680">   21</a></span>&#160;<a class="code" href="class_nex_slider.html#af60f08f3308e76c8bb86ce2e84104680">NexSlider::NexSlider</a>(NexPid pid, NexCid cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name)</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_nex_slider.html#a00c5678209c936e9a57c14b6e2384774">   21</a></span>&#160;<a class="code" href="class_nex_slider.html#a00c5678209c936e9a57c14b6e2384774">NexSlider::NexSlider</a>(uint8_t pid, uint8_t cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    :<a class="code" href="class_nex_touch.html">NexTouch</a>(pid, cid, name)</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
@@ -61,7 +61,7 @@
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_nex_slider.html#a384d5488b421efd6affbfd32f45bb107">   34</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_slider.html#a384d5488b421efd6affbfd32f45bb107">NexSlider::getValue</a>(uint32_t *number)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get &quot;</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    cmd += <a class="code" href="class_nex_object.html#aea0246c02cd5e54d0dbd714ace1ff2b1">getObjName</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    cmd += getObjName();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    cmd += <span class="stringliteral">&quot;.val&quot;</span>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="_nex_hardware_8cpp.html#aa382dfd2890722f1891f4924d87f2f79">sendCommand</a>(cmd.c_str());</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="_nex_hardware_8cpp.html#ae26fbfe1541acac85ac10398be787852">recvRetNumber</a>(number);</div>
@@ -73,7 +73,7 @@
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    String cmd;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    utoa(number, buf, 10);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    cmd += <a class="code" href="class_nex_object.html#aea0246c02cd5e54d0dbd714ace1ff2b1">getObjName</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    cmd += getObjName();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    cmd += <span class="stringliteral">&quot;.val=&quot;</span>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
@@ -86,14 +86,13 @@
 <div class="ttc" id="class_nex_slider_html_a3f325bda4db913e302e94a4b25de7b5f"><div class="ttname"><a href="class_nex_slider.html#a3f325bda4db913e302e94a4b25de7b5f">NexSlider::setValue</a></div><div class="ttdeci">bool setValue(uint32_t number)</div><div class="ttdoc">Set the value of slider. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_slider_8cpp_source.html#l00051">NexSlider.cpp:51</a></div></div>
 <div class="ttc" id="class_nex_slider_html_a384d5488b421efd6affbfd32f45bb107"><div class="ttname"><a href="class_nex_slider.html#a384d5488b421efd6affbfd32f45bb107">NexSlider::getValue</a></div><div class="ttdeci">bool getValue(uint32_t *number)</div><div class="ttdoc">Get the value of slider. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_slider_8cpp_source.html#l00034">NexSlider.cpp:34</a></div></div>
 <div class="ttc" id="_nex_slider_8h_html"><div class="ttname"><a href="_nex_slider_8h.html">NexSlider.h</a></div><div class="ttdoc">The definition of class NexSlider. </div></div>
-<div class="ttc" id="class_nex_object_html_aea0246c02cd5e54d0dbd714ace1ff2b1"><div class="ttname"><a href="class_nex_object.html#aea0246c02cd5e54d0dbd714ace1ff2b1">NexObject::getObjName</a></div><div class="ttdeci">const char * getObjName(void)</div><div class="ttdoc">Get component name. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00057">NexObject.cpp:57</a></div></div>
-<div class="ttc" id="class_nex_slider_html_af60f08f3308e76c8bb86ce2e84104680"><div class="ttname"><a href="class_nex_slider.html#af60f08f3308e76c8bb86ce2e84104680">NexSlider::NexSlider</a></div><div class="ttdeci">NexSlider(NexPid pid, NexCid cid, const char *name)</div><div class="ttdoc">Constructor,inherited NexTouch&#39;s constructor function. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_slider_8cpp_source.html#l00021">NexSlider.cpp:21</a></div></div>
+<div class="ttc" id="class_nex_slider_html_a00c5678209c936e9a57c14b6e2384774"><div class="ttname"><a href="class_nex_slider.html#a00c5678209c936e9a57c14b6e2384774">NexSlider::NexSlider</a></div><div class="ttdeci">NexSlider(uint8_t pid, uint8_t cid, const char *name)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_slider_8cpp_source.html#l00021">NexSlider.cpp:21</a></div></div>
 <div class="ttc" id="_nex_hardware_8cpp_html_aa382dfd2890722f1891f4924d87f2f79"><div class="ttname"><a href="_nex_hardware_8cpp.html#aa382dfd2890722f1891f4924d87f2f79">sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd)</div><div class="ttdoc">Send command to Nextion. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00164">NexHardware.cpp:164</a></div></div>
-<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00036">NexTouch.h:36</a></div></div>
+<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Father class of the components with touch events. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00048">NexTouch.h:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2015 11:56:19 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 14 2015 15:37:20 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
