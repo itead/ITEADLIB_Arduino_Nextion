@@ -1,10 +1,11 @@
 /**
  * @file NexCrop.h
  *
- * API of NexCrop. 
+ * The definition of class NexCrop. 
  *
- * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
- * @date    2015/7/10
+ * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
+ * @date 2015/8/13
+ *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -15,7 +16,7 @@
 
 #ifndef __NEXCROP_H__
 #define __NEXCROP_H__
-#ifdef __cplusplus
+
 #include "NexTouch.h"
 #include "NexHardware.h"
 
@@ -32,5 +33,5 @@ public: /* methods */
     bool setPic(uint32_t number);
 };
 
-#endif /* #ifdef __cplusplus */
+
 #endif /* #ifndef __NEXCROP_H__ */

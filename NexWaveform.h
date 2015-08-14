@@ -1,10 +1,11 @@
 /**
  * @file NexWaveform.h
  *
- * API of NexWaveform. 
+ * The definition of class NexWaveform. 
  *
- * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
- * @date    2015/8/11
+ * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
+ * @date 2015/8/13
+ *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -14,7 +15,7 @@
  */
 #ifndef __NEXWAVEFORM_H__
 #define __NEXWAVEFORM_H__
-#ifdef __cplusplus
+
 #include "NexTouch.h"
 #include "NexHardware.h"
 
@@ -29,5 +30,5 @@ public: /* methods */
     bool addValue(uint8_t ch, uint8_t number);
 };
 
-#endif /* #ifdef __cplusplus */
+
 #endif /* #ifndef __NEXWAVEFORM_H__ */

@@ -1,10 +1,11 @@
 /**
  * @file NexHotspot.h
  *
- * API of NexHotspot. 
+ * The definition of class NexHotspot. 
  *
- * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
- * @date    2015/7/10
+ * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
+ * @date 2015/8/13
+ *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -15,7 +16,7 @@
 
 #ifndef __NEXHOTSPOT_H__
 #define __NEXHOTSPOT_H__
-#ifdef __cplusplus
+
 #include "NexTouch.h"
 #include "NexHardware.h"
 
@@ -29,5 +30,5 @@ public: /* methods */
     NexHotspot(NexPid pid, NexCid cid, const char *name);
 };
 
-#endif /* #ifdef __cplusplus */
+
 #endif /* #ifndef __NEXHOTSPOT_H__ */

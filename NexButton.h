@@ -1,10 +1,11 @@
 /**
  * @file NexButton.h
  *
- * API of NexButton. 
+ * The definition of class NexButton. 
  *
- * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
- * @date    2015/7/10
+ * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
+ * @date 2015/8/13
+ *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -15,7 +16,7 @@
 
 #ifndef __NEXBUTTON_H__
 #define __NEXBUTTON_H__
-#ifdef __cplusplus
+
 #include "NexTouch.h"
 #include "NexHardware.h"
 
@@ -32,5 +33,5 @@ public: /* methods */
     bool setText(const char *buffer);    
 };
 
-#endif /* #ifdef __cplusplus */
+
 #endif /* #ifndef __NEXBUTTON_H__ */

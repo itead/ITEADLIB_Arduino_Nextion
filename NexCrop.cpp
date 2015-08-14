@@ -1,10 +1,10 @@
 /**
  * @file NexCrop.cpp
  *
- * API of NexCrop. 
+ * The implementation of class NexCrop. 
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
- * @date    2015/7/10
+ * @date    2015/8/13
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or

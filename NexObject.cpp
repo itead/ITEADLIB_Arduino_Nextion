@@ -1,7 +1,7 @@
 /**
  * @file NexObject.cpp
  *
- * The root of all classes in Nextion library. 
+ * The implementation of class NexObject. 
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/13
@@ -12,7 +12,6 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  */
-
 #include "NexObject.h"
 
 /**

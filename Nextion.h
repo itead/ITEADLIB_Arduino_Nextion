@@ -1,9 +1,9 @@
 /**
  * @file Nextion.h
  *
- * Header file of Nextion Library. 
+ * The header file including all other header files provided by this library. 
  *
- * All examples or sketches need to include this file. 
+ * Every example sketch should include this file. 
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/12
@@ -14,12 +14,11 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  */
-
 #ifndef __NEXTION_H__
 #define __NEXTION_H__
 
 #include "Arduino.h"
-#include "NexSerialConfig.h"
+#include "NexConfig.h"
 #include "NexTouch.h"
 #include "NexHardware.h"
 

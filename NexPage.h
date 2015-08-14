@@ -1,10 +1,11 @@
 /**
  * @file NexPage.h
  *
- * API of NexPage. 
+ * The definition of class NexPage. 
  *
- * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
- * @date    2015/7/10
+ * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
+ * @date 2015/8/13
+ *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -15,7 +16,7 @@
 
 #ifndef __NEXPAGE_H__
 #define __NEXPAGE_H__
-#ifdef __cplusplus
+
 #include "NexTouch.h"
 #include "NexHardware.h"
 
@@ -30,5 +31,5 @@ public: /* methods */
     bool show(void);
 };
 
-#endif /* #ifdef __cplusplus */
+
 #endif /* #ifndef __NEXPAGE_H__ */

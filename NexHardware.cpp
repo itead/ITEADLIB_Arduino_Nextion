@@ -1,7 +1,7 @@
 /**
  * @file NexHardware.cpp
  *
- * Hardware Srial API. 
+ * The implementation of base API for using Nextion. 
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/11

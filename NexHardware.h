@@ -1,7 +1,7 @@
 /**
  * @file NexHardware.h
  *
- * Hardware Srial API. 
+ * The definition of base API for using Nextion. 
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/11
@@ -15,7 +15,7 @@
 #ifndef __NEXHARDWARE_H__
 #define __NEXHARDWARE_H__
 #include <Arduino.h>
-#include "NexSerialConfig.h"
+#include "NexConfig.h"
 #include "NexTouch.h"
 
 bool recvRetNumber(uint32_t *number, uint32_t timeout = 100);

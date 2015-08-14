@@ -1,10 +1,11 @@
 /**
  * @file NexTouch.h
  *
- * API of Nextion. 
+ * The definition of class NexTouch. 
  *
- * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
- * @date    2015/7/10
+ * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
+ * @date 2015/8/13
+ *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -15,9 +16,9 @@
 
 #ifndef __NEXTOUCH_H__
 #define __NEXTOUCH_H__
-#ifdef __cplusplus
+
 #include <Arduino.h>
-#include "NexSerialConfig.h"
+#include "NexConfig.h"
 #include "NexObject.h"
 
 typedef void (*NexTouchEventCb)(void *ptr);
@@ -56,5 +57,5 @@ private: /* data */
     void *__cbpop_ptr;
 };
 
-#endif /* #ifdef __cplusplus */
+
 #endif /* #ifndef __NEXTOUCH_H__ */
