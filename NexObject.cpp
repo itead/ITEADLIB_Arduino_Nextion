@@ -14,68 +14,40 @@
  */
 #include "NexObject.h"
 
-/**
- * Constructor
- * 
- * @param pid - page id. 
- * @param cid - component id.    
- * @param name - component name. 
- */
 NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name)
 {
-    this->pid = pid;
-    this->cid = cid;
-    this->name = name;
-    dbSerialPrintln("NexObject called");
+    this->__pid = pid;
+    this->__cid = cid;
+    this->__name = name;
 }
 
-/**
- * Get page id.
- *
- * @return the id of page.  
- */
 uint8_t NexObject::getObjPid(void)
 {
-    return pid;
+    return __pid;
 }
 
-/**
- * Get component id.
- *
- * @return the id of component.  
- */
 uint8_t NexObject::getObjCid(void)
 {
-    return cid;
+    return __cid;
 }
 
-/**
- * Get component name.
- *
- * @return the name of component. 
- */
 const char* NexObject::getObjName(void)
 {
-    return name;
+    return __name;
 }
 
-/**
- * Print current object address,page id,component id,
- * component name,pop event function address,push event function address. 
- *  
- */
 void NexObject::printObjInfo(void)
 {
     dbSerialPrint("[");
     dbSerialPrint((uint32_t)this);
     dbSerialPrint(":");
-    dbSerialPrint(pid);
+    dbSerialPrint(__pid);
     dbSerialPrint(",");
-    dbSerialPrint(cid);
+    dbSerialPrint(__cid);
     dbSerialPrint(",");
-    if (name)
+    if (__name)
     {
-        dbSerialPrint(name);
+        dbSerialPrint(__name);
     }
     else
     {

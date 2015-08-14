@@ -28,18 +28,50 @@
 class NexObject 
 {
 public: /* methods */
+
+    /**
+     * Constructor. 
+     *
+     * @param pid - page id. 
+     * @param cid - component id.    
+     * @param name - pointer to an unique name in range of all components. 
+     */
     NexObject(uint8_t pid, uint8_t cid, const char *name);
+
+    /**
+     * Print current object'address, page id, component id and name. 
+     *
+     * @warning this method does nothing, unless debug message enabled. 
+     */
     void printObjInfo(void);
 
 protected: /* methods */
+
+    /*
+     * Get page id.
+     *
+     * @return the id of page.  
+     */
     uint8_t getObjPid(void);    
+
+    /*
+     * Get component id.
+     *
+     * @return the id of component.  
+     */
     uint8_t getObjCid(void);
+
+    /*
+     * Get component name.
+     *
+     * @return the name of component. 
+     */
     const char *getObjName(void);    
     
 private: /* data */ 
-    uint8_t pid; /* Page ID */
-    uint8_t cid; /* Component ID */
-    const char *name; /* An unique name */
+    uint8_t __pid; /* Page ID */
+    uint8_t __cid; /* Component ID */
+    const char *__name; /* An unique name */
 };
 
 #endif /* #ifndef __NEXOBJECT_H__ */
