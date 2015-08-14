@@ -18,21 +18,33 @@
 #include <Arduino.h>
 #include "NexConfig.h"
 
-typedef uint8_t NexPid;
-typedef uint8_t NexCid;
+/**
+ * Page ID 
+ * 
+ * Actually, Page is also a component which can contain other components such as 
+ * Button, Text, etc. 
+ */
+typedef uint8_t NexPid; 
+
+typedef uint8_t NexCid; /**< Component ID */
 
 /**
- * Root Class of Nextion Components. 
+ * Root class of all Nextion components. 
+ *
+ * Provides the essential attributes of a Nextion component and the methods accessing
+ * them. At least, Page ID(pid), Component ID(pid) and an unique name are needed for
+ * creating a component in Nexiton library. 
  */
 class NexObject 
 {
 public: /* methods */
     NexObject(NexPid pid, NexCid cid, const char *name);
+    void printObjInfo(void);
 
+protected: /* methods */
     NexPid getObjPid(void);    
     NexCid getObjCid(void);
-    const char *getObjName(void);
-    void printObjInfo(void);
+    const char *getObjName(void);    
     
 private: /* data */ 
     NexPid pid; /* Page ID */

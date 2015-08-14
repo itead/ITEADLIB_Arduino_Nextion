@@ -41,7 +41,7 @@ For example:
 
 # Serial configuration
 
-In configuration file `NexSerialConfig.h`, you can find two macros below:
+In configuration file `NexConfig.h`, you can find two macros below:
 
   - dbSerial: Debug Serial (baudrate:9600), needed by beginners for debug your nextion applications or sketches. If
               your complete your work, it will be a wise choice to disable Debug Serial.
@@ -52,7 +52,7 @@ In configuration file `NexSerialConfig.h`, you can find two macros below:
 ## Redirect dbSerial and nexSerial
 
 If you want to change the default serial to debug or communicate with Nextion ,
-you need to modify the line in file `NexSerialConfig.h`:
+you need to modify the line in file `NexConfig.h`:
 
 	#define dbSerial Serial    ---> #define dbSerial Serialxxx
     #define nexSerial Serial2  ---> #define nexSeria Serialxxx
@@ -60,7 +60,7 @@ you need to modify the line in file `NexSerialConfig.h`:
 ## Disable Debug Serial
 
 If you want to disable the debug information,you need to modify the line in file 
-`NexSerialConfig.h`:
+`NexConfig.h`:
 
     #define DEBUG_SERIAL_ENABLE ---> //#define DEBUG_SERIAL_ENABLE
 

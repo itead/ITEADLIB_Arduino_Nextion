@@ -51,32 +51,32 @@
 </div><!--header-->
 <div class="contents">
 <a href="_nex_crop_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef __NEXCROP_H__</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define __NEXCROP_H__</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_touch_8h.html">NexTouch.h</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_hardware_8h.html">NexHardware.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_nex_crop.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nex_crop.html">NexCrop</a>: <span class="keyword">public</span> <a class="code" href="class_nex_touch.html">NexTouch</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_nex_crop.html#afdf123f244986ceb5cf4a9780f712e39">NexCrop</a>(NexPid pid, NexCid cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">bool</span> getPic(uint32_t *number);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> setPic(uint32_t number);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifdef __cplusplus */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXCROP_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef __NEXCROP_H__</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define __NEXCROP_H__</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_touch_8h.html">NexTouch.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_hardware_8h.html">NexHardware.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_nex_crop.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nex_crop.html">NexCrop</a>: <span class="keyword">public</span> <a class="code" href="class_nex_touch.html">NexTouch</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_nex_crop.html#afdf123f244986ceb5cf4a9780f712e39">NexCrop</a>(NexPid pid, NexCid cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> getPic(uint32_t *number);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> setPic(uint32_t number);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXCROP_H__ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="class_nex_crop_html_afdf123f244986ceb5cf4a9780f712e39"><div class="ttname"><a href="class_nex_crop.html#afdf123f244986ceb5cf4a9780f712e39">NexCrop::NexCrop</a></div><div class="ttdeci">NexCrop(NexPid pid, NexCid cid, const char *name)</div><div class="ttdoc">Constructor,inherited NexTouch&#39;s constructor function. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8cpp_source.html#l00022">NexCrop.cpp:22</a></div></div>
-<div class="ttc" id="_nex_touch_8h_html"><div class="ttname"><a href="_nex_touch_8h.html">NexTouch.h</a></div><div class="ttdoc">API of Nextion. </div></div>
-<div class="ttc" id="_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div><div class="ttdoc">Hardware Srial API. </div></div>
-<div class="ttc" id="class_nex_crop_html"><div class="ttname"><a href="class_nex_crop.html">NexCrop</a></div><div class="ttdoc">NexCrop,subclass of NexTouch,provides simple methods to control crop component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8h_source.html#l00026">NexCrop.h:26</a></div></div>
-<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00035">NexTouch.h:35</a></div></div>
+<div class="ttc" id="_nex_touch_8h_html"><div class="ttname"><a href="_nex_touch_8h.html">NexTouch.h</a></div><div class="ttdoc">The definition of class NexTouch. </div></div>
+<div class="ttc" id="_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div><div class="ttdoc">The definition of base API for using Nextion. </div></div>
+<div class="ttc" id="class_nex_crop_html"><div class="ttname"><a href="class_nex_crop.html">NexCrop</a></div><div class="ttdoc">NexCrop,subclass of NexTouch,provides simple methods to control crop component. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8h_source.html#l00027">NexCrop.h:27</a></div></div>
+<div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Root Class of Nextion Components. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00036">NexTouch.h:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2015 09:35:52 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 14 2015 11:56:19 for Nextion User Manual by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
