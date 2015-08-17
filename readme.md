@@ -23,7 +23,8 @@ To discuss the project?  Request new features?  Report a BUG? please visit the
 
 # Documentation
 
-Documentation includes 
+[Documentation](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html)
+includes 
 [Configuration](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/modules.html),
 [Get Started](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/modules.html)
 and [Reference of Core API](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/modules.html)
