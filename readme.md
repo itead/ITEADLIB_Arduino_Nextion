@@ -1,4 +1,4 @@
-@mainpage
+@mainpage Home Page
 
 # Nextion
 

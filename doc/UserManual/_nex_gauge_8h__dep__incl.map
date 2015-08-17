@@ -1,0 +1,14 @@
+<map id="NexGauge.h" name="NexGauge.h">
+<area shape="rect" id="node2" href="$_nextion_8h.html" title="The header file including all other header files provided by this library. " alt="" coords="991,80,1068,107"/>
+<area shape="rect" id="node13" href="$_nex_gauge_8cpp.html" title="The implementation of class NexGauge. " alt="" coords="1093,80,1201,107"/>
+<area shape="rect" id="node3" href="$_comp_button_8ino_source.html" title="examples/CompButton\l/CompButton.ino" alt="" coords="5,155,160,196"/>
+<area shape="rect" id="node4" href="$_comp_crop_8ino_source.html" title="examples/CompCrop/CompCrop.ino" alt="" coords="184,162,413,189"/>
+<area shape="rect" id="node5" href="$_comp_gauge_8ino_source.html" title="examples/CompGauge\l/CompGauge.ino" alt="" coords="437,155,592,196"/>
+<area shape="rect" id="node6" href="$_comp_hotspot_8ino_source.html" title="examples/CompHotspot\l/CompHotspot.ino" alt="" coords="617,155,778,196"/>
+<area shape="rect" id="node7" href="$_comp_page_8ino_source.html" title="examples/CompPage/CompPage.ino" alt="" coords="803,162,1037,189"/>
+<area shape="rect" id="node8" href="$_comp_picture_8ino_source.html" title="examples/CompPicture\l/CompPicture.ino" alt="" coords="1061,155,1219,196"/>
+<area shape="rect" id="node9" href="$_comp_progress_bar_8ino_source.html" title="examples/CompProgressBar\l/CompProgressBar.ino" alt="" coords="1243,155,1431,196"/>
+<area shape="rect" id="node10" href="$_comp_slider_8ino_source.html" title="examples/CompSlider\l/CompSlider.ino" alt="" coords="1456,155,1605,196"/>
+<area shape="rect" id="node11" href="$_comp_text_8ino_source.html" title="examples/CompText/CompText.ino" alt="" coords="1630,162,1855,189"/>
+<area shape="rect" id="node12" href="$_comp_waveform_8ino_source.html" title="examples/CompWaveform\l/CompWaveform.ino" alt="" coords="1880,155,2053,196"/>
+</map>

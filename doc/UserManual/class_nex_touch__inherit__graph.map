@@ -1,0 +1,10 @@
+<map id="NexTouch" name="NexTouch">
+<area shape="rect" id="node3" href="$class_nex_button.html" title="NexButton component. " alt="" coords="5,155,88,181"/>
+<area shape="rect" id="node4" href="$class_nex_crop.html" title="NexCrop component. " alt="" coords="112,155,184,181"/>
+<area shape="rect" id="node5" href="$class_nex_hotspot.html" title="NexHotspot component. " alt="" coords="208,155,299,181"/>
+<area shape="rect" id="node6" href="$class_nex_page.html" title="A special component , which can contain other components such as NexButton, NexText and NexWaveform..." alt="" coords="323,155,397,181"/>
+<area shape="rect" id="node7" href="$class_nex_picture.html" title="NexPicture component. " alt="" coords="422,155,509,181"/>
+<area shape="rect" id="node8" href="$class_nex_slider.html" title="NexSlider component. " alt="" coords="533,155,611,181"/>
+<area shape="rect" id="node9" href="$class_nex_text.html" title="NexText component. " alt="" coords="635,155,706,181"/>
+<area shape="rect" id="node2" href="$class_nex_object.html" title="Root class of all Nextion components. " alt="" coords="319,5,401,32"/>
+</map>
