@@ -1,4 +1,4 @@
-@mainpage README
+@mainpage Home Page
 
 # Nextion
 
