@@ -23,7 +23,14 @@ To discuss the project?  Request new features?  Report a BUG? please visit the
 
 # Download Source Code 
 
-## Latest
+Latest version is unstable and a mass of change may be applied in a short time 
+without any notification for users. Commonly, it is for developers of this 
+library. 
+
+**Release version is recommanded for you, unless you are one of developers of this 
+library.**
+
+## Latest(unstable)
 
 Latest source code(master branch) can be downloaded:
   <https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/master.zip>. 
@@ -32,9 +39,9 @@ You can also clone it via git:
 
     git clone https://github.com/itead/ITEADLIB_Arduino_Nextion
 
-## Previous Releases
+## Releases(stable)
 
-Previous releases can be available from:
+Releases can be available from:
 <https://github.com/itead/ITEADLIB_Arduino_Nextion/releases>.
 
 ## Release Notes
