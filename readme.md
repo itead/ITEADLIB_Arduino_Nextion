@@ -30,6 +30,9 @@ library.
 **Release version is recommanded for you, unless you are one of developers of this 
 library.**
 
+**Release notes** is at
+<https://github.com/itead/ITEADLIB_Arduino_Nextion/blob/master/release_notes.md>.
+
 ## Latest(unstable)
 
 Latest source code(master branch) can be downloaded:
@@ -41,20 +44,19 @@ You can also clone it via git:
 
 ## Releases(stable)
 
-Releases can be available from:
+  - https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/v0.21.zip
+  - https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/v0.21.tar.gz
+
+
+All releases can be available from:
 <https://github.com/itead/ITEADLIB_Arduino_Nextion/releases>.
-
-## Release Notes
-
-Release notes is 
-  [here](https://github.com/itead/ITEADLIB_Arduino_Nextion/blob/master/release_notes.md).
 
 # Documentation
 
 [Latest Online Documentation](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html)
 contains Configuration, Get Started, Reference of API and Examples, etc.
 
-Offline Documentation's entry `doc/UserManual/index.html` shiped with source code
+Offline Documentation's entry `doc/Documentation/index.html` shiped with source code
 can be open in your browser such as Chrome, Firefox or any one you like. 
 
 # Suppported Mainboards
