@@ -1,4 +1,3 @@
-@file README.md
 @mainpage README
 
 # Nextion
