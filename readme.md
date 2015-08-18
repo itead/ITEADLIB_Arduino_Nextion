@@ -1,4 +1,5 @@
-@mainpage Home Page
+@file README.md
+@mainpage README
 
 # Nextion
 
@@ -35,13 +36,26 @@ Online documentation: <http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/inde
 Offline documentation: `doc/UserManual/index.html` can be open in your 
 browser.(For example, Chrome or the fucking one you like).
 ​
-# Source 
+# Download Source Code 
 
-Latest source code can be download at https://github.com/itead/ITEADLIB_Arduino_Nextion.
+## Latest
 
-You can clone it by:
+Latest source code(master branch) can be downloaded:
+  <https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/master.zip>. 
+
+You can also clone it via git:
 
     git clone https://github.com/itead/ITEADLIB_Arduino_Nextion
+
+## Previous Releases
+
+Previous releases can be available from:
+<https://github.com/itead/ITEADLIB_Arduino_Nextion/releases>.
+
+## Release Notes
+
+Release notes is 
+  [here](https://github.com/itead/ITEADLIB_Arduino_Nextion/blob/master/release_notes.md).
 
 # Suppported Mainboards
 
