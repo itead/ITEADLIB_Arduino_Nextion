@@ -21,20 +21,6 @@ To get your Nextion display, please visit
 To discuss the project?  Request new features?  Report a BUG? please visit the 
 [Forums](http://support.iteadstudio.com/discussions/1000058038)
 
-# Documentation
-
-[Documentation](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html)
-includes 
-[Configuration](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/modules.html),
-[Get Started](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/modules.html)
-and [Reference of Core API](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/modules.html)
-, etc.
-
-Online documentation: <http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html>. 
-
-Offline documentation: `doc/UserManual/index.html` can be open in your 
-browser.(For example, Chrome or the fucking one you like).
-​
 # Download Source Code 
 
 ## Latest
@@ -55,6 +41,14 @@ Previous releases can be available from:
 
 Release notes is 
   [here](https://github.com/itead/ITEADLIB_Arduino_Nextion/blob/master/release_notes.md).
+
+# Documentation
+
+[Latest Online Documentation](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html)
+contains Configuration, Get Started, Reference of API and Examples, etc.
+
+Offline Documentation's entry `doc/UserManual/index.html` shiped with source code
+can be open in your browser such as Chrome, Firefox or any one you like. 
 
 # Suppported Mainboards
 
