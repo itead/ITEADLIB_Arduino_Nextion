@@ -44,9 +44,8 @@ You can also clone it via git:
 
 ## Releases(stable)
 
-  - https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/v0.21.zip
-  - https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/v0.21.tar.gz
-
+  - https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/v0.7.0.zip
+  - https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/v0.7.0.tar.gz
 
 All releases can be available from:
 <https://github.com/itead/ITEADLIB_Arduino_Nextion/releases>.
