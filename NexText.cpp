@@ -37,6 +37,19 @@ bool NexText::setText(const char *buffer)
     cmd += buffer;
     cmd += "\"";
     sendCommand(cmd.c_str());
-    return recvRetCommandFinished();    
+    return recvRetCommandFinished();
 }
 
+bool NexText::setColor(uint32_t value)
+{
+    char buf[10] = {0};
+    String cmd;
+
+    utoa(value, buf, 10);
+    cmd += getObjName();
+    cmd += ".pco=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}

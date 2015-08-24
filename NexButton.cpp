@@ -38,6 +38,5 @@ bool NexButton::setText(const char *buffer)
     cmd += buffer;
     cmd += "\"";
     sendCommand(cmd.c_str());
-    return recvRetCommandFinished();    
+    return recvRetCommandFinished();
 }
-
