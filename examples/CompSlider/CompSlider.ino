@@ -2,7 +2,8 @@
  * @example CompSlider.ino
  *
  * @par How to Use
- * Show how to use API of class NexSlider.  
+ * This example shows that ,when the slider component on the Nextion screen is released,
+ * the text value of text component will be changed every time. 
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/11
@@ -15,7 +16,6 @@
  */
  
 #include "Nextion.h"
-
 
 NexText t0 = NexText(0, 2, "t0");
 NexSlider h0 = NexSlider(0, 1, "h0");
@@ -37,7 +37,6 @@ void h0PopCallback(void *ptr)
     utoa(number, temp, 10);
     t0.setText(temp);
 }
-
 
 void setup(void)
 {

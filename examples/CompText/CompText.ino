@@ -2,7 +2,9 @@
  * @example CompText.ino
  *
  * @par How to Use
- * Show how to use API of class NexText.  
+ * This example shows that ,when the "+" component on the Nextion screen is released,
+ * the value of text component will plus 1,when the "-" component released ,the value of 
+ * text component will minus 1 every time.
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/7/10

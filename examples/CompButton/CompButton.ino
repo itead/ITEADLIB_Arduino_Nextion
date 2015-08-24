@@ -2,7 +2,8 @@
  * @example CompButton.ino
  * 
  * @par How to Use
- * Show how to use API of class NexButton.  
+ * This example shows that when the button component on the Nextion screen is released,
+ * the text of this button will plus one every time.      
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/7/10
@@ -16,16 +17,26 @@
 
 #include "Nextion.h"
 
+/*
+ * Declare a button object [page id:0,component id:1, component name: "b0"]. 
+ */
 NexButton b0 = NexButton(0, 1, "b0");
 
 char buffer[100] = {0};
 
+/*
+ * Register a button object to the touch event list.  
+ */
 NexTouch *nex_listen_list[] = 
 {
     &b0,
     NULL
 };
 
+/*
+ * Button component pop callback function. 
+ * In this example,the button's text value will plus one every time when it is released. 
+ */
 void b0PopCallback(void *ptr)
 {
     uint16_t len;
@@ -35,6 +46,8 @@ void b0PopCallback(void *ptr)
     dbSerialPrint("ptr=");
     dbSerialPrintln((uint32_t)ptr); 
     memset(buffer, 0, sizeof(buffer));
+
+    /* Get the text value of button component [the value is string type]. */
     btn->getText(buffer, sizeof(buffer));
     
     number = atoi(buffer);
@@ -42,18 +55,39 @@ void b0PopCallback(void *ptr)
 
     memset(buffer, 0, sizeof(buffer));
     itoa(number, buffer, 10);
-    
+
+    /* Set the text value of button component [the value is string type]. */
     btn->setText(buffer);
 }
 
 void setup(void)
 {    
+    /* Set the baudrate which is for debug and communicate with Nextion screen. */
     nexInit();
+
+    /* Register the pop event callback function of the current button component. */
     b0.attachPop(b0PopCallback, &b0);
+    
     dbSerialPrintln("setup done"); 
 }
 
 void loop(void)
 {   
+    /*
+     * When a pop or push event occured every time,
+     * the corresponding component[right page id and component id] in touch event list will be asked.
+     */
     nexLoop(nex_listen_list);
 }
+
+
+
+
+
+
+
+
+
+
+
+

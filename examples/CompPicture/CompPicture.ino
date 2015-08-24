@@ -2,7 +2,8 @@
  * @example CompPicture.ino
  *
  * @par How to Use
- * Show how to use API of class NexPicture.  
+ * This example shows that ,when the picture component on the Nextion screen is released,
+ * the picture of current component will be changed every time.  
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/7/10
@@ -13,9 +14,13 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  */
- 
+
+
 #include "Nextion.h"
 
+/*
+ * Declare a picture object [page id:0,component id:1, component name: "p0"]. 
+ */
 NexPicture p0 = NexPicture(0, 1, "p0");
 
 NexTouch *nex_listen_list[] = 

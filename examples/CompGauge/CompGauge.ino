@@ -2,7 +2,9 @@
  * @example CompGauge.ino
  *
  * @par How to Use
- * Show how to use API of class NexGauge.  
+ * This example shows that ,when the "btn_up" component on the Nextion screen is released,
+ * the value of gauge component will plus 5,when the "btn_down" component released ,the value of 
+ * gauge component will minus 5 every time.
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/7/10
@@ -13,7 +15,7 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  */
-
+ 
 #include "Nextion.h"
 
 NexGauge pointer  = NexGauge(0, 1, "pointer");
