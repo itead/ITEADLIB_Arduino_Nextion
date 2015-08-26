@@ -1,7 +1,7 @@
 /**
- * @file NexButton.h
+ * @file NexTimer.h
  *
- * The definition of class NexButton. 
+ * The definition of class NexTimer. 
  *
  * @author huang xianming (email:<xianming.huang@itead.cc>)
  * @date 2015/8/26
@@ -40,7 +40,7 @@ public: /* methods */
      */
     NexTimer(uint8_t pid, uint8_t cid, const char *name);
 
-     /**
+    /**
      * Attach an callback function of timer respond event. 
      *
      * @param push - callback called with ptr when a timer respond event occurs. 
@@ -67,23 +67,27 @@ public: /* methods */
      * @retval false - failed. 
      */
     bool getCycle(uint32_t *number); 
-     /**
-      * Set the value of timer cycle val.
-      *
-      * @param number - the value of timer cycle.  
-      *
-      * @retval true - success. 
-      * @retval false - failed. 
-      */
+    /**
+     * Set the value of timer cycle val.
+     *
+     * @param number - the value of timer cycle.  
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
 
     bool setCycle(uint32_t number);   
-  /**
-   *contorl timer enable.
-   */
+    /**
+     * contorl timer enable.
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool enable(void);
-  /**
-   *contorl timer disable.
-   */
+    /**
+     * contorl timer disable.
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool disable(void); 
 
 

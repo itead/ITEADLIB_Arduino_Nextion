@@ -1,5 +1,5 @@
 /**
- * @file NexButton.cpp
+ * @file NexTimer.cpp
  *
  * The implementation of class NexTimer. 
  *
@@ -30,7 +30,6 @@ void NexTimer::detachTimer(void)
     NexTouch::detachPop();
 }
 
-
 bool NexTimer::getCycle(uint32_t *number)
 {
     String cmd = String("get ");
@@ -59,7 +58,6 @@ bool NexTimer::enable(void)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(1, buf, 10);
     cmd += getObjName();
     cmd += ".en=";
@@ -73,7 +71,6 @@ bool NexTimer::disable(void)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(0, buf, 10);
     cmd += getObjName();
     cmd += ".en=";
