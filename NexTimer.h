@@ -97,4 +97,4 @@ public: /* methods */
  */
 
 
-#endif /* #ifndef __NEXBUTTON_H__ */
+#endif /* #ifndef __NEXTIMER_H__ */
