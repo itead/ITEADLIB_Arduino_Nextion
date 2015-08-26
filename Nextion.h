@@ -32,5 +32,7 @@
 #include "NexSlider.h"
 #include "NexText.h"
 #include "NexWaveform.h"
+#include "NexTimer.h"
+
 
 #endif /* #ifndef __NEXTION_H__ */
