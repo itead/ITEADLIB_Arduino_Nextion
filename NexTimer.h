@@ -27,8 +27,8 @@
 /**
  * NexTimer component. 
  *
- * Commonly, you want to do something after set timer cycle and enable it. It is recommanded that only
- * call @ref NexTimer::attachPop to satisfy your purpose. 
+ * Commonly, you want to do something after set timer cycle and enable it,and the cycle value 
+ * must be greater than 50
  * 
  */
 class NexTimer: public NexTouch
@@ -43,7 +43,7 @@ public: /* methods */
     /**
      * Attach an callback function of timer respond event. 
      *
-     * @param push - callback called with ptr when a timer respond event occurs. 
+     * @param timer - callback called with ptr when a timer respond event occurs. 
      * @param ptr - parameter passed into push[default:NULL]. 
      * @return none. 
      *
@@ -58,7 +58,7 @@ public: /* methods */
      */
     void detachTimer(void);
 
-     /**
+    /**
      * Get the value of timer cycle val. 
      * 
      * @param number - an output parameter to save the value of timer cycle.  
@@ -67,29 +67,34 @@ public: /* methods */
      * @retval false - failed. 
      */
     bool getCycle(uint32_t *number); 
+
     /**
      * Set the value of timer cycle val.
      *
      * @param number - the value of timer cycle.  
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     *
+     * @warning  the cycle value must be greater than 50.
+     */
+    bool setCycle(uint32_t number);   
+
+    /**
+     * contorl timer enable.
      *
      * @retval true - success. 
      * @retval false - failed. 
      */
-
-    bool setCycle(uint32_t number);   
-    /**
-     * contorl timer enable.
-     * @retval true - success. 
-     * @retval false - failed. 
-     */
     bool enable(void);
+
     /**
      * contorl timer disable.
+     *
      * @retval true - success. 
      * @retval false - failed. 
      */
     bool disable(void); 
-
 
 };
 /**

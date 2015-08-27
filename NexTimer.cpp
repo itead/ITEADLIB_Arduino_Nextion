@@ -43,7 +43,10 @@ bool NexTimer::setCycle(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
+    if (number < 50)
+    {
+        number = 50;
+    }
     utoa(number, buf, 10);
     cmd += getObjName();
     cmd += ".tim=";
