@@ -22,12 +22,26 @@ void t0PopCallback(void *ptr);
 void b0PopCallback(void *ptr);
 void b1PopCallback(void *ptr);
 
+/*
+ * Declare a text object [page id:0,component id:1, component name: "t0"]. 
+ */
 NexText t0 = NexText(0, 1, "t0");
+
+/*
+ * Declare a button object [page id:0,component id:2, component name: "b0"]. 
+ */
 NexButton b0 = NexButton(0, 2, "b0");
+
+/*
+ * Declare a button object [page id:0,component id:3, component name: "b1"]. 
+ */
 NexButton b1 = NexButton(0, 3, "b1");
 
 char buffer[100] = {0};
 
+/*
+ * Register object t0, b0, b1, to the touch event list.  
+ */
 NexTouch *nex_listen_list[] = 
 {
     &t0,
@@ -36,12 +50,19 @@ NexTouch *nex_listen_list[] =
     NULL
 };
 
+/*
+ * Text component pop callback function. 
+ */
 void t0PopCallback(void *ptr)
 {
     dbSerialPrintln("t0PopCallback");
     t0.setText("50");
 }
 
+/*
+ * Button0 component pop callback function.
+ * In this example,the value of the text component will plus one every time when button0 is released.
+ */
 void b0PopCallback(void *ptr)
 {
     uint16_t len;
@@ -61,6 +82,10 @@ void b0PopCallback(void *ptr)
     t0.setText(buffer);
 }
 
+/*
+ * Button1 component pop callback function.
+ * In this example,the value of the text component will minus one every time when button1 is released.
+ */
 void b1PopCallback(void *ptr)
 {
     uint16_t len;
@@ -82,15 +107,27 @@ void b1PopCallback(void *ptr)
 
 void setup(void)
 {
+    /* Set the baudrate which is for debug and communicate with Nextion screen. */
     nexInit();
+
+    /* Register the pop event callback function of the current text component. */
     t0.attachPop(t0PopCallback);
+
+    /* Register the pop event callback function of the current button0 component. */
     b0.attachPop(b0PopCallback);
+
+    /* Register the pop event callback function of the current button1 component. */
     b1.attachPop(b1PopCallback);
+
     dbSerialPrintln("setup done");
 }
 
 void loop(void)
 {
+    /*
+     * When a pop or push event occured every time, 
+     * the corresponding component[right page id and component id] in touch event list will be asked.
+     */
     nexLoop(nex_listen_list);
 }
 
