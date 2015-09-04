@@ -223,7 +223,7 @@ bool nexInit(void)
     bool ret2 = false;
     
     dbSerialBegin(9600);
-    nexSerial.begin(9600);
+    nexSerial.begin(NEXTION_BAUDRATE);
     sendCommand("");
     sendCommand("bkcmd=1");
     ret1 = recvRetCommandFinished();
@@ -264,4 +264,3 @@ void nexLoop(NexTouch *nex_listen_list[])
         }
     }
 }
-
