@@ -262,6 +262,24 @@ void nexLoop(NexTouch *nex_listen_list[])
                 
             }
         }
+        else if( NEX_RET_CURRENT_PAGE_ID_HEAD == c) // sendme will generate a page Push event
+        {
+            if (nexSerial.available() >= 4)
+            {
+                __buffer[0] = c;  
+                for (i = 1; i < 5; i++)
+                {
+                    __buffer[i] = nexSerial.read();
+                }
+                __buffer[i] = 0x00;
+                
+                if (0xFF == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4])
+                {
+                    NexTouch::iterate(nex_listen_list, __buffer[1], 0, (int32_t)NEX_EVENT_PUSH);
+                }
+                
+            }
+        }
     }
 }
 
