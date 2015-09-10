@@ -54,6 +54,16 @@ public: /* methods */
      * @retval false - failed. 
      */
     bool setValue(uint32_t number);
+    
+    /**
+     * Set the Maximum value of slider.
+     *
+     * @param number - the maximum value of slider.  
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
+    bool setMaxVal(uint32_t number);
 };
 /**
  * @}
