@@ -31,9 +31,9 @@ class NexProgressBar: public NexObject
 {
 public: /* methods */
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, void *value);
      */
-    NexProgressBar(uint8_t pid, uint8_t cid, const char *name);
+    NexProgressBar(uint8_t pid, uint8_t cid, const char *name, void *value);
     
     /**
      * Get the value of progress bar. 

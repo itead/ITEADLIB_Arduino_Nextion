@@ -31,9 +31,9 @@ class NexSlider: public NexTouch
 {
 public: /* methods */
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, void *value);
      */
-    NexSlider(uint8_t pid, uint8_t cid, const char *name);
+    NexSlider(uint8_t pid, uint8_t cid, const char *name, void *value);
 
     /**
      * Get the value of slider. 
@@ -55,15 +55,9 @@ public: /* methods */
      */
     bool setValue(uint32_t number);
     
-    /**
-     * Set the Maximum value of slider.
-     *
-     * @param number - the maximum value of slider.  
-     *
-     * @retval true - success. 
-     * @retval false - failed. 
-     */
     bool setMaxVal(uint32_t number);
+    
+    bool setMinVal(uint32_t number);
 };
 /**
  * @}

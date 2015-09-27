@@ -17,7 +17,7 @@
 #ifndef __NEXTOUCH_H__
 #define __NEXTOUCH_H__
 
-#include <Arduino.h>
+#include "application.h"
 #include "NexConfig.h"
 #include "NexObject.h"
 
@@ -26,15 +26,7 @@
  * @{ 
  */
 
-/**
- * Push touch event occuring when your finger or pen coming to Nextion touch pannel. 
- */
-#define NEX_EVENT_PUSH  (0x01)
 
-/**
- * Pop touch event occuring when your finger or pen leaving from Nextion touch pannel. 
- */
-#define NEX_EVENT_POP   (0x00)  
 
 /**
  * Type of callback funciton when an touch event occurs. 
@@ -53,14 +45,14 @@ typedef void (*NexTouchEventCb)(void *ptr);
 class NexTouch: public NexObject
 {
 public: /* static methods */    
-    static void iterate(NexTouch **list, uint8_t pid, uint8_t cid, int32_t event);
+    static void iterate(NexTouch **list, uint8_t pid, uint8_t cid, int32_t event, void *value);
 
 public: /* methods */
 
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, void *value);
      */
-    NexTouch(uint8_t pid, uint8_t cid, const char *name);
+    NexTouch(uint8_t pid, uint8_t cid, const char *name, void *value);
 
     /**
      * Attach an callback function of push touch event. 
@@ -98,15 +90,37 @@ public: /* methods */
      */
     void detachPop(void);
     
+    
+        /**
+     * Attach an callback function of value touch event. 
+     *
+     * @param value - callback called with ptr when a value touch event occurs. 
+     * @param ptr - parameter passed into value[default:NULL]. 
+     * @return none. 
+     *
+     * @note If calling this method multiply, the last call is valid. 
+     */
+    void attachValue(NexTouchEventCb value, void *ptr = NULL);
+
+    /**
+     * Detach an callback function. 
+     * 
+     * @return none. 
+     */
+    void detachValue(void);
+    
 private: /* methods */ 
     void push(void);
     void pop(void);
+    void value(uint8_t type, void *value);
     
 private: /* data */ 
     NexTouchEventCb __cb_push;
     void *__cbpush_ptr;
     NexTouchEventCb __cb_pop;
     void *__cbpop_ptr;
+    NexTouchEventCb __cb_value;
+    void *__cbvalue_ptr;
 };
 
 /**

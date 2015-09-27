@@ -15,8 +15,8 @@
 
 #include "NexGauge.h"
 
-NexGauge::NexGauge(uint8_t pid, uint8_t cid, const char *name)
-    :NexObject(pid, cid, name)
+NexGauge::NexGauge(uint8_t pid, uint8_t cid, const char *name, void *value)
+    :NexObject(pid, cid, name, value)
 {
 }
 

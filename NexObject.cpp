@@ -14,11 +14,36 @@
  */
 #include "NexObject.h"
 
-NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name)
+NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, void *value)
 {
     this->__pid = pid;
     this->__cid = cid;
     this->__name = name;
+    this->__value = value;
+}
+
+void NexObject::setObjValue(uint8_t type, void *value)
+{
+    uint8_t i = 0;
+    if (__value)
+    {
+        switch (type)
+        {
+        case NEX_EVENT_VALUE:
+           *((unsigned long *)__value) = (((uint8_t *)value)[0]) | (((unsigned long)((uint8_t *)value)[1]) << 8) | (((unsigned long)((uint8_t *)value)[2]) << 16) | (((unsigned long)((uint8_t *)value)[3]) << 24);
+        break;
+        case NEX_EVENT_STRING:
+        //while (*((unsigned char *)(value+i)) != 0)
+        //{
+         // *((unsigned char *)(__value+i)) = *((unsigned char *)(value+i));
+        //  i++;
+        //}        
+        break;
+        default:
+        //*(__value) = 0;
+        break;
+        }
+    }
 }
 
 uint8_t NexObject::getObjPid(void)
@@ -34,6 +59,11 @@ uint8_t NexObject::getObjCid(void)
 const char* NexObject::getObjName(void)
 {
     return __name;
+}
+
+void * NexObject::getObjValue(void)
+{
+    return __value;
 }
 
 void NexObject::printObjInfo(void)
@@ -53,6 +83,15 @@ void NexObject::printObjInfo(void)
     {
         dbSerialPrint("(null)");
     }
+    dbSerialPrint(",");
+    if (__value)
+    {
+        dbSerialPrint((uint32_t)__value);
+    }
+    else
+    {
+        dbSerialPrint("(null)");
+    }        
     dbSerialPrintln("]");
 }
 

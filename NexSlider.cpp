@@ -14,8 +14,8 @@
  */
 #include "NexSlider.h"
 
-NexSlider::NexSlider(uint8_t pid, uint8_t cid, const char *name)
-    :NexTouch(pid, cid, name)
+NexSlider::NexSlider(uint8_t pid, uint8_t cid, const char *name, void *value)
+    :NexTouch(pid, cid, name, value)
 {
 }
 
@@ -56,3 +56,16 @@ bool NexSlider::setMaxVal(uint32_t number)
     return recvRetCommandFinished();
 }
 
+bool NexSlider::setMinVal(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+    
+    utoa(number, buf, 10);
+    cmd += getObjName();
+    cmd += ".minval=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}

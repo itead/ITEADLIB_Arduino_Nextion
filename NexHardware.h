@@ -14,10 +14,12 @@
  */
 #ifndef __NEXHARDWARE_H__
 #define __NEXHARDWARE_H__
-#include <Arduino.h>
+#include "application.h"
 #include "NexConfig.h"
 #include "NexTouch.h"
 
+//extern "C" char* itoa(int a, char* buffer, unsigned char radix);
+//extern "C" char* utoa( unsigned int value, char* buffer, unsigned char radix );
 /**
  * @addtogroup CoreAPI 
  * @{ 
@@ -51,5 +53,10 @@ bool recvRetNumber(uint32_t *number, uint32_t timeout = 100);
 uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout = 100);
 void sendCommand(const char* cmd);
 bool recvRetCommandFinished(uint32_t timeout = 100);
+
+bool sendCurrentPageId(uint8_t* pageId);
+bool setCurrentBrightness(uint8_t dimValue);
+bool setDefaultBaudrate(uint32_t baudrate);
+void sendRefreshAll(void);
 
 #endif /* #ifndef __NEXHARDWARE_H__ */

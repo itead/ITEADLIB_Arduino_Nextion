@@ -36,9 +36,9 @@ class NexTimer: public NexTouch
 public: /* methods */
 
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, void *value);
      */
-    NexTimer(uint8_t pid, uint8_t cid, const char *name);
+    NexTimer(uint8_t pid, uint8_t cid, const char *name, void *value);
 
     /**
      * Attach an callback function of timer respond event. 

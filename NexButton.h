@@ -37,9 +37,9 @@ class NexButton: public NexTouch
 public: /* methods */
 
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, void *value);
      */
-    NexButton(uint8_t pid, uint8_t cid, const char *name);
+    NexButton(uint8_t pid, uint8_t cid, const char *name, void *value);
 
     /**
      * Get text attribute of component.
