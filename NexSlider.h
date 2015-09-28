@@ -44,7 +44,7 @@ public: /* methods */
      * @retval false - failed. 
      */
     bool getValue(uint32_t *number);
-    
+
     /**
      * Set the value of slider.
      *
@@ -54,6 +54,26 @@ public: /* methods */
      * @retval false - failed. 
      */
     bool setValue(uint32_t number);
+
+    /**
+     * Set the maxvalue of slider.
+     *
+     * @param number - the value of slider.  
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
+    bool setMaxValue(uint32_t number);
+
+    /**
+     * Set the hig of slider.
+     *
+     * @param number - the value of slider.  
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
+    bool setHigValue(uint32_t number);
 };
 /**
  * @}

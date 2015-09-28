@@ -20,12 +20,6 @@
  * @{ 
  */
 
-/**
- * Nextion Baudrate - default 9600
- * 2400 - 4800 - 9600 - 19200 - 38400 - 57600 - 115200
- */
-#define NEXTION_BAUDRATE 9600
-
 /** 
  * Define DEBUG_SERIAL_ENABLE to enable debug serial. 
  * Comment it to disable debug serial. 

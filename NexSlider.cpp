@@ -32,7 +32,7 @@ bool NexSlider::setValue(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
+
     utoa(number, buf, 10);
     cmd += getObjName();
     cmd += ".val=";
@@ -42,3 +42,30 @@ bool NexSlider::setValue(uint32_t number)
     return recvRetCommandFinished();
 }
 
+bool NexSlider::setMaxValue(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+
+    utoa(number, buf, 10);
+    cmd += getObjName();
+    cmd += ".maxval=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
+
+bool NexSlider::setHigValue(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+
+    utoa(number, buf, 10);
+    cmd += getObjName();
+    cmd += ".hig=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
