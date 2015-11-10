@@ -33,6 +33,7 @@
 #include "NexText.h"
 #include "NexWaveform.h"
 #include "NexTimer.h"
+#include "NexNumber.h"
 
 
 #endif /* #ifndef __NEXTION_H__ */
