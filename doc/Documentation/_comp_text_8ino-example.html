@@ -77,12 +77,26 @@ This program is free software; you can redistribute it and/or modify it under th
 <div class="line"><span class="keywordtype">void</span> b0PopCallback(<span class="keywordtype">void</span> *ptr);</div>
 <div class="line"><span class="keywordtype">void</span> b1PopCallback(<span class="keywordtype">void</span> *ptr);</div>
 <div class="line"></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Declare a text object [page id:0,component id:1, component name: &quot;t0&quot;]. </span></div>
+<div class="line"><span class="comment"> */</span></div>
 <div class="line"><a name="_a0"></a><a class="code" href="class_nex_text.html">NexText</a> t0 = <a class="code" href="class_nex_text.html">NexText</a>(0, 1, <span class="stringliteral">&quot;t0&quot;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Declare a button object [page id:0,component id:2, component name: &quot;b0&quot;]. </span></div>
+<div class="line"><span class="comment"> */</span></div>
 <div class="line"><a name="_a1"></a><a class="code" href="class_nex_button.html">NexButton</a> b0 = <a class="code" href="class_nex_button.html">NexButton</a>(0, 2, <span class="stringliteral">&quot;b0&quot;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Declare a button object [page id:0,component id:3, component name: &quot;b1&quot;]. </span></div>
+<div class="line"><span class="comment"> */</span></div>
 <div class="line"><a class="code" href="class_nex_button.html">NexButton</a> b1 = <a class="code" href="class_nex_button.html">NexButton</a>(0, 3, <span class="stringliteral">&quot;b1&quot;</span>);</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">char</span> buffer[100] = {0};</div>
 <div class="line"></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Register object t0, b0, b1, to the touch event list.  </span></div>
+<div class="line"><span class="comment"> */</span></div>
 <div class="line"><a name="_a2"></a><a class="code" href="class_nex_touch.html">NexTouch</a> *nex_listen_list[] = </div>
 <div class="line">{</div>
 <div class="line">    &amp;t0,</div>
@@ -91,12 +105,19 @@ This program is free software; you can redistribute it and/or modify it under th
 <div class="line">    NULL</div>
 <div class="line">};</div>
 <div class="line"></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Text component pop callback function. </span></div>
+<div class="line"><span class="comment"> */</span></div>
 <div class="line"><span class="keywordtype">void</span> t0PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
 <div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;t0PopCallback&quot;</span>);</div>
 <div class="line">    t0.<a name="a3"></a><a class="code" href="class_nex_text.html#a19589b32c981436a1bbcfe407bc766e3">setText</a>(<span class="stringliteral">&quot;50&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Button0 component pop callback function.</span></div>
+<div class="line"><span class="comment"> * In this example,the value of the text component will plus one every time when button0 is released.</span></div>
+<div class="line"><span class="comment"> */</span></div>
 <div class="line"><span class="keywordtype">void</span> b0PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
 <div class="line">    uint16_t len;</div>
@@ -116,6 +137,10 @@ This program is free software; you can redistribute it and/or modify it under th
 <div class="line">    t0.<a class="code" href="class_nex_text.html#a19589b32c981436a1bbcfe407bc766e3">setText</a>(buffer);</div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Button1 component pop callback function.</span></div>
+<div class="line"><span class="comment"> * In this example,the value of the text component will minus one every time when button1 is released.</span></div>
+<div class="line"><span class="comment"> */</span></div>
 <div class="line"><span class="keywordtype">void</span> b1PopCallback(<span class="keywordtype">void</span> *ptr)</div>
 <div class="line">{</div>
 <div class="line">    uint16_t len;</div>
@@ -137,15 +162,27 @@ This program is free software; you can redistribute it and/or modify it under th
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
+<div class="line">    <span class="comment">/* Set the baudrate which is for debug and communicate with Nextion screen. */</span></div>
 <div class="line">    <a name="a5"></a><a class="code" href="group___core_a_p_i.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* Register the pop event callback function of the current text component. */</span></div>
 <div class="line">    t0.<a name="a6"></a><a class="code" href="class_nex_touch.html#a4da1c4fcdfadb7eabfb9ccaba9ecad11">attachPop</a>(t0PopCallback);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* Register the pop event callback function of the current button0 component. */</span></div>
 <div class="line">    b0.<a class="code" href="class_nex_touch.html#a4da1c4fcdfadb7eabfb9ccaba9ecad11">attachPop</a>(b0PopCallback);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* Register the pop event callback function of the current button1 component. */</span></div>
 <div class="line">    b1.<a class="code" href="class_nex_touch.html#a4da1c4fcdfadb7eabfb9ccaba9ecad11">attachPop</a>(b1PopCallback);</div>
+<div class="line"></div>
 <div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
+<div class="line">    <span class="comment">/*</span></div>
+<div class="line"><span class="comment">     * When a pop or push event occured every time, </span></div>
+<div class="line"><span class="comment">     * the corresponding component[right page id and component id] in touch event list will be asked.</span></div>
+<div class="line"><span class="comment">     */</span></div>
 <div class="line">    <a name="a7"></a><a class="code" href="group___core_a_p_i.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a>(nex_listen_list);</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -154,7 +191,7 @@ This program is free software; you can redistribute it and/or modify it under th
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Aug 24 2015 17:21:19 for Documentation by
+    <li class="footer">Generated on Wed Nov 11 2015 15:49:29 for Documentation by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

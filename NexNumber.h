@@ -25,7 +25,7 @@
  */
 
 /**
- * NexTNumber component.
+ * NexNumber component.
  */
 class NexNumber: public NexTouch
 {

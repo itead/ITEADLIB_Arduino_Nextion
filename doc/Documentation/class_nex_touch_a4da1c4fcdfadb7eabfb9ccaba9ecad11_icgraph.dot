@@ -1,0 +1,9 @@
+digraph "NexTouch::attachPop"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="NexTouch::attachPop",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="NexTimer::attachTimer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_nex_timer.html#ae6f1ae95ef40b8bc6f482185b1ec5175",tooltip="Attach an callback function of timer respond event. "];
+}
