@@ -56,7 +56,26 @@ public: /* methods */
      * @param buffer - text buffer terminated with '\0'. 
      * @return true if success, false for failure. 
      */
-    bool setText(const char *buffer);    
+    bool setText(const char *buffer); 
+    
+    /**
+     * Sets the background picture property of the button.
+     * 
+     * @param number - Pointer to buffer that will store the ID of the image
+     * resource on Nextion Editor.
+     * 
+     * @return true if command succeeded, false otherwise
+     */
+    bool getPic(uint32_t number);
+    
+    /**
+     * Sets the background picture property of the button.
+     * 
+     * @param number - ID of the image resource on Nextion Editor.
+     * 
+     * @return true if command succeeded, false otherwise
+     */
+    bool setPic(uint32_t number);
 };
 /**
  * @}
