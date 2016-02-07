@@ -41,3 +41,25 @@ bool NexButton::setText(const char *buffer)
     return recvRetCommandFinished();    
 }
 
+bool NexButton::getPIC(uint32_t * number)
+{
+    String cmd = String("get ");
+    cmd += getObjName();
+    cmd += ".pic";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
+}
+
+bool NexButton::setPIC(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+    
+    utoa(number, buf, 10);
+    cmd += getObjName();
+    cmd += ".pic=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
