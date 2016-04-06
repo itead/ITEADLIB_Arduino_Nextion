@@ -1,7 +1,7 @@
 /**
- * @file NexDown.h
+ * @file NexDownload.h
  *
- * The definition of class NexDown. 
+ * The definition of class NexDownload. 
  *
  * @author Chen Zengpeng (email:<zengpeng.chen@itead.cc>)
  * @date 2016/3/29

@@ -1,7 +1,7 @@
 /**
- * @file NexDown.cpp
+ * @file NexDownload.cpp
  *
- * The implementation of class NexObject. 
+ * The implementation of download tft file for nextion. 
  *
  * @author  Chen Zengpeng (email:<zengpeng.chen@itead.cc>)
  * @date    2016/3/29
