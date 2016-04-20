@@ -30,9 +30,9 @@ class NexWaveform: public NexObject
 {
 public: /* methods */
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, void *value);
      */
-    NexWaveform(uint8_t pid, uint8_t cid, const char *name);
+    NexWaveform(uint8_t pid, uint8_t cid, const char *name, void *value);
     
     /**
      * Add value to show. 

@@ -31,9 +31,9 @@ class NexPicture: public NexTouch
 {
 public: /* methods */
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, void *value);
      */
-    NexPicture(uint8_t pid, uint8_t cid, const char *name);
+    NexPicture(uint8_t pid, uint8_t cid, const char *name, void *value);
     
     /**
      * Get picture's number.

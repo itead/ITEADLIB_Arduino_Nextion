@@ -14,8 +14,8 @@
  */
 #include "NexText.h"
 
-NexText::NexText(uint8_t pid, uint8_t cid, const char *name)
-    :NexTouch(pid, cid, name)
+NexText::NexText(uint8_t pid, uint8_t cid, const char *name, void *value)
+    :NexTouch(pid, cid, name, value)
 {
 }
 

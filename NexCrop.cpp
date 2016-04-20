@@ -15,8 +15,8 @@
 
 #include "NexCrop.h"
 
-NexCrop::NexCrop(uint8_t pid, uint8_t cid, const char *name)
-    :NexTouch(pid, cid, name)
+NexCrop::NexCrop(uint8_t pid, uint8_t cid, const char *name, void *value)
+    :NexTouch(pid, cid, name, value)
 {
 }
 

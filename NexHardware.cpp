@@ -23,6 +23,7 @@
 #define NEX_RET_CURRENT_PAGE_ID_HEAD        (0x66)
 #define NEX_RET_STRING_HEAD                 (0x70)
 #define NEX_RET_NUMBER_HEAD                 (0x71)
+#define NEX_RET_VALUE_HEAD                 (0x72)
 #define NEX_RET_INVALID_CMD             (0x00)
 #define NEX_RET_INVALID_COMPONENT_ID    (0x02)
 #define NEX_RET_INVALID_PAGE_ID         (0x03)
@@ -222,8 +223,6 @@ bool nexInit(void)
     bool ret1 = false;
     bool ret2 = false;
     
-    dbSerialBegin(9600);
-    nexSerial.begin(9600);
     sendCommand("");
     sendCommand("bkcmd=1");
     ret1 = recvRetCommandFinished();
@@ -234,7 +233,7 @@ bool nexInit(void)
 
 void nexLoop(NexTouch *nex_listen_list[])
 {
-    static uint8_t __buffer[10];
+    static uint8_t __buffer[20];
     
     uint16_t i;
     uint8_t c;  
@@ -257,11 +256,179 @@ void nexLoop(NexTouch *nex_listen_list[])
                 
                 if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
                 {
-                    NexTouch::iterate(nex_listen_list, __buffer[1], __buffer[2], (int32_t)__buffer[3]);
+                    NexTouch::iterate(nex_listen_list, __buffer[1], __buffer[2], (int32_t)__buffer[3], NULL);
                 }
                 
             }
         }
+        else if( NEX_RET_CURRENT_PAGE_ID_HEAD == c)
+        {
+            dbSerialPrint("page cmd:");
+            if (nexSerial.available() >= 4)
+            {
+                __buffer[0] = c;  
+                for (i = 1; i < 5; i++)
+                {
+                    __buffer[i] = nexSerial.read();
+                }
+                __buffer[i] = 0x00;
+                
+                if (0xFF == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4])
+                {
+                    dbSerialPrintln(__buffer[1]);
+                    NexTouch::iterate(nex_listen_list, __buffer[1], 0, (int32_t)NEX_EVENT_PUSH, NULL);
+                }
+                
+            }
+        }
+        else if (NEX_RET_VALUE_HEAD == c)
+        {
+            dbSerialPrint("value cmd:");
+            if (nexSerial.available() >= 10)
+            {
+                __buffer[0] = c;  
+                for (i = 1; i < 12; i++)
+                {
+                    __buffer[i] = nexSerial.read();
+                }
+                __buffer[i] = 0x00;
+                
+                if (0xFF == __buffer[i-1] && 0xFF == __buffer[i-2] && 0xFF == __buffer[i-3])
+                {
+                    dbSerialPrint(" Page:");
+                    dbSerialPrint(__buffer[1]);
+                    dbSerialPrint(" Component:");
+                    dbSerialPrint(__buffer[2]);
+                    dbSerialPrint(" Value:");
+                    i = __buffer[4] | (((unsigned long)__buffer[5]) << 8) | (((unsigned long)__buffer[6]) << 16) | (((unsigned long)__buffer[6]) << 24);
+                    dbSerialPrintln(i);
+                    NexTouch::iterate(nex_listen_list, __buffer[1], __buffer[2], (int32_t)__buffer[3], (void *)&(__buffer[4]));
+                }
+            }   
+        }
     }
 }
 
+/**
+ * Return current page id.   
+ *  
+ * @param pageId - output parameter,to save page id.  
+ * 
+ * @retval true - success. 
+ * @retval false - failed. 
+ */
+bool sendCurrentPageId(uint8_t* pageId)
+{
+
+    bool ret = false;
+    uint8_t temp[5] = {0};
+
+    if (!pageId)
+    {
+        goto __return;
+    }
+    sendCommand("sendme");
+    delay(50);
+    nexSerial.setTimeout(100);
+    if (sizeof(temp) != nexSerial.readBytes((char *)temp, sizeof(temp)))
+    {
+        goto __return;
+    }
+
+    if (temp[0] == NEX_RET_CURRENT_PAGE_ID_HEAD
+    && temp[2] == 0xFF
+    && temp[3] == 0xFF
+    && temp[4] == 0xFF
+    )
+    {
+        *pageId = temp[1];
+        ret = true;
+    }
+
+    __return:
+
+    if (ret) 
+    {
+        dbSerialPrint("recvPageId :");
+        dbSerialPrintln(*pageId);
+    }
+    else
+    {
+        dbSerialPrintln("recvPageId err");
+    }
+
+    return ret;
+
+}
+
+/**
+ * Set current backlight brightness value. 
+ *
+ * @param dimValue - current backlight brightness value.
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */
+bool setCurrentBrightness(uint8_t dimValue)
+{
+    bool ret = false;
+    char buf[10] = {0};
+    String cmd;
+    utoa(dimValue, buf, 10);
+    cmd += "dim=";
+    cmd += buf;
+    sendCommand(cmd.c_str());
+    delay(10);
+
+    if(recvRetCommandFinished())
+    {   
+        dbSerialPrint("setCurrentBrightness[ ");
+        dbSerialPrint(dimValue);
+        dbSerialPrintln("]ok ");
+      
+        ret = true; 
+    }
+    else 
+    {
+        dbSerialPrintln("setCurrentBrightness err ");
+    }
+
+    return ret;    
+}
+
+/**
+ * Set default baudrate. 
+ *
+ * @param  defaultBaudrate - default baudrate,it supports 2400,4800,9600,19200,38400,57600,115200.
+ * 
+ * @retval true - success. 
+ * @retval false - failed.
+ */  
+bool setDefaultBaudrate(uint32_t defaultBaudrate)
+{
+    bool ret = false;
+    char buf[10] = {0};
+    String cmd;
+    utoa(defaultBaudrate, buf, 10);
+    cmd += "bauds=";
+    cmd += buf;
+    sendCommand(cmd.c_str());
+    delay(10);
+
+    if(recvRetCommandFinished())
+    {
+        dbSerialPrintln("setDefaultBaudrate ok ");
+        ret = true; 
+    }
+    else 
+    {
+        dbSerialPrintln("setDefaultBaudrate err ");
+    }
+
+    return ret; 
+}
+
+void sendRefreshAll(void)
+{
+    sendCommand("ref 0");
+}
