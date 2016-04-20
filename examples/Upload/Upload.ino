@@ -1,4 +1,4 @@
-#include "NexDownload.h"
+#include "NexUpload.h"
 NexUpload nex_download("nex.tft",10,115200);
 void setup() {
   // put your setup code here, to run once:
