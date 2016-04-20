@@ -1,7 +1,7 @@
 /**
- * @file NexDownload.h
+ * @file NexUpload.h
  *
- * The definition of class NexDownload. 
+ * The definition of class NexUpload. 
  *
  * @author Chen Zengpeng (email:<zengpeng.chen@itead.cc>)
  * @date 2016/3/29
@@ -13,8 +13,8 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  */
-#ifndef __NEXDOWNLOAD_H__
-#define __NEXDOWNLOAD_H__
+#ifndef __NEXUPLOAD_H__
+#define __NEXUPLOAD_H__
 #include <Arduino.h>
 #include <SPI.h>
 #include <SD.h>
@@ -29,7 +29,7 @@
  *
  * Provides the API for nextion to download the ftf file.
  */
-class NexDownload
+class NexUpload
 {
 public: /* methods */
 
@@ -40,7 +40,7 @@ public: /* methods */
      * @param SD_chip_select - sd chip select pin.
      * @download_baudrate - set download baudrate.
      */
-    NexDownload(const char *file_name,const uint8_t SD_chip_select,uint32_t download_baudrate);
+    NexUpload(const char *file_name,const uint8_t SD_chip_select,uint32_t download_baudrate);
     
     /**
      * Constructor. 
@@ -49,20 +49,20 @@ public: /* methods */
      * @param SD_chip_select - sd chip select pin.
      * @download_baudrate - set download baudrate.
      */
-    NexDownload(const String file_Name,const uint8_t SD_chip_select,uint32_t download_baudrate); 
+    NexUpload(const String file_Name,const uint8_t SD_chip_select,uint32_t download_baudrate); 
     
     /**
      * destructor. 
      * 
      */
-    ~NexDownload(){}
+    ~NexUpload(){}
     
     /*
      * start download.
      *
      * @return none.
      */
-    void startDownload();
+    void upload();
 
 private: /* methods */
 

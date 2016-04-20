@@ -1,5 +1,5 @@
 /**
- * @file NexDownload.cpp
+ * @file NexUpload.cpp
  *
  * The implementation of download tft file for nextion. 
  *
@@ -13,7 +13,7 @@
  * the License, or (at your option) any later version.
  */
 
-#include "NexDownload.h"
+#include "NexUpload.h"
 #include <SoftwareSerial.h>
 
 //#define USE_SOFTWARE_SERIAL
@@ -32,19 +32,19 @@ SoftwareSerial dbSerial(3, 2); /* RX:D3, TX:D2 */
 #define dbSerialBegin(a)    do{}while(0)
 #endif
 
-NexDownload::NexDownload(const char *file_name,const uint8_t SD_chip_select,uint32_t download_baudrate)
+NexUpload::NexUpload(const char *file_name,const uint8_t SD_chip_select,uint32_t download_baudrate)
 {
     _file_name = file_name; 
     _SD_chip_select = SD_chip_select;
     _download_baudrate = download_baudrate;
 }
 
-NexDownload::NexDownload(const String file_Name,const uint8_t SD_chip_select,uint32_t download_baudrate)
+NexUpload::NexUpload(const String file_Name,const uint8_t SD_chip_select,uint32_t download_baudrate)
 {
-    NexDownload(file_Name.c_str(),SD_chip_select,download_baudrate);
+    NexUpload(file_Name.c_str(),SD_chip_select,download_baudrate);
 }
 
-void NexDownload::startDownload(void)
+void NexUpload::upload(void)
 {
     dbSerialBegin(9600);
     if(!_checkFile())
@@ -70,7 +70,7 @@ void NexDownload::startDownload(void)
     dbSerialPrintln("download ok\r\n");
 }
 
-uint16_t NexDownload::_getBaudrate(void)
+uint16_t NexUpload::_getBaudrate(void)
 {
     uint32_t baudrate_array[7] = {115200,19200,9600,57600,38400,4800,2400};
     for(uint8_t i = 0; i < 7; i++)
@@ -85,7 +85,7 @@ uint16_t NexDownload::_getBaudrate(void)
     return _baudrate;
 }
 
-bool NexDownload::_checkFile(void)
+bool NexUpload::_checkFile(void)
 {
     dbSerialPrintln("start _checkFile");
     if(!SD.begin(_SD_chip_select))
@@ -105,7 +105,7 @@ bool NexDownload::_checkFile(void)
     return 1;
 }
 
-bool NexDownload::_searchBaudrate(uint32_t baudrate)
+bool NexUpload::_searchBaudrate(uint32_t baudrate)
 {
     String string = String("");  
     nexSerial.begin(baudrate);
@@ -119,7 +119,7 @@ bool NexDownload::_searchBaudrate(uint32_t baudrate)
     return 0;
 }
 
-void NexDownload::sendCommand(const char* cmd)
+void NexUpload::sendCommand(const char* cmd)
 {
 
     while (nexSerial.available())
@@ -133,7 +133,7 @@ void NexDownload::sendCommand(const char* cmd)
     nexSerial.write(0xFF);
 }
 
-uint16_t NexDownload::recvRetString(String &string, uint32_t timeout,bool recv_flag)
+uint16_t NexUpload::recvRetString(String &string, uint32_t timeout,bool recv_flag)
 {
     uint16_t ret = 0;
     uint8_t c = 0;
@@ -167,7 +167,7 @@ uint16_t NexDownload::recvRetString(String &string, uint32_t timeout,bool recv_f
     return ret;
 }
 
-bool NexDownload::_setDownloadBaudrate(uint32_t baudrate)
+bool NexUpload::_setDownloadBaudrate(uint32_t baudrate)
 {
     String string = String(""); 
     String cmd = String("");
@@ -189,7 +189,7 @@ bool NexDownload::_setDownloadBaudrate(uint32_t baudrate)
     return 0;
 }
 
-bool NexDownload::_downloadTftFile(void)
+bool NexUpload::_downloadTftFile(void)
 {
     uint8_t c;
     uint16_t send_timer = 0;
