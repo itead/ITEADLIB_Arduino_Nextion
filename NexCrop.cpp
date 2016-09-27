@@ -20,7 +20,7 @@ NexCrop::NexCrop(uint8_t pid, uint8_t cid, const char *name)
 {
 }
 
-bool NexCrop::getPic(uint32_t *number)
+bool NexCrop::Get_background_crop_picc(uint32_t *number)
 {
     String cmd = String("get ");
     cmd += getObjName();
@@ -29,7 +29,7 @@ bool NexCrop::getPic(uint32_t *number)
     return recvRetNumber(number);
 }
 
-bool NexCrop::setPic(uint32_t number)
+bool NexCrop::Set_background_crop_picc(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;

@@ -43,7 +43,7 @@ public: /* methods */
      * @retval true - success. 
      * @retval false - failed. 
      */
-    bool getPic(uint32_t *number);
+    bool Get_background_image_pic(uint32_t *number);
     
     /**
      * Set picture's number.
@@ -53,7 +53,7 @@ public: /* methods */
      * @retval true - success.
      * @retval false - failed. 
      */
-    bool setPic(uint32_t number);
+    bool Set_background_image_pic(uint32_t number);
 };
 
 /**

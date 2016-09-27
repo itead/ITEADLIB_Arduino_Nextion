@@ -30,7 +30,7 @@ void NexTimer::detachTimer(void)
     NexTouch::detachPop();
 }
 
-bool NexTimer::getCycle(uint32_t *number)
+bool NexTimer::Get_cycle_tim(uint32_t *number)
 {
     String cmd = String("get ");
     cmd += getObjName();
@@ -39,7 +39,7 @@ bool NexTimer::getCycle(uint32_t *number)
     return recvRetNumber(number);
 }
 
-bool NexTimer::setCycle(uint32_t number)
+bool NexTimer::Set_cycle_tim(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;

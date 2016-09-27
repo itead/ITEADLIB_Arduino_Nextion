@@ -20,7 +20,7 @@ NexPicture::NexPicture(uint8_t pid, uint8_t cid, const char *name)
 {
 }
 
-bool NexPicture::getPic(uint32_t *number)
+bool NexPicture::Get_background_image_pic(uint32_t *number)
 {
     String cmd = String("get ");
     cmd += getObjName();
@@ -29,7 +29,7 @@ bool NexPicture::getPic(uint32_t *number)
     return recvRetNumber(number);
 }
 
-bool NexPicture::setPic(uint32_t number)
+bool NexPicture::Set_background_image_pic(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;

@@ -66,7 +66,7 @@ public: /* methods */
      * @retval true - success. 
      * @retval false - failed. 
      */
-    bool getCycle(uint32_t *number); 
+    bool Get_cycle_tim(uint32_t *number); 
 
     /**
      * Set the value of timer cycle val.
@@ -78,7 +78,7 @@ public: /* methods */
      *
      * @warning  the cycle value must be greater than 50.
      */
-    bool setCycle(uint32_t number);   
+    bool Set_cycle_tim(uint32_t number);   
 
     /**
      * contorl timer enable.

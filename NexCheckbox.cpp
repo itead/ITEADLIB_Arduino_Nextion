@@ -1,10 +1,10 @@
 /**
- * @file NexProgressBar.cpp
+ * @file NexCheckbox.cpp
  *
- * The implementation of class NexProgressBar. 
+ * The implementation of class NexCheckbox. 
  *
- * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
- * @date    2015/8/13
+ * @author  huang xiaoming (email:<xiaoming.huang@itead.cc>)
+ * @date    2016/9/13
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -12,15 +12,14 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  */
+#include "NexCheckbox.h"
 
-#include "NexProgressBar.h"
-
-NexProgressBar::NexProgressBar(uint8_t pid, uint8_t cid, const char *name)
-    :NexObject(pid, cid, name)
+NexCheckbox::NexCheckbox(uint8_t pid, uint8_t cid, const char *name)
+    :NexTouch(pid, cid, name)
 {
 }
 
-bool NexProgressBar::getValue(uint32_t *number)
+uint32_t NexCheckbox::getValue(uint32_t *number)
 {
     String cmd = String("get ");
     cmd += getObjName();
@@ -29,7 +28,7 @@ bool NexProgressBar::getValue(uint32_t *number)
     return recvRetNumber(number);
 }
 
-bool NexProgressBar::setValue(uint32_t number)
+bool NexCheckbox::setValue(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
@@ -42,8 +41,8 @@ bool NexProgressBar::setValue(uint32_t number)
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
- 
-uint32_t NexProgressBar::Get_background_color_bco(uint32_t *number)
+
+uint32_t NexCheckbox::Get_background_color_bco(uint32_t *number)
 {
 	String cmd;
 	cmd += "get ";
@@ -53,7 +52,7 @@ uint32_t NexProgressBar::Get_background_color_bco(uint32_t *number)
 	return recvRetNumber(number);
 }
 
-bool NexProgressBar::Set_background_color_bco(uint32_t number)
+bool NexCheckbox::Set_background_color_bco(uint32_t number)
 {
 	char buf[10] = {0};
     String cmd;
@@ -71,7 +70,7 @@ bool NexProgressBar::Set_background_color_bco(uint32_t number)
     return recvRetCommandFinished();
 }
 
-uint32_t NexProgressBar::Get_font_color_pco(uint32_t *number)
+uint32_t NexCheckbox::Get_font_color_pco(uint32_t *number)
 {
 	String cmd;
 	cmd += "get ";
@@ -81,7 +80,7 @@ uint32_t NexProgressBar::Get_font_color_pco(uint32_t *number)
 	return recvRetNumber(number);
 }
 
-bool NexProgressBar::Set_font_color_pco(uint32_t number)
+bool NexCheckbox::Set_font_color_pco(uint32_t number)
 {
 	char buf[10] = {0};
     String cmd;
@@ -97,4 +96,4 @@ bool NexProgressBar::Set_font_color_pco(uint32_t number)
 	cmd += getObjName();
 	sendCommand(cmd.c_str());
     return recvRetCommandFinished();
-} 
+}

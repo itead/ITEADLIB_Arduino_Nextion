@@ -44,7 +44,7 @@ public: /* methods */
      * @retval true - success. 
      * @retval false - failed. 
      */
-    bool getPic(uint32_t *number);
+    bool Get_background_crop_picc(uint32_t *number);
     
     /**
      * Set the number of picture. 
@@ -54,7 +54,7 @@ public: /* methods */
      * @retval true - success. 
      * @retval false - failed. 
      */
-    bool setPic(uint32_t number);
+    bool Set_background_crop_picc(uint32_t number);
 };
 
 /**
