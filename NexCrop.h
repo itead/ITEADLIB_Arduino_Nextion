@@ -55,6 +55,26 @@ public: /* methods */
      * @retval false - failed. 
      */
     bool Set_background_crop_picc(uint32_t number);
+	
+	/**
+     * Get the number of picture. 
+     *
+     * @param number - an output parameter to save the number of picture. 
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
+    bool getPic(uint32_t *number);
+    
+    /**
+     * Set the number of picture. 
+     *
+     * @param number - the number of picture. 
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
+    bool setPic(uint32_t number);
 };
 
 /**

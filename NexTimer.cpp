@@ -83,4 +83,30 @@ bool NexTimer::disable(void)
     return recvRetCommandFinished();
 }
 
+bool NexTimer::getCycle(uint32_t *number)
+{
+    String cmd = String("get ");
+    cmd += getObjName();
+    cmd += ".tim";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
+}
+
+bool NexTimer::setCycle(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+    if (number < 50)
+    {
+        number = 50;
+    }
+    utoa(number, buf, 10);
+    cmd += getObjName();
+    cmd += ".tim=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
+
 
