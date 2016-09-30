@@ -66,7 +66,7 @@ public: /* methods */
      * @retval true - success. 
      * @retval false - failed. 
      */
-    bool Get_cycle_tim(uint32_t *number); 
+    bool getCycle(uint32_t *number); 
 
     /**
      * Set the value of timer cycle val.
@@ -78,7 +78,7 @@ public: /* methods */
      *
      * @warning  the cycle value must be greater than 50.
      */
-    bool Set_cycle_tim(uint32_t number);   
+    bool setCycle(uint32_t number);   
 
     /**
      * contorl timer enable.
@@ -95,28 +95,24 @@ public: /* methods */
      * @retval false - failed. 
      */
     bool disable(void); 
+    
+    /*
+	* Get tim attribute of component
+	*
+	* @param number - buffer storing data retur
+	* @return the length of the data 
+	*/
 	
-	/**
-     * Get the value of timer cycle val. 
-     * 
-     * @param number - an output parameter to save the value of timer cycle.  
-     * 
-     * @retval true - success. 
-     * @retval false - failed. 
-     */
-    bool getCycle(uint32_t *number); 
+	uint32_t Get_cycle_tim(uint32_t *number);
 
-    /**
-     * Set the value of timer cycle val.
-     *
-     * @param number - the value of timer cycle.  
-     * 
-     * @retval true - success. 
-     * @retval false - failed. 
-     *
-     * @warning  the cycle value must be greater than 50.
-     */
-    bool setCycle(uint32_t number); 
+	/*
+	* Set tim attribute of component
+	*
+	* @param number - To set up the data
+	* @return true if success, false for failure
+	*/
+	
+	bool Set_cycle_tim(uint32_t number);
 
 };
 /**

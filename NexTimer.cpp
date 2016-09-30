@@ -30,7 +30,7 @@ void NexTimer::detachTimer(void)
     NexTouch::detachPop();
 }
 
-bool NexTimer::Get_cycle_tim(uint32_t *number)
+bool NexTimer::getCycle(uint32_t *number)
 {
     String cmd = String("get ");
     cmd += getObjName();
@@ -39,7 +39,7 @@ bool NexTimer::Get_cycle_tim(uint32_t *number)
     return recvRetNumber(number);
 }
 
-bool NexTimer::Set_cycle_tim(uint32_t number)
+bool NexTimer::setCycle(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
@@ -83,7 +83,7 @@ bool NexTimer::disable(void)
     return recvRetCommandFinished();
 }
 
-bool NexTimer::getCycle(uint32_t *number)
+uint32_t NexTimer::Get_cycle_tim(uint32_t *number)
 {
     String cmd = String("get ");
     cmd += getObjName();
@@ -92,21 +92,24 @@ bool NexTimer::getCycle(uint32_t *number)
     return recvRetNumber(number);
 }
 
-bool NexTimer::setCycle(uint32_t number)
+bool NexTimer::Set_cycle_tim(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    if (number < 50)
+    if (number < 8)
     {
-        number = 50;
+        number = 8;
     }
     utoa(number, buf, 10);
     cmd += getObjName();
     cmd += ".tim=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
+	
+	cmd = "";
+	cmd += "ref ";
+	cmd += getObjName();
+	sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
-
 
