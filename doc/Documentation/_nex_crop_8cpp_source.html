@@ -79,7 +79,7 @@ $(document).ready(function(){initNavTree('_nex_crop_8cpp_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_crop.html#a2cbfe125182626965dd530f14ab55885">   23</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_crop.html#a2cbfe125182626965dd530f14ab55885">NexCrop::getPic</a>(uint32_t *number)</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_crop.html#a19f824bea045bab4cc1afc5950259247">   23</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_crop.html#a19f824bea045bab4cc1afc5950259247">NexCrop::Get_background_crop_picc</a>(uint32_t *number)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get &quot;</span>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    cmd += getObjName();</div>
@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('_nex_crop_8cpp_source.html','');});
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> recvRetNumber(number);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_nex_crop.html#aac34fc2f8ead1e330918089ea8a339db">   32</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_crop.html#aac34fc2f8ead1e330918089ea8a339db">NexCrop::setPic</a>(uint32_t number)</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_nex_crop.html#aa85a69de5055c29f0a85406d10806bfe">   32</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_crop.html#aa85a69de5055c29f0a85406d10806bfe">NexCrop::Set_background_crop_picc</a>(uint32_t number)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    String cmd;</div>
@@ -102,10 +102,35 @@ $(document).ready(function(){initNavTree('_nex_crop_8cpp_source.html','');});
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> recvRetCommandFinished();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="ttc" id="class_nex_crop_html_a2cbfe125182626965dd530f14ab55885"><div class="ttname"><a href="class_nex_crop.html#a2cbfe125182626965dd530f14ab55885">NexCrop::getPic</a></div><div class="ttdeci">bool getPic(uint32_t *number)</div><div class="ttdoc">Get the number of picture. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8cpp_source.html#l00023">NexCrop.cpp:23</a></div></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_nex_crop.html#a2cbfe125182626965dd530f14ab55885">   46</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_crop.html#a2cbfe125182626965dd530f14ab55885">NexCrop::getPic</a>(uint32_t *number)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get &quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    cmd += getObjName();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    cmd += <span class="stringliteral">&quot;.picc&quot;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    sendCommand(cmd.c_str());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> recvRetNumber(number);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_nex_crop.html#aac34fc2f8ead1e330918089ea8a339db">   55</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_crop.html#aac34fc2f8ead1e330918089ea8a339db">NexCrop::setPic</a>(uint32_t number)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    String cmd;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    utoa(number, buf, 10);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    cmd += getObjName();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    cmd += <span class="stringliteral">&quot;.picc=&quot;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    sendCommand(cmd.c_str());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> recvRetCommandFinished();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="ttc" id="class_nex_crop_html_a19f824bea045bab4cc1afc5950259247"><div class="ttname"><a href="class_nex_crop.html#a19f824bea045bab4cc1afc5950259247">NexCrop::Get_background_crop_picc</a></div><div class="ttdeci">bool Get_background_crop_picc(uint32_t *number)</div><div class="ttdoc">Get the number of picture. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8cpp_source.html#l00023">NexCrop.cpp:23</a></div></div>
+<div class="ttc" id="class_nex_crop_html_a2cbfe125182626965dd530f14ab55885"><div class="ttname"><a href="class_nex_crop.html#a2cbfe125182626965dd530f14ab55885">NexCrop::getPic</a></div><div class="ttdeci">bool getPic(uint32_t *number)</div><div class="ttdoc">Get the number of picture. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8cpp_source.html#l00046">NexCrop.cpp:46</a></div></div>
 <div class="ttc" id="class_nex_crop_html_a1a3a195d3da05cb832f91a2ef43f27d3"><div class="ttname"><a href="class_nex_crop.html#a1a3a195d3da05cb832f91a2ef43f27d3">NexCrop::NexCrop</a></div><div class="ttdeci">NexCrop(uint8_t pid, uint8_t cid, const char *name)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8cpp_source.html#l00018">NexCrop.cpp:18</a></div></div>
 <div class="ttc" id="_nex_crop_8h_html"><div class="ttname"><a href="_nex_crop_8h.html">NexCrop.h</a></div><div class="ttdoc">The definition of class NexCrop. </div></div>
-<div class="ttc" id="class_nex_crop_html_aac34fc2f8ead1e330918089ea8a339db"><div class="ttname"><a href="class_nex_crop.html#aac34fc2f8ead1e330918089ea8a339db">NexCrop::setPic</a></div><div class="ttdeci">bool setPic(uint32_t number)</div><div class="ttdoc">Set the number of picture. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8cpp_source.html#l00032">NexCrop.cpp:32</a></div></div>
+<div class="ttc" id="class_nex_crop_html_aac34fc2f8ead1e330918089ea8a339db"><div class="ttname"><a href="class_nex_crop.html#aac34fc2f8ead1e330918089ea8a339db">NexCrop::setPic</a></div><div class="ttdeci">bool setPic(uint32_t number)</div><div class="ttdoc">Set the number of picture. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8cpp_source.html#l00055">NexCrop.cpp:55</a></div></div>
+<div class="ttc" id="class_nex_crop_html_aa85a69de5055c29f0a85406d10806bfe"><div class="ttname"><a href="class_nex_crop.html#aa85a69de5055c29f0a85406d10806bfe">NexCrop::Set_background_crop_picc</a></div><div class="ttdeci">bool Set_background_crop_picc(uint32_t number)</div><div class="ttdoc">Set the number of picture. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_crop_8cpp_source.html#l00032">NexCrop.cpp:32</a></div></div>
 <div class="ttc" id="class_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdoc">Father class of the components with touch events. </div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00053">NexTouch.h:53</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -113,7 +138,7 @@ $(document).ready(function(){initNavTree('_nex_crop_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="_nex_crop_8cpp.html">NexCrop.cpp</a></li>
-    <li class="footer">Generated on Wed Nov 11 2015 15:49:29 for Documentation by
+    <li class="footer">Generated on Mon Oct 10 2016 09:55:03 for Documentation by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -58,22 +58,20 @@ public: /* methods */
      */
     bool setText(const char *buffer);    
 	
-	/*
-	* Get val attribute of component
-	*
-	* @param number - buffer storing data retur
-	* @return the length of the data 
-	*/
-	
+	/**
+	 * Get val attribute of component
+	 *
+	 * @param number - buffer storing data retur
+	 * @return the length of the data 
+	 */
 	uint32_t getValue(uint32_t *number);
 	
-	/*
-	* Set val attribute of component
-	*
-	* @param number - To set up the data
-	* @return true if success, false for failure
-	*/
-	
+	/**
+	 * Set val attribute of component
+	 *
+	 * @param number - To set up the data
+	 * @return true if success, false for failure
+	 */
 	bool setValue(uint32_t number);
 	
 };

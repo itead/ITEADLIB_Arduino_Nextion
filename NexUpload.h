@@ -38,16 +38,16 @@ public: /* methods */
      * 
      * @param file_name - tft file name. 
      * @param SD_chip_select - sd chip select pin.
-     * @download_baudrate - set download baudrate.
+     * @param download_baudrate - set download baudrate.
      */
     NexUpload(const char *file_name,const uint8_t SD_chip_select,uint32_t download_baudrate);
     
     /**
      * Constructor. 
      * 
-     * @param file_name - tft file name. 
+     * @param file_Name - tft file name. 
      * @param SD_chip_select - sd chip select pin.
-     * @download_baudrate - set download baudrate.
+     * @param download_baudrate - set download baudrate.
      */
     NexUpload(const String file_Name,const uint8_t SD_chip_select,uint32_t download_baudrate); 
     

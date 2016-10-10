@@ -49,7 +49,7 @@
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -81,26 +81,20 @@ $(document).ready(function(){initNavTree('class_nex_picture.html','');});
  <a href="class_nex_picture.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_nex_picture_8h_source.html">NexPicture.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for NexPicture:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_nex_picture__inherit__graph.png" border="0" usemap="#_nex_picture_inherit__map" alt="Inheritance graph"/></div>
-<map name="_nex_picture_inherit__map" id="_nex_picture_inherit__map">
-<area shape="rect" id="node2" href="class_nex_touch.html" title="Father class of the components with touch events. " alt="" coords="9,80,89,107"/><area shape="rect" id="node3" href="class_nex_object.html" title="Root class of all Nextion components. " alt="" coords="7,5,90,32"/></map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for NexPicture:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_nex_picture__coll__graph.png" border="0" usemap="#_nex_picture_coll__map" alt="Collaboration graph"/></div>
-<map name="_nex_picture_coll__map" id="_nex_picture_coll__map">
-<area shape="rect" id="node2" href="class_nex_touch.html" title="Father class of the components with touch events. " alt="" coords="9,80,89,107"/><area shape="rect" id="node3" href="class_nex_object.html" title="Root class of all Nextion components. " alt="" coords="7,5,90,32"/></map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+
+<p>Inherits <a class="el" href="class_nex_touch.html">NexTouch</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa6096defacd933e8bff5283c83200459"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_picture.html#aa6096defacd933e8bff5283c83200459">NexPicture</a> (uint8_t pid, uint8_t cid, const char *name)</td></tr>
 <tr class="memdesc:aa6096defacd933e8bff5283c83200459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#aa6096defacd933e8bff5283c83200459">More...</a><br /></td></tr>
 <tr class="separator:aa6096defacd933e8bff5283c83200459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0297c4a9544df9b0c37db0ea894d699f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_picture.html#a0297c4a9544df9b0c37db0ea894d699f">Get_background_image_pic</a> (uint32_t *number)</td></tr>
+<tr class="memdesc:a0297c4a9544df9b0c37db0ea894d699f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get picture's number.  <a href="#a0297c4a9544df9b0c37db0ea894d699f">More...</a><br /></td></tr>
+<tr class="separator:a0297c4a9544df9b0c37db0ea894d699f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a531e22f70dbf0dcaf6e114581364acea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_picture.html#a531e22f70dbf0dcaf6e114581364acea">Set_background_image_pic</a> (uint32_t number)</td></tr>
+<tr class="memdesc:a531e22f70dbf0dcaf6e114581364acea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set picture's number.  <a href="#a531e22f70dbf0dcaf6e114581364acea">More...</a><br /></td></tr>
+<tr class="separator:a531e22f70dbf0dcaf6e114581364acea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11bd68ef9fe1d03d9e0d02ef1c7527e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nex_picture.html#a11bd68ef9fe1d03d9e0d02ef1c7527e9">getPic</a> (uint32_t *number)</td></tr>
 <tr class="memdesc:a11bd68ef9fe1d03d9e0d02ef1c7527e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get picture's number.  <a href="#a11bd68ef9fe1d03d9e0d02ef1c7527e9">More...</a><br /></td></tr>
 <tr class="separator:a11bd68ef9fe1d03d9e0d02ef1c7527e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,6 +176,39 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0297c4a9544df9b0c37db0ea894d699f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NexPicture::Get_background_image_pic </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get picture's number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>- an output parameter to save picture number.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_nex_picture_8cpp_source.html#l00023">23</a> of file <a class="el" href="_nex_picture_8cpp_source.html">NexPicture.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a11bd68ef9fe1d03d9e0d02ef1c7527e9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +239,40 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_comp_picture_8ino-example.html#a2">CompPicture.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_nex_picture_8cpp_source.html#l00023">23</a> of file <a class="el" href="_nex_picture_8cpp_source.html">NexPicture.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_nex_picture_8cpp_source.html#l00046">46</a> of file <a class="el" href="_nex_picture_8cpp_source.html">NexPicture.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a531e22f70dbf0dcaf6e114581364acea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NexPicture::Set_background_image_pic </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set picture's number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>-the picture number.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_nex_picture_8cpp_source.html#l00032">32</a> of file <a class="el" href="_nex_picture_8cpp_source.html">NexPicture.cpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +306,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_comp_picture_8ino-example.html#a3">CompPicture.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_nex_picture_8cpp_source.html#l00032">32</a> of file <a class="el" href="_nex_picture_8cpp_source.html">NexPicture.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_nex_picture_8cpp_source.html#l00055">55</a> of file <a class="el" href="_nex_picture_8cpp_source.html">NexPicture.cpp</a>.</p>
 
 </div>
 </div>
@@ -260,7 +320,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_nex_picture.html">NexPicture</a></li>
-    <li class="footer">Generated on Wed Nov 11 2015 15:49:30 for Documentation by
+    <li class="footer">Generated on Mon Oct 10 2016 09:55:05 for Documentation by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
