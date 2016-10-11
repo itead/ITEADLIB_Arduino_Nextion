@@ -35,6 +35,10 @@
 #include "NexTimer.h"
 #include "NexNumber.h"
 #include "NexDualStateButton.h"
+#include "NexVariable.h"
+#include "NexCheckbox.h"
+#include "NexRadio.h"
+#include "NexScrolltext.h"
 
 
 #endif /* #ifndef __NEXTION_H__ */

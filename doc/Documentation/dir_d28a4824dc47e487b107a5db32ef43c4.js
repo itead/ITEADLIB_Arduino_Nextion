@@ -12,5 +12,6 @@ var dir_d28a4824dc47e487b107a5db32ef43c4 =
     [ "CompSlider", "dir_472f54fb1d9b74971d8e15d62f212bd3.html", "dir_472f54fb1d9b74971d8e15d62f212bd3" ],
     [ "CompText", "dir_c918e8bf3fc71f849978cdb0d900e61c.html", "dir_c918e8bf3fc71f849978cdb0d900e61c" ],
     [ "CompTimer", "dir_53835f0dfcb7abf9d97bc46682fab859.html", "dir_53835f0dfcb7abf9d97bc46682fab859" ],
-    [ "CompWaveform", "dir_4b43661efaa18af91f213d2681ebd37e.html", "dir_4b43661efaa18af91f213d2681ebd37e" ]
+    [ "CompWaveform", "dir_4b43661efaa18af91f213d2681ebd37e.html", "dir_4b43661efaa18af91f213d2681ebd37e" ],
+    [ "Upload", "dir_58f5ecea2e2241e947c6d0b6b0a6574c.html", "dir_58f5ecea2e2241e947c6d0b6b0a6574c" ]
 ];

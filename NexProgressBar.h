@@ -54,6 +54,38 @@ public: /* methods */
      * @retval false - failed. 
      */
     bool setValue(uint32_t number);
+	
+    /**
+     * Get bco attribute of component
+     *
+     * @param number - buffer storing data retur
+     * @return the length of the data 
+     */
+    uint32_t Get_background_color_bco(uint32_t *number);
+	
+    /**
+     * Set bco attribute of component
+     *
+     * @param number - To set up the data
+     * @return true if success, false for failure
+     */
+    bool Set_background_color_bco(uint32_t number);
+	
+    /**
+     * Get pco attribute of component
+     *
+     * @param number - buffer storing data retur
+     * @return the length of the data 
+     */
+    uint32_t Get_font_color_pco(uint32_t *number);		
+	
+    /**
+     * Set pco attribute of component
+     *
+     * @param number - To set up the data
+     * @return true if success, false for failure
+     */
+    bool Set_font_color_pco(uint32_t number);			
 };
 
 /**

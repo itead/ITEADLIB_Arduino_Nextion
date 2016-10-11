@@ -1,9 +1,12 @@
 var files =
 [
     [ "examples", "dir_d28a4824dc47e487b107a5db32ef43c4.html", "dir_d28a4824dc47e487b107a5db32ef43c4" ],
+    [ "html", "dir_2dae0a562653f78d59931f0e4b070746.html", "dir_2dae0a562653f78d59931f0e4b070746" ],
     [ "doxygen.h", "doxygen_8h.html", null ],
     [ "NexButton.cpp", "_nex_button_8cpp.html", null ],
     [ "NexButton.h", "_nex_button_8h.html", null ],
+    [ "NexCheckbox.cpp", "_nex_checkbox_8cpp.html", null ],
+    [ "NexCheckbox.h", "_nex_checkbox_8h.html", null ],
     [ "NexConfig.h", "_nex_config_8h.html", "_nex_config_8h" ],
     [ "NexCrop.cpp", "_nex_crop_8cpp.html", null ],
     [ "NexCrop.h", "_nex_crop_8h.html", null ],
@@ -25,6 +28,10 @@ var files =
     [ "NexPicture.h", "_nex_picture_8h.html", null ],
     [ "NexProgressBar.cpp", "_nex_progress_bar_8cpp.html", null ],
     [ "NexProgressBar.h", "_nex_progress_bar_8h.html", null ],
+    [ "NexRadio.cpp", "_nex_radio_8cpp.html", null ],
+    [ "NexRadio.h", "_nex_radio_8h.html", null ],
+    [ "NexScrolltext.cpp", "_nex_scrolltext_8cpp.html", null ],
+    [ "NexScrolltext.h", "_nex_scrolltext_8h.html", null ],
     [ "NexSlider.cpp", "_nex_slider_8cpp.html", null ],
     [ "NexSlider.h", "_nex_slider_8h.html", null ],
     [ "NexText.cpp", "_nex_text_8cpp.html", null ],
@@ -34,6 +41,10 @@ var files =
     [ "Nextion.h", "_nextion_8h.html", null ],
     [ "NexTouch.cpp", "_nex_touch_8cpp.html", null ],
     [ "NexTouch.h", "_nex_touch_8h.html", "_nex_touch_8h" ],
+    [ "NexUpload.cpp", "_nex_upload_8cpp.html", null ],
+    [ "NexUpload.h", "_nex_upload_8h.html", null ],
+    [ "NexVariable.cpp", "_nex_variable_8cpp.html", null ],
+    [ "NexVariable.h", "_nex_variable_8h_source.html", null ],
     [ "NexWaveform.cpp", "_nex_waveform_8cpp.html", null ],
     [ "NexWaveform.h", "_nex_waveform_8h.html", null ]
 ];

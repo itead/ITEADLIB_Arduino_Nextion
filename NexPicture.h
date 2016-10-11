@@ -43,6 +43,26 @@ public: /* methods */
      * @retval true - success. 
      * @retval false - failed. 
      */
+    bool Get_background_image_pic(uint32_t *number);
+    
+    /**
+     * Set picture's number.
+     * 
+     * @param number -the picture number.
+     *
+     * @retval true - success.
+     * @retval false - failed. 
+     */
+    bool Set_background_image_pic(uint32_t number);
+	
+	/**
+     * Get picture's number.
+     * 
+     * @param number - an output parameter to save picture number.  
+     * 
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
     bool getPic(uint32_t *number);
     
     /**
