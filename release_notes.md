@@ -2,6 +2,20 @@
 
 --------------------------------------------------------------------------------
 
+# Release v0.9.0
+
+  - version: v0.9.0
+  - base: v0.7.0
+  
+## Brief
+
+Support all components in Nextion Editor v0.38. 
+
+## Details
+
+Added APIs of new attrubutes and components supported by Nextion Editor v0.38.
+
+
 # Release v0.7.0
 
   - version: v0.7.0
