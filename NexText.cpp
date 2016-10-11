@@ -42,17 +42,17 @@ bool NexText::setText(const char *buffer)
 
 uint32_t NexText::Get_background_color_bco(uint32_t *number)
 {
-	String cmd;
-	cmd += "get ";
-	cmd += getObjName();
-	cmd += ".bco";
-	sendCommand(cmd.c_str());
-	return recvRetNumber(number);
+    String cmd;
+    cmd += "get ";
+    cmd += getObjName();
+    cmd += ".bco";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
 }
 
 bool NexText::Set_background_color_bco(uint32_t number)
 {
-	char buf[10] = {0};
+    char buf[10] = {0};
     String cmd;
     
     utoa(number, buf, 10);
@@ -61,26 +61,26 @@ bool NexText::Set_background_color_bco(uint32_t number)
     cmd += buf;
     sendCommand(cmd.c_str());
 	
-	cmd="";
-	cmd += "ref ";
-	cmd += getObjName();
-	sendCommand(cmd.c_str());
+    cmd="";
+    cmd += "ref ";
+    cmd += getObjName();
+    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
 uint32_t NexText::Get_font_color_pco(uint32_t *number)
 {
-	String cmd;
-	cmd += "get ";
-	cmd += getObjName();
-	cmd += ".pco";
-	sendCommand(cmd.c_str());
-	return recvRetNumber(number);
+    String cmd;
+    cmd += "get ";
+    cmd += getObjName();
+    cmd += ".pco";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
 }
 
 bool NexText::Set_font_color_pco(uint32_t number)
 {
-	char buf[10] = {0};
+    char buf[10] = {0};
     String cmd;
     
     utoa(number, buf, 10);
@@ -89,21 +89,21 @@ bool NexText::Set_font_color_pco(uint32_t number)
     cmd += buf;
     sendCommand(cmd.c_str());
 	
-	cmd = "";
-	cmd += "ref ";
-	cmd += getObjName();
-	sendCommand(cmd.c_str());
+    cmd = "";
+    cmd += "ref ";
+    cmd += getObjName();
+    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
 uint32_t NexText::Get_place_xcen(uint32_t *number)
 {
-	String cmd;
-	cmd += "get ";
-	cmd += getObjName();
-	cmd += ".xcen";
-	sendCommand(cmd.c_str());
-	return recvRetNumber(number);
+    String cmd;
+    cmd += "get ";
+    cmd += getObjName();
+    cmd += ".xcen";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
 }
 
 bool NexText::Set_place_xcen(uint32_t number)
@@ -117,26 +117,26 @@ bool NexText::Set_place_xcen(uint32_t number)
     cmd += buf;
     sendCommand(cmd.c_str());
 	
-	cmd = "";
-	cmd += "ref ";
-	cmd += getObjName();
-	sendCommand(cmd.c_str());
+    cmd = "";
+    cmd += "ref ";
+    cmd += getObjName();
+    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
 uint32_t NexText::Get_place_ycen(uint32_t *number)
 {
-	String cmd;
-	cmd += "get ";
-	cmd += getObjName();
-	cmd += ".ycen";
-	sendCommand(cmd.c_str());
-	return recvRetNumber(number);
+    String cmd;
+    cmd += "get ";
+    cmd += getObjName();
+    cmd += ".ycen";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
 }
 
 bool NexText::Set_place_ycen(uint32_t number)
 {
-	char buf[10] = {0};
+    char buf[10] = {0};
     String cmd;
     
     utoa(number, buf, 10);
@@ -145,26 +145,26 @@ bool NexText::Set_place_ycen(uint32_t number)
     cmd += buf;
     sendCommand(cmd.c_str());
 	
-	cmd = "";
-	cmd += "ref ";
-	cmd += getObjName();
-	sendCommand(cmd.c_str());
+    cmd = "";
+    cmd += "ref ";
+    cmd += getObjName();
+    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
 uint32_t NexText::getFont(uint32_t *number)
 {
-	String cmd;
-	cmd += "get ";
-	cmd += getObjName();
-	cmd += ".font";
-	sendCommand(cmd.c_str());
-	return recvRetNumber(number);
+    String cmd;
+    cmd += "get ";
+    cmd += getObjName();
+    cmd += ".font";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
 }
 
 bool NexText::setFont(uint32_t number)
 {
-	char buf[10] = {0};
+    char buf[10] = {0};
     String cmd;
     
     utoa(number, buf, 10);
@@ -173,26 +173,26 @@ bool NexText::setFont(uint32_t number)
     cmd += buf;
     sendCommand(cmd.c_str());
 
-	cmd = "";
-	cmd += "ref ";
-	cmd += getObjName();
-	sendCommand(cmd.c_str());
+    cmd = "";
+    cmd += "ref ";
+    cmd += getObjName();
+    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
 uint32_t NexText::Get_background_crop_picc(uint32_t *number)
 {
-	String cmd;
-	cmd += "get ";
-	cmd += getObjName();
-	cmd += ".picc";
-	sendCommand(cmd.c_str());
-	return recvRetNumber(number);
+    String cmd;
+    cmd += "get ";
+    cmd += getObjName();
+    cmd += ".picc";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
 }
 
 bool NexText::Set_background_crop_picc(uint32_t number)
 {
-	char buf[10] = {0};
+    char buf[10] = {0};
     String cmd;
     
     utoa(number, buf, 10);
@@ -201,10 +201,10 @@ bool NexText::Set_background_crop_picc(uint32_t number)
     cmd += buf;
     sendCommand(cmd.c_str());
 	
-	cmd = "";
-	cmd += "ref ";
-	cmd += getObjName();
-	sendCommand(cmd.c_str());
+    cmd = "";
+    cmd += "ref ";
+    cmd += getObjName();
+    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 

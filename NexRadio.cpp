@@ -44,17 +44,17 @@ bool NexRadio::setValue(uint32_t number)
 
 uint32_t NexRadio::Get_background_color_bco(uint32_t *number)
 {
-	String cmd;
-	cmd += "get ";
-	cmd += getObjName();
-	cmd += ".bco";
-	sendCommand(cmd.c_str());
-	return recvRetNumber(number);
+    String cmd;
+    cmd += "get ";
+    cmd += getObjName();
+    cmd += ".bco";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
 }
 
 bool NexRadio::Set_background_color_bco(uint32_t number)
 {
-	char buf[10] = {0};
+    char buf[10] = {0};
     String cmd;
     
     utoa(number, buf, 10);
@@ -63,26 +63,26 @@ bool NexRadio::Set_background_color_bco(uint32_t number)
     cmd += buf;
     sendCommand(cmd.c_str());
 	
-	cmd="";
-	cmd += "ref ";
-	cmd += getObjName();
-	sendCommand(cmd.c_str());
+    cmd="";
+    cmd += "ref ";
+    cmd += getObjName();
+    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
 uint32_t NexRadio::Get_font_color_pco(uint32_t *number)
 {
-	String cmd;
-	cmd += "get ";
-	cmd += getObjName();
-	cmd += ".pco";
-	sendCommand(cmd.c_str());
-	return recvRetNumber(number);
+    String cmd;
+    cmd += "get ";
+    cmd += getObjName();
+    cmd += ".pco";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
 }
 
 bool NexRadio::Set_font_color_pco(uint32_t number)
 {
-	char buf[10] = {0};
+    char buf[10] = {0};
     String cmd;
     
     utoa(number, buf, 10);
@@ -91,9 +91,9 @@ bool NexRadio::Set_font_color_pco(uint32_t number)
     cmd += buf;
     sendCommand(cmd.c_str());
 	
-	cmd = "";
-	cmd += "ref ";
-	cmd += getObjName();
-	sendCommand(cmd.c_str());
+    cmd = "";
+    cmd += "ref ";
+    cmd += getObjName();
+    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

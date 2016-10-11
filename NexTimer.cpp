@@ -106,10 +106,10 @@ bool NexTimer::Set_cycle_tim(uint32_t number)
     cmd += buf;
     sendCommand(cmd.c_str());
 	
-	cmd = "";
-	cmd += "ref ";
-	cmd += getObjName();
-	sendCommand(cmd.c_str());
+    cmd = "";
+    cmd += "ref ";
+    cmd += getObjName();
+    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
