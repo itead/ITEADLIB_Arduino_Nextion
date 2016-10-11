@@ -108,7 +108,7 @@ uint32_t NexText::Get_place_xcen(uint32_t *number)
 
 bool NexText::Set_place_xcen(uint32_t number)
 {
-	char buf[10] = {0};
+    char buf[10] = {0};
     String cmd;
     
     utoa(number, buf, 10);

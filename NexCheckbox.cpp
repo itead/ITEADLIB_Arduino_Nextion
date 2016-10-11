@@ -54,7 +54,7 @@ uint32_t NexCheckbox::Get_background_color_bco(uint32_t *number)
 
 bool NexCheckbox::Set_background_color_bco(uint32_t number)
 {
-	char buf[10] = {0};
+    char buf[10] = {0};
     String cmd;
     
     utoa(number, buf, 10);
