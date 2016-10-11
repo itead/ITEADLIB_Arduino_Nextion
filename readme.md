@@ -52,9 +52,6 @@ All releases can be available from:
 
 # Documentation
 
-[Latest Online Documentation](http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/index.html)
-contains Configuration, Get Started, Reference of API and Examples, etc.
-
 Offline Documentation's entry `doc/Documentation/index.html` shiped with source code
 can be open in your browser such as Chrome, Firefox or any one you like. 
 
