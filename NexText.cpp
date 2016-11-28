@@ -232,3 +232,5 @@ bool NexText::Set_background_image_pic(uint32_t number)
 }
 
 
+
+
