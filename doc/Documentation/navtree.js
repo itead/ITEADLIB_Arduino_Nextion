@@ -30,7 +30,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_comp_button_8ino-example.html",
-"class_nex_radio.html#a7bbd252dc78876d0831badbe791dbbc8"
+"class_nex_picture.html#a0297c4a9544df9b0c37db0ea894d699f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

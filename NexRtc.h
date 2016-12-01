@@ -1,9 +1,32 @@
+/**
+ * @file NexRtc.h
+ *
+ * The definition of class NexRtc. 
+ *
+ * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
+ * @date 2015/8/13
+ *
+ * @copyright 
+ * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License, or (at your option) any later version.
+ */
+
 #ifndef _NEXRTC_H
 #define _NEXRTC_H
      
 #include "NexTouch.h"
 #include "NexHardware.h"
+/**
+ * @addtogroup Component 
+ * @{ 
+ */
 
+/**
+ * NexRtc component.
+ */
 
 class NexRtc
 {
@@ -35,7 +58,7 @@ class NexRtc
      * read rtc time
      *
      * @param time - Access data array
-     * @param time - len of array
+     * @param len - len of array
      * @return true if success, false for failure
      */
     
@@ -55,7 +78,7 @@ class NexRtc
      * read rtc time
      *
      * @param time - Access data array
-     * @param time - len of array
+     * @param len - len of array
      * @return true if success, false for failure
      */
     
@@ -63,4 +86,8 @@ class NexRtc
     
 };
 
-#endif
+/**
+ * @}
+ */
+
+#endif /* #ifndef __NEXRTC_H__ */

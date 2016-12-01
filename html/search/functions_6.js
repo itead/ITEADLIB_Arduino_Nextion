@@ -1,19 +1,4 @@
 var searchData=
 [
-  ['set_5fbackground_5fcolor_5fbco',['Set_background_color_bco',['../class_nex_button.html#ae6ade99045d0f97594eac50adc7c12f7',1,'NexButton::Set_background_color_bco()'],['../class_nex_checkbox.html#ab430ba5908c84fea8ab910002581350a',1,'NexCheckbox::Set_background_color_bco()']]],
-  ['set_5fbackground_5fcrop_5fpicc',['Set_background_crop_picc',['../class_nex_button.html#a71fc4f96d4700bd50cd6c937a0bfd43d',1,'NexButton::Set_background_crop_picc()'],['../class_nex_crop.html#aa85a69de5055c29f0a85406d10806bfe',1,'NexCrop::Set_background_crop_picc()']]],
-  ['set_5fbackground_5fimage_5fpic',['Set_background_image_pic',['../class_nex_button.html#a926c09d2615d74ef67d577c2934e2982',1,'NexButton::Set_background_image_pic()'],['../class_nex_picture.html#a531e22f70dbf0dcaf6e114581364acea',1,'NexPicture::Set_background_image_pic()']]],
-  ['set_5ffont_5fcolor_5fpco',['Set_font_color_pco',['../class_nex_button.html#a9fbfe6df7a285e470fb8bc3fd77df00a',1,'NexButton::Set_font_color_pco()'],['../class_nex_checkbox.html#aa1d52cc0170f11ec85263770fe77db2a',1,'NexCheckbox::Set_font_color_pco()']]],
-  ['set_5fplace_5fxcen',['Set_place_xcen',['../class_nex_button.html#a76cdf6324e05d7a2c30f397e947e7cc7',1,'NexButton']]],
-  ['set_5fplace_5fycen',['Set_place_ycen',['../class_nex_button.html#a50c8c3678dd815ec8d4e111c79251b53',1,'NexButton']]],
-  ['set_5fpress_5fbackground_5fcolor_5fbco2',['Set_press_background_color_bco2',['../class_nex_button.html#acdc1da7ffea8791a8237b201d572d1e3',1,'NexButton']]],
-  ['set_5fpress_5fbackground_5fcrop_5fpicc2',['Set_press_background_crop_picc2',['../class_nex_button.html#a8f63f08fa00609546011b0a66e7070a7',1,'NexButton']]],
-  ['set_5fpress_5fbackground_5fimage_5fpic2',['Set_press_background_image_pic2',['../class_nex_button.html#a2c1ded80df08c3726347b8acc68d1678',1,'NexButton']]],
-  ['set_5fpress_5ffont_5fcolor_5fpco2',['Set_press_font_color_pco2',['../class_nex_button.html#a5fe5e3331795ecb43eacf5aead7f5f4a',1,'NexButton']]],
-  ['setcycle',['setCycle',['../class_nex_timer.html#acf20f76949ed43f05b1c33613dabcb01',1,'NexTimer']]],
-  ['setfont',['setFont',['../class_nex_button.html#a0fc4598f87578079127ea33a303962ff',1,'NexButton']]],
-  ['setpic',['setPic',['../class_nex_crop.html#aac34fc2f8ead1e330918089ea8a339db',1,'NexCrop::setPic()'],['../class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd',1,'NexPicture::setPic()']]],
-  ['settext',['setText',['../class_nex_button.html#a649dafc5afb1dc7f1fc1bde1e6270290',1,'NexButton::setText()'],['../class_nex_d_s_button.html#aa7a83123530f2dbb3e6aa909352da5b2',1,'NexDSButton::setText()'],['../class_nex_scrolltext.html#a71b8e2b2bff22e3c0cbdf961a55b8d12',1,'NexScrolltext::setText()'],['../class_nex_text.html#a19589b32c981436a1bbcfe407bc766e3',1,'NexText::setText()'],['../class_nex_variable.html#aab59ac44eb0804664a03c09932be70eb',1,'NexVariable::setText()']]],
-  ['setvalue',['setValue',['../class_nex_checkbox.html#aa932e7c45765400618dce1804766264b',1,'NexCheckbox::setValue()'],['../class_nex_d_s_button.html#a2f696207609e0f01aadebb8b3826b0fa',1,'NexDSButton::setValue()'],['../class_nex_gauge.html#a448ce9ad69f54c156c325d578a96b765',1,'NexGauge::setValue()'],['../class_nex_number.html#a9cef51f6b76b4ba03a31b2427ffd4526',1,'NexNumber::setValue()'],['../class_nex_progress_bar.html#aaa7937d364cb63151bd1e1bc4729334d',1,'NexProgressBar::setValue()'],['../class_nex_slider.html#a3f325bda4db913e302e94a4b25de7b5f',1,'NexSlider::setValue()']]],
-  ['show',['show',['../class_nex_page.html#a5714e41d4528b991eda4bbe578005418',1,'NexPage']]]
+  ['read_5frtc_5ftime',['read_rtc_time',['../class_nex_rtc.html#a17230cd9342a905778fa4ee2e8609f02',1,'NexRtc::read_rtc_time(char *time, uint32_t len)'],['../class_nex_rtc.html#aa1afa1d516db55dfbbf650cbe5180eab',1,'NexRtc::read_rtc_time(char *time_type, uint32_t *number)'],['../class_nex_rtc.html#ac71de2cd6f7598f05a5115642714d490',1,'NexRtc::read_rtc_time(uint32_t *time, uint32_t len)']]]
 ];

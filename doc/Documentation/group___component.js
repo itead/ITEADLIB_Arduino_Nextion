@@ -83,6 +83,14 @@ var group___component =
       [ "Set_pointer_thickness_wid", "class_nex_gauge.html#adacdbcb25fdf45654ebc88f572e3bce9", null ],
       [ "setValue", "class_nex_gauge.html#a448ce9ad69f54c156c325d578a96b765", null ]
     ] ],
+    [ "NexGpio", "class_nex_gpio.html", [
+      [ "analog_write", "class_nex_gpio.html#af21eb91b041d149193bc716202d4a462", null ],
+      [ "digital_read", "class_nex_gpio.html#a36386b97898f0960abda51c6010378eb", null ],
+      [ "digital_write", "class_nex_gpio.html#aaea4cb428fa0a2e26927073c20ed64ac", null ],
+      [ "get_pwmfreq", "class_nex_gpio.html#a8fca87ac0cdfbc8a62dec807b949c36d", null ],
+      [ "pin_mode", "class_nex_gpio.html#adbe08eb11827d75c6b2e9c935d9da19a", null ],
+      [ "set_pwmfreq", "class_nex_gpio.html#a62c2cb633e321ef2273eb3a7af6a5b47", null ]
+    ] ],
     [ "NexHotspot", "class_nex_hotspot.html", [
       [ "NexHotspot", "class_nex_hotspot.html#ad2408e74f5445941897702c4c78fddbf", null ]
     ] ],
@@ -135,6 +143,13 @@ var group___component =
       [ "Set_background_color_bco", "class_nex_radio.html#a7bbd252dc78876d0831badbe791dbbc8", null ],
       [ "Set_font_color_pco", "class_nex_radio.html#afd379837becbcf4a8f126820658a7f78", null ],
       [ "setValue", "class_nex_radio.html#aa92d6f41ff30467a965e8a802e7d8b83", null ]
+    ] ],
+    [ "NexRtc", "class_nex_rtc.html", [
+      [ "read_rtc_time", "class_nex_rtc.html#a17230cd9342a905778fa4ee2e8609f02", null ],
+      [ "read_rtc_time", "class_nex_rtc.html#aa1afa1d516db55dfbbf650cbe5180eab", null ],
+      [ "read_rtc_time", "class_nex_rtc.html#ac71de2cd6f7598f05a5115642714d490", null ],
+      [ "write_rtc_time", "class_nex_rtc.html#a9c55a15fa0a2b1511162facdc47f78b2", null ],
+      [ "write_rtc_time", "class_nex_rtc.html#ab11da59341b52b0f686cb85a058d0962", null ]
     ] ],
     [ "NexScrolltext", "class_nex_scrolltext.html", [
       [ "NexScrolltext", "class_nex_scrolltext.html#a212aa1505ed7c0bfdb47de3e6e2045fb", null ],

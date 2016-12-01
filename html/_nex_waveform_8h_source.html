@@ -98,108 +98,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#a5b04ea7397b784947b845e2a03fc77e4">addValue</a>(uint8_t ch, uint8_t number);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">    * Get bco attribute of component</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">    * @param number - buffer storing data retur</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">    * @return the length of the data </span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    uint32_t Get_background_color_bco(uint32_t *number);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">    * Set bco attribute of component</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">    * @param number - To set up the data</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">    * @return true if success, false for failure</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    uint32_t <a class="code" href="class_nex_waveform.html#a66cec3c4d0d1a769dbf50c8092cc01d1">Get_background_color_bco</a>(uint32_t *number);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#aefec5eb25ee698c8c940c9190d60b696">Set_background_color_bco</a>(uint32_t number);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> Set_background_color_bco(uint32_t number);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">    * Get gdc attribute of component</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">    * @param number - buffer storing data retur</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">    * @return the length of the data </span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    uint32_t Get_grid_color_gdc(uint32_t *number);  </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">    * Set gdc attribute of component</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">    * @param number - To set up the data</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">    * @return true if success, false for failure</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> Set_grid_color_gdc(uint32_t number);           </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">    * Get gdw attribute of component</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    * @param number - buffer storing data retur</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">    * @return the length of the data </span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    uint32_t Get_grid_width_gdw(uint32_t *number);  </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">    * Set gdw attribute of component</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">    * @param number - To set up the data</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">    * @return true if success, false for failure</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">bool</span> Set_grid_width_gdw(uint32_t number);           </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">    * Get gdh attribute of component</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">    * @param number - buffer storing data retur</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">    * @return the length of the data </span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    uint32_t Get_grid_height_gdh(uint32_t *number);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">    * Set gdh attribute of component</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">    * @param number - To set up the data</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">    * @return true if success, false for failure</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">bool</span> Set_grid_height_gdh(uint32_t number);          </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">    * Get pco0 attribute of component</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">    * @param number - buffer storing data retur</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">    * @return the length of the data </span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    uint32_t Get_channel_0_color_pco0(uint32_t *number);    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    uint32_t <a class="code" href="class_nex_waveform.html#ac5a6622e9004600f24b12e60ebb6b984">Get_grid_color_gdc</a>(uint32_t *number);  </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#ab396211f736824a0210446e68dc3edf4">Set_grid_color_gdc</a>(uint32_t number);           </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    uint32_t <a class="code" href="class_nex_waveform.html#ad5c4968c81d4941a08841cbaf217c631">Get_grid_width_gdw</a>(uint32_t *number);  </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#a41cb6d8b1ff6c309d1c4e8a1f73304fe">Set_grid_width_gdw</a>(uint32_t number);           </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    uint32_t <a class="code" href="class_nex_waveform.html#a87f6baf5a7a9c52f54281865e757d9a3">Get_grid_height_gdh</a>(uint32_t *number);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#a85e776a5347c22efd9abe9bb8cfdbddb">Set_grid_height_gdh</a>(uint32_t number);          </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    uint32_t <a class="code" href="class_nex_waveform.html#a09e36144f65c73b21edcfd5caff8a914">Get_channel_0_color_pco0</a>(uint32_t *number);    </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#ade323e0eae3b5058a76245e5ac97b037">Set_channel_0_color_pco0</a>(uint32_t number);         </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">    * Set pco0 attribute of component</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">    *</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">    * @param number - To set up the data</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">    * @return true if success, false for failure</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">bool</span> Set_channel_0_color_pco0(uint32_t number);         </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXWAVEFORM_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXWAVEFORM_H__ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="class_nex_waveform_html_ad5c4968c81d4941a08841cbaf217c631"><div class="ttname"><a href="class_nex_waveform.html#ad5c4968c81d4941a08841cbaf217c631">NexWaveform::Get_grid_width_gdw</a></div><div class="ttdeci">uint32_t Get_grid_width_gdw(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:93</div></div>
+<div class="ttc" id="class_nex_waveform_html_a66cec3c4d0d1a769dbf50c8092cc01d1"><div class="ttname"><a href="class_nex_waveform.html#a66cec3c4d0d1a769dbf50c8092cc01d1">NexWaveform::Get_background_color_bco</a></div><div class="ttdeci">uint32_t Get_background_color_bco(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:37</div></div>
+<div class="ttc" id="class_nex_waveform_html_a41cb6d8b1ff6c309d1c4e8a1f73304fe"><div class="ttname"><a href="class_nex_waveform.html#a41cb6d8b1ff6c309d1c4e8a1f73304fe">NexWaveform::Set_grid_width_gdw</a></div><div class="ttdeci">bool Set_grid_width_gdw(uint32_t number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:103</div></div>
+<div class="ttc" id="class_nex_waveform_html_a85e776a5347c22efd9abe9bb8cfdbddb"><div class="ttname"><a href="class_nex_waveform.html#a85e776a5347c22efd9abe9bb8cfdbddb">NexWaveform::Set_grid_height_gdh</a></div><div class="ttdeci">bool Set_grid_height_gdh(uint32_t number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:131</div></div>
+<div class="ttc" id="class_nex_waveform_html_a87f6baf5a7a9c52f54281865e757d9a3"><div class="ttname"><a href="class_nex_waveform.html#a87f6baf5a7a9c52f54281865e757d9a3">NexWaveform::Get_grid_height_gdh</a></div><div class="ttdeci">uint32_t Get_grid_height_gdh(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:121</div></div>
 <div class="ttc" id="class_nex_waveform_html_a5b04ea7397b784947b845e2a03fc77e4"><div class="ttname"><a href="class_nex_waveform.html#a5b04ea7397b784947b845e2a03fc77e4">NexWaveform::addValue</a></div><div class="ttdeci">bool addValue(uint8_t ch, uint8_t number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:22</div></div>
 <div class="ttc" id="_nex_touch_8h_html"><div class="ttname"><a href="_nex_touch_8h.html">NexTouch.h</a></div></div>
 <div class="ttc" id="_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div></div>
+<div class="ttc" id="class_nex_waveform_html_a09e36144f65c73b21edcfd5caff8a914"><div class="ttname"><a href="class_nex_waveform.html#a09e36144f65c73b21edcfd5caff8a914">NexWaveform::Get_channel_0_color_pco0</a></div><div class="ttdeci">uint32_t Get_channel_0_color_pco0(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:149</div></div>
+<div class="ttc" id="class_nex_waveform_html_aefec5eb25ee698c8c940c9190d60b696"><div class="ttname"><a href="class_nex_waveform.html#aefec5eb25ee698c8c940c9190d60b696">NexWaveform::Set_background_color_bco</a></div><div class="ttdeci">bool Set_background_color_bco(uint32_t number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:47</div></div>
 <div class="ttc" id="class_nex_waveform_html_a4f18ca5050823e874d526141c8595514"><div class="ttname"><a href="class_nex_waveform.html#a4f18ca5050823e874d526141c8595514">NexWaveform::NexWaveform</a></div><div class="ttdeci">NexWaveform(uint8_t pid, uint8_t cid, const char *name)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:17</div></div>
+<div class="ttc" id="class_nex_waveform_html_ade323e0eae3b5058a76245e5ac97b037"><div class="ttname"><a href="class_nex_waveform.html#ade323e0eae3b5058a76245e5ac97b037">NexWaveform::Set_channel_0_color_pco0</a></div><div class="ttdeci">bool Set_channel_0_color_pco0(uint32_t number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:159</div></div>
 <div class="ttc" id="class_nex_object_html"><div class="ttname"><a href="class_nex_object.html">NexObject</a></div><div class="ttdef"><b>Definition:</b> NexObject.h:32</div></div>
 <div class="ttc" id="class_nex_waveform_html"><div class="ttname"><a href="class_nex_waveform.html">NexWaveform</a></div><div class="ttdef"><b>Definition:</b> NexWaveform.h:29</div></div>
+<div class="ttc" id="class_nex_waveform_html_ab396211f736824a0210446e68dc3edf4"><div class="ttname"><a href="class_nex_waveform.html#ab396211f736824a0210446e68dc3edf4">NexWaveform::Set_grid_color_gdc</a></div><div class="ttdeci">bool Set_grid_color_gdc(uint32_t number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:75</div></div>
+<div class="ttc" id="class_nex_waveform_html_ac5a6622e9004600f24b12e60ebb6b984"><div class="ttname"><a href="class_nex_waveform.html#ac5a6622e9004600f24b12e60ebb6b984">NexWaveform::Get_grid_color_gdc</a></div><div class="ttdeci">uint32_t Get_grid_color_gdc(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> NexWaveform.cpp:65</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 10 2016 09:22:37 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 1 2016 09:26:01 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
