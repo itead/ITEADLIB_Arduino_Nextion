@@ -163,6 +163,14 @@ public: /* methods */
      * @return true if success, false for failure
      */
     bool Set_background_image_pic(uint32_t number);			
+    
+    /**
+     * Set visibility attribute of component
+     *
+     * @param visible - To set visible or invisible
+     * @return true if success, false for failure
+     */
+    bool Set_visibility(bool visible);
 };
 
 /**
