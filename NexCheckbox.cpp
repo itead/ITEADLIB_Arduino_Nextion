@@ -112,3 +112,4 @@ bool NexCheckbox::Set_visibility(bool visible)
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
+
