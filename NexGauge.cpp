@@ -170,4 +170,4 @@ bool NexGauge::Set_visibility(bool visible)
     return recvRetCommandFinished();
 }
 
- 
+
