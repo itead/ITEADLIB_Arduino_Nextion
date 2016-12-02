@@ -155,7 +155,7 @@ bool NexGauge::Set_background_crop_picc(uint32_t number)
     return recvRetCommandFinished();
 }
 
-bool NexGauge::Set_Visibility(bool visible)
+bool NexGauge::Set_visibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";
