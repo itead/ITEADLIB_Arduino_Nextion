@@ -155,4 +155,19 @@ bool NexGauge::Set_background_crop_picc(uint32_t number)
     return recvRetCommandFinished();
 }
 
+bool NexGauge::Set_Visibility(bool visible)
+{
+    String cmd;
+    cmd	+= "vis ";
+    cmd += getObjName();
+    cmd += ',';
+    if(visible)
+        cmd += '1';
+    else
+        cmd += '0';
+	
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
+
  
