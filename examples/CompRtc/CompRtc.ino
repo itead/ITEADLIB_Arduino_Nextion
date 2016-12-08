@@ -1,3 +1,20 @@
+/**
+ * @example CompRtc.ino
+ *
+ * @par How to Use
+ * This example shows that in nextion screen 
+ * displays the current read the RTC time and show how to use the API.
+ *
+ * @author  huangxiaoming (email:<xiaoming.huang@itead.cc>)
+ * @date    2016/12/8
+ * @copyright 
+ * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License, or (at your option) any later version.
+ */
+
 #include "Nextion.h"
 
 NexText t0 = NexText(0,1,"t0");
