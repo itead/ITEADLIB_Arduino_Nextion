@@ -350,7 +350,7 @@ bool NexScrolltext::disable(void)
     return recvRetCommandFinished();
 }
 
-bool NexScrolltext::Set_visibility(bool visible)
+bool NexScrolltext::SetVisibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";

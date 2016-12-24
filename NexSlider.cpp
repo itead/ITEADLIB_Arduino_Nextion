@@ -210,7 +210,7 @@ bool NexSlider::setMinval(uint32_t number)
     return recvRetCommandFinished();
 }
 
-bool NexSlider::Set_visibility(bool visible)
+bool NexSlider::SetVisibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";

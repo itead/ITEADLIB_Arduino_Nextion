@@ -99,7 +99,7 @@ bool NexProgressBar::Set_font_color_pco(uint32_t number)
     return recvRetCommandFinished();
 } 
 
-bool NexProgressBar::Set_visibility(bool visible)
+bool NexProgressBar::SetVisibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";

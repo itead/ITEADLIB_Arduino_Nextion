@@ -98,7 +98,7 @@ bool NexCheckbox::Set_font_color_pco(uint32_t number)
     return recvRetCommandFinished();
 }
 
-bool NexCheckbox::Set_Visibility(bool visible)
+bool NexCheckbox::SetVisibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";

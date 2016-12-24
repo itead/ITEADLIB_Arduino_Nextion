@@ -350,7 +350,7 @@ bool NexButton::Set_press_background_image_pic2(uint32_t number)
     return recvRetCommandFinished();
 }
 
-bool NexButton::Set_Visibility(bool visible)
+bool NexButton::SetVisibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";

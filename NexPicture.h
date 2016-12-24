@@ -81,7 +81,7 @@ public: /* methods */
      * @param visible - To set visible or invisible
      * @return true if success, false for failure
      */
-    bool Set_visibility(bool visible);
+    bool SetVisibility(bool visible);
 };
 
 /**

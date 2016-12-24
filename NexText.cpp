@@ -231,7 +231,7 @@ bool NexText::Set_background_image_pic(uint32_t number)
     return recvRetCommandFinished();
 }
 
-bool NexText::Set_visibility(bool visible)
+bool NexText::SetVisibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";

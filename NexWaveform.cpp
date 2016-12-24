@@ -174,7 +174,7 @@ bool NexWaveform::Set_channel_0_color_pco0(uint32_t number)
     return recvRetCommandFinished();
 }
 
-bool NexWaveform::Set_visibility(bool visible)
+bool NexWaveform::SetVisibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";

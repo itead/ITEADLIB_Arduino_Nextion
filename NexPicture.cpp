@@ -66,7 +66,7 @@ bool NexPicture::setPic(uint32_t number)
     return recvRetCommandFinished();
 }
 
-bool NexPicture::Set_visibility(bool visible)
+bool NexPicture::SetVisibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";
