@@ -47,9 +47,9 @@ void nexLoop(NexTouch *nex_listen_list[]);
  * @}
  */
 
-bool recvRetNumber(uint32_t *number, uint32_t timeout = 100);
-uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout = 100);
+bool recvRetNumber(uint32_t *number, uint32_t timeout = 150);
+uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout = 150);
 void sendCommand(const char* cmd);
-bool recvRetCommandFinished(uint32_t timeout = 100);
+bool recvRetCommandFinished(uint32_t timeout = 150);
 
 #endif /* #ifndef __NEXHARDWARE_H__ */

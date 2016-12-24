@@ -214,6 +214,14 @@ public: /* methods */
 	
     bool enable(void);
     bool disable(void);
+    
+    /**
+     * Set visibility attribute of component
+     *
+     * @param visible - To set visible or invisible
+     * @return true if success, false for failure
+     */
+    bool SetVisibility(bool visible);
 };
 
 /**

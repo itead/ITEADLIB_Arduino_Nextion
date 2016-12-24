@@ -173,4 +173,19 @@ bool NexWaveform::Set_channel_0_color_pco0(uint32_t number)
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
+
+bool NexWaveform::SetVisibility(bool visible)
+{
+    String cmd;
+    cmd	+= "vis ";
+    cmd += getObjName();
+    cmd += ',';
+    if(visible)
+        cmd += '1';
+    else
+        cmd += '0';
+	
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
  

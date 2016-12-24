@@ -97,3 +97,19 @@ bool NexCheckbox::Set_font_color_pco(uint32_t number)
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
+
+bool NexCheckbox::SetVisibility(bool visible)
+{
+    String cmd;
+    cmd	+= "vis ";
+    cmd += getObjName();
+    cmd += ',';
+    if(visible)
+        cmd += '1';
+    else
+        cmd += '0';
+	
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
+

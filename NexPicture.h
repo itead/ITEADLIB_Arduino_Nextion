@@ -74,6 +74,14 @@ public: /* methods */
      * @retval false - failed. 
      */
     bool setPic(uint32_t number);
+    
+    /**
+     * Set visibility attribute of component
+     *
+     * @param visible - To set visible or invisible
+     * @return true if success, false for failure
+     */
+    bool SetVisibility(bool visible);
 };
 
 /**
