@@ -344,7 +344,7 @@ bool NexDSButton::Set_state1_image_pic1(uint32_t number)
     return recvRetCommandFinished();
 }
 
-bool NexDSButton::Set_visibility(bool visible)
+bool NexDSButton::Set_Visibility(bool visible)
 {
     String cmd;
     cmd	+= "vis ";
