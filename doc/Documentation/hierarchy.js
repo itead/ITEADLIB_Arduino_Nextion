@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "NexGpio", "class_nex_gpio.html", null ],
     [ "NexObject", "class_nex_object.html", [
       [ "NexGauge", "class_nex_gauge.html", null ],
       [ "NexProgressBar", "class_nex_progress_bar.html", null ],
@@ -21,5 +22,6 @@ var hierarchy =
       ] ],
       [ "NexWaveform", "class_nex_waveform.html", null ]
     ] ],
+    [ "NexRtc", "class_nex_rtc.html", null ],
     [ "NexUpload", "class_nex_upload.html", null ]
 ];

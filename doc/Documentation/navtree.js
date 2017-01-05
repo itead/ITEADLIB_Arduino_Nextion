@@ -2,6 +2,7 @@ var NAVTREE =
 [
   [ "Documentation", "index.html", [
     [ "Home Page", "index.html", null ],
+    [ "license", "md_license.html", null ],
     [ "readme", "md_readme.html", null ],
     [ "Release Notes", "md_release_notes.html", null ],
     [ "Modules", "modules.html", "modules" ],
@@ -30,7 +31,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_comp_button_8ino-example.html",
-"class_nex_radio.html#a7bbd252dc78876d0831badbe791dbbc8"
+"class_nex_page.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

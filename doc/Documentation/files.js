@@ -1,7 +1,8 @@
 var files =
 [
-    [ "examples", "dir_d28a4824dc47e487b107a5db32ef43c4.html", "dir_d28a4824dc47e487b107a5db32ef43c4" ],
-    [ "html", "dir_2dae0a562653f78d59931f0e4b070746.html", "dir_2dae0a562653f78d59931f0e4b070746" ],
+    [ "doc", "dir_9d128665765fcd7de990374f9fac59bd.html", "dir_9d128665765fcd7de990374f9fac59bd" ],
+    [ "examples", "dir_13cb27e7707bad7dfc51e3225831c378.html", "dir_13cb27e7707bad7dfc51e3225831c378" ],
+    [ "html", "dir_79c8dee8d7e42a0e610f37121a84c3a9.html", "dir_79c8dee8d7e42a0e610f37121a84c3a9" ],
     [ "doxygen.h", "doxygen_8h.html", null ],
     [ "NexButton.cpp", "_nex_button_8cpp.html", null ],
     [ "NexButton.h", "_nex_button_8h.html", null ],
@@ -14,6 +15,8 @@ var files =
     [ "NexDualStateButton.h", "_nex_dual_state_button_8h.html", null ],
     [ "NexGauge.cpp", "_nex_gauge_8cpp.html", null ],
     [ "NexGauge.h", "_nex_gauge_8h.html", null ],
+    [ "NexGpio.cpp", "_nex_gpio_8cpp.html", null ],
+    [ "NexGpio.h", "_nex_gpio_8h.html", null ],
     [ "NexHardware.cpp", "_nex_hardware_8cpp.html", "_nex_hardware_8cpp" ],
     [ "NexHardware.h", "_nex_hardware_8h.html", "_nex_hardware_8h" ],
     [ "NexHotspot.cpp", "_nex_hotspot_8cpp.html", null ],
@@ -30,6 +33,8 @@ var files =
     [ "NexProgressBar.h", "_nex_progress_bar_8h.html", null ],
     [ "NexRadio.cpp", "_nex_radio_8cpp.html", null ],
     [ "NexRadio.h", "_nex_radio_8h.html", null ],
+    [ "NexRtc.cpp", "_nex_rtc_8cpp.html", null ],
+    [ "NexRtc.h", "_nex_rtc_8h.html", null ],
     [ "NexScrolltext.cpp", "_nex_scrolltext_8cpp.html", null ],
     [ "NexScrolltext.h", "_nex_scrolltext_8h.html", null ],
     [ "NexSlider.cpp", "_nex_slider_8cpp.html", null ],
