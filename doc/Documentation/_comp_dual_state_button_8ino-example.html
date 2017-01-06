@@ -67,93 +67,15 @@ $(document).ready(function(){initNavTree('_comp_dual_state_button_8ino-example.h
 <div class="contents">
 <dl class="section user"><dt>How to Use</dt><dd>This example shows that when the dual state button component on the Nextion screen is released, the text of Text component will change one every time.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>huang xianming (email:<a href="#" onclick="location.href='mai'+'lto:'+'xia'+'nm'+'ing'+'.h'+'uan'+'g@'+'ite'+'ad'+'.cc'; return false;">xianm<span style="display: none;">.nosp@m.</span>ing.<span style="display: none;">.nosp@m.</span>huang<span style="display: none;">.nosp@m.</span>@ite<span style="display: none;">.nosp@m.</span>ad.cc</a>) </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2015/11/11 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2015/11/11  2016/12/25 bring HMI up to v0.32 to avoid too old issues  by Patrick Martin, no other changes made </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. <br />
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</dd></dl>
-<div class="fragment"><div class="line"></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_nextion_8h.html">Nextion.h</a>&quot;</span></div>
-<div class="line"></div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment"> * Declare a dual state button object [page id:0,component id:1, component name: &quot;bt0&quot;]. </span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="line"><a name="_a0"></a><a class="code" href="class_nex_d_s_button.html">NexDSButton</a> bt0 = <a class="code" href="class_nex_d_s_button.html">NexDSButton</a>(0, 1, <span class="stringliteral">&quot;bt0&quot;</span>);</div>
-<div class="line"></div>
-<div class="line"><a name="_a1"></a><a class="code" href="class_nex_text.html">NexText</a> t0 = <a class="code" href="class_nex_text.html">NexText</a>(0, 2, <span class="stringliteral">&quot;t0&quot;</span>);</div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"><span class="keywordtype">char</span> buffer[100] = {0};</div>
-<div class="line"></div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment"> * Register a dual state button object to the touch event list.  </span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="line"><a name="_a2"></a><a class="code" href="class_nex_touch.html">NexTouch</a> *nex_listen_list[] = </div>
-<div class="line">{</div>
-<div class="line">    &amp;bt0,</div>
-<div class="line">    NULL</div>
-<div class="line">};</div>
-<div class="line"></div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment"> * Dual state button component pop callback function. </span></div>
-<div class="line"><span class="comment"> * In this example,the button&#39;s text value will plus one every time when it is released. </span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="line"><span class="keywordtype">void</span> bt0PopCallback(<span class="keywordtype">void</span> *ptr)</div>
-<div class="line">{</div>
-<div class="line">    uint32_t dual_state;</div>
-<div class="line">    <a class="code" href="class_nex_d_s_button.html">NexDSButton</a> *btn = (<a class="code" href="class_nex_d_s_button.html">NexDSButton</a> *)ptr;</div>
-<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;b0PopCallback&quot;</span>);</div>
-<div class="line">    dbSerialPrint(<span class="stringliteral">&quot;ptr=&quot;</span>);</div>
-<div class="line">    dbSerialPrintln((uint32_t)ptr); </div>
-<div class="line">    memset(buffer, 0, <span class="keyword">sizeof</span>(buffer));</div>
-<div class="line"></div>
-<div class="line">    <span class="comment">/* Get the state value of dual state button component . */</span></div>
-<div class="line">    bt0.<a name="a3"></a><a class="code" href="class_nex_d_s_button.html#a63e08f9a79f326c47aa66e1d0f9648c8">getValue</a>(&amp;dual_state);</div>
-<div class="line">    <span class="keywordflow">if</span>(dual_state) </div>
-<div class="line">    {</div>
-<div class="line">        t0.<a name="a4"></a><a class="code" href="class_nex_text.html#a19589b32c981436a1bbcfe407bc766e3">setText</a>(<span class="stringliteral">&quot;HI! OPEN STATE&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">    {</div>
-<div class="line">        t0.<a class="code" href="class_nex_text.html#a19589b32c981436a1bbcfe407bc766e3">setText</a>(<span class="stringliteral">&quot;HI! OFF STATE&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">}</div>
-<div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
-<div class="line">{    </div>
-<div class="line">    <span class="comment">/* Set the baudrate which is for debug and communicate with Nextion screen. */</span></div>
-<div class="line">    <a name="a5"></a><a class="code" href="group___core_a_p_i.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
-<div class="line"></div>
-<div class="line">    <span class="comment">/* Register the pop event callback function of the dual state button component. */</span></div>
-<div class="line">    bt0.<a name="a6"></a><a class="code" href="class_nex_touch.html#a4da1c4fcdfadb7eabfb9ccaba9ecad11">attachPop</a>(bt0PopCallback, &amp;bt0);</div>
-<div class="line">    </div>
-<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>); </div>
-<div class="line">}</div>
-<div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
-<div class="line">{   </div>
-<div class="line">    <span class="comment">/*</span></div>
-<div class="line"><span class="comment">     * When a pop or push event occured every time,</span></div>
-<div class="line"><span class="comment">     * the corresponding component[right page id and component id] in touch event list will be asked.</span></div>
-<div class="line"><span class="comment">     */</span></div>
-<div class="line">    <a name="a7"></a><a class="code" href="group___core_a_p_i.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a>(nex_listen_list);</div>
-<div class="line">}</div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-</div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Dec 8 2016 14:46:05 for Documentation by
+    <li class="footer">Generated on Fri Jan 6 2017 14:00:35 for Documentation by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
