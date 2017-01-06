@@ -67,67 +67,15 @@ $(document).ready(function(){initNavTree('_comp_waveform_8ino-example.html','');
 <div class="contents">
 <dl class="section user"><dt>How to Use</dt><dd>Show how to use API of class <a class="el" href="class_nex_waveform.html" title="NexWaveform component. ">NexWaveform</a>.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Wu Pengfei (email:<a href="#" onclick="location.href='mai'+'lto:'+'pen'+'gf'+'ei.'+'wu'+'@it'+'ea'+'d.c'+'c'; return false;">pengf<span style="display: none;">.nosp@m.</span>ei.w<span style="display: none;">.nosp@m.</span>u@ite<span style="display: none;">.nosp@m.</span>ad.c<span style="display: none;">.nosp@m.</span>c</a>) </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2015/8/11 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2015/8/11  2016/12/25 bring HMI up to v0.32 to avoid too old issues  by Patrick Martin, no other changes made </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. <br />
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</dd></dl>
-<div class="fragment"><div class="line"></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_nextion_8h.html">Nextion.h</a>&quot;</span></div>
-<div class="line"></div>
-<div class="line"><span class="preprocessor">#define LEVEL_HIGH      (30)</span></div>
-<div class="line"><span class="preprocessor">#define LEVEL_LOW       (0)</span></div>
-<div class="line"></div>
-<div class="line"><span class="preprocessor">#define CH0_OFFSET  (40 - LEVEL_HIGH/2)</span></div>
-<div class="line"><span class="preprocessor">#define CH1_OFFSET  (CH0_OFFSET + 40 * 1)</span></div>
-<div class="line"><span class="preprocessor">#define CH2_OFFSET  (CH0_OFFSET + 40 * 2)</span></div>
-<div class="line"><span class="preprocessor">#define CH3_OFFSET  (CH0_OFFSET + 40 * 3)</span></div>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"><a name="_a0"></a><a class="code" href="class_nex_waveform.html">NexWaveform</a> s0 = <a class="code" href="class_nex_waveform.html">NexWaveform</a>(0, 1, <span class="stringliteral">&quot;s0&quot;</span>);</div>
-<div class="line"></div>
-<div class="line"><span class="keyword">static</span> uint8_t ch0_data = LEVEL_LOW;</div>
-<div class="line"><span class="keyword">static</span> uint8_t ch1_data = LEVEL_LOW;</div>
-<div class="line"><span class="keyword">static</span> uint8_t ch2_data = LEVEL_LOW;</div>
-<div class="line"><span class="keyword">static</span> uint8_t ch3_data = LEVEL_LOW;</div>
-<div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">    <a name="a1"></a><a class="code" href="group___core_a_p_i.html#gab09ddba6b72334d30ae091a7b038d790">nexInit</a>();</div>
-<div class="line">    dbSerialPrintln(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
-<div class="line">}</div>
-<div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">    <span class="keyword">static</span> uint32_t started = 0;</div>
-<div class="line">    <span class="keywordflow">if</span> (millis() - started &gt;= 2000)</div>
-<div class="line">    {</div>
-<div class="line">        started = millis();    </div>
-<div class="line">        <span class="keywordflow">if</span> (LEVEL_HIGH == ch0_data)</div>
-<div class="line">        {</div>
-<div class="line">            ch0_data = LEVEL_LOW;</div>
-<div class="line">        }</div>
-<div class="line">        <span class="keywordflow">else</span></div>
-<div class="line">        {</div>
-<div class="line">            ch0_data = LEVEL_HIGH;</div>
-<div class="line">        }</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    ch1_data = ch0_data + random(0, 2);</div>
-<div class="line">    ch2_data = ch0_data + random(0, 5);</div>
-<div class="line">    ch3_data = ch0_data + random(0, 8);</div>
-<div class="line">    </div>
-<div class="line">    s0.<a name="a2"></a><a class="code" href="class_nex_waveform.html#a5b04ea7397b784947b845e2a03fc77e4">addValue</a>(0, CH0_OFFSET + ch0_data);</div>
-<div class="line">    s0.<a class="code" href="class_nex_waveform.html#a5b04ea7397b784947b845e2a03fc77e4">addValue</a>(1, CH1_OFFSET + ch1_data);</div>
-<div class="line">    s0.<a class="code" href="class_nex_waveform.html#a5b04ea7397b784947b845e2a03fc77e4">addValue</a>(2, CH2_OFFSET + ch2_data);</div>
-<div class="line">    s0.<a class="code" href="class_nex_waveform.html#a5b04ea7397b784947b845e2a03fc77e4">addValue</a>(3, CH3_OFFSET + ch3_data);</div>
-<div class="line">    </div>
-<div class="line">}</div>
-<div class="line"></div>
-</div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Dec 8 2016 14:46:06 for Documentation by
+    <li class="footer">Generated on Fri Jan 6 2017 14:00:35 for Documentation by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
