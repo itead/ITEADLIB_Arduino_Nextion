@@ -7,30 +7,29 @@
 # Introduction
 
 Nextion Arduino library provides an easy-to-use way to manipulate Nextion serial
-displays. Users can use the libarry freely, either in commerical projects or 
-open-source prjects,  without any additional condiitons. 
+displays. Users can use the library freely, either in commerical projects or 
+open-source prjects, without any additional conditions. 
 
 For more information about the Nextion display project, please visit 
 [the wiki。](http://wiki.iteadstudio.com/Nextion_HMI_Solution)  
-The wiki provdies all the necessary technical documnets, quick start guide, 
+The wiki provides all the necessary technical documents, quick start guide, 
 tutorials, demos, as well as some useful resources.
 
 To get your Nextion display, please visit 
 [iMall.](http://imall.itead.cc/display/nextion.html)
 
-To discuss the project?  Request new features?  Report a BUG? please visit the 
+To discuss the project, request new features or report a BUG please visit the 
 [Forums](http://support.iteadstudio.com/discussions/1000058038)
 
 # Download Source Code 
 
-Latest version is unstable and a mass of change may be applied in a short time 
-without any notification for users. Commonly, it is for developers of this 
+The latest version of this source may be unstable and have a lot of changes compared to previously released versions. This may include breaking changes without any notification to users. Therefore, the latest code is meant only for developers of this 
 library. 
 
-**Release version is recommanded for you, unless you are one of developers of this 
+**Release version is recommended for you, unless you are one of the developers of this 
 library.**
 
-**Release notes** is at
+**Release notes** are at
 <https://github.com/itead/ITEADLIB_Arduino_Nextion/blob/master/release_notes.md>.
 
 ## Latest(unstable)
@@ -47,17 +46,17 @@ You can also clone it via git:
   - https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/v0.7.0.zip
   - https://github.com/itead/ITEADLIB_Arduino_Nextion/archive/v0.7.0.tar.gz
 
-All releases can be available from:
+All releases are available from:
 <https://github.com/itead/ITEADLIB_Arduino_Nextion/releases>.
 
 # Documentation
 
-Offline Documentation's entry `doc/Documentation/index.html` shiped with source code
-can be open in your browser such as Chrome, Firefox or any one you like. 
+Offline Documentation's entry `doc/Documentation/index.html` shipped with source code
+can be opened in your browser such as Chrome, Firefox or any one you like. 
 
-# Suppported Mainboards
+# Supported Mainboards
 
-**All boards, which has one or more hardware serial, can be supported.**
+**All boards, which have one or more hardware serial, can be supported.**
 
 For example:
 
@@ -80,22 +79,22 @@ In configuration file NexConfig.h, you can find two macros below:
 
 ## Redirect dbSerial and nexSerial
 
-If you want to change the default serial to debug or communicate with Nextion ,
-you need to modify the line in configuration file:
+If you want to change the default serial to debug or communicate with Nextion,
+you need to modify the following lines in the configuration file:
 
 	#define dbSerial Serial    ---> #define dbSerial Serialxxx
     #define nexSerial Serial2  ---> #define nexSeria Serialxxx
 
 ## Disable Debug Serial
 
-If you want to disable the debug information,you need to modify the line in 
+If you want to disable the debug information,you need to modify this line in the
 configuration file:
 
     #define DEBUG_SERIAL_ENABLE ---> //#define DEBUG_SERIAL_ENABLE
 
 # UNO-like Mainboards
 
-If your board has only one hardware serial, such as UNO, you should disable 
+If your board has only one hardware serial, such as the UNO, you should disable 
 dbSerial and redirect nexSerial to Serial(Refer to section:`Serial configuration`). 
 
 # Useful Links
