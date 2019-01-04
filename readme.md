@@ -55,6 +55,8 @@ All releases can be available from:
 Offline Documentation's entry `doc/Documentation/index.html` shiped with source code
 can be open in your browser such as Chrome, Firefox or any one you like. 
 
+Online documentation is available at http://docs.iteadstudio.com/ITEADLIB_Arduino_Nextion/
+
 # Suppported Mainboards
 
 **All boards, which has one or more hardware serial, can be supported.**
