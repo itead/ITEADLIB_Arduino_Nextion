@@ -5,6 +5,7 @@
  *
  * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date 2015/8/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -31,9 +32,9 @@ class NexNumber: public NexTouch
 {
 public: /* methods */
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
      */
-    NexNumber(uint8_t pid, uint8_t cid, const char *name);
+    NexNumber(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
     
     /**
      * Get number attribute of component.

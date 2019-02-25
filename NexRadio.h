@@ -5,6 +5,7 @@
  *
  * @author huang xiaoming (email:<xiaoming.huang@itead.cc>)
  * @date 2016/9/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -37,9 +38,9 @@ class NexRadio:public NexTouch
 public: /* methods */
 
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
      */
-    NexRadio(uint8_t pid, uint8_t cid, const char *name);
+    NexRadio(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
 	
     /**
      * Get val attribute of component

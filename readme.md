@@ -1,8 +1,23 @@
-@mainpage Home Page
+﻿@mainpage Home Page
 
 # Nextion
 
 --------------------------------------------------------------------------------
+
+Jyrki Berg 2/17/2019 (https://github.com/jyberg)
+Enhanced and corrected Nextion library version for Arduino/Esp8266/NodeMcu, based on original Nextion Arduino library
+
+- Added support for NodeMcu/esp8266, Software serial, Software serial can be used with arduino also
+- Added support for global Nextion objects. (Optional page parameter added in the components)
+- NexVariable corrected to use int32_t data type
+- NextText corrected to return tru/false, and string length is returned in len parameter
+- NextText String object support added
+- other small bug fixes done
+- Added to support global Nextion events like CurrentPageIdCallback,systemStartUpCallback,...
+- examples Nextion editor projects corrected
+
+-For some reason I need to remove NexUpload.h & NexUpload.cpp when using the library in PlatformIO
+  some platform header files not found spontaneously when building, adding the libray path in platformio.ini did not help.
 
 # Introduction
 

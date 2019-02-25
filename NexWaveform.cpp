@@ -5,6 +5,8 @@
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
+ * 
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -14,8 +16,8 @@
  */
 #include "NexWaveform.h"
 
-NexWaveform::NexWaveform(uint8_t pid, uint8_t cid, const char *name)
-    :NexObject(pid, cid, name)
+NexWaveform::NexWaveform(uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+    :NexObject(pid, cid, name, page)
 {
 }
 
@@ -38,7 +40,7 @@ uint32_t NexWaveform::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".bco";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -50,14 +52,14 @@ bool NexWaveform::Set_background_color_bco(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd="";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -66,7 +68,7 @@ uint32_t NexWaveform::Get_grid_color_gdc(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".gdc";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -78,14 +80,14 @@ bool NexWaveform::Set_grid_color_gdc(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".gdc=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd="";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -94,7 +96,7 @@ uint32_t NexWaveform::Get_grid_width_gdw(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".gdw";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -106,14 +108,14 @@ bool NexWaveform::Set_grid_width_gdw(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".gdw=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd="";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -122,7 +124,7 @@ uint32_t NexWaveform::Get_grid_height_gdh(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".gdh";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -134,14 +136,14 @@ bool NexWaveform::Set_grid_height_gdh(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".gdh=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd="";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -150,7 +152,7 @@ uint32_t NexWaveform::Get_channel_0_color_pco0(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pco0";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -162,14 +164,14 @@ bool NexWaveform::Set_channel_0_color_pco0(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pco0=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd="";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

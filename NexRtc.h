@@ -5,6 +5,7 @@
  *
  * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date 2015/8/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -62,7 +63,7 @@ class NexRtc
      * @return true if success, false for failure
      */
     
-    uint32_t read_rtc_time(char *time,uint32_t len);
+    bool read_rtc_time(char *time,uint32_t len);
     
     /**
      * read rtc times
@@ -72,7 +73,7 @@ class NexRtc
      * @return true if success, false for failure
      */
     
-    uint32_t read_rtc_time(char *time_type,uint32_t *number);
+    bool read_rtc_time(char *time_type,uint32_t *number);
     
     /**
      * read rtc time
@@ -82,7 +83,7 @@ class NexRtc
      * @return true if success, false for failure
      */
     
-    uint32_t read_rtc_time(uint32_t *time,uint32_t len);
+    bool read_rtc_time(uint32_t *time,uint32_t len);
     
 };
 

@@ -5,6 +5,7 @@
  *
  * @author huang xiaoming (email:<xiaoming.huang@itead.cc>)
  * @date 2016/9/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -37,18 +38,31 @@ class NexVariable: public NexTouch
 public: /* methods */
 
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
      */
-    NexVariable(uint8_t pid, uint8_t cid, const char *name);
+    NexVariable(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+
+    /*
+    * Get text attribute of component. 
+    * 
+    * @param str - String storing text returned. 
+    *
+    * @retval true - success. 
+    * @retval false - failed.
+    *
+    */
+    bool getText(String &str);
 
     /**
      * Get text attribute of component.
      *
      * @param buffer - buffer storing text returned. 
-     * @param len - length of buffer. 
-     * @return The real length of text returned. 
+     * @param len - in buffer len / out saved string len excluding null char.  
+     * 
+     * @retval true - success. 
+     * @retval false - failed.
      */
-    uint32_t getText(char *buffer, uint32_t len);    
+    bool getText(char *buffer, uint16_t &len);   
 
     /**
      * Set text attribute of component.
@@ -64,7 +78,7 @@ public: /* methods */
      * @param number - buffer storing data retur
      * @return the length of the data 
      */
-    uint32_t getValue(uint32_t *number);
+    uint32_t getValue(int32_t *number);
 	
     /**
      * Set val attribute of component
@@ -72,7 +86,7 @@ public: /* methods */
      * @param number - To set up the data
      * @return true if success, false for failure
      */
-    bool setValue(uint32_t number);
+    bool setValue(int32_t number);
 };
 /**
  * @}

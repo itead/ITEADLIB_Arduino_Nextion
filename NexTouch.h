@@ -5,6 +5,7 @@
  *
  * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date 2015/8/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -53,14 +54,14 @@ typedef void (*NexTouchEventCb)(void *ptr);
 class NexTouch: public NexObject
 {
 public: /* static methods */    
-    static void iterate(NexTouch **list, uint8_t pid, uint8_t cid, int32_t event);
+    static void iterate(NexTouch **list, uint8_t pid, uint8_t cid, uint8_t event);
 
 public: /* methods */
 
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
      */
-    NexTouch(uint8_t pid, uint8_t cid, const char *name);
+    NexTouch(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
 
     /**
      * Attach an callback function of push touch event. 

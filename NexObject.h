@@ -5,6 +5,7 @@
  *
  * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date 2015/8/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -40,7 +41,7 @@ public: /* methods */
      * @param cid - component id.    
      * @param name - pointer to an unique name in range of all components. 
      */
-    NexObject(uint8_t pid, uint8_t cid, const char *name);
+    NexObject(uint8_t pid, uint8_t cid, const char* name, const NexObject* page) ;
 
     /**
      * Print current object'address, page id, component id and name. 
@@ -70,12 +71,27 @@ protected: /* methods */
      *
      * @return the name of component. 
      */
-    const char *getObjName(void);    
-    
+    const char *getObjName(void) const;    
+
+    /*
+     * Get component page name.
+     *
+     * @return the name of component page, nullptr if not defined (local). 
+     */    
+    const char* getObjPageName(void);
+
+    /*
+    * Get component global name
+    *
+    * @return the global name of component in page
+    */
+    void getObjGlobalPageName(String &gName);
+
 private: /* data */ 
-    uint8_t __pid; /* Page ID */
-    uint8_t __cid; /* Component ID */
-    const char *__name; /* An unique name */
+    const uint8_t __pid; /* Page ID */
+    const uint8_t __cid; /* Component ID */
+    const char* __name; /* An unique name */
+    const NexObject* __page; /* page information for global objects nullptr for local */
 };
 /**
  * @}
