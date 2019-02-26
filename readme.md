@@ -55,7 +55,7 @@ In configuration file NexConfig.h, you can configure Hardware / software, debug 
 In case of Hardware serial comment/undefine "// #define NEX_SOFTWARE_SERIAL" line and
 configure used Serial port on line "#define nexSerial Serial" by default Serial poirt used (NodeMcu/Esp8266 hardware serial)
 
-Software serial used if "#define NEX_SOFTWARE_SERIAL" when NEX_SOFTWARE_SERIAL is defined use  NEX_RX and NEX_TX definitions to define used software serial ports. Bu default NodeMcu: 
+Software serial used if "#define NEX_SOFTWARE_SERIAL" when NEX_SOFTWARE_SERIAL is defined use  NEX_RX and NEX_TX definitions to define used software serial ports. By default NodeMcu:
 "#define NEX_RX 13 // D5"
 "#define NEX_TX 15 // D6"
 You need to remember that Software serial is not nessessary workin with out problmes at least when using NodeMcu/Esp8266 boards.
