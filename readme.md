@@ -64,9 +64,9 @@ If you want activate Debug messages, uncomment "//#define DEBUG_SERIAL_ENABLE" l
 
 
 # Useful Links
-<https://nextion.itead.cc/resources/download/nextion-editor/>
-<https://github.com/hagronnestad/nextion-font-editor>
-<http://blog.iteadstudio.com/nextion-tutorial-based-on-nextion-arduino-library/>
-<https://www.itead.cc/wiki/Nextion_Instruction_Set>
-<https://nextion.itead.cc/resources/documents/instruction-set/>
-<http://wiki.iteadstudio.com/Nextion_HMI_Solution>
+- <https://nextion.itead.cc/resources/download/nextion-editor/> 
+- <https://github.com/hagronnestad/nextion-font-editor> 
+- <http://blog.iteadstudio.com/nextion-tutorial-based-on-nextion-arduino-library/> 
+- <https://www.itead.cc/wiki/Nextion_Instruction_Set> 
+- <https://nextion.itead.cc/resources/documents/instruction-set/> 
+- <http://wiki.iteadstudio.com/Nextion_HMI_Solution> 
