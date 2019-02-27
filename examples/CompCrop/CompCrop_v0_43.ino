@@ -9,6 +9,8 @@
  * @date    2015/7/10
  * @updated 2016/12/25 bring HMI up to v0.32 to avoid too old issues
  * @convert by Patrick Martin, no other changes made
+ * @author Jyrki Berg 2/27/2019 (https://github.com/jyberg)
+ *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -22,7 +24,7 @@
 /*
  * Declare a crop object [page id:0,component id:1, component name: "q0"]. 
  */
-NexCrop q0 = NexCrop(0, 1, "q0");
+NexCrop q0(0, 1, "q0");
 
 NexTouch *nex_listen_list[] = 
 {

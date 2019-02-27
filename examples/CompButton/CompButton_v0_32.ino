@@ -9,6 +9,8 @@
  * @date    2015/7/10
  * @updated 2016/12/25 bring HMI up to v0.32 to avoid too old issues
  * @convert by Patrick Martin, no other changes made
+ * @author Jyrki Berg 2/27/2019 (https://github.com/jyberg)
+ *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -22,7 +24,7 @@
 /*
  * Declare a button object [page id:0,component id:1, component name: "b0"]. 
  */
-NexButton b0 = NexButton(0, 1, "b0");
+NexButton b0(0, 1, "b0");
 
 char buffer[100] = {0};
 
@@ -50,7 +52,8 @@ void b0PopCallback(void *ptr)
     memset(buffer, 0, sizeof(buffer));
 
     /* Get the text value of button component [the value is string type]. */
-    btn->getText(buffer, sizeof(buffer));
+    len = sizeof(buffer);
+    btn->getText(buffer, len );
     
     number = atoi(buffer);
     number += 1;

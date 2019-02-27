@@ -22,9 +22,10 @@
 /*
  * Declare a dual state button object [page id:0,component id:1, component name: "bt0"]. 
  */
-NexDSButton bt0 = NexDSButton(0, 1, "bt0");
 
-NexText t0 = NexText(0, 2, "t0");
+NexDSButton bt0(0, 1, "bt0");
+
+NexText t0(0, 2, "t0");
 
 
 char buffer[100] = {0};

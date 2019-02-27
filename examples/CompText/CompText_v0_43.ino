@@ -10,6 +10,8 @@
  * @date    2015/7/10
  * @updated 2016/12/25 bring HMI up to v0.32 to avoid too old issues
  * @convert by Patrick Martin, no other changes made
+ * @author Jyrki Berg 2/27/2019 (https://github.com/jyberg)
+ * 
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -27,17 +29,17 @@ void b1PopCallback(void *ptr);
 /*
  * Declare a text object [page id:0,component id:1, component name: "t0"]. 
  */
-NexText t0 = NexText(0, 1, "t0");
+NexText t0(0, 1, "t0");
 
 /*
  * Declare a button object [page id:0,component id:2, component name: "b0"]. 
  */
-NexButton b0 = NexButton(0, 2, "b0");
+NexButton b0(0, 2, "b0");
 
 /*
  * Declare a button object [page id:0,component id:3, component name: "b1"]. 
  */
-NexButton b1 = NexButton(0, 3, "b1");
+NexButton b1(0, 3, "b1");
 
 char buffer[100] = {0};
 
@@ -73,7 +75,8 @@ void b0PopCallback(void *ptr)
     dbSerialPrintln("b0PopCallback");
 
     memset(buffer, 0, sizeof(buffer));
-    t0.getText(buffer, sizeof(buffer));
+    len = sizeof(buffer);
+    t0.getText(buffer, len);
     
     number = atoi(buffer);
     number += 1;
@@ -96,7 +99,8 @@ void b1PopCallback(void *ptr)
     dbSerialPrintln("b1PopCallback");
 
     memset(buffer, 0, sizeof(buffer));
-    t0.getText(buffer, sizeof(buffer));
+    len = sizeof(buffer);
+    t0.getText(buffer, len);
     
     number = atoi(buffer);
     number -= 1;

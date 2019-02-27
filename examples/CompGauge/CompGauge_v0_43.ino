@@ -10,6 +10,8 @@
  * @date    2015/7/10
  * @updated 2016/12/25 bring HMI up to v0.32 to avoid too old issues
  * @convert by Patrick Martin, no other changes made
+ * @author Jyrki Berg 2/27/2019 (https://github.com/jyberg)
+ *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -20,9 +22,9 @@
  
 #include "Nextion.h"
 
-NexGauge pointer  = NexGauge(0, 1, "pointer");
-NexButton btn_up   = NexButton(0, 2, "btn_up");
-NexButton btn_down = NexButton(0, 3, "btn_down");
+NexGauge pointer(0, 1, "pointer");
+NexButton btn_up(0, 2, "btn_up");
+NexButton btn_down(0, 3, "btn_down");
 
 NexTouch *nex_listen_list[] = 
 {
