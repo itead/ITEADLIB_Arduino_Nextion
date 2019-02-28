@@ -46,8 +46,9 @@
 #define nexSerial Serial
 #else
 // NodeMcu / Esp8266 Softwareserial if usb port used for debug 
-#define NEX_RX 13 // D5
-#define NEX_TX 15 // D6
+// NodeMcu board pin numbers not match with Esp8266 pin numbers use NodeMcu Pin number definitions (pins_arduino.h)
+#define NEX_RX D2
+#define NEX_TX D1
 #endif
 
 
