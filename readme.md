@@ -52,17 +52,22 @@ In configuration file NexConfig.h, you can configure Hardware / software, debug 
 
 In case of Hardware serial comment/undefine "// #define NEX_SOFTWARE_SERIAL" line and<br />
 configure used Serial port on line "#define nexSerial Serial"<br />
-by default Serial poirt used (NodeMcu/Esp8266 hardware serial)
+by default Serial poirt used (NodeMcu/Esp8266 hardware serial)  
 
 Software serial used if "#define NEX_SOFTWARE_SERIAL" when NEX_SOFTWARE_SERIAL is defined<br />
 use  NEX_RX and NEX_TX definitions to define used software serial ports.<br />
 By default NodeMcu:<br />
-  "#define NEX_RX 13 // D5"
-  "#define NEX_TX 15 // D6"
-You need to remember that Software serial is not nessessary workin with out problmes at least when using NodeMcu/Esp8266 boards.<br />
+  "#define NEX_RX D2"  
+  "#define NEX_TX D1"  
+NodeMcu board pin numbers not match with Esp8266 pin numbers. So use D<x> pin number definitions from pins_arduino.h  
+You need to remember that Software serial is not nessessary workin with out problmes at least when using NodeMcu/Esp8266 boards (See power tips...).<br />
 
 If you want activate Debug messages, uncomment "//#define DEBUG_SERIAL_ENABLE" line and define serial port used for debug messges using line:<br />
-"//#define dbSerial Serial", it is responsibiity of main program to initialize/open debug serial port.
+"//#define dbSerial Serial", it is responsibiity of main program to initialize/open debug serial port.  
+
+# Power tips
+
+Nextion and NodeMcu/Esp8266 is sensitive with power quality and current. Especially when Software serial is used, (Serial message quality can be bad and then functionality is not stable...). Don't power Nextion display from NodeMcu board, because Nextion takes guite mutch of current, and NodeMcu internal power requlator is not good. Use separate power to power Nextion and connect Nextion and NodeMcu/Esp8266 board gnd to commond gnd point.  
 
 
 # Useful Links
