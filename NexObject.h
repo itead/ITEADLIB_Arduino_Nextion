@@ -44,6 +44,22 @@ public: /* methods */
     NexObject(uint8_t pid, uint8_t cid, const char* name, const NexObject* page) ;
 
     /**
+     * Get object width
+     * 
+     * @param number - buffer storing data return
+     * @return true if success, false for failure
+     */
+    bool GetObjectWidth( uint32_t &width); 
+
+    /**
+     * Get object height
+     * 
+     * @param number - buffer storing data return
+     * @return true if success, false for failure
+     */
+    bool GetObjectHeight( uint32_t &height); 
+
+    /**
      * Print current object'address, page id, component id and name. 
      *
      * @warning this method does nothing, unless debug message enabled. 

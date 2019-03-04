@@ -15,6 +15,7 @@
  * the License, or (at your option) any later version.
  */
 #include "NexObject.h"
+#include "NexHardware.h"
 
 NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, const NexObject* page):
 __pid{pid},__cid{cid},__name{name}, __page{page}
@@ -54,6 +55,27 @@ void NexObject::getObjGlobalPageName(String &gName)
     }
     gName +=__name;
 }
+
+bool NexObject::GetObjectWidth( uint32_t &width)
+{
+    String cmd;
+    cmd = "get ";
+    getObjGlobalPageName(cmd);
+    cmd += ".w";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(&width);
+}
+
+bool NexObject::GetObjectHeight( uint32_t &height)
+{
+    String cmd;
+    cmd = "get ";
+    getObjGlobalPageName(cmd);
+    cmd += ".h";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(&height);
+}
+
 void NexObject::printObjInfo(void)
 {
     dbSerialPrint("[");
