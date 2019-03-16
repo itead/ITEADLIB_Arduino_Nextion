@@ -17,6 +17,7 @@
 #ifndef __NEXWAVEFORM_H__
 #define __NEXWAVEFORM_H__
 
+#include <vector>
 #include "NexTouch.h"
 #include "NexHardware.h"
 /**
@@ -43,20 +44,90 @@ public: /* methods */
      * Constructor with value scaling parameters, Scales added value to set Waveform scale 
      */
     NexWaveform(uint8_t pid, uint8_t cid, const char *name, 
-        int32_t minVal, int32_t maxVal, uint8_t hight,
+        float minVal, float maxVal, uint8_t hight,
         const NexObject* page=nullptr);
 
     /**
      * Add value to show. 
      *
      * @param ch - channel of waveform(0-3). 
-     * @param value - the value of waveform.  
+     * @param value - the value of waveform (value is scaled to nextion resolution 0-255 based on Min / Max component hight).  
      *
      * @retval true - success. 
      * @retval false - failed. 
      */
-    bool addValue(uint8_t ch, int32_t value);
-	
+    template<typename T>
+    bool addValue(uint8_t ch, T value)
+    {
+        static_assert(std::is_arithmetic<T>::value, "Not numeric type");
+        char buf[15] = {0};
+        
+        if (ch > 3)
+        {
+            return false;
+        }
+
+        sprintf(buf, "add %u,%u,%u", getObjCid(), ch, ScaleToForm(value));
+        sendCommand(buf);
+        return true;
+    }
+
+    /**
+     * Add values to show. 
+     *
+     * @param ch - channel of waveform(0-3). 
+     * @param values - the values of waveform (values are scaled to nextion resolution 0-255 based on Min / Max component hight).  
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
+    template<typename T>
+    bool addValues(uint8_t ch, std::vector<T> &values)
+    {
+        static_assert(std::is_arithmetic<T>::value, "Not numeric type");
+
+        bool ret=true;
+ 
+        for(uint16_t offset{0}; offset < values.size() && ret;)
+        {
+            uint32_t sendBytes{values.size()-offset};
+            if(sendBytes>124)
+            {
+                sendBytes=124;
+            }
+            { 
+            char buf[4] = {0};
+            utoa(getObjCid(), buf, 10);
+            String cmd;
+            cmd = "addt ";
+            cmd += buf;
+            cmd += ",";
+            utoa(ch, buf, 10);
+            cmd += buf;
+            cmd += ",";
+            utoa(sendBytes, buf, 10);
+            cmd += buf;
+            sendCommand(cmd.c_str());
+            }
+
+            if(!RecvTransparendDataModeReady())
+            {
+                ret=false;
+                continue;
+            }
+            for(uint16_t i{0}; i<sendBytes; ++i)
+            {
+                sendRawByte(ScaleToForm(values[offset++]));
+            }
+            if(!RecvTransparendDataModeFinished())
+            {
+                ret=false;
+            }
+        }
+ 
+        return ret;
+    }
+
     /**
      * Get bco attribute of component
      *
@@ -139,11 +210,29 @@ public: /* methods */
      */
     bool Set_channel_color(uint8_t ch, uint32_t number);
 
+    /**
+     *  Clear waveform component
+     * @param ch - channel of waveform(0-3). 255 Clear all data
+     * @return true if success, false for failure
+     * */
+    bool Clear(uint8_t ch);
+
 private:
-    int32_t m_minVal;
-    int32_t m_maxVal;
+
+    template<typename T>
+    inline uint8_t ScaleToForm(T value)
+    {
+        if(value > m_maxVal){value=m_maxVal;}
+        else if(value < m_minVal){value=m_minVal;}
+        value-= m_minVal;
+        value *= m_scale;
+        uint8_t v = abs((int16_t)value);
+        return v;
+    }
+    float m_minVal;
+    float m_maxVal;
+    float m_scale;
     uint8_t m_hight;
-    double m_scale;
 };
 
 /**

@@ -33,6 +33,8 @@ SoftwareSerial nexSerial(NEX_RX,NEX_TX);
 #define NEX_RET_AUTOMATIC_WAKE_UP           (0x87)
 #define NEX_RET_START_UP                    (0x88)
 #define NEX_RET_START_SD_UPGRADE            (0x89)
+#define Nex_RET_TRANSPARENT_DATA_FINISHED   (0xFD)
+#define Nex_RET_TRANSPARENT_DATA_READY      (0xFE)
 
 #define NEX_RET_INVALID_CMD             (0x00)
 #define NEX_RET_CMD_FINISHED            (0x01)
@@ -253,18 +255,18 @@ void sendCommand(const char* cmd)
     nexSerial.write(0xFF);
 }
 
+void sendRawData(const std::vector<uint8_t> &data)
+{
+    nexSerial.write(data.data(),data.size());
+}
 
-/*
- * Command is executed successfully. 
- *
- * @param timeout - set timeout time.
- *
- * @retval true - success.
- * @retval false - failed. 
- *
- */
-bool recvRetCommandFinished(uint32_t timeout)
-{    
+void sendRawByte(const uint8_t byte)
+{
+    nexSerial.write(&byte, 1);
+}
+
+bool recvCommand(const uint8_t command, uint32_t timeout)
+{
     bool ret = false;
     uint8_t temp[4] = {0};
     
@@ -274,7 +276,7 @@ bool recvRetCommandFinished(uint32_t timeout)
         ret = false;
     }
 
-    if (temp[0] == NEX_RET_CMD_FINISHED
+    if (temp[0] == command
         && temp[1] == 0xFF
         && temp[2] == 0xFF
         && temp[3] == 0xFF
@@ -282,7 +284,13 @@ bool recvRetCommandFinished(uint32_t timeout)
     {
         ret = true;
     }
+    
+    return ret;
+}
 
+bool recvRetCommandFinished(uint32_t timeout)
+{
+    bool ret = recvCommand(NEX_RET_CMD_FINISHED, timeout);
     if (ret) 
     {
         dbSerialPrintln("recvRetCommandFinished ok");
@@ -291,18 +299,54 @@ bool recvRetCommandFinished(uint32_t timeout)
     {
         dbSerialPrintln("recvRetCommandFinished err");
     }
-    
+    return ret;
+}
+
+bool RecvTransparendDataModeReady(uint32_t timeout)
+{
+    bool ret = recvCommand(Nex_RET_TRANSPARENT_DATA_READY, timeout);
+    if (ret) 
+    {
+        dbSerialPrintln("RecvTransparendDataModeReady ok");
+    }
+    else
+    {
+        dbSerialPrintln("RecvTransparendDataModeReady err");
+    }
+    return ret;
+}
+
+bool RecvTransparendDataModeFinished(uint32_t timeout)
+{
+    bool ret = recvCommand(Nex_RET_TRANSPARENT_DATA_FINISHED, timeout);
+    if (ret) 
+    {
+        dbSerialPrintln("RecvTransparendDataModeFinished ok");
+    }
+    else
+    {
+        dbSerialPrintln("RecvTransparendDataModeFinished err");
+    }
     return ret;
 }
 
 
-bool nexInit(void)
+bool nexInit(const uint32_t baud)
 {
     bool ret1 = false;
     bool ret2 = false;
-    
-    nexSerial.begin(9600);
-    sendCommand("");
+
+    nexSerial.begin(9600); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+    if(baud!=9600)
+    {
+        char cmd[14];
+        sprintf(cmd,"baud=%i",baud);
+        sendCommand(cmd);
+        delay(100);
+        nexSerial.begin(baud);
+    }
+
+ //   sendCommand("");
     sendCommand("bkcmd=1");
     ret1 = recvRetCommandFinished();
     sendCommand("page 0");

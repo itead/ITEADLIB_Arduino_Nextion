@@ -84,11 +84,81 @@ extern std::function<void()> systemStartUpCallback;
 extern std::function<void()> startSdUpgradeCallback;
 
 /**
+ * @}
+ */
+bool recvRetNumber(uint32_t *number, uint32_t timeout = 100);
+bool recvRetNumber(int32_t *number, uint32_t timeout = 100);
+bool recvRetString(String &str, uint32_t timeout = 100);
+bool recvRetString(char *buffer, uint16_t &len, uint32_t timeout = 100);
+
+/* Send Command to device
+*
+* parameter command string
+*/
+void sendCommand(const char* cmd);
+
+/* Send Raw data to device
+*
+* parameter raw data buffer
+*/
+void sendRawData(const std::vector<uint8_t> &data);
+
+/* Send Raw byte to device
+*
+* parameter raw byte
+*/
+void sendRawByte(const uint8_t byte);
+
+/* Receive command
+*
+* @param timeout - set timeout time.
+*
+* @retval true - success.
+* @retval false - failed. 
+*/
+bool recvCommand(const uint8_t command, uint32_t timeout);
+
+/*
+ * Command is executed successfully. 
+ *
+ * @param timeout - set timeout time.
+ *
+ * @retval true - success.
+ * @retval false - failed. 
+ *
+ */
+bool recvRetCommandFinished(uint32_t timeout = 100);
+
+/*
+ * Transpared data mode setup successfully 
+ *
+ * @param timeout - set timeout time.
+ *
+ * @retval true - success.
+ * @retval false - failed. 
+ *
+ */
+bool RecvTransparendDataModeReady(uint32_t timeout = 100);
+
+/*
+ * Transpared data mode finished 
+ *
+ * @param timeout - set timeout time.
+ *
+ * @retval true - success.
+ * @retval false - failed. 
+ *
+ */
+bool RecvTransparendDataModeFinished(uint32_t timeout = 100);
+
+/**
  * Init Nextion.  
+ * 
+ * @param paud (2400, 4800, 9600, 19200, 38400, 57600, 115200 )
  * 
  * @return true if success, false for failure. 
  */
-bool nexInit(void);
+bool nexInit(const uint32_t baud=9600);
 
 /**
  * Listen touch event and calling callbacks attached before.
@@ -102,22 +172,5 @@ bool nexInit(void);
  *  from Nextion touch panel. Actually, you should place it in your loop function. 
  */
 void nexLoop(NexTouch *nex_listen_list[]);
-
-/**
- * @}
- */
-
-bool recvRetNumber(uint32_t *number, uint32_t timeout = 100);
-bool recvRetNumber(int32_t *number, uint32_t timeout = 100);
-bool recvRetString(String &str, uint32_t timeout = 100);
-bool recvRetString(char *buffer, uint16_t &len, uint32_t timeout = 100);
-
-/* Send Command to device
-*
-* parameter command string
-*/
-void sendCommand(const char* cmd);
-
-bool recvRetCommandFinished(uint32_t timeout = 100);
 
 #endif /* #ifndef __NEXHARDWARE_H__ */

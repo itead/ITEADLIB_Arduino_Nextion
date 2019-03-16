@@ -15,43 +15,24 @@
  * the License, or (at your option) any later version.
  */
 #include "NexWaveform.h"
+#include <type_traits>
 
 NexWaveform::NexWaveform(uint8_t pid, uint8_t cid, const char *name, const NexObject* page):
-        NexTouch(pid, cid, name, page), m_minVal{0},m_maxVal{255},m_hight{255},m_scale{1.0}
+        NexTouch(pid, cid, name, page), m_minVal{0},m_maxVal{255},m_scale{1.0},m_hight{255}
 {
 }
 
 NexWaveform::NexWaveform(uint8_t pid, uint8_t cid, const char *name, 
-    int32_t minVal, int32_t maxVal, uint8_t hight,
+    float minVal, float maxVal, uint8_t hight,
     const NexObject* page):NexWaveform(pid, cid, name, page)
 {
     m_minVal = minVal;
     m_maxVal = maxVal;
     m_hight = hight;
-    m_scale =((double)hight)/(maxVal-minVal);
+    m_scale =((float)hight)/(maxVal-minVal);
 }    
 
 
-bool NexWaveform::addValue(uint8_t ch, int32_t value)
-{
-    char buf[15] = {0};
-    
-    if (ch > 3)
-    {
-        return false;
-    }
-	// scale to form
-	if(value > m_maxVal){value=m_maxVal;}
-	else if(value < m_minVal){value=m_minVal;}
-	value-= m_minVal;
-	value = abs(value);
-	value*=m_scale;
-
-    sprintf(buf, "add %u,%u,%u", getObjCid(), ch, value);
-
-    sendCommand(buf);
-    return true;
-}
 
 bool NexWaveform::Get_background_color_bco(uint32_t *number)
 {
@@ -180,7 +161,7 @@ bool NexWaveform::Get_channel_color(uint8_t ch, uint32_t *number)
 }
 
 bool NexWaveform::Set_channel_color(uint8_t ch, uint32_t number)
-{    
+{
     char buf[10] = {0};
     utoa(ch, buf, 10);
     String cmd;
@@ -200,3 +181,17 @@ bool NexWaveform::Set_channel_color(uint8_t ch, uint32_t number)
     return recvRetCommandFinished();
 }
  
+ bool NexWaveform::Clear(uint8_t ch)
+ {
+    char buf[4] = {0};
+    utoa(getObjCid(), buf, 10);
+    String cmd;
+    cmd = "cle ";
+    cmd += buf;
+    cmd += ",";
+    utoa(ch, buf, 10);
+    cmd += buf;
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+ }
+
