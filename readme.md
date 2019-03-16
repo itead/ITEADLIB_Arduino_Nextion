@@ -4,10 +4,11 @@
 
 --------------------------------------------------------------------------------
 
-Jyrki Berg 3/4/2019 (https://github.com/jyberg)
+Jyrki Berg 3/16/2019 (https://github.com/jyberg)
 Enhanced and corrected Nextion library version for Arduino/Esp8266/NodeMcu, based on original Nextion Arduino library.
 
 - Added support for NodeMcu/esp8266, Software serial, Software serial can be used with arduin
+- Added support to define communication baud rate in nexInit function
 - Added support for global Nextion objects. (Optional page parameter added in the components)
 - NexVariable corrected to use int32_t data type
 - NextText corrected to return tru/false, and string length is returned in len parameter
@@ -18,8 +19,11 @@ Enhanced and corrected Nextion library version for Arduino/Esp8266/NodeMcu, base
   - Inheritance to support toutch events
   - return values corrected
   - set/get channel colour corrected to support all channels
-- Waveform enhanced to suport scaled values:
-  - define min and max values + coponent height in pixels (component support 255 pixel max height). When value is added to changell it is automatically scaled to component size and min/max value definitions.
+- Waveform enhancedments:
+  - Suport scaled values:
+   - define min and max values + coponent height in pixels (component support 255 pixel max height). When value is added to changell it is automatically scaled to component size and min/max value definitions.
+  - Add multiple values to line
+  - Clear component
 - Added get component height/width function calls to NexObject  
 - examples Nextion editor projects corrected
 
