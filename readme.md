@@ -88,3 +88,4 @@ Nextion and NodeMcu/Esp8266 is sensitive with power quality and current. Especia
 - https://www.itead.cc/wiki/Nextion_Instruction_Set 
 - https://nextion.itead.cc/resources/documents/instruction-set/  
 - http://wiki.iteadstudio.com/Nextion_HMI_Solution 
+- https://www.arduinolibraries.info/libraries/arduino-stl  (Arduino stl library)
