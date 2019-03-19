@@ -15,7 +15,7 @@
  * the License, or (at your option) any later version.
  */
 #include "NexHardware.h"
-#include <functional>
+
 
 #ifdef NEX_SOFTWARE_SERIAL
 #include <SoftwareSerial.h>
