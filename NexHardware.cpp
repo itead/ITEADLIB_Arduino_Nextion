@@ -46,13 +46,13 @@ SoftwareSerial nexSerial(NEX_RX,NEX_TX);
 #define NEX_RET_INVALID_VARIABLE        (0x1A)
 #define NEX_RET_INVALID_OPERATION       (0x1B)
 
-std::function<void(uint8_t)> currentPageIdCallback=nullptr;
-std::function<void(uint16_t,uint16_t,uint8_t)> touchCoordinateCallback=nullptr;
-std::function<void(uint16_t,uint16_t,uint8_t)> touchEventInSleepModeCallback=nullptr;
-std::function<void()> automaticSleepCallback=nullptr;
-std::function<void()> automaticWakeUpCallback=nullptr;
-std::function<void()> systemStartUpCallback=nullptr;
-std::function<void()> startSdUpgradeCallback=nullptr;
+void (*currentPageIdCallback)(uint8_t) =nullptr;
+void (*touchCoordinateCallback)(uint16_t,uint16_t,uint8_t)=nullptr;
+void(*touchEventInSleepModeCallback)(uint16_t,uint16_t,uint8_t) =nullptr;
+void (*automaticSleepCallback)() =nullptr;
+void (*automaticWakeUpCallback)() =nullptr;
+void (*systemStartUpCallback)() =nullptr;
+void (*startSdUpgradeCallback)() =nullptr;
 
 /*
  * Receive unt32_t data. 
@@ -255,9 +255,16 @@ void sendCommand(const char* cmd)
     nexSerial.write(0xFF);
 }
 
+#ifdef STD_SUPPORT
 void sendRawData(const std::vector<uint8_t> &data)
 {
     nexSerial.write(data.data(),data.size());
+}
+#endif
+
+void sendRawData(const uint8_t *buf, uint16_t len)
+{
+    nexSerial.write(buf, len);
 }
 
 void sendRawByte(const uint8_t byte)

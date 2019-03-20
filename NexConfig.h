@@ -22,6 +22,12 @@
  * @{ 
  */
 
+/**
+ * Define STD_SUPPORT to enable c++ std templates usage like std::vector
+ * 
+*/
+//#define STD_SUPPORT
+
 /** 
  * Define DEBUG_SERIAL_ENABLE to enable debug serial. 
  * Comment it to disable debug serial. 

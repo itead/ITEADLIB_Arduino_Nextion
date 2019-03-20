@@ -15,7 +15,10 @@
  * the License, or (at your option) any later version.
  */
 #include "NexWaveform.h"
+
+#ifdef STD_SUPPORT
 #include <type_traits>
+#endif
 
 NexWaveform::NexWaveform(uint8_t pid, uint8_t cid, const char *name, const NexObject* page):
         NexTouch(pid, cid, name, page), m_minVal{0},m_maxVal{255},m_scale{1.0},m_hight{255}

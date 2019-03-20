@@ -17,7 +17,6 @@
 #ifndef __NEXHARDWARE_H__
 #define __NEXHARDWARE_H__
 #include <Arduino.h>
-#include <functional>
 #include "NexConfig.h"
 #include "NexTouch.h"
 
@@ -32,7 +31,8 @@
  * 
  *  uint8_t pageId
  */
-extern std::function<void(uint8_t)> currentPageIdCallback;
+extern void (*currentPageIdCallback)(uint8_t);
+//extern std::function<void(uint8_t)> currentPageIdCallback;
 
 /**
  * Touch Coordinate callback function
@@ -44,7 +44,8 @@ extern std::function<void(uint8_t)> currentPageIdCallback;
  * 
  * Definition of TouchEvent: Press Event 0x01, Release Event 0X00 
  */
-extern std::function<void(uint16_t,uint16_t,uint8_t)>  touchCoordinateCallback;
+extern void (*touchCoordinateCallback)(uint16_t,uint16_t,uint8_t);
+//extern std::function<void(uint16_t,uint16_t,uint8_t)>  touchCoordinateCallback;
 
 /**
  * Touch Event in sleep mode callback function
@@ -56,33 +57,38 @@ extern std::function<void(uint16_t,uint16_t,uint8_t)>  touchCoordinateCallback;
  * 
  * Definition of TouchEvent: Press Event 0x01, Release Event 0X00 
  */
-extern std::function<void(uint16_t,uint16_t,uint8_t)> touchEventInSleepModeCallback;
+extern void (*touchEventInSleepModeCallback)(uint16_t,uint16_t,uint8_t);
+//extern std::function<void(uint16_t,uint16_t,uint8_t)> touchEventInSleepModeCallback;
 
 /**
  * Device automatically enters into sleep mode callback function
  * Only when the device automatically enters into sleep mode will return this data.
  * If execute serial command “sleep = 1” to enter into sleep mode, it will not return this data.
  */
-extern std::function<void()> automaticSleepCallback;
+extern void (*automaticSleepCallback)();
+//extern std::function<void()> automaticSleepCallback;
 
 /**
  * Device automatically wake up callback function
  * Only when the device automatically wake up will return this data.
  * If execute serial command “sleep=0” to wake up, it will not return this data. 
  */
-extern std::function<void()> automaticWakeUpCallback;
+extern void (*automaticWakeUpCallback)();
+//extern std::function<void()> automaticWakeUpCallback;
 
 /**
  * System successful start up callback function
  * This data is sent after a successful power-on initialization on the device
  */
-extern std::function<void()> systemStartUpCallback;
+extern void (*systemStartUpCallback)();
+//extern std::function<void()> systemStartUpCallback;
 
 /**
  * Start SD card upgrade callback function
  * This data is sent after the device power on and detect SD card, and then enter upgrade interface
  */
-extern std::function<void()> startSdUpgradeCallback;
+extern void (*startSdUpgradeCallback)();
+//extern std::function<void()> startSdUpgradeCallback;
 
 /**
  * @}
@@ -102,7 +108,17 @@ void sendCommand(const char* cmd);
 *
 * parameter raw data buffer
 */
+#ifdef STD_SUPPORT
 void sendRawData(const std::vector<uint8_t> &data);
+#endif
+
+/* Send Raw data to device
+*
+* @param buf - raw data buffer poiter
+* @param len - raw data buffer pointer
+*/
+void sendRawData(const uint8_t *buf, uint16_t len);
+
 
 /* Send Raw byte to device
 *
@@ -112,6 +128,7 @@ void sendRawByte(const uint8_t byte);
 
 /* Receive command
 *
+* @param command - command to be received / checked
 * @param timeout - set timeout time.
 *
 * @retval true - success.

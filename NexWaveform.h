@@ -17,7 +17,10 @@
 #ifndef __NEXWAVEFORM_H__
 #define __NEXWAVEFORM_H__
 
+#ifdef STD_SUPPORT
 #include <vector>
+#endif
+
 #include "NexTouch.h"
 #include "NexHardware.h"
 /**
@@ -59,7 +62,10 @@ public: /* methods */
     template<typename T>
     bool addValue(uint8_t ch, T value)
     {
+        #ifdef STD_SUPPORT
+        // compile time data type check 
         static_assert(std::is_arithmetic<T>::value, "Not numeric type");
+        #endif
         char buf[15] = {0};
         
         if (ch > 3)
@@ -81,9 +87,11 @@ public: /* methods */
      * @retval true - success. 
      * @retval false - failed. 
      */
+    #ifdef STD_SUPPORT
     template<typename T>
     bool addValues(uint8_t ch, std::vector<T> &values)
     {
+        // compile time data type check  
         static_assert(std::is_arithmetic<T>::value, "Not numeric type");
 
         bool ret=true;
@@ -127,6 +135,69 @@ public: /* methods */
  
         return ret;
     }
+#endif
+
+    /**
+     * Add values to show. 
+     *
+     * @param ch - channel of waveform(0-3). 
+     * @param values - pointer to the values of waveform (values are scaled to nextion resolution 0-255 based on Min / Max component hight). 
+     * @param len - values buffer len
+     *
+     * @retval true - success. 
+     * @retval false - failed. 
+     */
+    template<typename T>
+    bool addValues(uint8_t ch, T *values, uint16_t len)
+    {
+        #ifdef STD_SUPPORT
+        // compile time data type check 
+        static_assert(std::is_arithmetic<T>::value, "Not numeric type");
+        #endif
+
+        bool ret=true;
+ 
+        for(uint16_t offset{0}; offset < len && ret;)
+        {
+            uint32_t sendBytes{len-offset};
+            if(sendBytes>124)
+            {
+                sendBytes=124;
+            }
+            { 
+            char buf[4] = {0};
+            utoa(getObjCid(), buf, 10);
+            String cmd;
+            cmd = "addt ";
+            cmd += buf;
+            cmd += ",";
+            utoa(ch, buf, 10);
+            cmd += buf;
+            cmd += ",";
+            utoa(sendBytes, buf, 10);
+            cmd += buf;
+            sendCommand(cmd.c_str());
+            }
+
+            if(!RecvTransparendDataModeReady())
+            {
+                ret=false;
+                continue;
+            }
+            for(uint16_t i{0}; i<sendBytes; ++i)
+            {
+                sendRawByte(ScaleToForm(values[offset++]));
+            }
+            if(!RecvTransparendDataModeFinished())
+            {
+                ret=false;
+            }
+        }
+ 
+        return ret;
+    }
+
+
 
     /**
      * Get bco attribute of component
