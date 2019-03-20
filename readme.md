@@ -4,11 +4,11 @@
 
 --------------------------------------------------------------------------------
 
-Jyrki Berg 3/16/2019 (https://github.com/jyberg)
+Jyrki Berg 3/20/2019 (https://github.com/jyberg)
 Enhanced and corrected Nextion library version for Arduino/Esp8266/NodeMcu, based on original Nextion Arduino library.
 
-- Added support for NodeMcu/esp8266, Software serial, Software serial can be used with arduin
-- Added support to define communication baud rate in nexInit function
+- Added support for NodeMcu/esp8266, Software serial, Software serial can be used with arduino
+- Added support to define communication baud rate in nexInit functiono
 - Added support for global Nextion objects. (Optional page parameter added in the components)
 - NexVariable corrected to use int32_t data type
 - NextText corrected to return tru/false, and string length is returned in len parameter
@@ -26,6 +26,8 @@ Enhanced and corrected Nextion library version for Arduino/Esp8266/NodeMcu, base
   - Clear component
 - Added get component height/width function calls to NexObject  
 - examples Nextion editor projects corrected
+- C++ std library usage made optional, (e.g std::vector) See NexConfig.h #define STD_SUPPORT
+- C style versions added for functions that uses std::vector etc..
 
 Nextion serial instruction set see: https://www.itead.cc/wiki/Nextion_Instruction_Set or https://nextion.itead.cc/resources/documents/instruction-set/
 
@@ -88,4 +90,3 @@ Nextion and NodeMcu/Esp8266 is sensitive with power quality and current. Especia
 - https://www.itead.cc/wiki/Nextion_Instruction_Set 
 - https://nextion.itead.cc/resources/documents/instruction-set/  
 - http://wiki.iteadstudio.com/Nextion_HMI_Solution 
-- https://www.arduinolibraries.info/libraries/arduino-stl  (Arduino stl library)
