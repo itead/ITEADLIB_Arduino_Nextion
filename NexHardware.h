@@ -145,7 +145,7 @@ bool recvCommand(const uint8_t command, uint32_t timeout);
  * @retval false - failed. 
  *
  */
-bool recvRetCommandFinished(uint32_t timeout = 100);
+bool recvRetCommandFinished(uint32_t timeout = 200);
 
 /*
  * Transpared data mode setup successfully 
@@ -156,7 +156,7 @@ bool recvRetCommandFinished(uint32_t timeout = 100);
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeReady(uint32_t timeout = 100);
+bool RecvTransparendDataModeReady(uint32_t timeout = 400);
 
 /*
  * Transpared data mode finished 
@@ -167,7 +167,7 @@ bool RecvTransparendDataModeReady(uint32_t timeout = 100);
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeFinished(uint32_t timeout = 100);
+bool RecvTransparendDataModeFinished(uint32_t timeout = 200);
 
 /**
  * Init Nextion.  

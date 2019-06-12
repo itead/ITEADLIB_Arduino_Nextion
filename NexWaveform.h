@@ -121,7 +121,7 @@ public: /* methods */
             if(!RecvTransparendDataModeReady())
             {
                 ret=false;
-                continue;
+                break;
             }
             for(uint16_t i{0}; i<sendBytes; ++i)
             {
@@ -182,7 +182,7 @@ public: /* methods */
             if(!RecvTransparendDataModeReady())
             {
                 ret=false;
-                continue;
+                break;
             }
             for(uint16_t i{0}; i<sendBytes; ++i)
             {

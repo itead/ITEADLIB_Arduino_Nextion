@@ -221,7 +221,7 @@ bool recvRetString(String &str, uint32_t timeout)
  * @param timeout - set timeout time. 
  *
  * @retval true - success. 
- * @retval false - failed.
+ * @retval false - failed.  
  *
  */
 bool recvRetString(char *buffer, uint16_t &len, uint32_t timeout)
@@ -244,6 +244,7 @@ bool recvRetString(char *buffer, uint16_t &len, uint32_t timeout)
  */
 void sendCommand(const char* cmd)
 {
+    // empty in buffer for clean responce
     while (nexSerial.available())
     {
         nexSerial.read();
@@ -280,18 +281,25 @@ bool recvCommand(const uint8_t command, uint32_t timeout)
     nexSerial.setTimeout(timeout);
     if (sizeof(temp) != nexSerial.readBytes((char *)temp, sizeof(temp)))
     {
+        dbSerialPrintln("recv command timeout");
         ret = false;
     }
-
-    if (temp[0] == command
-        && temp[1] == 0xFF
-        && temp[2] == 0xFF
-        && temp[3] == 0xFF
-        )
+    else
     {
-        ret = true;
+        if (temp[0] == command
+            && temp[1] == 0xFF
+            && temp[2] == 0xFF
+            && temp[3] == 0xFF
+            )
+        {
+            ret = true;
+        }
+        else
+        {
+            dbSerialPrint("recv command err value: ");
+            dbSerialPrintln(temp[0]);   
+        }
     }
-    
     return ret;
 }
 
@@ -311,6 +319,7 @@ bool recvRetCommandFinished(uint32_t timeout)
 
 bool RecvTransparendDataModeReady(uint32_t timeout)
 {
+    dbSerialPrintln("RecvTransparendDataModeReady requested");
     bool ret = recvCommand(Nex_RET_TRANSPARENT_DATA_READY, timeout);
     if (ret) 
     {
@@ -353,57 +362,38 @@ bool nexInit(const uint32_t baud)
         nexSerial.begin(baud);
     }
 
- //   sendCommand("");
-    sendCommand("bkcmd=1");
+    sendCommand("bkcmd=3");
     ret1 = recvRetCommandFinished();
     sendCommand("page 0");
     ret2 = recvRetCommandFinished();
-    return ret1 && ret2;
+    return ret2;
 }
 
 void nexLoop(NexTouch *nex_listen_list[])
 {
     static uint8_t __buffer[10];
     
-    uint16_t i;
-    uint8_t c;  
-    
-    while (nexSerial.available() > 0)
-    {   
-        delay(10);
-        c = nexSerial.read();
-        switch(c)
+    while (nexSerial.available())
+    {
+        __buffer[0] = nexSerial.read();
+        nexSerial.setTimeout(200);
+        switch(__buffer[0])
         {
             case NEX_RET_EVENT_TOUCH_HEAD:
             {
-                if (nexSerial.available() >= 6)
+                if(6==nexSerial.readBytes(&__buffer[1],6))
                 {
-                    __buffer[0] = c;  
-                    for (i = 1; i < 7; i++)
-                    {
-                        __buffer[i] = nexSerial.read();
-                    }
-                    __buffer[i] = 0x00;
-                    
                     if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
                     {
                         NexTouch::iterate(nex_listen_list, __buffer[1], __buffer[2], __buffer[3]);
                     }
-                    
                 }
                 break;
             }
             case NEX_RET_CURRENT_PAGE_ID_HEAD:
             {
-                if(nexSerial.available()>=4)
+                if(4==nexSerial.readBytes(&__buffer[1],4))
                 {
-                    __buffer[0] = c;  
-                    for (i = 1; i < 5; i++)
-                    {
-                        __buffer[i] = nexSerial.read();
-                    }
-                    __buffer[i] = 0x00;
-                    
                     if (0xFF == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4])
                     {
                         if(currentPageIdCallback!=nullptr)
@@ -417,25 +407,18 @@ void nexLoop(NexTouch *nex_listen_list[])
             case NEX_RET_EVENT_POSITION_HEAD:
             case NEX_RET_EVENT_SLEEP_POSITION_HEAD:
             {
-                if(nexSerial.available()>=8)
-                {
-                    __buffer[0] = c;  
-                    for (i = 1; i < 9; i++)
-                    {
-                        __buffer[i] = nexSerial.read();
-                    }
-                    __buffer[i] = 0x00;
-                    
+                if(8==nexSerial.readBytes(&__buffer[1],8))
+                {                  
                     if (0xFF == __buffer[6] && 0xFF == __buffer[7] && 0xFF == __buffer[8])
                     {
                         if(__buffer[0] == NEX_RET_EVENT_POSITION_HEAD && touchCoordinateCallback!=nullptr)
                         {
-                             
+                                
                             touchCoordinateCallback(((int16_t)__buffer[2] << 8) | (__buffer[1]), ((int16_t)__buffer[4] << 8) | (__buffer[3]),__buffer[5]);
                         }
                         else if(__buffer[0] == NEX_RET_EVENT_SLEEP_POSITION_HEAD && touchCoordinateCallback!=nullptr)
                         {
-                             
+                                
                             touchEventInSleepModeCallback(((int16_t)__buffer[2] << 8) | (__buffer[1]), ((int16_t)__buffer[4] << 8) | (__buffer[3]),__buffer[5]);
                         }
                     }
@@ -445,15 +428,8 @@ void nexLoop(NexTouch *nex_listen_list[])
             case NEX_RET_AUTOMATIC_SLEEP:
             case NEX_RET_AUTOMATIC_WAKE_UP:
             {
-                if(nexSerial.available()>=3)
+                if(3==nexSerial.readBytes(&__buffer[1],3))
                 {
-                    __buffer[0] = c;  
-                    for (i = 1; i < 4; i++)
-                    {
-                        __buffer[i] = nexSerial.read();
-                    }
-                    __buffer[i] = 0x00;
-                    
                     if (0xFF == __buffer[1] && 0xFF == __buffer[2] && 0xFF == __buffer[3])
                     {
                         if(__buffer[0]==NEX_RET_AUTOMATIC_SLEEP && automaticSleepCallback!=nullptr)
@@ -483,6 +459,15 @@ void nexLoop(NexTouch *nex_listen_list[])
                     startSdUpgradeCallback();
                 }
                 break;
+            }
+            default:
+            {
+                // unnoun data clean buffer.
+                while (nexSerial.available())
+                {
+                    nexSerial.read();
+                }
+                break;              
             }
         };      
     }
