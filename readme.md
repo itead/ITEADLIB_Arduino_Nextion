@@ -3,8 +3,12 @@
 # Enhanced Nextion Library
 
 --------------------------------------------------------------------------------
+Jyrki Berg 6/12/2019 (https://github.com/jyberg)
 
-Jyrki Berg 3/20/2019 (https://github.com/jyberg)
+Nextion display communication stabilization, now serial communication is more stable and delay agnostic.
+corrected waveform AddValues error schenario.
+
+Jyrki Berg 3/20/2019
 Enhanced and corrected Nextion library version for Arduino/Esp8266/NodeMcu, based on original Nextion Arduino library.
 
 - Added support for NodeMcu/esp8266, Software serial, Software serial can be used with arduino
