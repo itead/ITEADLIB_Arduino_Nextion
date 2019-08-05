@@ -88,6 +88,7 @@ Nextion and NodeMcu/Esp8266 is sensitive with power quality and current. Especia
 
 
 # Useful Links
+- https://unofficialnextion.com/
 - https://nextion.itead.cc/resources/download/nextion-editor/ 
 - https://github.com/hagronnestad/nextion-font-editor 
 - http://blog.iteadstudio.com/nextion-tutorial-based-on-nextion-arduino-library/ 
