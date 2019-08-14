@@ -22,8 +22,8 @@
 SoftwareSerial nexSerial(NEX_RX,NEX_TX);
 #endif
 
-
-#define NEX_RET_EVENT_TOUCH_HEAD            (0x65)     
+#define NEX_RET_EVENT_NEXTION_STARTUP       (0x00)
+#define NEX_RET_EVENT_TOUCH_HEAD            (0x65)
 #define NEX_RET_CURRENT_PAGE_ID_HEAD        (0x66)
 #define NEX_RET_EVENT_POSITION_HEAD         (0x67)
 #define NEX_RET_EVENT_SLEEP_POSITION_HEAD   (0x68)
@@ -31,27 +31,39 @@ SoftwareSerial nexSerial(NEX_RX,NEX_TX);
 #define NEX_RET_NUMBER_HEAD                 (0x71)
 #define NEX_RET_AUTOMATIC_SLEEP             (0x86)
 #define NEX_RET_AUTOMATIC_WAKE_UP           (0x87)
-#define NEX_RET_START_UP                    (0x88)
+#define NEX_RET_EVENT_NEXTION_READY         (0x88)
 #define NEX_RET_START_SD_UPGRADE            (0x89)
 #define Nex_RET_TRANSPARENT_DATA_FINISHED   (0xFD)
 #define Nex_RET_TRANSPARENT_DATA_READY      (0xFE)
 
 #define NEX_RET_INVALID_CMD             (0x00)
-#define NEX_RET_CMD_FINISHED            (0x01)
+#define NEX_RET_CMD_FINISHED_OK         (0x01)
 #define NEX_RET_INVALID_COMPONENT_ID    (0x02)
 #define NEX_RET_INVALID_PAGE_ID         (0x03)
 #define NEX_RET_INVALID_PICTURE_ID      (0x04)
 #define NEX_RET_INVALID_FONT_ID         (0x05)
+#define NEX_RET_INVALID_FILE_OPERATION  (0x06)
+#define NEX_RET_INVALID_CRC             (0x09)
 #define NEX_RET_INVALID_BAUD            (0x11)
-#define NEX_RET_INVALID_VARIABLE        (0x1A)
-#define NEX_RET_INVALID_OPERATION       (0x1B)
+#define NEX_RET_INVALID_WAVEFORM_ID_OR_CHANNEL_NRO  (0x12)
+#define NEX_RET_INVALID_VARIABLE_OR_ATTRIBUTE       (0x1A)
+#define NEX_RET_INVALID_VARIABLE_OPERATION          (0x1B)
+#define NEX_RET_ASSIGNMENT_FAILED_TO_ASSIGN         (0x1C)
+#define NEX_RET_EEPROM_OPERATION_FAILED             (0x1D)
+#define NEX_RET_INVALID_QUANTITY_OF_PARAMETERS      (0x1E)
+#define NEX_RET_IO_OPERATION_FAILED                 (0x1F)
+#define NEX_RET_ESCAPE_CHARACTER_INVALID            (0x20)
+#define NEX_RET_VARIABLE_NAME_TOO_LONG              (0x23)
+#define NEX_RET_SERIAL_BUFFER_OVERFLOW              (0x24)
 
+
+void (*nextionStartupCallback)() =nullptr;
 void (*currentPageIdCallback)(uint8_t) =nullptr;
 void (*touchCoordinateCallback)(uint16_t,uint16_t,uint8_t)=nullptr;
 void(*touchEventInSleepModeCallback)(uint16_t,uint16_t,uint8_t) =nullptr;
 void (*automaticSleepCallback)() =nullptr;
 void (*automaticWakeUpCallback)() =nullptr;
-void (*systemStartUpCallback)() =nullptr;
+void (*nextionReadyCallback)() =nullptr;
 void (*startSdUpgradeCallback)() =nullptr;
 
 /*
@@ -305,7 +317,7 @@ bool recvCommand(const uint8_t command, uint32_t timeout)
 
 bool recvRetCommandFinished(uint32_t timeout)
 {
-    bool ret = recvCommand(NEX_RET_CMD_FINISHED, timeout);
+    bool ret = recvCommand(NEX_RET_CMD_FINISHED_OK, timeout);
     if (ret) 
     {
         dbSerialPrintln("recvRetCommandFinished ok");
@@ -379,6 +391,20 @@ void nexLoop(NexTouch *nex_listen_list[])
         nexSerial.setTimeout(200);
         switch(__buffer[0])
         {
+            case NEX_RET_EVENT_NEXTION_STARTUP:
+            {
+                if(5==nexSerial.readBytes(&__buffer[1],5))
+                {
+                    if (0x00 == __buffer[1] && 0x00 == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4] && 0xFF == __buffer[5])
+                    {
+                        if(nextionStartupCallback!=nullptr)
+                        {
+                            nextionStartupCallback();
+                        }
+                    }
+                }
+                break;
+            }
             case NEX_RET_EVENT_TOUCH_HEAD:
             {
                 if(6==nexSerial.readBytes(&__buffer[1],6))
@@ -444,11 +470,11 @@ void nexLoop(NexTouch *nex_listen_list[])
                 }
                 break;
             }
-            case NEX_RET_START_UP:
+            case NEX_RET_EVENT_NEXTION_READY:
             {
-                if(systemStartUpCallback!=nullptr)
+                if(nextionReadyCallback!=nullptr)
                 {
-                    systemStartUpCallback();
+                    nextionReadyCallback();
                 }
                 break;
             }

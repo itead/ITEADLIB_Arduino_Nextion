@@ -3,12 +3,16 @@
 # Enhanced Nextion Library
 
 --------------------------------------------------------------------------------
-Jyrki Berg 6/12/2019 (https://github.com/jyberg)
+Jyrki Berg 8/14/2019 (https://github.com/jyberg)
 
-Nextion display communication stabilization, now serial communication is more stable and delay agnostic.
-corrected waveform AddValues error schenario.
+-Backward compatinility issue:
+	- systemStartUpCallback function pointer name corrected to match Nextion functionality/documentation new name: nextionReadyCallback
 
-Jyrki Berg 3/20/2019
+- Error code list updated (NexHardware.cpp)
+- nextionStartupCallback function added. Called when when Nextion has started or reset
+
+
+Jyrki Berg 2/17/2019
 Enhanced and corrected Nextion library version for Arduino/Esp8266/NodeMcu, based on original Nextion Arduino library.
 
 - Added support for NodeMcu/esp8266, Software serial, Software serial can be used with arduino

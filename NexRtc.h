@@ -41,8 +41,7 @@ class NexRtc
      * @param time_type - To type in time   (example:write_rtc_time("year",2016))
      * @param number - the time value
      * @return true if success, false for failure
-     */
-    
+     */   
     bool write_rtc_time(char *time_type,uint32_t number);
     
     /**
@@ -51,7 +50,6 @@ class NexRtc
      * @param time - Time to write to the array
      * @return true if success, false for failure
      */
-    
     bool write_rtc_time(uint32_t *time);
     
     
@@ -62,7 +60,6 @@ class NexRtc
      * @param len - len of array
      * @return true if success, false for failure
      */
-    
     bool read_rtc_time(char *time,uint32_t len);
     
     /**
@@ -72,7 +69,6 @@ class NexRtc
      * @param number - the time value
      * @return true if success, false for failure
      */
-    
     bool read_rtc_time(char *time_type,uint32_t *number);
     
     /**
@@ -82,7 +78,6 @@ class NexRtc
      * @param len - len of array
      * @return true if success, false for failure
      */
-    
     bool read_rtc_time(uint32_t *time,uint32_t len);
     
 };

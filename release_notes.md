@@ -1,6 +1,14 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+
+# Release v0.11.0
+ -Backward compatinility issue:
+     -systemStartUpCallback function pointer name corrected to match Nextion functionality/documentation new name: nextionReadyCallback
+     
+ -Error code list updated (NexHardware.cpp)
+- nextionStartupCallback function added called when when Nextion has started or reset
+
 # Release v0.10.0
 
   - version: v0.10.0

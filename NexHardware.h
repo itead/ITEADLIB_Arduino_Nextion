@@ -26,6 +26,15 @@
  */
 
 /**
+ * Nextion Startup callback function
+ * Returned when Nextion has started or reset
+ * 
+ */
+extern void (*nextionStartupCallback)();
+//extern std::function<void()> nextionStartupCallback;
+
+
+/**
  * Current Page ID callback function
  * The device returns this data after receiving “sendme” instruction)
  * 
@@ -77,11 +86,11 @@ extern void (*automaticWakeUpCallback)();
 //extern std::function<void()> automaticWakeUpCallback;
 
 /**
- * System successful start up callback function
- * This data is sent after a successful power-on initialization on the device
+ * Nextion Ready callback function
+ * Returned when Nextion has powered up and is now initialized successfully
  */
-extern void (*systemStartUpCallback)();
-//extern std::function<void()> systemStartUpCallback;
+extern void (*nextionReadyCallback)();
+//extern std::function<void()> nextionReadyCallback;
 
 /**
  * Start SD card upgrade callback function
