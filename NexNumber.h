@@ -49,7 +49,7 @@ public: /* methods */
      * @param number - number buffer. 
      * @return true if success, false for failure. 
      */
-    bool setValue(uint32_t number);
+    bool setValue(int32_t number);
 	
     /**
      * Get bco attribute of component
