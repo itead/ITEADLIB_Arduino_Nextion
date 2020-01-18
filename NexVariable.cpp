@@ -30,9 +30,9 @@ uint32_t NexVariable::getValue(int32_t *number)
     return recvRetNumber(number);
 }
 
-bool NexVariable::setValue(int32_t number)
+bool NexVariable::setValue(int number)
 {
-    char buf[10] = {0};
+    char buf[12] = {0};
     String cmd;
     
     itoa(number, buf, 10);

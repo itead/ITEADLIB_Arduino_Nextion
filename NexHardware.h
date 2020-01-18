@@ -135,6 +135,17 @@ void sendRawData(const uint8_t *buf, uint16_t len);
 */
 void sendRawByte(const uint8_t byte);
 
+/* read Bytes from device
+ * @brief 
+ * 
+ * @param buffer - receive buffer
+ * @param size  - bytes to read
+ * @param timeout  timeout ms
+ * @return size_t read bytes can be less that size (timeout case) 
+ */
+size_t readBytes(uint8_t* buffer, size_t size, size_t timeout=1000);
+
+
 /* Receive command
 *
 * @param command - command to be received / checked

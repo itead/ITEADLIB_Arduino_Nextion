@@ -2,9 +2,6 @@
 
 # Enhanced Nextion Library
 
-12/18/2019
-- I have started major change of library, purpose is to publish support fot multiple displays on same time. I hope that I can publish that soon.
-
 --------------------------------------------------------------------------------
 Jyrki Berg 8/14/2019 (https://github.com/jyberg)
 

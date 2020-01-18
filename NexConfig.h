@@ -26,13 +26,13 @@
  * Define STD_SUPPORT to enable c++ std templates usage like std::vector
  * 
 */
-//#define STD_SUPPORT
+// #define STD_SUPPORT
 
 /** 
- * Define DEBUG_SERIAL_ENABLE to enable debug serial. 
+ * Define NEX_DEBUG_SERIAL_ENABLE to enable debug serial. 
  * Comment it to disable debug serial. 
  */
-//#define DEBUG_SERIAL_ENABLE
+// #define NEX_DEBUG_SERIAL_ENABLE
 
 /**
  * Define dbSerial for the output of debug messages. 
@@ -46,7 +46,7 @@
  * NodeMcu/Esp8266 can use harware serial (Serial) but it uses same serial as usb communication and
  * during SW upload NodeMcu RX pin must be disconnected from Nextion
  */
-//#define NEX_SOFTWARE_SERIAL
+#define NEX_SOFTWARE_SERIAL
 #ifndef NEX_SOFTWARE_SERIAL
 // hardware Serial port
 #define nexSerial Serial
@@ -58,14 +58,18 @@
 #endif
 
 
-#ifdef DEBUG_SERIAL_ENABLE
+#ifdef NEX_DEBUG_SERIAL_ENABLE
 #define dbSerialPrint(a)    dbSerial.print(a)
 #define dbSerialPrintln(a)  dbSerial.println(a)
 #define dbSerialBegin(a)    dbSerial.begin(a)
+#define dbSerialPrintByte(a) {if(a<10)dbSerial.print(0);dbSerial.print((unsigned char)a,HEX);}
+#define dbSerialPrintlnByte(a) {if(a<10)dbSerial.print(0);dbSerial.println((unsigned char)a,HEX);}
 #else
 #define dbSerialPrint(a)   do{}while(0)
 #define dbSerialPrintln(a) do{}while(0)
 #define dbSerialBegin(a)   do{}while(0)
+#define dbSerialPrintByte(a) do{}while(0)
+#define dbSerialPrintlnByte(a) do{}while(0)
 #endif
 
 /**

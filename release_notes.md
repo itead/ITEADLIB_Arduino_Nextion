@@ -1,13 +1,17 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+# Release v0.11.1
+- NexVariable::setValue datatype corrected #2
+- DEBUG_SERIAL_ENABLE changed to NEX_DEBUG_SERIAL_ENABLE
+- Serial.readBytes(...) implementation not used anymore, own implementation instead. Because of softwareSerial readBytes functionality is not reliable enough.
 
 # Release v0.11.0
  -Backward compatinility issue:
      -systemStartUpCallback function pointer name corrected to match Nextion functionality/documentation new name: nextionReadyCallback
      
  -Error code list updated (NexHardware.cpp)
-- nextionStartupCallback function added called when when Nextion has started or reset
+- nextionStartupCallback function added. Called when when Nextion has started or reset
 
 # Release v0.10.0
 

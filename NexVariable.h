@@ -86,7 +86,7 @@ public: /* methods */
      * @param number - To set up the data
      * @return true if success, false for failure
      */
-    bool setValue(int32_t number);
+    bool setValue(int number);
 };
 /**
  * @}

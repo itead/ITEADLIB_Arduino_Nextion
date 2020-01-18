@@ -22,40 +22,39 @@
 SoftwareSerial nexSerial(NEX_RX,NEX_TX);
 #endif
 
-#define NEX_RET_EVENT_NEXTION_STARTUP       (0x00)
-#define NEX_RET_EVENT_TOUCH_HEAD            (0x65)
-#define NEX_RET_CURRENT_PAGE_ID_HEAD        (0x66)
-#define NEX_RET_EVENT_POSITION_HEAD         (0x67)
-#define NEX_RET_EVENT_SLEEP_POSITION_HEAD   (0x68)
-#define NEX_RET_STRING_HEAD                 (0x70)
-#define NEX_RET_NUMBER_HEAD                 (0x71)
-#define NEX_RET_AUTOMATIC_SLEEP             (0x86)
-#define NEX_RET_AUTOMATIC_WAKE_UP           (0x87)
-#define NEX_RET_EVENT_NEXTION_READY         (0x88)
-#define NEX_RET_START_SD_UPGRADE            (0x89)
-#define Nex_RET_TRANSPARENT_DATA_FINISHED   (0xFD)
-#define Nex_RET_TRANSPARENT_DATA_READY      (0xFE)
+#define NEX_RET_EVENT_NEXTION_STARTUP       (0x00)  //Returned when Nextion has started or reset
+#define NEX_RET_EVENT_TOUCH_HEAD            (0x65)  //Returned when Touch occurs and component’s corresponding Send Component ID is checked in the users HMI design.
+#define NEX_RET_CURRENT_PAGE_ID_HEAD        (0x66)  //Returned when the sendme command is used.
+#define NEX_RET_EVENT_POSITION_HEAD         (0x67)  //Returned when sendxy=1 and not in sleep mode
+#define NEX_RET_EVENT_SLEEP_POSITION_HEAD   (0x68)  //Returned when sendxy=1 and in sleep mode
+#define NEX_RET_STRING_HEAD                 (0x70)  //Returned when using get command for a string.
+#define NEX_RET_NUMBER_HEAD                 (0x71)  //Returned when get command to return a number 4 byte 32-bit value in little endian order.
+#define NEX_RET_AUTOMATIC_SLEEP             (0x86)  //Returned when Nextion enters sleep automatically Using sleep=1 will not return an 0x86
+#define NEX_RET_AUTOMATIC_WAKE_UP           (0x87)  //Returned when Nextion leaves sleep automatically Using sleep=0 will not return an 0x87
+#define NEX_RET_EVENT_NEXTION_READY         (0x88)  //Returned when Nextion has powered up and is now initialized successfully
+#define NEX_RET_START_SD_UPGRADE            (0x89)  //Returned when power on detects inserted microSD and begins Upgrade by microSD process
+#define Nex_RET_TRANSPARENT_DATA_FINISHED   (0xFD)  //Returned when all requested bytes of Transparent Data mode have been received, and is now leaving transparent data mode
+#define Nex_RET_TRANSPARENT_DATA_READY      (0xFE)  //Returned when requesting Transparent Data mode, and device is now ready to begin receiving the specified quantity of data
 
-#define NEX_RET_INVALID_CMD             (0x00)
-#define NEX_RET_CMD_FINISHED_OK         (0x01)
-#define NEX_RET_INVALID_COMPONENT_ID    (0x02)
-#define NEX_RET_INVALID_PAGE_ID         (0x03)
-#define NEX_RET_INVALID_PICTURE_ID      (0x04)
-#define NEX_RET_INVALID_FONT_ID         (0x05)
-#define NEX_RET_INVALID_FILE_OPERATION  (0x06)
-#define NEX_RET_INVALID_CRC             (0x09)
-#define NEX_RET_INVALID_BAUD            (0x11)
-#define NEX_RET_INVALID_WAVEFORM_ID_OR_CHANNEL_NRO  (0x12)
-#define NEX_RET_INVALID_VARIABLE_OR_ATTRIBUTE       (0x1A)
-#define NEX_RET_INVALID_VARIABLE_OPERATION          (0x1B)
-#define NEX_RET_ASSIGNMENT_FAILED_TO_ASSIGN         (0x1C)
-#define NEX_RET_EEPROM_OPERATION_FAILED             (0x1D)
-#define NEX_RET_INVALID_QUANTITY_OF_PARAMETERS      (0x1E)
-#define NEX_RET_IO_OPERATION_FAILED                 (0x1F)
-#define NEX_RET_ESCAPE_CHARACTER_INVALID            (0x20)
-#define NEX_RET_VARIABLE_NAME_TOO_LONG              (0x23)
-#define NEX_RET_SERIAL_BUFFER_OVERFLOW              (0x24)
-
+#define NEX_RET_INVALID_CMD             (0x00)  //Returned when instruction sent by user has failed
+#define NEX_RET_CMD_FINISHED_OK         (0x01)  //Returned when instruction sent by user was successful
+#define NEX_RET_INVALID_COMPONENT_ID    (0x02)  //Returned when invalid Component ID or name was used
+#define NEX_RET_INVALID_PAGE_ID         (0x03)  //Returned when invalid Page ID or name was used
+#define NEX_RET_INVALID_PICTURE_ID      (0x04)  //Returned when invalid Picture ID was used
+#define NEX_RET_INVALID_FONT_ID         (0x05)  //Returned when invalid Font ID was used
+#define NEX_RET_INVALID_FILE_OPERATION  (0x06)  //Returned when File operation fails
+#define NEX_RET_INVALID_CRC             (0x09)  //Returned when Instructions with CRC validation fails their CRC check
+#define NEX_RET_INVALID_BAUD            (0x11)  //Returned when invalid Baud rate was used
+#define NEX_RET_INVALID_WAVEFORM_ID_OR_CHANNEL_NRO  (0x12)  //Returned when invalid Waveform ID or Channel # was used
+#define NEX_RET_INVALID_VARIABLE_OR_ATTRIBUTE       (0x1A)  //Returned when invalid Variable name or invalid attribute was used
+#define NEX_RET_INVALID_VARIABLE_OPERATION          (0x1B)  //Returned when Operation of Variable is invalid. ie: Text assignment t0.txt=abc or t0.txt=23, Numeric assignment j0.val=”50″ or j0.val=abc
+#define NEX_RET_ASSIGNMENT_FAILED_TO_ASSIGN         (0x1C)  //Returned when attribute assignment failed to assign
+#define NEX_RET_EEPROM_OPERATION_FAILED             (0x1D)  //Returned when an EEPROM Operation has failed
+#define NEX_RET_INVALID_QUANTITY_OF_PARAMETERS      (0x1E)  //Returned when the number of instruction parameters is invalid
+#define NEX_RET_IO_OPERATION_FAILED                 (0x1F)  //Returned when an IO operation has failed
+#define NEX_RET_ESCAPE_CHARACTER_INVALID            (0x20)  //Returned when an unsupported escape character is used
+#define NEX_RET_VARIABLE_NAME_TOO_LONG              (0x23)  //Returned when variable name is too long. Max length is 29 characters: 14 for page + “.” + 14 for component.
+#define NEX_RET_SERIAL_BUFFER_OVERFLOW              (0x24)  //Returned when a Serial Buffer overflow occurs Buffer will continue to receive the current instruction, all previous instructions are lost.
 
 void (*nextionStartupCallback)() =nullptr;
 void (*currentPageIdCallback)(uint8_t) =nullptr;
@@ -86,8 +85,7 @@ bool recvRetNumber(uint32_t *number, uint32_t timeout)
         goto __return;
     }
     
-    nexSerial.setTimeout(timeout);
-    if (sizeof(temp) != nexSerial.readBytes((char *)temp, sizeof(temp)))
+    if (sizeof(temp) != readBytes(temp, sizeof(temp), timeout))
     {
         goto __return;
     }
@@ -137,8 +135,7 @@ bool recvRetNumber(int32_t *number, uint32_t timeout)
         goto __return;
     }
     
-    nexSerial.setTimeout(timeout);
-    if (sizeof(temp) != nexSerial.readBytes((char *)temp, sizeof(temp)))
+    if (sizeof(temp) != readBytes(temp, sizeof(temp),timeout))
     {
         goto __return;
     }
@@ -182,17 +179,18 @@ bool recvRetString(String &str, uint32_t timeout)
 {
     str = "";
     bool ret{false};
-    bool str_start_flag = false;
+    bool str_start_flag{false};
     uint8_t cnt_0xff = 0;
     uint8_t c = 0;
-    long start;
+    size_t end{micros()+timeout*1000};
 
-    start = millis();
-    while (millis() - start <= timeout && ret == false)
+    while (end > micros() && ret == false)
     {
         while (nexSerial.available())
         {
             c = nexSerial.read();
+            dbSerialPrint(c);
+
             if (str_start_flag)
             {
                 if (0xFF == c)
@@ -213,9 +211,11 @@ bool recvRetString(String &str, uint32_t timeout)
             {
                 str_start_flag = true;
             }
+            yield();
         }
+        delayMicroseconds(20);
     }
-
+    dbSerialPrintln("");
     dbSerialPrint("recvRetString[");
     dbSerialPrint(str.length());
     dbSerialPrint(",");
@@ -266,6 +266,7 @@ void sendCommand(const char* cmd)
     nexSerial.write(0xFF);
     nexSerial.write(0xFF);
     nexSerial.write(0xFF);
+    dbSerialPrintln(cmd);
 }
 
 #ifdef STD_SUPPORT
@@ -285,13 +286,30 @@ void sendRawByte(const uint8_t byte)
     nexSerial.write(&byte, 1);
 }
 
+size_t readBytes(uint8_t* buffer, size_t size, size_t timeout)
+{
+    size_t end{micros()+timeout*1000};
+    size_t avail{(size_t)nexSerial.available()};
+    while(size>avail && end > micros())
+    {
+        delayMicroseconds(10);
+        avail=nexSerial.available();
+    }
+    size_t read=min(size,avail);
+    for(size_t i{read}; i;--i)
+    {
+        *buffer=nexSerial.read();
+        ++buffer;
+    }
+    return read;
+}
+
 bool recvCommand(const uint8_t command, uint32_t timeout)
 {
     bool ret = false;
     uint8_t temp[4] = {0};
-    
-    nexSerial.setTimeout(timeout);
-    if (sizeof(temp) != nexSerial.readBytes((char *)temp, sizeof(temp)))
+
+    if (sizeof(temp) != readBytes((uint8_t*)&temp, sizeof(temp), timeout))
     {
         dbSerialPrintln("recv command timeout");
         ret = false;
@@ -309,7 +327,7 @@ bool recvCommand(const uint8_t command, uint32_t timeout)
         else
         {
             dbSerialPrint("recv command err value: ");
-            dbSerialPrintln(temp[0]);   
+            dbSerialPrintlnByte(temp[0]);  
         }
     }
     return ret;
@@ -372,12 +390,18 @@ bool nexInit(const uint32_t baud)
         sendCommand(cmd);
         delay(100);
         nexSerial.begin(baud);
+        delay(20);
     }
 
     sendCommand("bkcmd=3");
     ret1 = recvRetCommandFinished();
     sendCommand("page 0");
     ret2 = recvRetCommandFinished();
+    sendCommand("connect");
+    String str;
+    recvRetString(str,1000);
+    dbSerialPrintln(str);
+
     return ret2;
 }
 
@@ -388,12 +412,11 @@ void nexLoop(NexTouch *nex_listen_list[])
     while (nexSerial.available())
     {
         __buffer[0] = nexSerial.read();
-        nexSerial.setTimeout(200);
         switch(__buffer[0])
         {
             case NEX_RET_EVENT_NEXTION_STARTUP:
             {
-                if(5==nexSerial.readBytes(&__buffer[1],5))
+                if(5==readBytes(&__buffer[1],5,200))
                 {
                     if (0x00 == __buffer[1] && 0x00 == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4] && 0xFF == __buffer[5])
                     {
@@ -407,7 +430,7 @@ void nexLoop(NexTouch *nex_listen_list[])
             }
             case NEX_RET_EVENT_TOUCH_HEAD:
             {
-                if(6==nexSerial.readBytes(&__buffer[1],6))
+                if(6==readBytes(&__buffer[1],6,200))
                 {
                     if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
                     {
@@ -418,7 +441,7 @@ void nexLoop(NexTouch *nex_listen_list[])
             }
             case NEX_RET_CURRENT_PAGE_ID_HEAD:
             {
-                if(4==nexSerial.readBytes(&__buffer[1],4))
+                if(4==readBytes(&__buffer[1],4,200))
                 {
                     if (0xFF == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4])
                     {
@@ -433,7 +456,7 @@ void nexLoop(NexTouch *nex_listen_list[])
             case NEX_RET_EVENT_POSITION_HEAD:
             case NEX_RET_EVENT_SLEEP_POSITION_HEAD:
             {
-                if(8==nexSerial.readBytes(&__buffer[1],8))
+                if(8==readBytes(&__buffer[1],8,200))
                 {                  
                     if (0xFF == __buffer[6] && 0xFF == __buffer[7] && 0xFF == __buffer[8])
                     {
@@ -454,7 +477,7 @@ void nexLoop(NexTouch *nex_listen_list[])
             case NEX_RET_AUTOMATIC_SLEEP:
             case NEX_RET_AUTOMATIC_WAKE_UP:
             {
-                if(3==nexSerial.readBytes(&__buffer[1],3))
+                if(3==readBytes(&__buffer[1],3,200))
                 {
                     if (0xFF == __buffer[1] && 0xFF == __buffer[2] && 0xFF == __buffer[3])
                     {
@@ -489,10 +512,14 @@ void nexLoop(NexTouch *nex_listen_list[])
             default:
             {
                 // unnoun data clean buffer.
+                dbSerialPrint("Unexpected data received hex: ");
                 while (nexSerial.available())
                 {
-                    nexSerial.read();
+                    dbSerialPrintByte(__buffer[0]);
+                    __buffer[0]=nexSerial.read();
+                    yield();
                 }
+                dbSerialPrintln(__buffer[0]);
                 break;              
             }
         };      
