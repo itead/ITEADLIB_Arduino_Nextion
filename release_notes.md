@@ -1,6 +1,11 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+# Release v0.11.3
+- getValue and getText doesn't work #9 
+- timeout parameters chaned from uit32_t to size_t
+- timeout check uses millis instead of micros
+
 # Release v0.11.1
 - NexVariable::setValue datatype corrected #2
 - DEBUG_SERIAL_ENABLE changed to NEX_DEBUG_SERIAL_ENABLE

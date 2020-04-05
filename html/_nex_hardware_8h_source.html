@@ -96,10 +96,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___core_a_p_i.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a>(<a class="code" href="class_nex_touch.html">NexTouch</a> *nex_listen_list[]);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">bool</span> recvRetNumber(uint32_t *number, uint32_t timeout = 100);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;uint16_t recvRetString(<span class="keywordtype">char</span> *buffer, uint16_t len, uint32_t timeout = 100);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">bool</span> recvRetNumber(uint32_t *number, size_t timeout = 100);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;uint16_t recvRetString(<span class="keywordtype">char</span> *buffer, uint16_t len, size_t timeout = 100);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> sendCommand(<span class="keyword">const</span> <span class="keywordtype">char</span>* cmd);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">bool</span> recvRetCommandFinished(uint32_t timeout = 100);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">bool</span> recvRetCommandFinished(size_t timeout = 100);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __NEXHARDWARE_H__ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="group___core_a_p_i_html_ga91c549e696b0ca035cf18901e6a50d5a"><div class="ttname"><a href="group___core_a_p_i.html#ga91c549e696b0ca035cf18901e6a50d5a">nexLoop</a></div><div class="ttdeci">void nexLoop(NexTouch *nex_listen_list[])</div><div class="ttdef"><b>Definition:</b> NexHardware.cpp:235</div></div>

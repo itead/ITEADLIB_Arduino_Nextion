@@ -133,7 +133,7 @@ void NexUpload::sendCommand(const char* cmd)
     nexSerial.write(0xFF);
 }
 
-uint16_t NexUpload::recvRetString(String &string, uint32_t timeout,bool recv_flag)
+uint16_t NexUpload::recvRetString(String &string, size_t timeout,bool recv_flag)
 {
     uint16_t ret = 0;
     uint8_t c = 0;

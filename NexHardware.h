@@ -102,10 +102,10 @@ extern void (*startSdUpgradeCallback)();
 /**
  * @}
  */
-bool recvRetNumber(uint32_t *number, uint32_t timeout = 100);
-bool recvRetNumber(int32_t *number, uint32_t timeout = 100);
-bool recvRetString(String &str, uint32_t timeout = 100);
-bool recvRetString(char *buffer, uint16_t &len, uint32_t timeout = 100);
+bool recvRetNumber(uint32_t *number, size_t timeout = 100);
+bool recvRetNumber(int32_t *number, size_t timeout = 100);
+bool recvRetString(String &str, size_t timeout = 100);
+bool recvRetString(char *buffer, uint16_t &len, size_t timeout = 100);
 
 /* Send Command to device
 *
@@ -154,7 +154,7 @@ size_t readBytes(uint8_t* buffer, size_t size, size_t timeout=1000);
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvCommand(const uint8_t command, uint32_t timeout);
+bool recvCommand(const uint8_t command, size_t timeout);
 
 /*
  * Command is executed successfully. 
@@ -165,7 +165,7 @@ bool recvCommand(const uint8_t command, uint32_t timeout);
  * @retval false - failed. 
  *
  */
-bool recvRetCommandFinished(uint32_t timeout = 200);
+bool recvRetCommandFinished(size_t timeout = 200);
 
 /*
  * Transpared data mode setup successfully 
@@ -176,7 +176,7 @@ bool recvRetCommandFinished(uint32_t timeout = 200);
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeReady(uint32_t timeout = 400);
+bool RecvTransparendDataModeReady(size_t timeout = 400);
 
 /*
  * Transpared data mode finished 
@@ -187,7 +187,7 @@ bool RecvTransparendDataModeReady(uint32_t timeout = 400);
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeFinished(uint32_t timeout = 200);
+bool RecvTransparendDataModeFinished(size_t timeout = 200);
 
 /**
  * Init Nextion.  

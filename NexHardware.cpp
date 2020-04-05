@@ -75,7 +75,7 @@ void (*startSdUpgradeCallback)() =nullptr;
  * @retval false - failed.
  *
  */
-bool recvRetNumber(uint32_t *number, uint32_t timeout)
+bool recvRetNumber(uint32_t *number, size_t timeout)
 {
     bool ret = false;
     uint8_t temp[8] = {0};
@@ -125,7 +125,7 @@ __return:
  * @retval false - failed.
  *
  */
-bool recvRetNumber(int32_t *number, uint32_t timeout)
+bool recvRetNumber(int32_t *number, size_t timeout)
 {
     bool ret = false;
     uint8_t temp[8] = {0};
@@ -175,16 +175,16 @@ __return:
  * @retval false - failed.
  *
  */
-bool recvRetString(String &str, uint32_t timeout)
+bool recvRetString(String &str, size_t timeout)
 {
     str = "";
     bool ret{false};
     bool str_start_flag{false};
     uint8_t cnt_0xff = 0;
     uint8_t c = 0;
-    size_t end{micros()+timeout*1000};
-
-    while (end > micros() && ret == false)
+    size_t start{millis()};
+    size_t avail{(size_t)nexSerial.available()};
+    while(ret == false && (millis()-start)<timeout)
     {
         while (nexSerial.available())
         {
@@ -236,7 +236,7 @@ bool recvRetString(String &str, uint32_t timeout)
  * @retval false - failed.  
  *
  */
-bool recvRetString(char *buffer, uint16_t &len, uint32_t timeout)
+bool recvRetString(char *buffer, uint16_t &len, size_t timeout)
 {
     String temp;
     bool ret = recvRetString(temp,timeout);
@@ -288,10 +288,9 @@ void sendRawByte(const uint8_t byte)
 
 size_t readBytes(uint8_t* buffer, size_t size, size_t timeout)
 {
-    size_t end{micros()+timeout*1000};
+    size_t start{millis()};
     size_t avail{(size_t)nexSerial.available()};
-    while(size>avail && end > micros())
-    {
+    while(size>avail && (millis()-start)<timeout)
         delayMicroseconds(10);
         avail=nexSerial.available();
     }
@@ -304,7 +303,7 @@ size_t readBytes(uint8_t* buffer, size_t size, size_t timeout)
     return read;
 }
 
-bool recvCommand(const uint8_t command, uint32_t timeout)
+bool recvCommand(const uint8_t command, size_t timeout)
 {
     bool ret = false;
     uint8_t temp[4] = {0};
@@ -333,7 +332,7 @@ bool recvCommand(const uint8_t command, uint32_t timeout)
     return ret;
 }
 
-bool recvRetCommandFinished(uint32_t timeout)
+bool recvRetCommandFinished(size_t timeout)
 {
     bool ret = recvCommand(NEX_RET_CMD_FINISHED_OK, timeout);
     if (ret) 
@@ -347,7 +346,7 @@ bool recvRetCommandFinished(uint32_t timeout)
     return ret;
 }
 
-bool RecvTransparendDataModeReady(uint32_t timeout)
+bool RecvTransparendDataModeReady(size_t timeout)
 {
     dbSerialPrintln("RecvTransparendDataModeReady requested");
     bool ret = recvCommand(Nex_RET_TRANSPARENT_DATA_READY, timeout);
@@ -362,7 +361,7 @@ bool RecvTransparendDataModeReady(uint32_t timeout)
     return ret;
 }
 
-bool RecvTransparendDataModeFinished(uint32_t timeout)
+bool RecvTransparendDataModeFinished(size_t timeout)
 {
     bool ret = recvCommand(Nex_RET_TRANSPARENT_DATA_FINISHED, timeout);
     if (ret) 
