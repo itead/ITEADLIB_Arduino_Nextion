@@ -4,11 +4,11 @@
 
 --------------------------------------------------------------------------------
 Jyrki Berg 4/5/2019 (https://github.com/jyberg)
--Backward compatinility issue: functions timeout parameters datatype changed from uint32_t to size_t
+-Backward compatibility issue: functions timeout parameters datatype changed from uint32_t to size_t
 - getValue and getText doesn't work #9 corrected
 
 Jyrki Berg 8/14/2019
--Backward compatinility issue:
+-Backward compatibility issue:
 	- systemStartUpCallback function pointer name corrected to match Nextion functionality/documentation new name: nextionReadyCallback
 
 - Error code list updated (NexHardware.cpp)
