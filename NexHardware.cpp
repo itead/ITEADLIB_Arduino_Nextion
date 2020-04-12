@@ -291,6 +291,7 @@ size_t readBytes(uint8_t* buffer, size_t size, size_t timeout)
     size_t start{millis()};
     size_t avail{(size_t)nexSerial.available()};
     while(size>avail && (millis()-start)<timeout)
+	{
         delayMicroseconds(10);
         avail=nexSerial.available();
     }
