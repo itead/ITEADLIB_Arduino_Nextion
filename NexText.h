@@ -5,6 +5,7 @@
  *
  * @author Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date 2015/8/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -31,18 +32,32 @@ class NexText: public NexTouch
 {
 public: /* methods */
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
      */
-    NexText(uint8_t pid, uint8_t cid, const char *name);
+    NexText(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
     
+
+    /*
+    * Get text attribute of component. 
+    * 
+    * @param str - String storing text returned. 
+    *
+    * @retval true - success. 
+    * @retval false - failed.
+    *
+    */
+    bool getText(String &str);
+
     /**
      * Get text attribute of component.
      *
      * @param buffer - buffer storing text returned. 
-     * @param len - length of buffer. 
-     * @return The real length of text returned. 
+     * @param len - in buffer len / out saved string len excluding null char.  
+     * 
+     * @retval true - success. 
+     * @retval false - failed.
      */
-    uint16_t getText(char *buffer, uint16_t len);
+    bool getText(char *buffer, uint16_t &len);
     
     /**
      * Set text attribute of component.

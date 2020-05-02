@@ -5,6 +5,8 @@
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
+ * 
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -15,8 +17,8 @@
 #include "NexTouch.h"
 
 
-NexTouch::NexTouch(uint8_t pid, uint8_t cid, const char *name)
-    :NexObject(pid, cid, name)
+NexTouch::NexTouch(uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+    :NexObject(pid, cid, name, page)
 {
     this->__cb_push = NULL;
     this->__cb_pop = NULL;
@@ -64,7 +66,7 @@ void NexTouch::pop(void)
     }
 }
 
-void NexTouch::iterate(NexTouch **list, uint8_t pid, uint8_t cid, int32_t event)
+void NexTouch::iterate(NexTouch **list, uint8_t pid, uint8_t cid, uint8_t event)
 {
     NexTouch *e = NULL;
     uint16_t i = 0;
