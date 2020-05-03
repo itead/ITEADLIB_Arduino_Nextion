@@ -1,6 +1,9 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+# Release v0.11.4
+Fix timeout for non-32bit processors
+
 # Release v0.11.3
 - getValue and getText doesn't work #9 
 - timeout parameters chaned from uit32_t to size_t
