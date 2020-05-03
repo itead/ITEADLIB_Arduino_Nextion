@@ -1,7 +1,7 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
-# Release v0.11.4
+# Release v0.11.5
 Fix timeout for non-32bit processors
 
 # Release v0.11.3
