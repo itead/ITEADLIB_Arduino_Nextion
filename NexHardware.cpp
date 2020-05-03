@@ -182,7 +182,7 @@ bool recvRetString(String &str, size_t timeout)
     bool str_start_flag{false};
     uint8_t cnt_0xff = 0;
     uint8_t c = 0;
-    size_t start{millis()};
+    uint32_t start{millis()};
     size_t avail{(size_t)nexSerial.available()};
     while(ret == false && (millis()-start)<timeout)
     {
@@ -288,10 +288,10 @@ void sendRawByte(const uint8_t byte)
 
 size_t readBytes(uint8_t* buffer, size_t size, size_t timeout)
 {
-    size_t start{millis()};
+    uint32_t start{millis()};
     size_t avail{(size_t)nexSerial.available()};
     while(size>avail && (millis()-start)<timeout)
-	{
+    {
         delayMicroseconds(10);
         avail=nexSerial.available();
     }
