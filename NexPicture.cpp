@@ -5,6 +5,8 @@
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
+ * 
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -15,15 +17,15 @@
 
 #include "NexPicture.h"
 
-NexPicture::NexPicture(uint8_t pid, uint8_t cid, const char *name)
-    :NexTouch(pid, cid, name)
+NexPicture::NexPicture(uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+    :NexTouch(pid, cid, name, page)
 {
 }
 
 bool NexPicture::Get_background_image_pic(uint32_t *number)
 {
     String cmd = String("get ");
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pic";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -35,7 +37,7 @@ bool NexPicture::Set_background_image_pic(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pic=";
     cmd += buf;
 
@@ -46,7 +48,7 @@ bool NexPicture::Set_background_image_pic(uint32_t number)
 bool NexPicture::getPic(uint32_t *number)
 {
     String cmd = String("get ");
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pic";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -58,7 +60,7 @@ bool NexPicture::setPic(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pic=";
     cmd += buf;
 

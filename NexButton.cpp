@@ -5,6 +5,8 @@
  *
  * @author  Wu Pengfei (email:<pengfei.wu@itead.cc>)
  * @date    2015/8/13
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
+ * 
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -15,16 +17,27 @@
 
 #include "NexButton.h"
 
-NexButton::NexButton(uint8_t pid, uint8_t cid, const char *name)
-    :NexTouch(pid, cid, name)
+NexButton::NexButton(uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+    :NexTouch(pid, cid, name, page)
 {
 }
 
-uint16_t NexButton::getText(char *buffer, uint16_t len)
+bool NexButton::getText(String &str)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
+    cmd += ".txt";
+    sendCommand(cmd.c_str());
+    return recvRetString(str);
+}
+
+
+bool NexButton::getText(char *buffer, uint16_t &len)
+{
+    String cmd;
+    cmd += "get ";
+    getObjGlobalPageName(cmd);
     cmd += ".txt";
     sendCommand(cmd.c_str());
     return recvRetString(buffer,len);
@@ -33,7 +46,7 @@ uint16_t NexButton::getText(char *buffer, uint16_t len)
 bool NexButton::setText(const char *buffer)
 {
     String cmd;
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".txt=\"";
     cmd += buffer;
     cmd += "\"";
@@ -46,7 +59,7 @@ uint32_t NexButton::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".bco";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -58,14 +71,14 @@ bool NexButton::Set_background_color_bco(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd="";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -74,7 +87,7 @@ uint32_t NexButton::Get_press_background_color_bco2(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".bco2";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -86,14 +99,14 @@ bool NexButton::Set_press_background_color_bco2(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".bco2=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd="";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -102,7 +115,7 @@ uint32_t NexButton::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pco";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -114,14 +127,14 @@ bool NexButton::Set_font_color_pco(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pco=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd = "";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -130,7 +143,7 @@ uint32_t NexButton::Get_press_font_color_pco2(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pco2";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -142,14 +155,14 @@ bool NexButton::Set_press_font_color_pco2(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pco2=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd = "";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -158,7 +171,7 @@ uint32_t NexButton::Get_place_xcen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".xcen";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -170,14 +183,14 @@ bool NexButton::Set_place_xcen(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".xcen=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd = "";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -186,7 +199,7 @@ uint32_t NexButton::Get_place_ycen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".ycen";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -198,14 +211,14 @@ bool NexButton::Set_place_ycen(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".ycen=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd = "";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -214,7 +227,7 @@ uint32_t NexButton::getFont(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".font";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -226,14 +239,14 @@ bool NexButton::setFont(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".font=";
     cmd += buf;
     sendCommand(cmd.c_str());
 
     cmd = "";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -242,7 +255,7 @@ uint32_t NexButton::Get_background_cropi_picc(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".picc";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -254,14 +267,14 @@ bool NexButton::Set_background_crop_picc(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".picc=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd = "";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -270,7 +283,7 @@ uint32_t NexButton::Get_press_background_crop_picc2(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".picc2";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -282,14 +295,14 @@ bool NexButton::Set_press_background_crop_picc2(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".picc2=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd = "";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -298,7 +311,7 @@ uint32_t NexButton::Get_background_image_pic(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pic";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -310,14 +323,14 @@ bool NexButton::Set_background_image_pic(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pic=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd = "";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -326,7 +339,7 @@ uint32_t NexButton::Get_press_background_image_pic2(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pic2";
     sendCommand(cmd.c_str());
     return recvRetNumber(number);
@@ -338,14 +351,14 @@ bool NexButton::Set_press_background_image_pic2(uint32_t number)
     String cmd;
     
     utoa(number, buf, 10);
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     cmd += ".pic2=";
     cmd += buf;
     sendCommand(cmd.c_str());
 	
     cmd = "";
     cmd += "ref ";
-    cmd += getObjName();
+    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

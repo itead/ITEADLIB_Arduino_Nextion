@@ -125,7 +125,7 @@ private: /* methods */
      * @return the length of string buffer.
      *
      */   
-    uint16_t recvRetString(String &string, uint32_t timeout = 100,bool recv_flag = false);
+    uint16_t recvRetString(String &string, size_t timeout = 100,bool recv_flag = false);
     
 private: /* data */ 
     uint32_t _baudrate; /*nextion serail baudrate*/

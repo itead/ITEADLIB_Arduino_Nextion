@@ -5,6 +5,7 @@
  *
  * @author huang xianming (email:<xianming.huang@itead.cc>)
  * @date 2015/8/26
+ * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -36,9 +37,9 @@ class NexTimer: public NexTouch
 public: /* methods */
 
     /**
-     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name);
+     * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
      */
-    NexTimer(uint8_t pid, uint8_t cid, const char *name);
+    NexTimer(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
 
     /**
      * Attach an callback function of timer respond event. 

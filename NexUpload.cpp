@@ -5,6 +5,7 @@
  *
  * @author  Chen Zengpeng (email:<zengpeng.chen@itead.cc>)
  * @date    2016/3/29
+ * @author Jyrki Berg 1/25/2020 (https://github.com/jyberg)
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
@@ -14,10 +15,9 @@
  */
 
 #include "NexUpload.h"
-#include <SoftwareSerial.h>
 
-//#define USE_SOFTWARE_SERIAL
 #ifdef USE_SOFTWARE_SERIAL
+#include <SoftwareSerial.h>
 SoftwareSerial dbSerial(3, 2); /* RX:D3, TX:D2 */
 #define DEBUG_SERIAL_ENABLE
 #endif
@@ -133,7 +133,7 @@ void NexUpload::sendCommand(const char* cmd)
     nexSerial.write(0xFF);
 }
 
-uint16_t NexUpload::recvRetString(String &string, uint32_t timeout,bool recv_flag)
+uint16_t NexUpload::recvRetString(String &string, size_t timeout,bool recv_flag)
 {
     uint16_t ret = 0;
     uint8_t c = 0;
