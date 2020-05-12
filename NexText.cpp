@@ -53,6 +53,17 @@ bool NexText::setText(const char *buffer)
     return recvRetCommandFinished();    
 }
 
+bool NexText::appendText(const char *buffer)
+{
+    String cmd;
+    getObjGlobalPageName(cmd);
+    cmd += ".txt+=\"";
+    cmd += buffer;
+    cmd += "\"";
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();    
+}
+
 uint32_t NexText::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
