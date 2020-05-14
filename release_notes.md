@@ -1,6 +1,9 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+# Release v0.11.7
+- appendText added to the text object
+
 # Release v0.11.6
 Fix timeout for non-32bit processors
 
