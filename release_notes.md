@@ -1,6 +1,9 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+# Release v0.11.8
+- bug in NexRtc::read_rtc_time() #12 Corrected
+
 # Release v0.11.7
 - appendText added to the text object
 
