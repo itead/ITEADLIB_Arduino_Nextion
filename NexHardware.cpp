@@ -382,8 +382,8 @@ bool nexInit(const uint32_t baud)
     bool ret1 = false;
     bool ret2 = false;
 
-    nexSerial.begin(9600); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
-    if(baud!=9600)
+    nexSerial.begin(STD_SERIAL_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+    if(baud!=STD_SERIAL_BAUD)
     {
         char cmd[14];
         sprintf(cmd,"baud=%i",baud);
@@ -399,7 +399,7 @@ bool nexInit(const uint32_t baud)
     ret2 = recvRetCommandFinished();
     sendCommand("connect");
     String str;
-    recvRetString(str,1000);
+    recvRetString(str,NEX_TIMEOUT_CONNECT);
     dbSerialPrintln(str);
 
     return ret2;
