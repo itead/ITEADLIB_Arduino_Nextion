@@ -102,10 +102,10 @@ extern void (*startSdUpgradeCallback)();
 /**
  * @}
  */
-bool recvRetNumber(uint32_t *number, size_t timeout = 100);
-bool recvRetNumber(int32_t *number, size_t timeout = 100);
-bool recvRetString(String &str, size_t timeout = 100);
-bool recvRetString(char *buffer, uint16_t &len, size_t timeout = 100);
+bool recvRetNumber(uint32_t *number, size_t timeout = NEX_TIMEOUT_RETURN);
+bool recvRetNumber(int32_t *number, size_t timeout = NEX_TIMEOUT_RETURN);
+bool recvRetString(String &str, size_t timeout = NEX_TIMEOUT_RETURN);
+bool recvRetString(char *buffer, uint16_t &len, size_t timeout = NEX_TIMEOUT_RETURN);
 
 /* Send Command to device
 *
@@ -165,7 +165,7 @@ bool recvCommand(const uint8_t command, size_t timeout);
  * @retval false - failed. 
  *
  */
-bool recvRetCommandFinished(size_t timeout = 200);
+bool recvRetCommandFinished(size_t timeout = NEX_TIMEOUT_COMMAND);
 
 /*
  * Transpared data mode setup successfully 

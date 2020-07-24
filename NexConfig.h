@@ -28,6 +28,28 @@
 */
 // #define STD_SUPPORT
 
+/**
+ * Define serial communication baud
+ * 
+*/
+#define STD_SERIAL_BAUD 9600
+
+/**
+ * Define standard or fast timeout
+ * 
+*/
+//#define NEX_TIMEOUT_STANDARD
+#define NEX_TIMEOUT_FAST
+
+#ifdef NEX_TIMEOUT_FAST
+#define NEX_TIMEOUT_CONNECT   10
+#define NEX_TIMEOUT_COMMAND   10
+#define NEX_TIMEOUT_RETURN    10
+#else
+#define NEX_TIMEOUT_CONNECT 1000
+#define NEX_TIMEOUT_COMMAND  200
+#define NEX_TIMEOUT_RETURN   100
+#endif
 /** 
  * Define NEX_DEBUG_SERIAL_ENABLE to enable debug serial. 
  * Comment it to disable debug serial. 
