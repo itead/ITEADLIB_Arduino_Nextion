@@ -43,6 +43,15 @@ public: /* methods */
      * @return true if success, false for faileure.
      */
     bool show(void);
+
+     /**
+     * Hide or Show all componens on current page
+     *
+     * @param visible - true Show components, false Hide components
+     * @return true if success, false for failure
+     */
+    bool setVisibleAll(bool visible)
+ 
 };
 /**
  * @}

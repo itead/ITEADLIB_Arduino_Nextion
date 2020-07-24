@@ -104,3 +104,19 @@ void NexObject::printObjInfo(void)
     dbSerialPrintln("]");
 }
 
+bool NexObject::setVisible(bool visible)
+{
+    String cmd = String("vis ");
+    cmd += __name;
+    cmd += ",";
+    if (flag)
+    {
+        cmd += "1";
+    } else
+    {
+        cmd += "0";
+    }
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
+

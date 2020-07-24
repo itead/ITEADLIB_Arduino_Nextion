@@ -1,6 +1,9 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+# Release v0.11.10
+- setVisible added for components and setVisibleAll for page
+
 # Release v0.11.9
 - NexConfig: standard (dafault) or fast timeout,  you may use fast timeout in case of baudrate higher than 115200
 
