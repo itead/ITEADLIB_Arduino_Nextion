@@ -3,7 +3,14 @@
 # Enhanced Nextion Library
 
 --------------------------------------------------------------------------------
-Jyrki Berg 4/5/2019 (https://github.com/jyberg)
+
+Jyrki Berg 7/24/2019 (https://github.com/jyberg)
+
+- NexConfig: standard (dafault) or fast timeout,  you may use fast timeout in case of baudrate higher than 115200
+- bug in NexRtc::read_rtc_time() #12 Corrected
+- appendText added to the text object
+
+Jyrki Berg 4/5/2019
 
 -Backward compatibility issue: functions timeout parameters datatype changed from uint32_t to size_t
 - getValue and getText doesn't work #9 corrected

@@ -46,7 +46,7 @@ NexUpload::NexUpload(const String file_Name,const uint8_t SD_chip_select,uint32_
 
 void NexUpload::upload(void)
 {
-    dbSerialBegin(9600);
+    dbSerialBegin(NEX_SERIAL_DEFAULT_BAUD);
     if(!_checkFile())
     {
         dbSerialPrintln("the file is error");

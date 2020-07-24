@@ -29,17 +29,19 @@
 // #define STD_SUPPORT
 
 /**
- * Define serial communication baud
+ * Define serial communication default baud.
+ * it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+ * If changing this value check that vakue is the same as factory set default baud in the used display.
  * 
 */
-#define STD_SERIAL_BAUD 9600
+#define NEX_SERIAL_DEFAULT_BAUD 9600
 
 /**
- * Define standard or fast timeout
+ * Define standard (dafault) or fast timeout,  you may use fast timeout in case of baudrate higher than 115200
  * 
 */
-//#define NEX_TIMEOUT_STANDARD
-#define NEX_TIMEOUT_FAST
+#define NEX_TIMEOUT_STANDARD
+//#define NEX_TIMEOUT_FAST
 
 #ifdef NEX_TIMEOUT_FAST
 #define NEX_TIMEOUT_CONNECT   10
@@ -50,6 +52,7 @@
 #define NEX_TIMEOUT_COMMAND  200
 #define NEX_TIMEOUT_RETURN   100
 #endif
+
 /** 
  * Define NEX_DEBUG_SERIAL_ENABLE to enable debug serial. 
  * Comment it to disable debug serial. 

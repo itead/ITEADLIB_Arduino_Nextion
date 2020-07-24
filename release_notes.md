@@ -1,6 +1,9 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+# Release v0.11.9
+- NexConfig: standard (dafault) or fast timeout,  you may use fast timeout in case of baudrate higher than 115200
+
 # Release v0.11.8
 - bug in NexRtc::read_rtc_time() #12 Corrected
 

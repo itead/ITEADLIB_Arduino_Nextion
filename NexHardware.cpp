@@ -382,9 +382,11 @@ bool nexInit(const uint32_t baud)
     bool ret1 = false;
     bool ret2 = false;
 
-    nexSerial.begin(STD_SERIAL_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
-    if(baud!=STD_SERIAL_BAUD)
+    // try to connect first with default baud as display may have forgot set baud
+    nexSerial.begin(NEX_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+    if(baud!=NEX_SERIAL_DEFAULT_BAUD)
     {
+        // change baud to wanted
         char cmd[14];
         sprintf(cmd,"baud=%i",baud);
         sendCommand(cmd);

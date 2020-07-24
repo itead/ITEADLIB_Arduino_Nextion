@@ -196,7 +196,7 @@ bool RecvTransparendDataModeFinished(size_t timeout = 200);
  * 
  * @return true if success, false for failure. 
  */
-bool nexInit(const uint32_t baud=9600);
+bool nexInit(const uint32_t baud=NEX_SERIAL_DEFAULT_BAUD);
 
 /**
  * Listen touch event and calling callbacks attached before.
