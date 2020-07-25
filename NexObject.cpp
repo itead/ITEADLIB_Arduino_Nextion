@@ -109,7 +109,7 @@ bool NexObject::setVisible(bool visible)
     String cmd = String("vis ");
     cmd += __name;
     cmd += ",";
-    if (flag)
+    if (visible)
     {
         cmd += "1";
     } else
