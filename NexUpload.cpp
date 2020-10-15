@@ -14,9 +14,13 @@
  */
 
 #include "NexUpload.h"
-#include <SoftwareSerial.h>
 
 //#define USE_SOFTWARE_SERIAL
+
+#ifdef USE_SOFTWARE_SERIAL
+#include <SoftwareSerial.h>
+#endif
+
 #ifdef USE_SOFTWARE_SERIAL
 SoftwareSerial dbSerial(3, 2); /* RX:D3, TX:D2 */
 #define DEBUG_SERIAL_ENABLE
