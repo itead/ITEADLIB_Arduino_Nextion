@@ -42,6 +42,16 @@ public: /* methods */
      * @return true if success, false for faileure.
      */
     bool show(void);
+
+    /**
+     * Set picture's number.
+     *
+     * @param number -the picture number.
+     *
+     * @retval true - success.
+     * @retval false - failed.
+     */
+    bool setPic(uint32_t number);
 };
 /**
  * @}

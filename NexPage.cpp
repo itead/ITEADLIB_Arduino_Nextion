@@ -36,3 +36,16 @@ bool NexPage::show(void)
     return recvRetCommandFinished();
 }
 
+bool NexPage::setPic(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+
+    utoa(number, buf, 10);
+    cmd += getObjName();
+    cmd += ".pic=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
