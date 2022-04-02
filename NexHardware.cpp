@@ -206,10 +206,10 @@ bool nexInit(void) {
     bool ret1 = false;
     bool ret2 = false;
     
-    dbSerialBegin(115200); //(9600);
-    nexSerial.begin(115200); //(9600);
+    dbSerialBegin(9600); //(9600);
+    nexSerial.begin(9600); //(9600);
     sendCommand("");
-    sendCommand("bkcmd=0"); //("bkcmd=1")
+    sendCommand("bkcmd=3"); //("bkcmd=1")
     ret1 = recvRetCommandFinished();
     sendCommand("page 0");
     ret2 = recvRetCommandFinished();
