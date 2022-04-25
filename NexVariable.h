@@ -34,6 +34,7 @@
  */
 class NexVariable: public NexTouch
 {
+
 public: /* methods */
 
     /**
@@ -51,13 +52,30 @@ public: /* methods */
     uint32_t getText(char *buffer, uint32_t len);    
 
     /**
+     * Get text attribute of component. Use ID Object of Nextion
+     *
+     * @param buffer - buffer storing text returned. 
+     * @param len - length of buffer. 
+     * @return The real length of text returned. 
+     */
+    uint32_t getTextByID(char *buffer, uint32_t len);    
+
+    /**
      * Set text attribute of component.
      *
      * @param buffer - text buffer terminated with '\0'. 
      * @return true if success, false for failure. 
      */
     bool setText(const char *buffer);    
-	
+
+    /**
+     * Set text attribute of component. Useof PID and CID
+     *
+     * @param buffer - text buffer terminated with '\0'. 
+     * @return true if success, false for failure. 
+     */
+    bool setTextByID(const char *buffer);    
+
     /**
      * Get val attribute of component
      *
@@ -65,7 +83,15 @@ public: /* methods */
      * @return the length of the data 
      */
     uint32_t getValue(uint32_t *number);
-	
+
+    /**
+     * Get val attribute of component. Use of PID and CID
+     *
+     * @param number - buffer storing data retur
+     * @return the length of the data 
+     */
+    uint32_t getValueByID(uint32_t *number);
+
     /**
      * Set val attribute of component
      *
@@ -73,6 +99,15 @@ public: /* methods */
      * @return true if success, false for failure
      */
     bool setValue(uint32_t number);
+
+     /**
+     * Set val attribute of component. Use of PID and CID
+     *
+     * @param number - To set up the data
+     * @return true if success, false for failure
+     */
+    bool setValueByID(uint32_t number);
+
 };
 /**
  * @}
