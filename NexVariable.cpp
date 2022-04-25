@@ -28,6 +28,15 @@ uint32_t NexVariable::getValue(uint32_t *number)
     return recvRetNumber(number);
 }
 
+uint32_t NexVariable::getValueByID(uint32_t *number)
+{
+    String cmd = String("get ");
+    cmd += String("p[") + getObjPid() + String("].b[") + getObjCid() + String("]");
+    cmd += ".val";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
+}
+
 bool NexVariable::setValue(uint32_t number)
 {
     char buf[10] = {0};
@@ -35,6 +44,20 @@ bool NexVariable::setValue(uint32_t number)
     
     utoa(number, buf, 10);
     cmd += getObjName();
+    cmd += ".val=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
+
+bool NexVariable::setValueByID(uint32_t number)
+{
+    char buf[10] = {0};
+	String cmd;		
+    
+    utoa(number, buf, 10);
+    cmd += String("p[") + getObjPid() + String("].b[") + getObjCid() + String("]");
     cmd += ".val=";
     cmd += buf;
 
@@ -52,10 +75,31 @@ uint32_t NexVariable::getText(char *buffer, uint32_t len)
     return recvRetString(buffer,len);
 }
 
+uint32_t NexVariable::getTextByID(char *buffer, uint32_t len)
+{
+    String cmd;
+    cmd += "get ";
+    cmd += String("p[") + getObjPid() + String("].b[") + getObjCid() + String("]");
+    cmd += ".txt";
+    sendCommand(cmd.c_str());
+    return recvRetString(buffer,len);
+}
+
 bool NexVariable::setText(const char *buffer)
 {
     String cmd;
     cmd += getObjName();
+    cmd += ".txt=\"";
+    cmd += buffer;
+    cmd += "\"";
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();    
+}
+
+bool NexVariable::setTextByID(const char *buffer)
+{
+    String cmd;
+    cmd += String("p[") + getObjPid() + String("].b[") + getObjCid() + String("]");
     cmd += ".txt=\"";
     cmd += buffer;
     cmd += "\"";
